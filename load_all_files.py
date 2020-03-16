@@ -29,8 +29,6 @@ def get_pdbid_from_xml(filename):
 
 
 def get_mmcif_high_resolution(filename):
-    print(filename)
-
     def get_resolution(fnm):
         try:
             return MMCIF2Dict(fnm)['_reflns.d_resolution_high'][0]
@@ -48,7 +46,6 @@ def get_mmcif_high_resolution(filename):
 
 
 def get_orig_json_water_weight(filename):
-    print(filename)
     dict_index = os.path.split(filename)[-1].rsplit('.', 1)[0]
     js = load_json(filename)
     for i in js[dict_index]:
@@ -58,7 +55,6 @@ def get_orig_json_water_weight(filename):
 
 
 def get_validated_json_model_count_filtered(filename):
-    print(filename)
     try:
         return len(load_json(filename)['Models'][0]['ModelNames'])
     except IndexError:
@@ -125,7 +121,9 @@ def main():
     parser.add_argument('json_files_validation', help='Folder with results of validation.'
                                                       'Files can be stored in subfolder', type=str)
     args = parser.parse_args()
-    read_and_write(csv_name(), columns, args.xml_files, args.mmcif_files, args.json_files, args.json_files_validation)
+    csvname = csv_name()
+    read_and_write(csvname, columns, args.xml_files, args.mmcif_files, args.json_files, args.json_files_validation)
+    print("Data were successfully written to " + csvname + ".")
 
 
 if __name__ == '__main__':
