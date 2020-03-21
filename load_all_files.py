@@ -21,15 +21,26 @@ def load_json(filename):
 
 
 def get_clashscore_from_xml(filename):
+    """
+    xml file is loaded in etree format
+    :param filename:
+    :return: clashscore gotten from etree
+    """
     return etree.parse(filename).getroot()[0].get('clashscore')
 
 
 def get_pdbid_from_xml(filename):
+    """
+    xml file is loaded in etree format
+    :param filename:
+    :return: pdbid gotten from etree
+    """
     return etree.parse(filename).getroot()[0].get('pdbid')
 
 
 def get_mmcif_high_resolution(filename):
     """
+    MMCIF is loaded as dictionary
     :param filename:
     :return: Highest resolution value if exists, nan otherwise.
     Highest resolution can be different item in different file. 2 of possibilities are covered for now
@@ -53,6 +64,7 @@ def get_mmcif_high_resolution(filename):
 
 def get_orig_json_water_weight(filename):
     """
+    json file is loaded as a dictionary
     :param filename:
     :return: total water weight (number of molecules * WATER_MOL_WEIGHT) if water is in molecule
     0 otherwise
