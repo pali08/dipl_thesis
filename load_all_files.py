@@ -9,6 +9,17 @@ from Bio.PDB.MMCIF2Dict import MMCIF2Dict
 from Bio.File import as_handle
 
 WATER_MOL_WEIGHT = 18.015
+fileset_xml = set()
+
+
+def get_molecule_name_from_filepath(filepath):
+    filename = os.path.split(filepath)[1]
+    if filename == 'result.json':
+        print(os.path.split(filepath)[0].split('/')[-1])
+        return os.path.split(filepath)[0].split('/')[-1]
+    else:
+        print(filename.split('.')[0].split("_")[0])
+        return filename.split('.')[0].split("_")[0]
 
 
 def load_json(filename):
@@ -26,6 +37,7 @@ def get_clashscore_from_xml(filename):
     :param filename:
     :return: clashscore gotten from etree
     """
+    fileset_xml.add(os.path.split(filename)[1].split('_')[0].strip())
     return etree.parse(filename).getroot()[0].get('clashscore')
 
 
@@ -98,8 +110,14 @@ def filepath_generator(path):
     for root, dirs, files in os.walk(path):
         dirs.sort()
         files.sort()
+        print(fileset_xml)
         for file in files:
-            yield os.path.join(root, file)
+            filepath = os.path.join(root, file)
+            if file.split(".")[1].lower() == 'xml':
+                yield filepath
+            elif get_molecule_name_from_filepath(filepath) in fileset_xml:
+                print(filepath)
+                yield filepath
 
 
 def write_csv_column(column_list, file):
@@ -114,8 +132,8 @@ def write_csv_column(column_list, file):
     :return:
     """
     try:
-        if sum(1 for line in open(file)) != len(column_list):
-            return 'List length not equal to lengt of lines in file.'
+        #if sum(1 for line in open(file)) != len(column_list):
+            #return 'List length not equal to lengt of lines in file.'
         for index, line in enumerate(fileinput.input(file, inplace=True)):
             print(line.rstrip() + ';' + str(column_list[index]))
     except FileNotFoundError:
@@ -143,6 +161,7 @@ def read_file_get_list(path, column_name, required_data_function):
             column_list.append(required_data_function(next(filename_generator)))
         except StopIteration:
             break
+    print(column_list)
     return column_list
 
 
@@ -171,6 +190,7 @@ def read_and_write(csv_file, columns, *datafolders):
                       get_validated_json_model_count_filtered]
     write_csv_column(read_file_get_list(datafolders[0], 'pdb_id', get_pdbid_from_xml), csv_file)
     for i in range(0, len(datafolders)):
+
         write_csv_column(read_file_get_list(datafolders[i], columns[i], data_functions[i]), csv_file)
 
 
