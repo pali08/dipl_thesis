@@ -1,6 +1,7 @@
 # /usr/bin/env python3
 import argparse
 import os
+import time
 import fileinput
 import xml.etree.ElementTree as etree
 import json
@@ -15,18 +16,16 @@ fileset_xml = set()
 def get_molecule_name_from_filepath(filepath):
     filename = os.path.split(filepath)[1]
     if filename == 'result.json':
-        print(os.path.split(filepath)[0].split('/')[-1])
         return os.path.split(filepath)[0].split('/')[-1]
     else:
-        print(filename.split('.')[0].split("_")[0])
         return filename.split('.')[0].split("_")[0]
 
 
 def load_json(filename):
-    '''
+    """
     :param filename: .json file as string
     :return: dictionary with json data
-    '''
+    """
     with open(filename) as js:
         return json.load(js)
 
@@ -59,13 +58,13 @@ def get_mmcif_high_resolution(filename):
     """
 
     def get_resolution(fnm):
-        try:
-            return MMCIF2Dict(fnm)['_reflns.d_resolution_high'][0]
-        except KeyError:
-            try:
-                return MMCIF2Dict(fnm)['em_3d_reconstruction.resolution'][0]
-            except KeyError:
-                return 'nan'
+        mmcif_dict = MMCIF2Dict(fnm)
+        if '_reflns.d_resolution_high' in mmcif_dict:
+            return mmcif_dict['_reflns.d_resolution_high'][0]
+        elif '_em_3d_reconstruction.resolution' in mmcif_dict:
+            return mmcif_dict['_em_3d_reconstruction.resolution'][0]
+        else:
+            return 'nan'
 
     try:
         return get_resolution(filename)
@@ -85,7 +84,7 @@ def get_orig_json_water_weight(filename):
     js = load_json(filename)
     for i in js[dict_index]:
         if i['molecule_name'] == ['water']:
-            return "{0:.3f}".format(WATER_MOL_WEIGHT * i['number_of_copies'])
+            return "{0:.2f}".format(WATER_MOL_WEIGHT * i['number_of_copies'])
     return 0
 
 
@@ -98,7 +97,7 @@ def get_validated_json_model_count_filtered(filename):
     try:
         return len(load_json(filename)['Models'][0]['ModelNames'])
     except IndexError:
-        return 'nan'
+        return '0'
 
 
 def filepath_generator(path):
@@ -110,13 +109,11 @@ def filepath_generator(path):
     for root, dirs, files in os.walk(path):
         dirs.sort()
         files.sort()
-        print(fileset_xml)
         for file in files:
             filepath = os.path.join(root, file)
             if file.split(".")[1].lower() == 'xml':
                 yield filepath
             elif get_molecule_name_from_filepath(filepath) in fileset_xml:
-                print(filepath)
                 yield filepath
 
 
@@ -132,8 +129,6 @@ def write_csv_column(column_list, file):
     :return:
     """
     try:
-        #if sum(1 for line in open(file)) != len(column_list):
-            #return 'List length not equal to lengt of lines in file.'
         for index, line in enumerate(fileinput.input(file, inplace=True)):
             print(line.rstrip() + ';' + str(column_list[index]))
     except FileNotFoundError:
@@ -143,7 +138,7 @@ def write_csv_column(column_list, file):
     return
 
 
-def read_file_get_list(path, column_name, required_data_function):
+def read_files_get_list(path, column_name, required_data_function):
     """
     Gets data of all files in given path and creates list from them. List is used by
     write_csv_column function
@@ -154,6 +149,7 @@ def read_file_get_list(path, column_name, required_data_function):
     get_mmcif_high_resolution, get_pdbid_from_xml, get_clashscore_from_xml
     :return: column list - see description
     """
+    print("Working with {} function on dataset.".format(required_data_function.__name__))
     column_list = [column_name]
     filename_generator = filepath_generator(path)
     while True:
@@ -161,7 +157,6 @@ def read_file_get_list(path, column_name, required_data_function):
             column_list.append(required_data_function(next(filename_generator)))
         except StopIteration:
             break
-    print(column_list)
     return column_list
 
 
@@ -188,10 +183,13 @@ def read_and_write(csv_file, columns, *datafolders):
         print('Incorrect number of items in column list')
     data_functions = [get_clashscore_from_xml, get_mmcif_high_resolution, get_orig_json_water_weight,
                       get_validated_json_model_count_filtered]
-    write_csv_column(read_file_get_list(datafolders[0], 'pdb_id', get_pdbid_from_xml), csv_file)
+    start_time = time.time()
+    write_csv_column(read_files_get_list(datafolders[0], 'pdb_id', get_pdbid_from_xml), csv_file)
+    print("Finished in {0:.3f} seconds.".format(time.time() - start_time))
     for i in range(0, len(datafolders)):
-
-        write_csv_column(read_file_get_list(datafolders[i], columns[i], data_functions[i]), csv_file)
+        start_time = time.time()
+        write_csv_column(read_files_get_list(datafolders[i], columns[i], data_functions[i]), csv_file)
+        print("Finished in {0:.3f} seconds.".format(time.time() - start_time))
 
 
 def main():
