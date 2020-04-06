@@ -134,7 +134,7 @@ def write_csv_column(column_list, file):
     except FileNotFoundError:
         with open(file, mode='w', encoding='utf-8') as f:
             for i in column_list:
-                f.write(i + '\n')
+                f.write(i + os.linesep)
     return
 
 
