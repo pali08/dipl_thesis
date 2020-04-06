@@ -1,5 +1,6 @@
 # /usr/bin/env python3
 import argparse
+import csv
 import os
 import time
 import fileinput
@@ -100,6 +101,10 @@ def get_validated_json_model_count_filtered(filename):
         return '0'
 
 
+def get_data_and_molecule_name(filename, function):
+    return function(filename), get_molecule_name_from_filepath(filename)
+
+
 def filepath_generator(path):
     """
     Generates filenames with their absolute or relative path depending on input
@@ -110,11 +115,7 @@ def filepath_generator(path):
         dirs.sort()
         files.sort()
         for file in files:
-            filepath = os.path.join(root, file)
-            if file.split(".")[1].lower() == 'xml':
-                yield filepath
-            elif get_molecule_name_from_filepath(filepath) in fileset_xml:
-                yield filepath
+            return os.path.join(root, file)
 
 
 def write_csv_column(column_list, file):
@@ -134,7 +135,7 @@ def write_csv_column(column_list, file):
     except FileNotFoundError:
         with open(file, mode='w', encoding='utf-8') as f:
             for i in column_list:
-                f.write(i + '\n')
+                f.write(i + os.linesep)
     return
 
 
@@ -150,14 +151,29 @@ def read_files_get_list(path, column_name, required_data_function):
     :return: column list - see description
     """
     print("Working with {} function on dataset.".format(required_data_function.__name__))
-    column_list = [column_name]
+    filename_value_dict = {}
     filename_generator = filepath_generator(path)
     while True:
         try:
-            column_list.append(required_data_function(next(filename_generator)))
+            filepath = next(filename_generator)
+            molecule_name = get_molecule_name_from_filepath(filepath)
+            if molecule_name in filename_value_dict:
+                print(
+                    "WARNING: Filename {} is duplicated in given folder (e.g. slightly "
+                    "changed name after subscore). Last found will be used".format(molecule_name))
+            filename_value_dict[get_molecule_name_from_filepath(filepath)] = required_data_function(filepath)
         except StopIteration:
             break
-    return column_list
+    return filename_value_dict
+
+
+def check_dataset_completeness(*dicts):
+    intersection = set.intersection(*map(set, [i.keys() for i in dicts]))
+    union_minus_intersection = set.union(*map(set, [i.keys() for i in dicts])) - intersection
+    if union_minus_intersection != {}:
+        print("Following molecules were omitted, because some of them did not exist in all datasets: {}".format(
+            str(union_minus_intersection)))
+    return intersection
 
 
 def csv_name():
@@ -183,13 +199,16 @@ def read_and_write(csv_file, columns, *datafolders):
         print('Incorrect number of items in column list')
     data_functions = [get_clashscore_from_xml, get_mmcif_high_resolution, get_orig_json_water_weight,
                       get_validated_json_model_count_filtered]
+    #TODO:
+    dicts = [data_functions[i](datafolders[i]) for i in range(0, len(data_functions))]
+    molecules_for_output = check_dataset_completeness(*dicts)
     start_time = time.time()
-    write_csv_column(read_files_get_list(datafolders[0], 'pdb_id', get_pdbid_from_xml), csv_file)
     print("Finished in {0:.3f} seconds.".format(time.time() - start_time))
-    for i in range(0, len(datafolders)):
-        start_time = time.time()
-        write_csv_column(read_files_get_list(datafolders[i], columns[i], data_functions[i]), csv_file)
-        print("Finished in {0:.3f} seconds.".format(time.time() - start_time))
+    with open(csv_file, mode='w', encoding='utf-8') as o:
+        writer = csv.writer(o, delimiter=';')
+        writer.writerow(columns)
+        for i in molecules_for_output:
+            writer.writerow([i] + [j[i] for j in dicts])
 
 
 def main():
