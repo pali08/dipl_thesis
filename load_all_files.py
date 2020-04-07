@@ -1,5 +1,6 @@
 # /usr/bin/env python3
 import argparse
+import csv
 import os
 import sys
 import time
@@ -106,6 +107,10 @@ def get_validated_json_model_count_filtered(filename):
         return '0'
 
 
+def get_data_and_molecule_name(filename, function):
+    return function(filename), get_molecule_name_from_filepath(filename)
+
+
 def filepath_generator(path):
     """
     Generates filenames with their absolute or relative path depending on input
@@ -116,61 +121,45 @@ def filepath_generator(path):
         dirs.sort()
         files.sort()
         for file in files:
-            filepath = os.path.join(root, file)
-            yield filepath
-            #if file.split(".")[1].lower() == 'xml':
-                #yield filepath
-            #elif get_molecule_name_from_filepath(filepath) in fileset_xml:
-                #yield filepath
+            yield os.path.join(root, file)
 
 
-def write_csv_column(column_list, file):
-    """
-    Wrtites csv column
-    For existing file, except block is executed (first column)
-    For every next file, try block is executed. Writing is done.
-    Fileinput.input(file, inplace=True) redirects output of print to file instead of
-    stdout
-    :param column_list: csv column list. The first item is column name
-    :param file:
-    :return:
-    """
-    try:
-        for index, line in enumerate(fileinput.input(file, inplace=True)):
-            print(line.rstrip() + ';' + str(column_list[index]))
-    except FileNotFoundError:
-        with open(file, mode='w', encoding='utf-8') as f:
-            for i in column_list:
-                f.write(i + '\n')
-    return
-
-
-def read_files_get_list(path, column_name, required_data_function, cpu_cores_count):
+def read_files_get_dict(path, required_data_function):
     """
     Gets data of all files in given path and creates list from them. List is used by
     write_csv_column function
     :param path:
-    :param column_name: first item in output list
-    :param cpu_cores_count: cpu cores chosen by user
     :param required_data_function: function that loads data from individual file (parsing function). One of:
     get_validated_json_model_count_filtered, get_orig_json_water_weight,
     get_mmcif_high_resolution, get_pdbid_from_xml, get_clashscore_from_xml
     :return: column list - see description
     """
     print("Working with {} function on dataset.".format(required_data_function.__name__))
-    column_list = [column_name]
+    start_time = time.time()
+    filename_value_dict = {}
     filename_generator = filepath_generator(path)
-    pool = Pool(cpu_cores_count)
-    column_list.extend(pool.map(required_data_function, filename_generator))
-    pool.close()
-    pool.join()
-    # while True:
-    #    try:
-    #        column_list.append(required_data_function(next(filename_generator)))
-    #    except StopIteration:
-    #        break
-    # print(column_list)
-    return column_list
+    while True:
+        try:
+            filepath = next(filename_generator)
+            molecule_name = get_molecule_name_from_filepath(filepath)
+            if molecule_name in filename_value_dict:
+                print(
+                    "WARNING: Filename {} is duplicated in given folder (e.g. slightly "
+                    "changed name after subscore). Last found will be used".format(molecule_name))
+            filename_value_dict[get_molecule_name_from_filepath(filepath).lower()] = required_data_function(filepath)
+        except StopIteration:
+            break
+    print("Finished in {0:.3f} seconds.".format(time.time() - start_time))
+    return filename_value_dict
+
+
+def check_dataset_completeness(*dicts):
+    intersection = set.intersection(*map(set, [i.keys() for i in dicts]))
+    union_minus_intersection = set.union(*map(set, [i.keys() for i in dicts])) - intersection
+    if union_minus_intersection != {}:
+        print(os.linesep + "Following molecules were omitted, because some of them did not exist in all datasets: {}".format(
+            str(union_minus_intersection)))
+    return intersection
 
 
 def csv_name():
@@ -196,14 +185,14 @@ def read_and_write(csv_file, columns, cpu_cores_count, *datafolders):
         print('Incorrect number of items in column list')
     data_functions = [get_clashscore_from_xml, get_mmcif_high_resolution, get_orig_json_water_weight,
                       get_validated_json_model_count_filtered]
-    start_time = time.time()
-    write_csv_column(read_files_get_list(datafolders[0], 'pdb_id', get_pdbid_from_xml, cpu_cores_count), csv_file)
-    print("Finished in {0:.3f} seconds.".format(time.time() - start_time))
-    print(fileset_xml)
-    for i in range(0, len(datafolders)):
-        start_time = time.time()
-        write_csv_column(read_files_get_list(datafolders[i], columns[i], data_functions[i], cpu_cores_count), csv_file)
-        print("Finished in {0:.3f} seconds.".format(time.time() - start_time))
+    # TODO:
+    dicts = [read_files_get_dict(datafolders[i], data_functions[i]) for i in range(0, len(data_functions))]
+    molecules_for_output = check_dataset_completeness(*dicts)
+    with open(csv_file, mode='w', encoding='utf-8') as o:
+        writer = csv.writer(o, delimiter=';')
+        writer.writerow(columns)
+        for i in molecules_for_output:
+            writer.writerow([i] + [j[i] for j in dicts])
 
 
 def verify_cpu_core_count(required_cores):
@@ -227,9 +216,8 @@ def main():
                         type=int)
     args = parser.parse_args()
     csvname = csv_name()
-    read_and_write(csvname, columns, args.cpu_count, args.xml_files, args.mmcif_files, args.json_files,
-                   args.json_files_validation)
-    print("Data were successfully written to " + csvname + ".")
+    read_and_write(csvname, columns, args.xml_files, args.mmcif_files, args.json_files, args.json_files_validation)
+    print(os.linesep + "Data were successfully written to " + csvname + ".")
 
 
 if __name__ == '__main__':
