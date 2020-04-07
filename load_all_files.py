@@ -115,42 +115,21 @@ def filepath_generator(path):
         dirs.sort()
         files.sort()
         for file in files:
-            return os.path.join(root, file)
+            yield os.path.join(root, file)
 
 
-def write_csv_column(column_list, file):
-    """
-    Wrtites csv column
-    For existing file, except block is executed (first column)
-    For every next file, try block is executed. Writing is done.
-    Fileinput.input(file, inplace=True) redirects output of print to file instead of
-    stdout
-    :param column_list: csv column list. The first item is column name
-    :param file:
-    :return:
-    """
-    try:
-        for index, line in enumerate(fileinput.input(file, inplace=True)):
-            print(line.rstrip() + ';' + str(column_list[index]))
-    except FileNotFoundError:
-        with open(file, mode='w', encoding='utf-8') as f:
-            for i in column_list:
-                f.write(i + os.linesep)
-    return
-
-
-def read_files_get_list(path, column_name, required_data_function):
+def read_files_get_dict(path, required_data_function):
     """
     Gets data of all files in given path and creates list from them. List is used by
     write_csv_column function
     :param path:
-    :param column_name: first item in output list
     :param required_data_function: function that loads data from individual file (parsing function). One of:
     get_validated_json_model_count_filtered, get_orig_json_water_weight,
     get_mmcif_high_resolution, get_pdbid_from_xml, get_clashscore_from_xml
     :return: column list - see description
     """
     print("Working with {} function on dataset.".format(required_data_function.__name__))
+    start_time = time.time()
     filename_value_dict = {}
     filename_generator = filepath_generator(path)
     while True:
@@ -161,9 +140,10 @@ def read_files_get_list(path, column_name, required_data_function):
                 print(
                     "WARNING: Filename {} is duplicated in given folder (e.g. slightly "
                     "changed name after subscore). Last found will be used".format(molecule_name))
-            filename_value_dict[get_molecule_name_from_filepath(filepath)] = required_data_function(filepath)
+            filename_value_dict[get_molecule_name_from_filepath(filepath).lower()] = required_data_function(filepath)
         except StopIteration:
             break
+    print("Finished in {0:.3f} seconds.".format(time.time() - start_time))
     return filename_value_dict
 
 
@@ -171,7 +151,7 @@ def check_dataset_completeness(*dicts):
     intersection = set.intersection(*map(set, [i.keys() for i in dicts]))
     union_minus_intersection = set.union(*map(set, [i.keys() for i in dicts])) - intersection
     if union_minus_intersection != {}:
-        print("Following molecules were omitted, because some of them did not exist in all datasets: {}".format(
+        print(os.linesep + "Following molecules were omitted, because some of them did not exist in all datasets: {}".format(
             str(union_minus_intersection)))
     return intersection
 
@@ -199,11 +179,9 @@ def read_and_write(csv_file, columns, *datafolders):
         print('Incorrect number of items in column list')
     data_functions = [get_clashscore_from_xml, get_mmcif_high_resolution, get_orig_json_water_weight,
                       get_validated_json_model_count_filtered]
-    #TODO:
-    dicts = [data_functions[i](datafolders[i]) for i in range(0, len(data_functions))]
+    # TODO:
+    dicts = [read_files_get_dict(datafolders[i], data_functions[i]) for i in range(0, len(data_functions))]
     molecules_for_output = check_dataset_completeness(*dicts)
-    start_time = time.time()
-    print("Finished in {0:.3f} seconds.".format(time.time() - start_time))
     with open(csv_file, mode='w', encoding='utf-8') as o:
         writer = csv.writer(o, delimiter=';')
         writer.writerow(columns)
@@ -226,7 +204,7 @@ def main():
     args = parser.parse_args()
     csvname = csv_name()
     read_and_write(csvname, columns, args.xml_files, args.mmcif_files, args.json_files, args.json_files_validation)
-    print("Data were successfully written to " + csvname + ".")
+    print(os.linesep + "Data were successfully written to " + csvname + ".")
 
 
 if __name__ == '__main__':
