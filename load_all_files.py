@@ -149,13 +149,9 @@ def read_files_get_dict(path, required_data_function, cpu_cores_count):
     start_time = time.time()
     filename_generator = filepath_generator(path)
     pool = Pool(cpu_cores_count)
-    try:
-        column_list = pool.starmap_async(two_funcs_to_one, zip(filename_generator, repeat(required_data_function))).get()
-        pool.close()
-        pool.join()
-    except:
-        pool.close()
-        pool.join()
+    column_list = pool.starmap_async(two_funcs_to_one, zip(filename_generator, repeat(required_data_function))).get()
+    pool.close()
+    pool.join()
     print("Finished in {0:.3f} seconds.".format(time.time() - start_time))
     filename_value_dict = dict(column_list)
     if len(column_list) != len(filename_value_dict):
