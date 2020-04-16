@@ -22,7 +22,7 @@ fileset_xml = set()
 def get_molecule_name_from_filepath(filepath):
     filename = os.path.split(filepath)[1]
     if filename == 'result.json':
-        return os.path.split(filepath)[0].split('/')[-1]
+        return os.path.split(os.path.split(filepath)[0])[1]
     else:
         return filename.split('.')[0].split("_")[0]
 
@@ -149,9 +149,13 @@ def read_files_get_dict(path, required_data_function, cpu_cores_count):
     start_time = time.time()
     filename_generator = filepath_generator(path)
     pool = Pool(cpu_cores_count)
-    column_list = pool.starmap(two_funcs_to_one, zip(filename_generator, repeat(required_data_function)))
-    pool.close()
-    pool.join()
+    try:
+        column_list = pool.starmap_async(two_funcs_to_one, zip(filename_generator, repeat(required_data_function))).get()
+        pool.close()
+        pool.join()
+    except:
+        pool.close()
+        pool.join()
     print("Finished in {0:.3f} seconds.".format(time.time() - start_time))
     filename_value_dict = dict(column_list)
     if len(column_list) != len(filename_value_dict):
