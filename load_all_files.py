@@ -4,19 +4,33 @@ import csv
 import os
 import sys
 import time
-import fileinput
 import xml.etree.ElementTree as etree
 import json
 from datetime import datetime
 from itertools import repeat
-from multiprocessing import Pool, Manager
-from multiprocessing import Process
+from multiprocessing import Pool
 
 from Bio.PDB.MMCIF2Dict import MMCIF2Dict
 from Bio.File import as_handle
 
 WATER_MOL_WEIGHT = 18.015
 fileset_xml = set()
+
+
+def get_xml(filename):
+    pass
+
+
+def get_mmcif(filename):
+    pass
+
+
+def get_json(filename):
+    pass
+
+
+def get_validated_json(filename):
+    pass
 
 
 def get_molecule_name_from_filepath(filepath):
@@ -42,7 +56,24 @@ def get_clashscore_from_xml(filename):
     :param filename:
     :return: clashscore gotten from etree
     """
-    return etree.parse(filename).getroot()[0].get('clashscore')
+    tree = etree.parse(filename).getroot()[0]
+    clashscore = tree.get('clashscore')
+    clashscore_full_length = tree.get('clashscore-full-length')
+    if clashscore_full_length is None:
+        return clashscore, 'nan'
+    return clashscore, clashscore_full_length
+
+
+def get_clashscore_full_length_from_xml(filename):
+    """
+    xml file is loaded in etree format
+    :param filename:
+    :return: clashscore gotten from etree
+    """
+    clashscore = etree.parse(filename).getroot()[0].get('clashscore-full-length')
+    if clashscore is None or clashscore == -1:
+        return 'nan'
+    return clashscore
 
 
 def get_pdbid_from_xml(filename):
@@ -53,7 +84,7 @@ def get_pdbid_from_xml(filename):
     """
     # well probably if this function is run inside pool, global variables cannot be modified ?
     fileset_xml.add(os.path.split(filename)[1].split('_')[0].strip())
-    return etree.parse(filename).getroot()[0].get('pdbid')
+    return [etree.parse(filename).getroot()[0].get('pdbid')]
 
 
 def get_mmcif_high_resolution(filename):
@@ -64,22 +95,21 @@ def get_mmcif_high_resolution(filename):
     Highest resolution can be different item in different file. 2 of possibilities are covered for now
     """
 
+    # print(filename)
+    # return 'nan'
     def get_resolution(fnm):
         mmcif_dict = MMCIF2Dict(fnm)
-        if '_reflns.d_resolution_high' in mmcif_dict:
-            return mmcif_dict['_reflns.d_resolution_high'][0]
-        elif '_em_3d_reconstruction.resolution' in mmcif_dict:
-            return mmcif_dict['_em_3d_reconstruction.resolution'][0]
-        else:
-            return 'nan'
+        if '_refine.ls_d_res_high' in mmcif_dict:
+            return mmcif_dict['_refine.ls_d_res_high'][0]
+        return ['nan']
 
     try:
         # print(get_resolution(filename))
-        return get_resolution(filename)
+        return [get_resolution(filename)]
     except UnicodeDecodeError:
         with as_handle(filename, 'r', encoding='utf-16') as f:
             # print(get_resolution(f))
-            return get_resolution(f)
+            return [get_resolution(f)]
 
 
 def get_orig_json_water_weight(filename):
@@ -93,8 +123,8 @@ def get_orig_json_water_weight(filename):
     js = load_json(filename)
     for i in js[dict_index]:
         if i['molecule_name'] == ['water']:
-            return "{0:.2f}".format(WATER_MOL_WEIGHT * i['number_of_copies'])
-    return 0
+            return ["{0:.2f}".format(WATER_MOL_WEIGHT * i['number_of_copies'])]
+    return [0]
 
 
 def get_validated_json_model_count_filtered(filename):
@@ -104,9 +134,9 @@ def get_validated_json_model_count_filtered(filename):
     if "Models" key exists in loaded json as dictionary, nan otherwise
     """
     try:
-        return len(load_json(filename)['Models'][0]['ModelNames'])
+        return [len(load_json(filename)['Models'][0]['ModelNames'])]
     except IndexError:
-        return '0'
+        return ['0']
 
 
 def get_data_and_molecule_name(filename, function):
@@ -163,13 +193,20 @@ def read_files_get_dict(path, required_data_function, cpu_cores_count):
 
 
 def check_dataset_completeness(*dicts):
+    """
+    :param dicts: dictionaries in format {molecule:value}
+    :return: union of all molecules. Keep in mind that function also modifies dicts in given scope, if some file does
+    not exist for given molecule, value dependent on this file is set to nan
+    """
     intersection = set.intersection(*map(set, [i.keys() for i in dicts]))
-    union_minus_intersection = set.union(*map(set, [i.keys() for i in dicts])) - intersection
+    union = set.union(*map(set, [i.keys() for i in dicts]))
+    union_minus_intersection = union - intersection
     if union_minus_intersection != {}:
-        print(
-            os.linesep + "Following molecules were omitted, because some of them did not exist in all datasets: {}".format(
-                str(union_minus_intersection)))
-    return intersection
+        for i in union_minus_intersection:
+            for j in dicts:
+                if i not in j:
+                    j[i] = 'nan'
+    return union
 
 
 def csv_name():
@@ -192,19 +229,23 @@ def read_and_write(csv_file, columns, cpu_cores_count, *datafolders):
             'Incorrect number of datafolders in argument. Arguments must be: \
             xml_folder, mmcif_folder, json folder, json_validated_folder')
         return
-    if len(columns) != 4:
+    if len(columns) != 5:
         print('Incorrect number of items in column list')
-    data_functions = [get_clashscore_from_xml, get_mmcif_high_resolution, get_orig_json_water_weight,
+    data_functions = [get_clashscore_from_xml,
+                      # get_clashscore_full_length_from_xml,
+                      get_mmcif_high_resolution,
+                      get_orig_json_water_weight,
                       get_validated_json_model_count_filtered]
     # TODO:
     dicts = [read_files_get_dict(datafolders[i], data_functions[i], cpu_cores_count) for i in
              range(0, len(data_functions))]
     molecules_for_output = check_dataset_completeness(*dicts)
     with open(csv_file, mode='w', encoding='utf-8') as o:
-        writer = csv.writer(o, delimiter=';')
+        writer = csv.writer(o, delimiter=';', lineterminator='\n')
         writer.writerow(columns)
         for i in molecules_for_output:
-            writer.writerow([i] + [j[i] for j in dicts])
+            writer.writerow([i] + [item for sublist in [j[i] for j in dicts] for item in sublist])
+            # writer.writerow([i] + [j[i] for j in dicts])
 
 
 def verify_cpu_core_count(required_cores):
@@ -217,7 +258,7 @@ def main():
     main - argparsing and executing read_and_write
     4 folders are compulsory as user argument, output csv filename is generated automatically
     """
-    columns = ['clashscore', 'high_resolution', 'water_weight', 'model_count']
+    columns = ['filename', 'clashscore', 'clashscore_full_length', 'high_resolution', 'water_weight', 'model_count']
     parser = argparse.ArgumentParser(description='Intro task - parse different types of the data.')
     parser.add_argument('xml_files', help='Folder with xml files', type=str)
     parser.add_argument('mmcif_files', help='Folder with mmcif files files', type=str)
