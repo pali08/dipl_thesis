@@ -9,28 +9,11 @@ import json
 from datetime import datetime
 from itertools import repeat
 from multiprocessing import Pool
-
 from Bio.PDB.MMCIF2Dict import MMCIF2Dict
 from Bio.File import as_handle
 
 WATER_MOL_WEIGHT = 18.015
 fileset_xml = set()
-
-
-def get_xml(filename):
-    pass
-
-
-def get_mmcif(filename):
-    pass
-
-
-def get_json(filename):
-    pass
-
-
-def get_validated_json(filename):
-    pass
 
 
 def get_molecule_name_from_filepath(filepath):
@@ -64,25 +47,13 @@ def get_clashscore_from_xml(filename):
     return clashscore, clashscore_full_length
 
 
-def get_clashscore_full_length_from_xml(filename):
-    """
-    xml file is loaded in etree format
-    :param filename:
-    :return: clashscore gotten from etree
-    """
-    clashscore = etree.parse(filename).getroot()[0].get('clashscore-full-length')
-    if clashscore is None or clashscore == -1:
-        return 'nan'
-    return clashscore
-
-
 def get_pdbid_from_xml(filename):
     """
     xml file is loaded in etree format
     :param filename:
     :return: pdbid gotten from etree
+    probably if this function is run inside pool, global variables cannot be modified ?
     """
-    # well probably if this function is run inside pool, global variables cannot be modified ?
     fileset_xml.add(os.path.split(filename)[1].split('_')[0].strip())
     return [etree.parse(filename).getroot()[0].get('pdbid')]
 
@@ -94,9 +65,6 @@ def get_mmcif_high_resolution(filename):
     :return: Highest resolution value if exists, nan otherwise.
     Highest resolution can be different item in different file. 2 of possibilities are covered for now
     """
-
-    # print(filename)
-    # return 'nan'
     def get_resolution(fnm):
         mmcif_dict = MMCIF2Dict(fnm)
         if '_refine.ls_d_res_high' in mmcif_dict:
@@ -104,11 +72,9 @@ def get_mmcif_high_resolution(filename):
         return ['nan']
 
     try:
-        # print(get_resolution(filename))
         return [get_resolution(filename)]
     except UnicodeDecodeError:
         with as_handle(filename, 'r', encoding='utf-16') as f:
-            # print(get_resolution(f))
             return [get_resolution(f)]
 
 
@@ -232,11 +198,9 @@ def read_and_write(csv_file, columns, cpu_cores_count, *datafolders):
     if len(columns) != 5:
         print('Incorrect number of items in column list')
     data_functions = [get_clashscore_from_xml,
-                      # get_clashscore_full_length_from_xml,
                       get_mmcif_high_resolution,
                       get_orig_json_water_weight,
                       get_validated_json_model_count_filtered]
-    # TODO:
     dicts = [read_files_get_dict(datafolders[i], data_functions[i], cpu_cores_count) for i in
              range(0, len(data_functions))]
     molecules_for_output = check_dataset_completeness(*dicts)
@@ -245,7 +209,6 @@ def read_and_write(csv_file, columns, cpu_cores_count, *datafolders):
         writer.writerow(columns)
         for i in molecules_for_output:
             writer.writerow([i] + [item for sublist in [j[i] for j in dicts] for item in sublist])
-            # writer.writerow([i] + [j[i] for j in dicts])
 
 
 def verify_cpu_core_count(required_cores):
