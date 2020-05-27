@@ -6,6 +6,10 @@ def get_pdb_id(mmcif_dict):
     return mmcif_dict['_entry.id'][0]
 
 
+def get_pdb_release_date(mmcif_dict):
+    return mmcif_dict['_citation.year'][0]
+
+
 def get_mmcif_resolution(mmcif_dict):
     """
     MMCIF is loaded as dictionary
