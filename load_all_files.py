@@ -41,9 +41,11 @@ def get_clashscore_from_xml(filename):
     """
     tree = etree.parse(filename).getroot()[0]
     clashscore = tree.get('clashscore')
+    if clashscore is None or float(clashscore) <= 0.0:
+        clashscore = 'nan'
     clashscore_full_length = tree.get('clashscore-full-length')
-    if clashscore_full_length is None:
-        return clashscore, 'nan'
+    if clashscore_full_length is None or float(clashscore_full_length) <= 0.0:
+        clashscore_full_length = 'nan'
     return clashscore, clashscore_full_length
 
 
@@ -65,11 +67,15 @@ def get_mmcif_high_resolution(filename):
     :return: Highest resolution value if exists, nan otherwise.
     Highest resolution can be different item in different file. 2 of possibilities are covered for now
     """
+
     def get_resolution(fnm):
         mmcif_dict = MMCIF2Dict(fnm)
         if '_refine.ls_d_res_high' in mmcif_dict:
-            return mmcif_dict['_refine.ls_d_res_high'][0]
-        return ['nan']
+            try:
+                return float(mmcif_dict['_refine.ls_d_res_high'][0])
+            except ValueError:
+                return 'nan'
+        return 'nan'
 
     try:
         return [get_resolution(filename)]
@@ -171,7 +177,7 @@ def check_dataset_completeness(*dicts):
         for i in union_minus_intersection:
             for j in dicts:
                 if i not in j:
-                    j[i] = 'nan'
+                    j[i] = ['nan' for i in range(0, len(j[list(j.keys())[0]]))]
     return union
 
 
