@@ -10,6 +10,7 @@ from Bio.PDB.MMCIF2Dict import MMCIF2Dict
 from Bio.File import as_handle
 import sys
 
+
 def rough_readlines(filename):
     try:
         with open(filename) as f:
@@ -32,7 +33,7 @@ def rough_readlines(filename):
                 else:
                     print('nan')
                     break
-        
+
 
 def get_mmcif_high_resolution_biopython(filename):
     """
@@ -56,7 +57,8 @@ def get_mmcif_high_resolution_biopython(filename):
     except UnicodeDecodeError:
         pass
         with as_handle(filename, 'r', encoding='utf-16', engine='python') as f:
-            return(get_resolution(f))
+            return (get_resolution(f))
+
 
 def walk_over_files(path, function):
     start_time = time.time()
@@ -67,6 +69,6 @@ def walk_over_files(path, function):
     print(function.__name__ + ':')
     print("Finished in {0:.3f} seconds.".format(time.time() - start_time))
 
+
 walk_over_files(sys.argv[1], rough_readlines)
 walk_over_files(sys.argv[1], get_mmcif_high_resolution_biopython)
-

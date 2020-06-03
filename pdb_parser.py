@@ -2,26 +2,6 @@ from Bio.File import as_handle
 from Bio.PDB.MMCIF2Dict import MMCIF2Dict
 
 
-def get_pdb_id(mmcif_dict):
-    return mmcif_dict['_entry.id'][0]
-
-
-def get_pdb_release_date(mmcif_dict):
-    return mmcif_dict['_citation.year'][0]
-
-
-def get_mmcif_resolution(mmcif_dict):
-    """
-    MMCIF is loaded as dictionary
-    :param mmcif_dict
-    :return: Highest resolution value if exists, nan otherwise.
-    Highest resolution can be different item in different file. 2 of possibilities are covered for now
-    """
-    if '_refine.ls_d_res_high' in mmcif_dict:
-        return mmcif_dict['_refine.ls_d_res_high'][0]
-    return 'nan'
-
-
 def get_mmcif_dictionary(filename):
     def get_mmcif_dictionary_local_function(fnm):
         return MMCIF2Dict(fnm)
@@ -31,5 +11,28 @@ def get_mmcif_dictionary(filename):
     except UnicodeDecodeError:
         with as_handle(filename, 'r', encoding='utf-16') as f:
             return get_mmcif_dictionary_local_function(f)
+
+
+class PdbParser:
+
+    def __init__(self, filename):
+        self.mmcif_dict = get_mmcif_dictionary(filename)
+
+    def get_pdb_id(self):
+        return self.mmcif_dict['_entry.id'][0]
+
+    def get_pdb_release_date(self):
+        return self.mmcif_dict['_citation.year'][0]
+
+    def get_mmcif_resolution(self):
+        """
+        MMCIF is loaded as dictionary
+        :param self.mmcif_dict
+        :return: Highest resolution value if exists, nan otherwise.
+        Highest resolution can be different item in different file. 2 of possibilities are covered for now
+        """
+        if '_refine.ls_d_res_high' in self.mmcif_dict:
+            return self.mmcif_dict['_refine.ls_d_res_high'][0]
+        return 'nan'
 
 # def get_data

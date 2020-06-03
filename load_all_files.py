@@ -12,8 +12,13 @@ from multiprocessing import Pool
 from Bio.PDB.MMCIF2Dict import MMCIF2Dict
 from Bio.File import as_handle
 
+from pdb_parser import PdbParser
+
 WATER_MOL_WEIGHT = 18.015
 fileset_xml = set()
+columns = ['filename', 'clashscore', 'clashscore_full_length', 'high_resolution', 'water_weight', 'model_count']
+functions = []
+
 
 
 def get_molecule_name_from_filepath(filepath):
@@ -60,28 +65,15 @@ def get_pdbid_from_xml(filename):
     return [etree.parse(filename).getroot()[0].get('pdbid')]
 
 
-def get_mmcif_high_resolution(filename):
+def get_mmcif_data(filename):
     """
     MMCIF is loaded as dictionary
     :param filename:
     :return: Highest resolution value if exists, nan otherwise.
     Highest resolution can be different item in different file. 2 of possibilities are covered for now
     """
-
-    def get_resolution(fnm):
-        mmcif_dict = MMCIF2Dict(fnm)
-        if '_refine.ls_d_res_high' in mmcif_dict:
-            try:
-                return float(mmcif_dict['_refine.ls_d_res_high'][0])
-            except ValueError:
-                return 'nan'
-        return 'nan'
-
-    try:
-        return [get_resolution(filename)]
-    except UnicodeDecodeError:
-        with as_handle(filename, 'r', encoding='utf-16') as f:
-            return [get_resolution(f)]
+    pdb_parser = PdbParser(filename)
+    return pdb_parser.get_pdb_id(), pdb_parser.get_pdb_release_date(), pdb_parser.get_mmcif_resolution()
 
 
 def get_orig_json_water_weight(filename):
@@ -227,7 +219,6 @@ def main():
     main - argparsing and executing read_and_write
     4 folders are compulsory as user argument, output csv filename is generated automatically
     """
-    columns = ['filename', 'clashscore', 'clashscore_full_length', 'high_resolution', 'water_weight', 'model_count']
     parser = argparse.ArgumentParser(description='Intro task - parse different types of the data.')
     parser.add_argument('xml_files', help='Folder with xml files', type=str)
     parser.add_argument('mmcif_files', help='Folder with mmcif files files', type=str)
