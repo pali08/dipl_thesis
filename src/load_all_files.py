@@ -9,16 +9,13 @@ import json
 from datetime import datetime
 from itertools import repeat
 from multiprocessing import Pool
-from Bio.PDB.MMCIF2Dict import MMCIF2Dict
-from Bio.File import as_handle
 
-from pdb_parser import PdbParser
+from src.pdb_parser import PdbParser
 
 WATER_MOL_WEIGHT = 18.015
 fileset_xml = set()
-columns = ['filename', 'clashscore', 'clashscore_full_length', 'high_resolution', 'water_weight', 'model_count']
-functions = []
-
+columns = ['pdbid', 'year', 'resolution', 'polymerWeight', 'nonPolymerWeight', 'waterWeight',
+           'nonPolymerWeightWithWater', 'structureWeight']
 
 
 def get_molecule_name_from_filepath(filepath):
@@ -29,42 +26,6 @@ def get_molecule_name_from_filepath(filepath):
         return filename.split('.')[0].split("_")[0]
 
 
-def load_json(filename):
-    """
-    :param filename: .json file as string
-    :return: dictionary with json data
-    """
-    with open(filename) as js:
-        return json.load(js)
-
-
-def get_clashscore_from_xml(filename):
-    """
-    xml file is loaded in etree format
-    :param filename:
-    :return: clashscore gotten from etree
-    """
-    tree = etree.parse(filename).getroot()[0]
-    clashscore = tree.get('clashscore')
-    if clashscore is None or float(clashscore) <= 0.0:
-        clashscore = 'nan'
-    clashscore_full_length = tree.get('clashscore-full-length')
-    if clashscore_full_length is None or float(clashscore_full_length) <= 0.0:
-        clashscore_full_length = 'nan'
-    return clashscore, clashscore_full_length
-
-
-def get_pdbid_from_xml(filename):
-    """
-    xml file is loaded in etree format
-    :param filename:
-    :return: pdbid gotten from etree
-    probably if this function is run inside pool, global variables cannot be modified ?
-    """
-    fileset_xml.add(os.path.split(filename)[1].split('_')[0].strip())
-    return [etree.parse(filename).getroot()[0].get('pdbid')]
-
-
 def get_mmcif_data(filename):
     """
     MMCIF is loaded as dictionary
@@ -73,34 +34,8 @@ def get_mmcif_data(filename):
     Highest resolution can be different item in different file. 2 of possibilities are covered for now
     """
     pdb_parser = PdbParser(filename)
-    return pdb_parser.get_pdb_id(), pdb_parser.get_pdb_release_date(), pdb_parser.get_mmcif_resolution()
-
-
-def get_orig_json_water_weight(filename):
-    """
-    json file is loaded as a dictionary
-    :param filename:
-    :return: total water weight (number of molecules * WATER_MOL_WEIGHT) if water is in molecule
-    0 otherwise
-    """
-    dict_index = os.path.split(filename)[-1].rsplit('.', 1)[0]
-    js = load_json(filename)
-    for i in js[dict_index]:
-        if i['molecule_name'] == ['water']:
-            return ["{0:.2f}".format(WATER_MOL_WEIGHT * i['number_of_copies'])]
-    return [0]
-
-
-def get_validated_json_model_count_filtered(filename):
-    """
-    :param filename:
-    :return: Number of models in validated json file
-    if "Models" key exists in loaded json as dictionary, nan otherwise
-    """
-    try:
-        return [len(load_json(filename)['Models'][0]['ModelNames'])]
-    except IndexError:
-        return ['0']
+    return pdb_parser.get_pdb_id(), pdb_parser.get_pdb_release_date(), \
+           pdb_parser.get_mmcif_resolution(), *pdb_parser.get_structure_weight()
 
 
 def get_data_and_molecule_name(filename, function):
@@ -188,25 +123,19 @@ def read_and_write(csv_file, columns, cpu_cores_count, *datafolders):
     :param datafolders: datafolders with different type of data
     :param cpu_cores_count count of cpu cores chosen by user
     """
-    if len(datafolders) != 4:
-        print(
-            'Incorrect number of datafolders in argument. Arguments must be: \
-            xml_folder, mmcif_folder, json folder, json_validated_folder')
-        return
-    if len(columns) != 5:
-        print('Incorrect number of items in column list')
-    data_functions = [get_clashscore_from_xml,
-                      get_mmcif_high_resolution,
-                      get_orig_json_water_weight,
-                      get_validated_json_model_count_filtered]
+    # if len(columns) != 5:
+    #     print('Incorrect number of items in column list')
+    data_functions = [get_mmcif_data]
     dicts = [read_files_get_dict(datafolders[i], data_functions[i], cpu_cores_count) for i in
              range(0, len(data_functions))]
     molecules_for_output = check_dataset_completeness(*dicts)
+    print(molecules_for_output)
     with open(csv_file, mode='w', encoding='utf-8') as o:
         writer = csv.writer(o, delimiter=';', lineterminator='\n')
         writer.writerow(columns)
         for i in molecules_for_output:
-            writer.writerow([i] + [item for sublist in [j[i] for j in dicts] for item in sublist])
+            writer.writerow(['{:.3f}'.format(i) if isinstance(i, float) else i for i in
+                             [item for sublist in [j[i] for j in dicts] for item in sublist]])
 
 
 def verify_cpu_core_count(required_cores):
@@ -229,8 +158,12 @@ def main():
                         type=int)
     args = parser.parse_args()
     csvname = csv_name()
-    read_and_write(csvname, columns, args.cpu_count, args.xml_files, args.mmcif_files, args.json_files,
-                   args.json_files_validation)
+    read_and_write(csvname, columns, args.cpu_count,
+                   # args.xml_files,
+                   args.mmcif_files,
+                   # args.json_files,
+                   # args.json_files_validation
+                   )
     print(os.linesep + "Data were successfully written to " + csvname + ".")
 
 

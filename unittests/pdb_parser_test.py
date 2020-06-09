@@ -1,6 +1,6 @@
 import unittest
 
-from pdb_parser import get_pdb_id, get_mmcif_dictionary, get_mmcif_resolution
+from src.pdb_parser import get_pdb_id, get_mmcif_dictionary, get_mmcif_resolution
 
 
 class MyTestCase(unittest.TestCase):

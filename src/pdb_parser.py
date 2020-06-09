@@ -24,6 +24,20 @@ class PdbParser:
     def get_pdb_release_date(self):
         return self.mmcif_dict['_citation.year'][0]
 
+    def get_structure_weight(self):
+        entities_list = list(zip(self.mmcif_dict['_entity.type'],
+                                 [float(i[0]) * float(i[1]) for i in list(zip(self.mmcif_dict['_entity.formula_weight'],
+                                                                              self.mmcif_dict[
+                                                                                  '_entity.pdbx_number_of_molecules'
+                                                                                  ]))]))
+        polymer_weight = float(sum([i[1] for i in entities_list if i[0] == "polymer"])) / 1000  # in kDaltons
+        non_polymer_weight = float(sum([i[1] for i in entities_list if i[0] == "non-polymer"]))  # in Daltons
+        water_weight = float(sum([i[1] for i in entities_list if i[0] == "water"]))  # in Daltons
+        non_polymer_weight_with_water = non_polymer_weight + water_weight
+        structure_weight = polymer_weight + (
+                non_polymer_weight + water_weight) / 1000  # in kDaltons
+        return polymer_weight, non_polymer_weight, water_weight, non_polymer_weight_with_water, structure_weight
+
     def get_mmcif_resolution(self):
         """
         MMCIF is loaded as dictionary
