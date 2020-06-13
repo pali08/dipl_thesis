@@ -35,7 +35,7 @@ def get_mmcif_data(filename):
     """
     pdb_parser = PdbParser(filename)
     return pdb_parser.get_pdb_id(), pdb_parser.get_pdb_release_date(), \
-           pdb_parser.get_mmcif_resolution(), *pdb_parser.get_structure_weight()
+           pdb_parser.get_mmcif_resolution(), *pdb_parser.get_structure_weights()
 
 
 def get_data_and_molecule_name(filename, function):
