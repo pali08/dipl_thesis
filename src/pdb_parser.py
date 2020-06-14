@@ -59,14 +59,31 @@ class PdbParser:
         counts of atoms and ligands
         :return:
         """
-        atom_count = len([i for i in self.mmcif_dict if i.upper() == 'ATOM'])
-        hetatm_count = len([i for i in self.mmcif_dict if i.upper() == 'HETATM'])
+        atom_count = len([i for i in self.mmcif_dict['_atom_site.group_PDB'] if i.upper() == 'ATOM'])
+        hetatm_count = len([i for i in self.mmcif_dict['_atom_site.group_PDB'] if i.upper() == 'HETATM'])
         all_atom_count = atom_count + hetatm_count
         all_atom_count_ln = np.log(all_atom_count)
 
         aa_count = len(self.mmcif_dict['_pdbx_poly_seq_scheme.pdb_mon_id'])
         ligand_count = len(self.mmcif_dict['_pdbx_nonpoly_scheme.mon_id'])
-        # TODO: ligand_bond_rotation_freedom = 'nan'
+        # TODO (vdb parsing):
+        ligand_bond_rotation_freedom = 'nan'
         aa_ligand_count = aa_count + ligand_count
         aa_ligand_count_nowater = aa_count + len(
             [i for i in self.mmcif_dict['_pdbx_nonpoly_scheme.mon_id'] if i.upper() != 'HOH'])
+        # TODO (vdb parsing)
+        aa_ligand_count_filtered = 'nan'
+        ligand_ratio = hetatm_count / ligand_count
+        hetatm_count_nowater = hetatm_count - len(
+            [i for i in self.mmcif_dict['_atom_site.label_comp_id'] if i.upper() == 'HOH'])
+        ligand_count_nowater = ligand_count - len(
+            [i for i in self.mmcif_dict['_pdbx_nonpoly_scheme.mon_id'] if i.upper() == 'HOH'])
+        ligand_ratio_nowater = hetatm_count_nowater/ligand_count_nowater
+        #TODO (vdbparsing):
+        hetatm_count_filtered='nan'
+        ligand_carbon_chiral_atom_count_filtered = 'nan'
+        ligand_count_filtered = 'nan'
+        ligand_ratio_filtered = 'nan'
+        hetatm_count_metal = 'nan'
+
+
