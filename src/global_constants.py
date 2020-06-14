@@ -7,3 +7,4 @@ metals = {'li', 'na', 'k', 'rb', 'cs', 'fr',
           'hf', 'ta', 'w', 're', 'os', 'ir', 'pt', 'au', 'hg',
           'rf', 'db', 'sg', 'bh', 'hs', 'cn',
           'al', 'ga', 'in', 'sn', 'tl', 'pb', 'bi', 'po', 'fl'}
+water_molecule = 'HOH'
