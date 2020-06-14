@@ -1,7 +1,7 @@
 import json
 import os
 
-from src.load_all_files import WATER_MOL_WEIGHT
+from src.global_constants_and_functions import WATER_MOL_WEIGHT
 
 
 def load_json(filename):

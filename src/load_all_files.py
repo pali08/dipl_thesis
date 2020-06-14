@@ -4,18 +4,14 @@ import csv
 import os
 import sys
 import time
-import xml.etree.ElementTree as etree
-import json
 from datetime import datetime
 from itertools import repeat
 from multiprocessing import Pool
 
+from src.global_constants_and_functions import columns
 from src.pdb_parser import PdbParser
 
-WATER_MOL_WEIGHT = 18.015
 fileset_xml = set()
-columns = ['pdbid', 'year', 'resolution', 'polymerWeight', 'nonPolymerWeight', 'waterWeight',
-           'nonPolymerWeightWithWater', 'structureWeight']
 
 
 def get_molecule_name_from_filepath(filepath):
@@ -34,8 +30,8 @@ def get_mmcif_data(filename):
     Highest resolution can be different item in different file. 2 of possibilities are covered for now
     """
     pdb_parser = PdbParser(filename)
-    return pdb_parser.get_pdb_id(), pdb_parser.get_pdb_release_date(), \
-           pdb_parser.get_mmcif_resolution(), *pdb_parser.get_structure_weights()
+    return pdb_parser.get_pdb_id(), pdb_parser.get_mmcif_resolution(), pdb_parser.get_pdb_release_date(), \
+           *pdb_parser.get_structure_weights(), *pdb_parser.get_structure_counts()
 
 
 def get_data_and_molecule_name(filename, function):
@@ -52,7 +48,10 @@ def filepath_generator(path):
         dirs.sort()
         files.sort()
         for file in files:
-            yield os.path.join(root, file)
+            # useful for vim users, otherwise program ends
+            # with decode error if file is opened during execution
+            if not file.lower().endswith('.swp'):
+                yield os.path.join(root, file)
 
 
 def two_funcs_to_one(filepath, required_data_function):
