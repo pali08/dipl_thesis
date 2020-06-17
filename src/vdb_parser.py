@@ -17,8 +17,16 @@ class VdbParser(JsonParser):
 
     def get_counts(self):
         ligand_count_filtered = float(self.json_dict['MotiveCount'])
-        missing_atom_count = [self.json_dict['Models'][i]['Entries'][j]['MissingAtoms'][k] for i in
-                              range(0, len(self.json_dict['Models'])) for j in
-                              range(0, len(self.json_dict['Models'][i]['Entries'])) for k in
-                              self.json_dict['Models'][i]['Entries'][j]['MissingAtoms']]
-        total_atom_count = [j for i in self.json_dict['Models'] for j in i['ModelAtomTypes']]
+        missing_atom_count = len([self.json_dict['Models'][i]['Entries'][j]['MissingAtoms'][k] for i in
+                                  range(0, len(self.json_dict['Models'])) for j in
+                                  range(0, len(self.json_dict['Models'][i]['Entries'])) for k in
+                                  self.json_dict['Models'][i]['Entries'][j]['MissingAtoms']])
+        total_atom_count = len([j for i in self.json_dict['Models'] for j in i['ModelAtomTypes']])
+        total_atom_count_metal_ligands = sum(map(len, [self.json_dict['Models'][i]['ModelAtomTypes'] for i in
+                                                       range(0, len(self.json_dict['Models'])) if
+                                                       self.detect_metal(i)]))
+        wrong_chiral_count = [l for l in [self.json_dict['Models'][i]['Entries'][j]['ChiralityMismatches'][k] for i in
+                                          range(0, len(self.json_dict['Models'])) for j in
+                                          range(0, len(self.json_dict['Models'][i]['Entries'])) for k in
+                                          self.json_dict['Models'][i]['Entries'][j]['ChiralityMismatches'].keys()] if
+                              len(l) > 1 and l.split()[1].upper() == "C"]
