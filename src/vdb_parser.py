@@ -30,3 +30,12 @@ class VdbParser(JsonParser):
                                           range(0, len(self.json_dict['Models'][i]['Entries'])) for k in
                                           self.json_dict['Models'][i]['Entries'][j]['ChiralityMismatches'].keys()] if
                               len(l) > 1 and l.split()[1].upper() == "C"]
+        total_c_chiral_count = sum(map(len, [self.json_dict['Models'][i]['ChiralAtomsInfo']['Carbon'] for i in
+                                             range(len(self.json_dict['Models']))]))
+        motive_count_metal_ligands = sum(map(len, [self.json_dict['Models'][i]['Entries'] for i in
+                                                   range(len(self.json_dict['Models']))]))
+        total_bond_count = sum(map(len, [self.json_dict['Models'][i]['ModelBonds'] for i in
+                                         range(0, self.json_dict['Models'])]))
+        sigma_bond_count = sum(map(len, [[value for key, value in self.json_dict['Models'][i]['ModelBonds'].items()
+                                          if value == 1] for i in
+                                         range(0, self.json_dict['Models'])]))
