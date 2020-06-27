@@ -34,8 +34,13 @@ def to_int(val):
         return 'nan'
 
 
-def division_zero_div_handling(a, b):
+def division_zero_div_handling(numerator, denominator):
+    """
+    :param numerator: numerator
+    :param denominator: denomitator
+    :return: result of division if denominator is no zero, nan otherwise
+    """
     try:
-        return a / b
+        return numerator / denominator
     except ZeroDivisionError:
         return 'nan'

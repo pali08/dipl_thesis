@@ -10,6 +10,7 @@ from multiprocessing import Pool
 
 from src.global_constants_and_functions import columns
 from src.pdb_parser import PdbParser
+from src.vdb_parser import VdbParser
 
 fileset_xml = set()
 
@@ -32,6 +33,11 @@ def get_mmcif_data(filename):
     pdb_parser = PdbParser(filename)
     return pdb_parser.get_pdb_id(), pdb_parser.get_mmcif_resolution(), pdb_parser.get_pdb_release_date(), \
            *pdb_parser.get_structure_weights(), *pdb_parser.get_structure_counts()
+
+
+def get_vdb_data(filename):
+    vdb_parser = VdbParser(filename)
+    return vdb_parser.get_counts()
 
 
 def get_data_and_molecule_name(filename, function):

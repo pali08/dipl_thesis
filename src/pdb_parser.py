@@ -42,7 +42,10 @@ class PdbParser:
         non_polymer_weight_with_water = non_polymer_weight + water_weight
         structure_weight = polymer_weight + (
                 non_polymer_weight + water_weight) / 1000  # in kDaltons
-        return structure_weight, polymer_weight,non_polymer_weight_with_water, non_polymer_weight, water_weight,
+        # return structure_weight, polymer_weight, non_polymer_weight_with_water, non_polymer_weight, water_weight,
+        return {'structure_weight': structure_weight, 'polymer_weight': polymer_weight,
+                'non_polymer_weight_with_water': non_polymer_weight_with_water,
+                'non_polymer_weight': non_polymer_weight, 'water_weight': water_weight}
 
     def get_mmcif_resolution(self):
         """
@@ -69,8 +72,7 @@ class PdbParser:
         ligand_count = len(set([self.mmcif_dict['_atom_site.auth_seq_id'][i] for i in
                                 range(0, len(self.mmcif_dict['_atom_site.auth_seq_id'])) if
                                 self.mmcif_dict['_atom_site.group_PDB'][i].upper() == 'HETATM']))
-        # TODO (vdb parsing):
-        ligand_bond_rotation_freedom = 'nan'
+        # ligand_bond_rotation_freedom - vdb parsing
         aa_ligand_count = aa_count + ligand_count
         nonwater_ligand_count = len(set([self.mmcif_dict['_atom_site.auth_seq_id'][i] for i in
                                          range(0, len(self.mmcif_dict['_atom_site.auth_seq_id'])) if
@@ -110,8 +112,23 @@ class PdbParser:
         ligand_count_filtered_nometal = 'nan'
         ligand_ratio_filtered_nometal = 'nan'
         return \
-            atom_count, hetatm_count, all_atom_count, all_atom_count_ln, aa_count, ligand_count, aa_ligand_count, \
-            aa_ligand_count_nowater, ligand_ratio, hetatm_count_nowater, ligand_count_nowater, ligand_ratio_nowater, \
-            hetatm_count_metal, ligand_count_metal, ligand_ratio_metal, hetatm_count_nometal, ligand_count_nometal, \
-            ligand_ratio_nometal, hetatm_count_nowater_nometal, ligand_count_nowater_nometal, \
-            ligand_ratio_nowater_nometal
+            {'atom_count': atom_count, 'hetatm_count': hetatm_count, 'all_atom_count': all_atom_count,
+             'all_atom_count_ln': all_atom_count_ln, 'aa_count': aa_count, 'ligand_count': ligand_count,
+             'aa_ligand_count': aa_ligand_count, 'aa_ligand_count_nowater': aa_ligand_count_nowater,
+             'ligand_ratio': ligand_ratio, 'hetatm_count_nowater': hetatm_count_nowater,
+             'ligand_count_nowater': ligand_count_nowater, 'ligand_ratio_nowater': ligand_ratio_nowater,
+             'hetatm_count_metal': hetatm_count_metal, 'ligand_count_metal': ligand_count_metal,
+             'ligand_ratio_metal': ligand_ratio_metal, 'hetatm_count_nometal': hetatm_count_nometal,
+             'ligand_count_nometal': ligand_count_nometal, 'ligand_ratio_nometal': ligand_ratio_nometal,
+             'hetatm_count_nowater_nometal': hetatm_count_nowater_nometal,
+             'ligand_count_nowater_nometal': ligand_count_nowater_nometal,
+             'ligand_ratio_nowater_nometal': ligand_ratio_nowater_nometal}
+
+    def get_all_mmcif_values(self):
+        all_mmcif_values = {}
+        all_mmcif_values.update({'pdb_id': self.get_pdb_id()})
+        all_mmcif_values.update({'release_date': self.get_pdb_release_date()})
+        all_mmcif_values.update({'mmcif_resolution': self.get_mmcif_resolution()})
+        all_mmcif_values.update(self.get_structure_weights())
+        all_mmcif_values.update(self.get_structure_counts())
+        return all_mmcif_values

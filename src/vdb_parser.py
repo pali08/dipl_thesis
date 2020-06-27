@@ -1,4 +1,4 @@
-from src.global_constants_and_functions import METALS
+from src.global_constants_and_functions import METALS, division_zero_div_handling
 from src.json_parser import JsonParser
 
 
@@ -39,3 +39,10 @@ class VdbParser(JsonParser):
         sigma_bond_count = sum(map(len, [[value for key, value in self.json_dict['Models'][i]['ModelBonds'].items()
                                           if value == 1] for i in
                                          range(0, self.json_dict['Models'])]))
+        ligand_bond_rotation_freedom = division_zero_div_handling(sigma_bond_count / total_bond_count)
+
+        return {'ligand_count_filtered': ligand_count_filtered, 'missing_atom_count': missing_atom_count,
+                'total_atom_count': total_atom_count, 'total_atom_count_metal_ligands': total_atom_count_metal_ligands,
+                'wrong_chiral_count': wrong_chiral_count, 'total_c_chiral_count': total_c_chiral_count,
+                'motive_count_metal_ligands': motive_count_metal_ligands, 'total_bond_count': total_bond_count,
+                'sigma_bond_count': sigma_bond_count, 'ligand_bond_rotation_freedom': ligand_bond_rotation_freedom}
