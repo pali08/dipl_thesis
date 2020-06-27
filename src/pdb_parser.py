@@ -79,8 +79,7 @@ class PdbParser:
                                          self.mmcif_dict['_atom_site.group_PDB'][i].upper() == 'HETATM' and
                                          self.mmcif_dict['_atom_site.label_comp_id'][i].upper() != WATER_MOLECULE]))
         aa_ligand_count_nowater = aa_count + nonwater_ligand_count
-        # TODO (vdb parsing)
-        aa_ligand_count_filtered = 'nan'
+        # aa_ligand_count_filtered - vdb and pdb parsing
         ligand_ratio = division_zero_div_handling(hetatm_count, ligand_count)
         hetatm_count_nowater = hetatm_count - len(
             [i for i in self.mmcif_dict['_atom_site.label_comp_id'] if i.upper() == WATER_MOLECULE])

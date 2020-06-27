@@ -44,3 +44,22 @@ def division_zero_div_handling(numerator, denominator):
         return numerator / denominator
     except ZeroDivisionError:
         return 'nan'
+    except TypeError:
+        return 'nan'
+
+
+def addition_nan_handling(*values):
+    """
+    addition of multiple numbers- omit strings
+    :param values: string, floats and int
+    :return: sum of values, omitting strings (nans)
+    """
+    return sum([i for i in values if type(i) != str])
+
+
+def underscores_to_camel(input_str):
+    """
+    :param input_str: e.g. non_camel_to_camel_case
+    :return: base on input: nonCamelToCamelCase
+    """
+    return ''.join([i[0].upper() + i[1:] for i in input_str.split('_')])
