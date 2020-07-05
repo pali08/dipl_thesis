@@ -41,10 +41,10 @@ def get_clashscore_from_xml(filename):
     """
     tree = etree.parse(filename).getroot()[0]
     clashscore = tree.get('clashscore')
-    if clashscore is None or float(clashscore) <= 0.0:
+    if clashscore is None or float(clashscore) < 0:
         clashscore = 'nan'
     clashscore_full_length = tree.get('clashscore-full-length')
-    if clashscore_full_length is None or float(clashscore_full_length) <= 0.0:
+    if clashscore_full_length is None or float(clashscore_full_length) < 0:
         clashscore_full_length = 'nan'
     return clashscore, clashscore_full_length
 
