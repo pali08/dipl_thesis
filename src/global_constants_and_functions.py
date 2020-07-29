@@ -21,6 +21,11 @@ columns = ['pdbid', 'resolution', 'year', 'structureWeight', 'polymerWeight', 'n
 
 
 def to_float(val):
+    """
+    :param val: value
+    :return: int value if it can be intigerized, nan otherwise (e.g. in case when val is 'nan'
+    or other text that cannot be integerized)
+    """
     try:
         return float(val)
     except ValueError:
@@ -28,6 +33,11 @@ def to_float(val):
 
 
 def to_int(val):
+    """
+    :param val: value
+    :return: int value if it can be floatized, nan otherwise (e.g. in case when val is 'nan'
+    or other text that cannot be floatized)
+    """
     try:
         return int(val)
     except ValueError:

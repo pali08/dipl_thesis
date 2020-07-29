@@ -16,7 +16,7 @@ class VdbParser(JsonParser):
             {i.lower() for i in self.json_dict['Models'][model_num]['ModelAtomTypes'].values()}.intersection(METALS))
 
     def get_counts(self):
-        ligand_count_filtered = float(self.json_dict['MotiveCount'])
+        ligand_count_filtered = float(self.json_dict['MotiveCount'])  # = motiveCount
         missing_atom_count = len([self.json_dict['Models'][i]['Entries'][j]['MissingAtoms'][k] for i in
                                   range(0, len(self.json_dict['Models'])) for j in
                                   range(0, len(self.json_dict['Models'][i]['Entries'])) for k in
@@ -25,11 +25,12 @@ class VdbParser(JsonParser):
         total_atom_count_metal_ligands = sum(map(len, [self.json_dict['Models'][i]['ModelAtomTypes'] for i in
                                                        range(0, len(self.json_dict['Models'])) if
                                                        self.detect_metal(i)]))
-        wrong_chiral_count = [l for l in [self.json_dict['Models'][i]['Entries'][j]['ChiralityMismatches'][k] for i in
-                                          range(0, len(self.json_dict['Models'])) for j in
-                                          range(0, len(self.json_dict['Models'][i]['Entries'])) for k in
-                                          self.json_dict['Models'][i]['Entries'][j]['ChiralityMismatches'].keys()] if
-                              len(l) > 1 and l.split()[1].upper() == "C"]
+        wrong_chiral_count = len(
+            [m for m in [self.json_dict['Models'][i]['Entries'][j]['ChiralityMismatches'][k] for i in
+                         range(0, len(self.json_dict['Models'])) for j in
+                         range(0, len(self.json_dict['Models'][i]['Entries'])) for k in
+                         self.json_dict['Models'][i]['Entries'][j]['ChiralityMismatches'].keys()] if
+             len(m) > 1 and m.split()[1].upper() == "C"])
         total_c_chiral_count = sum(map(len, [self.json_dict['Models'][i]['ChiralAtomsInfo']['Carbon'] for i in
                                              range(len(self.json_dict['Models']))]))
         motive_count_metal_ligands = sum(map(len, [self.json_dict['Models'][i]['Entries'] for i in
@@ -40,6 +41,13 @@ class VdbParser(JsonParser):
                                           if value == 1] for i in
                                          range(0, self.json_dict['Models'])]))
         ligand_bond_rotation_freedom = division_zero_div_handling(sigma_bond_count / total_bond_count)
+        ligand_ratio_filtered = total_atom_count / ligand_count_filtered
+        total_atom_count_nometal_ligands = total_atom_count - total_atom_count_metal_ligands
+        motive_count_nometal_ligands = ligand_count_filtered - motive_count_metal_ligands
+        ligand_ratio_filtered_nometal = total_atom_count_nometal_ligands / motive_count_nometal_ligands
+        ligand_ratio_filtered_metal = total_atom_count_metal_ligands / motive_count_metal_ligands
+        hetatm_count_filtered_nometal = total_atom_count_nometal_ligands / motive_count_nometal_ligands
+        ligand_count_filtered_nometal = ligand_count_filtered - motive_count_metal_ligands
         # backup: names = key
         # return {'ligand_count_filtered': ligand_count_filtered, 'missing_atom_count': missing_atom_count,
         #         'total_atom_count': total_atom_count, 'total_atom_count_metal_ligands':
@@ -48,8 +56,14 @@ class VdbParser(JsonParser):
         #         'motive_count_metal_ligands': motive_count_metal_ligands, 'total_bond_count': total_bond_count,
         #         'sigma_bond_count': sigma_bond_count, 'ligand_bond_rotation_freedom': ligand_bond_rotation_freedom}
 
-        return {'ligand_count_filtered': ligand_count_filtered, 'missing_atom_count': missing_atom_count,
-                'hetatmCountFiltered': total_atom_count, 'total_atom_count_metal_ligands': total_atom_count_metal_ligands,
-                'wrong_chiral_count': wrong_chiral_count, 'total_c_chiral_count': total_c_chiral_count,
-                'motive_count_metal_ligands': motive_count_metal_ligands, 'total_bond_count': total_bond_count,
-                'sigma_bond_count': sigma_bond_count, 'ligand_bond_rotation_freedom': ligand_bond_rotation_freedom}
+        return {'hetatmCountFiltered': total_atom_count, 'ligandCarbonChiralAtomCountFiltered': total_c_chiral_count,
+                'ligandCountFiltered': ligand_count_filtered, 'ligandRatioFiltered': ligand_ratio_filtered,
+                'ligandRatioFilteredMetal': ligand_ratio_filtered_metal,
+                'ligandRatioFilteredNometal': ligand_ratio_filtered_nometal,
+                'missing_atom_count': missing_atom_count,
+                'hetatmCountFilteredMetal': total_atom_count_metal_ligands,
+                'hetatmCountFilteredNometal': hetatm_count_filtered_nometal,
+                'ligandCountFilteredNometal': ligand_count_filtered_nometal,
+                'wrong_chiral_count': wrong_chiral_count,
+                'ligandCountFilteredMetal': motive_count_metal_ligands, 'total_bond_count': total_bond_count,
+                'sigma_bond_count': sigma_bond_count, 'ligandBondRotationFreedom': ligand_bond_rotation_freedom}
