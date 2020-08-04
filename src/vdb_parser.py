@@ -1,10 +1,23 @@
 from src.global_constants_and_functions import METALS, division_zero_div_handling
 from src.json_parser import JsonParser
+from src.parser import Parser
 
 
 class VdbParser(JsonParser):
     def __init__(self, filename):
         super().__init__(filename)
+        self.result_dict = {'hetatmCountFiltered': 'nan', 'ligandCarbonChiralAtomCountFiltered': 'nan',
+                            'ligandCountFiltered': 'nan', 'ligandRatioFiltered': 'nan',
+                            'ligandRatioFilteredMetal': 'nan',
+                            'ligandRatioFilteredNometal': 'nan',
+                            'missing_atom_count': 'nan',
+                            'hetatmCountFilteredMetal': 'nan',
+                            'hetatmCountFilteredNometal': 'nan',
+                            'ligandCountFilteredNometal': 'nan',
+                            'wrong_chiral_count': 'nan',
+                            'ligandCountFilteredMetal': 'nan', 'total_bond_count': 'nan',
+                            'sigma_bond_count': 'nan', 'ligandBondRotationFreedom': 'nan'}
+        self.create_result_dict()
 
     def detect_metal(self, model_num):
         """
@@ -48,22 +61,20 @@ class VdbParser(JsonParser):
         ligand_ratio_filtered_metal = total_atom_count_metal_ligands / motive_count_metal_ligands
         hetatm_count_filtered_nometal = total_atom_count_nometal_ligands / motive_count_nometal_ligands
         ligand_count_filtered_nometal = ligand_count_filtered - motive_count_metal_ligands
-        # backup: names = key
-        # return {'ligand_count_filtered': ligand_count_filtered, 'missing_atom_count': missing_atom_count,
-        #         'total_atom_count': total_atom_count, 'total_atom_count_metal_ligands':
-        #         total_atom_count_metal_ligands,
-        #         'wrong_chiral_count': wrong_chiral_count, 'total_c_chiral_count': total_c_chiral_count,
-        #         'motive_count_metal_ligands': motive_count_metal_ligands, 'total_bond_count': total_bond_count,
-        #         'sigma_bond_count': sigma_bond_count, 'ligand_bond_rotation_freedom': ligand_bond_rotation_freedom}
 
-        return {'hetatmCountFiltered': total_atom_count, 'ligandCarbonChiralAtomCountFiltered': total_c_chiral_count,
-                'ligandCountFiltered': ligand_count_filtered, 'ligandRatioFiltered': ligand_ratio_filtered,
-                'ligandRatioFilteredMetal': ligand_ratio_filtered_metal,
-                'ligandRatioFilteredNometal': ligand_ratio_filtered_nometal,
-                'missing_atom_count': missing_atom_count,
-                'hetatmCountFilteredMetal': total_atom_count_metal_ligands,
-                'hetatmCountFilteredNometal': hetatm_count_filtered_nometal,
-                'ligandCountFilteredNometal': ligand_count_filtered_nometal,
-                'wrong_chiral_count': wrong_chiral_count,
-                'ligandCountFilteredMetal': motive_count_metal_ligands, 'total_bond_count': total_bond_count,
-                'sigma_bond_count': sigma_bond_count, 'ligandBondRotationFreedom': ligand_bond_rotation_freedom}
+        self.result_dict.update(
+            {'hetatmCountFiltered': total_atom_count, 'ligandCarbonChiralAtomCountFiltered': total_c_chiral_count,
+             'ligandCountFiltered': ligand_count_filtered, 'ligandRatioFiltered': ligand_ratio_filtered,
+             'ligandRatioFilteredMetal': ligand_ratio_filtered_metal,
+             'ligandRatioFilteredNometal': ligand_ratio_filtered_nometal,
+             'missing_atom_count': missing_atom_count,
+             'hetatmCountFilteredMetal': total_atom_count_metal_ligands,
+             'hetatmCountFilteredNometal': hetatm_count_filtered_nometal,
+             'ligandCountFilteredNometal': ligand_count_filtered_nometal,
+             'wrong_chiral_count': wrong_chiral_count,
+             'ligandCountFilteredMetal': motive_count_metal_ligands, 'total_bond_count': total_bond_count,
+             'sigma_bond_count': sigma_bond_count, 'ligandBondRotationFreedom': ligand_bond_rotation_freedom})
+
+    def create_result_dict(self):
+        if super().file_exists():
+            self.get_counts()
