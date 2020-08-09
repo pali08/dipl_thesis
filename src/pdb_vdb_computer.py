@@ -1,4 +1,4 @@
-from src.global_constants_and_functions import addition_nan_handling
+from src.global_constants_and_functions import addition_nan_handling, key_error_output
 
 
 class PdbVdbComputer:
@@ -18,6 +18,9 @@ class PdbVdbComputer:
         :return: dict of values
         """
         if self.vdb_values_dict and self.pdb_values_dict:
-            aa_ligand_count_filtered = addition_nan_handling(self.vdb_values_dict['ligandCountFiltered'] +
-                                                             self.pdb_values_dict['aaCount'])
-            self.result_dict.update({'aaLigandCountFiltered': aa_ligand_count_filtered})
+            try:
+                aa_ligand_count_filtered = addition_nan_handling(self.vdb_values_dict['ligandCountFiltered'] +
+                                                                 self.pdb_values_dict['aaCount'])
+                self.result_dict.update({'aaLigandCountFiltered': aa_ligand_count_filtered})
+            except KeyError:
+                print(key_error_output(self.pdb_values_dict['PDBID'], 'aa ligand count filtered (pdb + vdb)'))

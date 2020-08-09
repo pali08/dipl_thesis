@@ -2,7 +2,9 @@
   <dictionary name="pali">
     <words>
       <w>clashscore</w>
+      <w>hetatm</w>
       <w>mmcif</w>
+      <w>pdbid</w>
     </words>
   </dictionary>
 </component>
