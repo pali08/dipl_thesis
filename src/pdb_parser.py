@@ -154,7 +154,7 @@ class PdbParser(Parser):
         ligand_ratio_nowater_nometal = division_zero_div_handling(hetatm_count_nowater_nometal,
                                                                   ligand_count_nowater_nometal)
 
-        self.mmcif_dict.update({'atomCount': atom_count, 'hetatmCount': hetatm_count, 'allAtomCount': all_atom_count,
+        self.result_dict.update({'atomCount': atom_count, 'hetatmCount': hetatm_count, 'allAtomCount': all_atom_count,
                                 'allAtomCountLn': all_atom_count_ln, 'aaCount': aa_count, 'ligandCount': ligand_count,
                                 'aaLigandCount': aa_ligand_count, 'aaLigandCountNowater': aa_ligand_count_nowater,
                                 'ligandRatio': ligand_ratio, 'hetatmCountNowater': hetatm_count_nowater,
