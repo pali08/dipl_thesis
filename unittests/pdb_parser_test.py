@@ -7,6 +7,7 @@ from src.pdb_parser import PdbParser
 class PdbParserTest(unittest.TestCase):
     def test_result_dict_not_empty(self):
         parser = PdbParser('/home/pali/diplomka_python/rawpdbe/2fl0_updated.cif')
+        print(parser.result_dict)
         self.assertNotEqual(parser.result_dict, {})
 
     def test_result_dict_not_nan(self):

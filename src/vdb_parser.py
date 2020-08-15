@@ -46,7 +46,7 @@ class VdbParser(JsonParser):
             total_atom_count_metal_ligands = sum(map(len, [self.json_dict['Models'][i]['ModelAtomTypes'] for i in
                                                            range(0, len(self.json_dict['Models'])) if
                                                            self.detect_metal(i)]))
-        except KeyError:
+        except KeyError('dsfsd'):
             total_atom_count = NAN_VALUE
             total_atom_count_metal_ligands = NAN_VALUE
             print(self.key_error_output('hetatm count filtered (metal)'))
@@ -74,21 +74,21 @@ class VdbParser(JsonParser):
             print(self.key_error_output('ligand count filtered metal'))
         try:
             total_bond_count = sum(map(len, [self.json_dict['Models'][i]['ModelBonds'] for i in
-                                             range(0, self.json_dict['Models'])]))
+                                             range(0, len(self.json_dict['Models']))]))
             sigma_bond_count = sum(map(len, [[value for key, value in self.json_dict['Models'][i]['ModelBonds'].items()
                                               if value == 1] for i in
-                                             range(0, self.json_dict['Models'])]))
+                                             range(0, len(self.json_dict['Models']))]))
         except KeyError:
             total_bond_count = NAN_VALUE
             sigma_bond_count = NAN_VALUE
             print(self.key_error_output('total/sigma bound count'))
-        ligand_bond_rotation_freedom = division_zero_div_handling(sigma_bond_count / total_bond_count)
-        ligand_ratio_filtered = total_atom_count / ligand_count_filtered
+        ligand_bond_rotation_freedom = division_zero_div_handling(sigma_bond_count, total_bond_count)
+        ligand_ratio_filtered = division_zero_div_handling (total_atom_count, ligand_count_filtered)
         total_atom_count_nometal_ligands = total_atom_count - total_atom_count_metal_ligands
         motive_count_nometal_ligands = ligand_count_filtered - motive_count_metal_ligands
-        ligand_ratio_filtered_nometal = total_atom_count_nometal_ligands / motive_count_nometal_ligands
-        ligand_ratio_filtered_metal = total_atom_count_metal_ligands / motive_count_metal_ligands
-        hetatm_count_filtered_nometal = total_atom_count_nometal_ligands / motive_count_nometal_ligands
+        ligand_ratio_filtered_nometal = division_zero_div_handling (total_atom_count_nometal_ligands, motive_count_nometal_ligands)
+        ligand_ratio_filtered_metal = division_zero_div_handling (total_atom_count_metal_ligands, motive_count_metal_ligands)
+        hetatm_count_filtered_nometal = division_zero_div_handling (total_atom_count_nometal_ligands, motive_count_nometal_ligands)
         ligand_count_filtered_nometal = ligand_count_filtered - motive_count_metal_ligands
 
         self.result_dict.update(

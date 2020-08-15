@@ -52,19 +52,19 @@ def get_all_molecules(*filepaths):
 
 def get_dicts(cpu_cores_count, molecules, *filepaths):
     # try what is faster for using one core - multiprocessing or for cycle
-    # if cpu_cores_count == 1:
-    #     result_list = []
-    #     for i in molecules:
-    #         result_list.append(AllFilesParser(i, *filepaths).result_dict)
-    #     return result_list
+    if cpu_cores_count == 1:
+        result_list = []
+        for i in molecules:
+            result_list.append(AllFilesParser(i, *filepaths).result_dict)
+        return result_list
 
-    start_time = time.time()
-    pool = Pool(cpu_cores_count)
-    result_tuple = pool.starmap_async(AllFilesParser, zip(molecules, repeat(filepaths))).get()
-    pool.close()
-    pool.join()
-    print("Finished in {0:.3f} seconds.".format(time.time() - start_time))
-    return result_tuple
+    # start_time = time.time()
+    # pool = Pool(cpu_cores_count)
+    # result_tuple = pool.starmap_async(AllFilesParser, zip(molecules, repeat(filepaths))).get()
+    # pool.close()
+    # pool.join()
+    # print("Finished in {0:.3f} seconds.".format(time.time() - start_time))
+    # return result_tuple
 
 
 def csv_name():

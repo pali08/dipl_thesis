@@ -16,6 +16,8 @@ class AllFilesParser:
         self.result_dict = {**self.pdb_dict, **self.vdb_dict, **self.pdb_vdb_dict}
 
     def get_pdb_filepath(self):
+        print(self.molecule)
+        #print(self.filepaths[0])
         return os.path.join(self.filepaths[0], self.molecule + '_updated.mmcif')
 
     def get_vdb_filepath(self):
