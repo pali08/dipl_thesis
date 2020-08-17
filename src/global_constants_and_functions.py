@@ -93,3 +93,11 @@ def underscores_to_camel(input_str):
 def key_error_output(pdbid, note=''):
     caller = inspect.stack()[1].function
     return 'Key Error at function: ' + caller + ' pdbid: ' + pdbid + ' NOTE: ' + note
+
+
+def is_float(val):
+    try:
+        float(val)
+        return True
+    except ValueError:
+        return False
