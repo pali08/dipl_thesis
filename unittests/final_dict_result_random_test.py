@@ -38,11 +38,14 @@ def get_molecules(random_data_csv_dicts):
 def get_result_dicts(molecules, *filepaths):
     list_of_result_dicts = []
     for i in molecules:
+        # print(i)
         list_of_result_dicts.append(AllFilesParser(i, *filepaths).result_dict)
+    return list_of_result_dicts
 
 
 def compare(random_data_csv_dicts, result_dicts):
     success_rate = {'Passed': 0, 'Failed': 0}
+    # print(result_dicts)
     for result_dict in result_dicts:
         errors = 0
         if 'PDB ID' not in result_dict:
@@ -51,8 +54,9 @@ def compare(random_data_csv_dicts, result_dicts):
         else:
             print('Testing ' + result_dict['PDB ID'])
             for random_data_csv_dict in random_data_csv_dicts:
-                if random_data_csv_dict['PDB ID'] == result_dict['PDB ID']:
-                    for key, value in result_dict:
+                if random_data_csv_dict['PDB ID'].upper() == result_dict['PDB ID'].upper():
+                    print('Its a match')
+                    for key, value in result_dict.items():
                         if key not in random_data_csv_dict:
                             # TODO When we will parse all data, we also need to compare, that all data.csv column are
                             #  in result dict
@@ -66,11 +70,11 @@ def compare(random_data_csv_dicts, result_dicts):
                                     pass
                                 else:
                                     errors += 1
-                                    print('Test failed: ' + key + ':' + 'Actual: ' + value + 'Expected ' +
+                                    print('Test failed: ' + str(key) + ':' + 'Actual: ' + str(value) + ' Expected: ' +
                                           random_data_csv_dict[key])
                             else:
                                 errors += 1
-                                print('Test failed: ' + key + ':' + 'Actual: ' + value + 'Expected ' +
+                                print('Test failed: ' + key + ':' + 'Actual: ' + value + ' Expected: ' +
                                       random_data_csv_dict[key])
         if errors == 0:
             success_rate['Passed'] += 1
@@ -79,14 +83,8 @@ def compare(random_data_csv_dicts, result_dicts):
     print(str(success_rate))
 
 
-# def get_pdb_files(self):
-#     self.result_dicts = []
-#     for i in self.molecules:
-#         self.result_dicts.append(AllFilesParser(i, ))
-
-# def test_something(self):
-#     self.assertEqual(1, 1)
-
-
 if __name__ == '__main__':
-    pass
+    data_csv_dicts = get_data_csv_random_records_dicts(int(sys.argv[1]), sys.argv[2])
+    molecules_globalvar = get_molecules(data_csv_dicts)
+    result_dicts_globalvar = get_result_dicts(molecules_globalvar, *sys.argv[3:])
+    compare(data_csv_dicts, result_dicts_globalvar)

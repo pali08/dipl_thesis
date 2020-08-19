@@ -22,10 +22,10 @@ class PdbParser(Parser):
     def __init__(self, filename):
         super().__init__(filename)
         self.mmcif_dict = get_mmcif_dictionary(filename)
-        self.result_dict = {'PDBID': NAN_VALUE, 'releaseDate': NAN_VALUE, 'structureWeight': 0,
-                            'polymerWeight': NAN_VALUE,
-                            'nonPolymerWeight': NAN_VALUE,
-                            'nonPolymerWeightNowater': NAN_VALUE, 'waterWeight': NAN_VALUE, 'atomCount': NAN_VALUE,
+        self.result_dict = {'PDB ID': NAN_VALUE, 'releaseDate': NAN_VALUE, 'StructureWeight': 0,
+                            'PolymerWeight': NAN_VALUE,
+                            'NonpolymerWeight': NAN_VALUE,
+                            'NonpolymerWeightNowater': NAN_VALUE, 'WaterWeight': NAN_VALUE, 'atomCount': NAN_VALUE,
                             'hetatmCount': NAN_VALUE, 'allAtomCount': NAN_VALUE,
                             'allAtomCountLn': NAN_VALUE, 'aaCount': NAN_VALUE, 'ligandCount': NAN_VALUE,
                             'aaLigandCount': NAN_VALUE, 'aaLigandCountNowater': NAN_VALUE,
@@ -41,7 +41,7 @@ class PdbParser(Parser):
 
     def get_pdb_id(self):
         try:
-            self.result_dict.update({'PDBID': self.mmcif_dict['_entry.id'][0]})
+            self.result_dict.update({'PDB ID': self.mmcif_dict['_entry.id'][0].lower()})
         except KeyError:
             pass
 
@@ -70,9 +70,9 @@ class PdbParser(Parser):
             non_polymer_weight_with_water = non_polymer_weight + water_weight
             structure_weight = polymer_weight + (
                     non_polymer_weight + water_weight) / 1000  # in kDaltons
-            self.result_dict.update({'structureWeight': structure_weight, 'polymerWeight': polymer_weight,
-                                     'nonPolymerWeight': non_polymer_weight_with_water,
-                                     'nonPolymerWeightNowater': non_polymer_weight, 'waterWeight': water_weight})
+            self.result_dict.update({'StructureWeight': structure_weight, 'PolymerWeight': polymer_weight,
+                                     'NonpolymerWeight': non_polymer_weight_with_water,
+                                     'NonpolymerWeightNowater': non_polymer_weight, 'WaterWeight': water_weight})
         except KeyError:
             print(self.key_error_output('weights'))
             pass
@@ -102,16 +102,18 @@ class PdbParser(Parser):
             hetatm_count = NAN_VALUE
             print(self.key_error_output('Atom and hetatm counts'))
         all_atom_count = addition_nan_handling(atom_count, hetatm_count)
-        all_atom_count_ln = np.log(all_atom_count) if all_atom_count != 0 and all_atom_count != NAN_VALUE else NAN_VALUE
+        all_atom_count_ln = round(np.log(all_atom_count),
+                                  5) if all_atom_count != 0 and all_atom_count != NAN_VALUE else NAN_VALUE
         try:
             aa_count = len(self.mmcif_dict['_entity_poly_seq.entity_id'])
         except KeyError:
             aa_count = NAN_VALUE
             print(self.key_error_output('aa count'))
         try:
-            ligand_count = len(set([self.mmcif_dict['_atom_site.auth_seq_id'][i] for i in
-                                    range(0, len(self.mmcif_dict['_atom_site.auth_seq_id'])) if
-                                    self.mmcif_dict['_atom_site.group_PDB'][i].upper() == 'HETATM']))
+            #TODO
+            ligand_count = len([self.mmcif_dict['_atom_site.auth_seq_id'][i] for i in
+                                range(0, len(self.mmcif_dict['_atom_site.auth_seq_id'])) if
+                                self.mmcif_dict['_atom_site.group_PDB'][i].upper().strip() == 'HETATM'])
         except KeyError:
             ligand_count = NAN_VALUE
             print(self.key_error_output('ligand count'))
@@ -155,16 +157,16 @@ class PdbParser(Parser):
                                                                   ligand_count_nowater_nometal)
 
         self.result_dict.update({'atomCount': atom_count, 'hetatmCount': hetatm_count, 'allAtomCount': all_atom_count,
-                                'allAtomCountLn': all_atom_count_ln, 'aaCount': aa_count, 'ligandCount': ligand_count,
-                                'aaLigandCount': aa_ligand_count, 'aaLigandCountNowater': aa_ligand_count_nowater,
-                                'ligandRatio': ligand_ratio, 'hetatmCountNowater': hetatm_count_nowater,
-                                'ligandCountNowater': ligand_count_nowater, 'ligandRatioNowater': ligand_ratio_nowater,
-                                'hetatmCountMetal': hetatm_count_metal, 'ligandCountMetal': ligand_count_metal,
-                                'ligandRatioMetal': ligand_ratio_metal, 'hetatmCountNometal': hetatm_count_nometal,
-                                'ligandCountNometal': ligand_count_nometal, 'ligandRatioNometal': ligand_ratio_nometal,
-                                'hetatmCountNowaterNometal': hetatm_count_nowater_nometal,
-                                'ligandCountNowaterNometal': ligand_count_nowater_nometal,
-                                'ligandRatioNowaterNometal': ligand_ratio_nowater_nometal})
+                                 'allAtomCountLn': all_atom_count_ln, 'aaCount': aa_count, 'ligandCount': ligand_count,
+                                 'aaLigandCount': aa_ligand_count, 'aaLigandCountNowater': aa_ligand_count_nowater,
+                                 'ligandRatio': ligand_ratio, 'hetatmCountNowater': hetatm_count_nowater,
+                                 'ligandCountNowater': ligand_count_nowater, 'ligandRatioNowater': ligand_ratio_nowater,
+                                 'hetatmCountMetal': hetatm_count_metal, 'ligandCountMetal': ligand_count_metal,
+                                 'ligandRatioMetal': ligand_ratio_metal, 'hetatmCountNometal': hetatm_count_nometal,
+                                 'ligandCountNometal': ligand_count_nometal, 'ligandRatioNometal': ligand_ratio_nometal,
+                                 'hetatmCountNowaterNometal': hetatm_count_nowater_nometal,
+                                 'ligandCountNowaterNometal': ligand_count_nowater_nometal,
+                                 'ligandRatioNowaterNometal': ligand_ratio_nowater_nometal})
 
     def create_result_dict(self):
         if super().file_exists():
