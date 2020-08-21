@@ -36,7 +36,7 @@ class PdbParser(Parser):
                             'ligandCountNometal': NAN_VALUE, 'ligandRatioNometal': NAN_VALUE,
                             'hetatmCountNowaterNometal': NAN_VALUE,
                             'ligandCountNowaterNometal': NAN_VALUE,
-                            'ligandRatioNowaterNometal': NAN_VALUE}
+                            'ligandRatioNowaterNometal': NAN_VALUE, 'resolution': NAN_VALUE}
         self.create_result_dict()
 
     def get_pdb_id(self):
@@ -110,19 +110,20 @@ class PdbParser(Parser):
             aa_count = NAN_VALUE
             print(self.key_error_output('aa count'))
         try:
-            #TODO
-            ligand_count = len([self.mmcif_dict['_atom_site.auth_seq_id'][i] for i in
-                                range(0, len(self.mmcif_dict['_atom_site.auth_seq_id'])) if
-                                self.mmcif_dict['_atom_site.group_PDB'][i].upper().strip() == 'HETATM'])
+            ligand_count = len(set(
+                [(self.mmcif_dict['_atom_site.auth_seq_id'][i], self.mmcif_dict['_atom_site.auth_asym_id'][i]) for i in
+                 range(0, len(self.mmcif_dict['_atom_site.auth_seq_id'])) if
+                 self.mmcif_dict['_atom_site.group_PDB'][i].upper().strip() == 'HETATM']))
         except KeyError:
             ligand_count = NAN_VALUE
             print(self.key_error_output('ligand count'))
         aa_ligand_count = addition_nan_handling(aa_count, ligand_count)
         try:
-            nonwater_ligand_count = len(set([self.mmcif_dict['_atom_site.auth_seq_id'][i] for i in
-                                             range(0, len(self.mmcif_dict['_atom_site.auth_seq_id'])) if
-                                             self.mmcif_dict['_atom_site.group_PDB'][i].upper() == 'HETATM' and
-                                             self.mmcif_dict['_atom_site.label_comp_id'][i].upper() != WATER_MOLECULE]))
+            nonwater_ligand_count = len(set(
+                [(self.mmcif_dict['_atom_site.auth_seq_id'][i], self.mmcif_dict['_atom_site.auth_asym_id'][i]) for i in
+                 range(0, len(self.mmcif_dict['_atom_site.auth_seq_id'])) if
+                 self.mmcif_dict['_atom_site.group_PDB'][i].upper() == 'HETATM' and
+                 self.mmcif_dict['_atom_site.label_comp_id'][i].upper() != WATER_MOLECULE]))
         except KeyError:
             nonwater_ligand_count = NAN_VALUE
             print(self.key_error_output('nonwater ligand count'))

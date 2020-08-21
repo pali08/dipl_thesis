@@ -45,26 +45,19 @@ def get_all_molecules(*filepaths):
         filenames = filename_with_path_generator(i)
         while True:
             try:
-                molecules.add(next(filenames))
+                molecules.add(get_molecule_name_from_filepath(next(filenames)))
             except StopIteration:
                 return molecules
 
 
 def get_dicts(cpu_cores_count, molecules, *filepaths):
-    # try what is faster for using one core - multiprocessing or for cycle
-    if cpu_cores_count == 1:
-        result_list = []
-        for i in molecules:
-            result_list.append(AllFilesParser(i, *filepaths).result_dict)
-        return result_list
-
-    # start_time = time.time()
-    # pool = Pool(cpu_cores_count)
-    # result_tuple = pool.starmap_async(AllFilesParser, zip(molecules, repeat(filepaths))).get()
-    # pool.close()
-    # pool.join()
-    # print("Finished in {0:.3f} seconds.".format(time.time() - start_time))
-    # return result_tuple
+    pool = Pool(cpu_cores_count)
+    result_tuple = pool.starmap_async(AllFilesParser, zip(molecules, repeat(filepaths[0]), repeat(filepaths[1]))).get()
+    pool.close()
+    pool.join()
+    result_tuple_list = [AllFilesParser.order_list]
+    result_tuple_list.extend([result_tuple[i].get_data_ordered() for i in range(0, len(result_tuple))])
+    return result_tuple_list
 
 
 def csv_name():
@@ -74,15 +67,10 @@ def csv_name():
     return 'output_' + datetime.now().strftime('%Y%m%d%H%M%S%f') + '.csv'
 
 
-def write_csv_file(csv_file, list_of_dicts):
+def write_csv_file(csv_file, list_of_record_lists):
     with open(csv_file, mode='w', encoding='utf-8') as o:
-        writer = csv.DictWriter(o, fieldnames=list(list_of_dicts[0].keys()), delimiter=';', lineterminator='\n')
-        writer.writeheader()
-        for i in list_of_dicts:
-            # TODO formatting of floats
-            writer.writerow(i)
-            # writer.writerow(['{:.3f}'.format(i) if isinstance(i, float) else i for i in
-            #                  [item for sublist in [j[i] for j in dicts] for item in sublist]])
+        writer = csv.writer(o, delimiter=';', lineterminator='\n')
+        writer.writerows(list_of_record_lists)
 
 
 def verify_cpu_core_count(required_cores):
@@ -96,9 +84,9 @@ def main():
     4 folders are compulsory as user argument, output csv filename is generated automatically
     """
     parser = argparse.ArgumentParser(description='Intro task - parse different types of the data.')
-    parser.add_argument('xml_files', help='Folder with xml files', type=str)
     parser.add_argument('mmcif_files', help='Folder with mmcif files files', type=str)
     parser.add_argument('vdb_files', help='Folder with original json files', type=str)
+    parser.add_argument('xml_files', help='Folder with xml files', type=str)
     parser.add_argument('rest_files', help='Folder with results of validation.'
                                            'Files can be stored in subfolder', type=str)
     parser.add_argument('--cpu_count', '-c', nargs='?', const=1, default=1, help='Folder with original json files',
@@ -106,7 +94,11 @@ def main():
     args = parser.parse_args()
     csvname = csv_name()
     molecules = get_all_molecules(args.xml_files, args.mmcif_files, args.vdb_files, args.rest_files)
-    dicts = get_dicts(args.cpu_count, molecules, args.mmcif_files, args.vdb_files, args.xml_files, args.rest_files)
+    start = time.time()
+    list_of_rec_lists = get_dicts(args.cpu_count, molecules, args.mmcif_files, args.vdb_files)
+    end = time.time()
+    print("Loading files lasted {:.3f} seconds".format(end - start))
+    write_csv_file(csvname, list_of_rec_lists)
     print(os.linesep + "Data were successfully written to " + csvname + ".")
 
 

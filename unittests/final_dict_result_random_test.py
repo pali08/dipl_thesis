@@ -46,6 +46,8 @@ def get_result_dicts(molecules, *filepaths):
 def compare(random_data_csv_dicts, result_dicts):
     success_rate = {'Passed': 0, 'Failed': 0}
     # print(result_dicts)
+    print(result_dicts[0])
+    print(random_data_csv_dicts[0])
     for result_dict in result_dicts:
         errors = 0
         if 'PDB ID' not in result_dict:
@@ -55,7 +57,7 @@ def compare(random_data_csv_dicts, result_dicts):
             print('Testing ' + result_dict['PDB ID'])
             for random_data_csv_dict in random_data_csv_dicts:
                 if random_data_csv_dict['PDB ID'].upper() == result_dict['PDB ID'].upper():
-                    print('Its a match')
+                    # print('Its a match')
                     for key, value in result_dict.items():
                         if key not in random_data_csv_dict:
                             # TODO When we will parse all data, we also need to compare, that all data.csv column are
@@ -63,19 +65,33 @@ def compare(random_data_csv_dicts, result_dicts):
                             print('Test failed: ' + key + ' not in data.csv')
                             errors += 1
                         else:
-                            if str(value).lower() == str(random_data_csv_dict[key].lower()) == NAN_VALUE:
+                            if str(value).lower() == str(random_data_csv_dict[key].lower()) \
+                                    and not is_float(value) \
+                                    and not is_float(random_data_csv_dict[key]):
                                 pass
+                                # pdbid names
                             elif is_float(value) and is_float(random_data_csv_dict[key]):
                                 if numpy.isclose(float(value), float(random_data_csv_dict[key])):
                                     pass
+                                    # two float nonnan values
+                                elif numpy.isnan(float(value)) and numpy.isnan(float(random_data_csv_dict[key])):
+                                    pass
+                                    # nan vs nan
                                 else:
                                     errors += 1
-                                    print('Test failed: ' + str(key) + ':' + 'Actual: ' + str(value) + ' Expected: ' +
+                                    print('First Test failed: ' + str(key) + ':' + 'Actual: ' + str(
+                                        value) + ' Expected: ' +
                                           random_data_csv_dict[key])
-                            else:
+                                    # either values are completely different (e.g. 1.0 vs 1000.0)
+                                    # or one of values is nan and one is not
+                            elif (is_float(value) and not is_float(random_data_csv_dicts[key])) \
+                                    or (not is_float(value) and is_float(random_data_csv_dicts[key])):
                                 errors += 1
-                                print('Test failed: ' + key + ':' + 'Actual: ' + value + ' Expected: ' +
+                                print('Second Test failed: ' + key + ':' + 'Actual: ' + value + ' Expected: ' +
                                       random_data_csv_dict[key])
+                                # not sure if this can happen - maybe question mark in pdb file ?
+                            else:
+                                print('compare function: This else branch should never happen')
         if errors == 0:
             success_rate['Passed'] += 1
         else:

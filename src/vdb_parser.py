@@ -5,7 +5,7 @@ from src.json_parser import JsonParser
 class VdbParser(JsonParser):
     def __init__(self, filename):
         super().__init__(filename)
-        self.result_dict = {'hetatmCountFiltered': NAN_VALUE, 'ligandCarbonChiralAtomCountFiltered': NAN_VALUE,
+        self.result_dict = {'hetatmCountFiltered': NAN_VALUE, 'ligandCarbonChiraAtomCountFiltered': NAN_VALUE,
                             'ligandCountFiltered': NAN_VALUE, 'ligandRatioFiltered': NAN_VALUE,
                             'ligandRatioFilteredMetal': NAN_VALUE,
                             'ligandRatioFilteredNometal': NAN_VALUE,
@@ -92,12 +92,11 @@ class VdbParser(JsonParser):
                                                                    motive_count_nometal_ligands)
         ligand_ratio_filtered_metal = division_zero_div_handling(total_atom_count_metal_ligands,
                                                                  motive_count_metal_ligands)
-        hetatm_count_filtered_nometal = division_zero_div_handling(total_atom_count_nometal_ligands,
-                                                                   motive_count_nometal_ligands)
+        hetatm_count_filtered_nometal = total_atom_count - total_atom_count_metal_ligands
         ligand_count_filtered_nometal = ligand_count_filtered - motive_count_metal_ligands
 
         self.result_dict.update(
-            {'hetatmCountFiltered': total_atom_count, 'ligandCarbonChiralAtomCountFiltered': total_c_chiral_count,
+            {'hetatmCountFiltered': total_atom_count, 'ligandCarbonChiraAtomCountFiltered': total_c_chiral_count,
              'ligandCountFiltered': ligand_count_filtered, 'ligandRatioFiltered': ligand_ratio_filtered,
              'ligandRatioFilteredMetal': ligand_ratio_filtered_metal,
              'ligandRatioFilteredNometal': ligand_ratio_filtered_nometal,
