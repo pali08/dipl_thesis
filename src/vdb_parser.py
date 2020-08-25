@@ -9,14 +9,10 @@ class VdbParser(JsonParser):
                             'ligandCountFiltered': NAN_VALUE, 'ligandRatioFiltered': NAN_VALUE,
                             'ligandRatioFilteredMetal': NAN_VALUE,
                             'ligandRatioFilteredNometal': NAN_VALUE,
-                            # 'missing_atom_count': NAN_VALUE,
                             'hetatmCountFilteredMetal': NAN_VALUE,
                             'hetatmCountFilteredNometal': NAN_VALUE,
                             'ligandCountFilteredNometal': NAN_VALUE,
-                            # 'wrong_chiral_count': NAN_VALUE,
                             'ligandCountFilteredMetal': NAN_VALUE,
-                            # 'total_bond_count': NAN_VALUE,
-                            # 'sigma_bond_count': NAN_VALUE,
                             'ligandBondRotationFreedom': NAN_VALUE}
         self.create_result_dict()
 
@@ -35,16 +31,11 @@ class VdbParser(JsonParser):
         except KeyError:
             ligand_count_filtered = NAN_VALUE
             print(self.key_error_output('ligand count filtered'))
-        # try:
-        #     missing_atom_count = len([self.json_dict['Models'][i]['Entries'][j]['MissingAtoms'][k] for i in
-        #                               range(0, len(self.json_dict['Models'])) for j in
-        #                               range(0, len(self.json_dict['Models'][i]['Entries'])) for k in
-        #                               self.json_dict['Models'][i]['Entries'][j]['MissingAtoms']])
-        # except KeyError:
-        #     missing_atom_count = NAN_VALUE
-        #     print(self.key_error_output('missing atom count'))
         try:
-            total_atom_count = len([j for i in self.json_dict['Models'] for j in i['ModelAtomTypes']])
+            # total_atom_count = len([j for i in self.json_dict['Models'] for j in i['ModelAtomTypes']])
+            total_atom_count = sum(
+                [len(self.json_dict['Models'][i]['ModelAtomTypes']) * len(self.json_dict['Models'][i]['Entries']) for i
+                 in range(0, len(self.json_dict['Models']))])
             total_atom_count_metal_ligands = sum(map(len, [self.json_dict['Models'][i]['ModelAtomTypes'] for i in
                                                            range(0, len(self.json_dict['Models'])) if
                                                            self.detect_metal(i)]))
@@ -52,25 +43,17 @@ class VdbParser(JsonParser):
             total_atom_count = NAN_VALUE
             total_atom_count_metal_ligands = NAN_VALUE
             print(self.key_error_output('hetatm count filtered (metal)'))
-        # try:
-        #     wrong_chiral_count = len(
-        #         [m for m in [self.json_dict['Models'][i]['Entries'][j]['ChiralityMismatches'][k] for i in
-        #                      range(0, len(self.json_dict['Models'])) for j in
-        #                      range(0, len(self.json_dict['Models'][i]['Entries'])) for k in
-        #                      self.json_dict['Models'][i]['Entries'][j]['ChiralityMismatches'].keys()] if
-        #          len(m) > 1 and m.split()[1].upper() == "C"])
-        # except KeyError:
-        #     wrong_chiral_count = NAN_VALUE
-        #     print(self.key_error_output('wrong chiral count'))
         try:
-            total_c_chiral_count = sum(map(len, [self.json_dict['Models'][i]['ChiralAtomsInfo']['Carbon'] for i in
-                                                 range(len(self.json_dict['Models']))]))
+            # total_c_chiral_count = sum(map(len, [self.json_dict['Models'][i]['ChiralAtomsInfo']['Carbon'] for i in
+            #                                      range(len(self.json_dict['Models']))]))
+            total_c_chiral_count = sum([len(self.json_dict['Models'][i]['ChiralAtomsInfo']['Carbon']) * len(
+                self.json_dict['Models'][i]['Entries']) for i in range(0, len(self.json_dict['Models']))])
         except KeyError:
             total_c_chiral_count = NAN_VALUE
             print(self.key_error_output('ligand Carbon Chiral Atom Count Filtered'))
         try:
             motive_count_metal_ligands = sum(map(len, [self.json_dict['Models'][i]['Entries'] for i in
-                                                       range(len(self.json_dict['Models']))]))
+                                                       range(len(self.json_dict['Models'])) if self.detect_metal(i)]))
         except KeyError:
             motive_count_metal_ligands = NAN_VALUE
             print(self.key_error_output('ligand count filtered metal'))
@@ -100,14 +83,10 @@ class VdbParser(JsonParser):
              'ligandCountFiltered': ligand_count_filtered, 'ligandRatioFiltered': ligand_ratio_filtered,
              'ligandRatioFilteredMetal': ligand_ratio_filtered_metal,
              'ligandRatioFilteredNometal': ligand_ratio_filtered_nometal,
-             # 'missing_atom_count': missing_atom_count,
              'hetatmCountFilteredMetal': total_atom_count_metal_ligands,
              'hetatmCountFilteredNometal': hetatm_count_filtered_nometal,
              'ligandCountFilteredNometal': ligand_count_filtered_nometal,
-             # 'wrong_chiral_count': wrong_chiral_count,
              'ligandCountFilteredMetal': motive_count_metal_ligands,
-             # 'total_bond_count': total_bond_count,
-             # 'sigma_bond_count': sigma_bond_count,
              'ligandBondRotationFreedom': ligand_bond_rotation_freedom})
 
     def create_result_dict(self):
