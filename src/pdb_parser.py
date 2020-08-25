@@ -2,7 +2,7 @@ import numpy as np
 from Bio.File import as_handle
 from Bio.PDB.MMCIF2Dict import MMCIF2Dict
 from src.global_constants_and_functions import METALS, WATER_MOLECULE, division_zero_div_handling, to_float, to_int, \
-    NAN_VALUE, addition_nan_handling, subtraction_nan_handling
+    NAN_VALUE, addition_nan_handling, subtraction_nan_handling, is_float, multiplying_question_mark_handling
 from src.parser import Parser
 
 
@@ -56,9 +56,10 @@ class PdbParser(Parser):
         Get different structure weights based on type of molecules
         :return: list of weights
         """
+        print(self.filename)
         try:
             entities_list = list(zip(self.mmcif_dict['_entity.type'],
-                                     [float(i[0]) * float(i[1]) for i in
+                                     [multiplying_question_mark_handling(i[0], i[1]) for i in
                                       list(zip(self.mmcif_dict['_entity.formula_weight'],
                                                self.mmcif_dict[
                                                    '_entity.pdbx_number_of_molecules'
