@@ -46,8 +46,8 @@ def get_result_dicts(molecules, *filepaths):
 def compare(random_data_csv_dicts, result_dicts):
     success_rate = {'Passed': 0, 'Failed': 0}
     # print(result_dicts)
-    print(result_dicts[0])
-    print(random_data_csv_dicts[0])
+    # print(result_dicts[0])
+    # print(random_data_csv_dicts[0])
     for result_dict in result_dicts:
         errors = 0
         if 'PDB ID' not in result_dict:

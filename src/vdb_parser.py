@@ -36,9 +36,17 @@ class VdbParser(JsonParser):
             total_atom_count = sum(
                 [len(self.json_dict['Models'][i]['ModelAtomTypes']) * len(self.json_dict['Models'][i]['Entries']) for i
                  in range(0, len(self.json_dict['Models']))])
-            total_atom_count_metal_ligands = sum(map(len, [self.json_dict['Models'][i]['ModelAtomTypes'] for i in
-                                                           range(0, len(self.json_dict['Models'])) if
-                                                           self.detect_metal(i)]))
+            total_atom_count_metal_ligands_modelatomtypes = map(len,
+                                                                [self.json_dict['Models'][i]['ModelAtomTypes'] for i in
+                                                                 range(0, len(self.json_dict['Models'])) if
+                                                                 self.detect_metal(i)])
+            total_atom_count_metal_ligands_entries = map(len, [self.json_dict['Models'][i]['Entries'] for i in
+                                                               range(0, len(self.json_dict['Models'])) if
+                                                               self.detect_metal(i)])
+            total_atom_count_metal_ligands = sum([i * j for i, j in
+                                                  zip(total_atom_count_metal_ligands_modelatomtypes,
+                                                      total_atom_count_metal_ligands_entries)])
+            # print(total_atom_count_metal_ligands)
         except KeyError:
             total_atom_count = NAN_VALUE
             total_atom_count_metal_ligands = NAN_VALUE

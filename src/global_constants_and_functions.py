@@ -69,8 +69,9 @@ def addition_nan_handling(*values):
     """
     if list(values) == [NAN_VALUE for i in range(0, len(values))]:
         return NAN_VALUE
+
     # TODO not string is probably not enough, fix it
-    return sum([i for i in values if type(i) != str])
+    return sum([float(i) for i in values if is_float(i)])
 
 
 def subtraction_nan_handling(minuend, subtrahend):

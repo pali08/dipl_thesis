@@ -56,7 +56,7 @@ class PdbParser(Parser):
         Get different structure weights based on type of molecules
         :return: list of weights
         """
-        print(self.filename)
+        #print(self.filename)
         try:
             entities_list = list(zip(self.mmcif_dict['_entity.type'],
                                      [multiplying_question_mark_handling(i[0], i[1]) for i in
@@ -115,6 +115,11 @@ class PdbParser(Parser):
                 [(self.mmcif_dict['_atom_site.auth_seq_id'][i], self.mmcif_dict['_atom_site.auth_asym_id'][i]) for i in
                  range(0, len(self.mmcif_dict['_atom_site.auth_seq_id'])) if
                  self.mmcif_dict['_atom_site.group_PDB'][i].upper().strip() == 'HETATM']))
+            if ('_pdbx_nmr_ensemble.conformers_submitted_total_number' in self.mmcif_dict and is_float(
+                    self.mmcif_dict['_pdbx_nmr_ensemble.conformers_submitted_total_number'][0])):
+                ligand_count = ligand_count * int(
+                    self.mmcif_dict['_pdbx_nmr_ensemble.conformers_submitted_total_number'][
+                        0])
         except KeyError:
             ligand_count = NAN_VALUE
             print(self.key_error_output('ligand count'))
@@ -125,6 +130,11 @@ class PdbParser(Parser):
                  range(0, len(self.mmcif_dict['_atom_site.auth_seq_id'])) if
                  self.mmcif_dict['_atom_site.group_PDB'][i].upper() == 'HETATM' and
                  self.mmcif_dict['_atom_site.label_comp_id'][i].upper() != WATER_MOLECULE]))
+            if ('_pdbx_nmr_ensemble.conformers_submitted_total_number' in self.mmcif_dict and is_float(
+                    self.mmcif_dict['_pdbx_nmr_ensemble.conformers_submitted_total_number'][0])):
+                nonwater_ligand_count = nonwater_ligand_count * int(
+                    self.mmcif_dict['_pdbx_nmr_ensemble.conformers_submitted_total_number'][
+                        0])
         except KeyError:
             nonwater_ligand_count = NAN_VALUE
             print(self.key_error_output('nonwater ligand count'))
@@ -139,12 +149,16 @@ class PdbParser(Parser):
         ligand_count_nowater = nonwater_ligand_count
         ligand_ratio_nowater = division_zero_div_handling(hetatm_count_nowater, ligand_count_nowater)
         try:
-            asym_ids_with_metal = [i[0] for i in set(
+            asym_ids_with_metal = set([i[0] for i in set(
                 zip(self.mmcif_dict['_atom_site.label_asym_id'], self.mmcif_dict['_atom_site.type_symbol']))
-                                   if i[1].lower() in METALS]
+                                   if i[1].lower() in METALS])
             hetatm_count_metal = len(
                 [i for i in self.mmcif_dict['_atom_site.label_asym_id'] if i in asym_ids_with_metal])
             ligand_count_metal = len(asym_ids_with_metal)
+            if ('_pdbx_nmr_ensemble.conformers_submitted_total_number' in self.mmcif_dict and is_float(
+                    self.mmcif_dict['_pdbx_nmr_ensemble.conformers_submitted_total_number'][0])):
+                ligand_count_metal = ligand_count_metal * int(
+                    self.mmcif_dict['_pdbx_nmr_ensemble.conformers_submitted_total_number'][0])
         except KeyError:
             ligand_count_metal = NAN_VALUE
             hetatm_count_metal = NAN_VALUE
