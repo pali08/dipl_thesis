@@ -102,7 +102,7 @@ class PdbParser(Parser):
             atom_count = NAN_VALUE
             hetatm_count = NAN_VALUE
             print(self.key_error_output('Atom and hetatm counts'))
-        all_atom_count = addition_nan_handling(atom_count, hetatm_count)
+        all_atom_count = int(addition_nan_handling(atom_count, hetatm_count))
         all_atom_count_ln = round(np.log(all_atom_count),
                                   5) if all_atom_count != 0 and all_atom_count != NAN_VALUE else NAN_VALUE
         try:
@@ -117,13 +117,13 @@ class PdbParser(Parser):
                  self.mmcif_dict['_atom_site.group_PDB'][i].upper().strip() == 'HETATM']))
             if ('_pdbx_nmr_ensemble.conformers_submitted_total_number' in self.mmcif_dict and is_float(
                     self.mmcif_dict['_pdbx_nmr_ensemble.conformers_submitted_total_number'][0])):
-                ligand_count = ligand_count * int(
+                ligand_count = int(ligand_count * int(
                     self.mmcif_dict['_pdbx_nmr_ensemble.conformers_submitted_total_number'][
-                        0])
+                        0]))
         except KeyError:
             ligand_count = NAN_VALUE
             print(self.key_error_output('ligand count'))
-        aa_ligand_count = addition_nan_handling(aa_count, ligand_count)
+        aa_ligand_count = int(addition_nan_handling(aa_count, ligand_count))
         try:
             nonwater_ligand_count = len(set(
                 [(self.mmcif_dict['_atom_site.auth_seq_id'][i], self.mmcif_dict['_atom_site.auth_asym_id'][i]) for i in
@@ -132,17 +132,17 @@ class PdbParser(Parser):
                  self.mmcif_dict['_atom_site.label_comp_id'][i].upper() != WATER_MOLECULE]))
             if ('_pdbx_nmr_ensemble.conformers_submitted_total_number' in self.mmcif_dict and is_float(
                     self.mmcif_dict['_pdbx_nmr_ensemble.conformers_submitted_total_number'][0])):
-                nonwater_ligand_count = nonwater_ligand_count * int(
+                nonwater_ligand_count = int(nonwater_ligand_count * int(
                     self.mmcif_dict['_pdbx_nmr_ensemble.conformers_submitted_total_number'][
-                        0])
+                        0]))
         except KeyError:
             nonwater_ligand_count = NAN_VALUE
             print(self.key_error_output('nonwater ligand count'))
-        aa_ligand_count_nowater = addition_nan_handling(aa_count + nonwater_ligand_count)
+        aa_ligand_count_nowater = int(addition_nan_handling(aa_count + nonwater_ligand_count))
         ligand_ratio = division_zero_div_handling(hetatm_count, ligand_count)
         try:
-            hetatm_count_nowater = hetatm_count - len(
-                [i for i in self.mmcif_dict['_atom_site.label_comp_id'] if i.upper() == WATER_MOLECULE])
+            hetatm_count_nowater = int(hetatm_count - len(
+                [i for i in self.mmcif_dict['_atom_site.label_comp_id'] if i.upper() == WATER_MOLECULE]))
         except KeyError:
             hetatm_count_nowater = NAN_VALUE
             print(self.key_error_output('hetatm count nowater'))

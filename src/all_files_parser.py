@@ -1,5 +1,6 @@
 import os
 
+from src.global_constants_and_functions import is_float
 from src.pdb_parser import PdbParser
 from src.pdb_vdb_computer import PdbVdbComputer
 from src.vdb_parser import VdbParser
@@ -55,3 +56,13 @@ class AllFilesParser:
     def get_rest_filepath(self, subfolder):
         pass
         # TODO return os.path.join(self.filepaths[3], subfolder, self.molecule + '.json')
+
+    def result_dict_final_edit(self):
+        """
+        format floating point numbers to 3 decimals
+        :return:
+        """
+        for key, value in self.result_dict:
+            if '.' in value:
+                self.result_dict[key] = '{:.3f}'.format(float(value))
+

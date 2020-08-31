@@ -27,7 +27,7 @@ class VdbParser(JsonParser):
 
     def get_counts(self):
         try:
-            ligand_count_filtered = float(self.json_dict['MotiveCount'])  # = motiveCount
+            ligand_count_filtered = int((self.json_dict['MotiveCount']))  # = motiveCount
         except KeyError:
             ligand_count_filtered = NAN_VALUE
             print(self.key_error_output('ligand count filtered'))
@@ -84,7 +84,7 @@ class VdbParser(JsonParser):
         ligand_ratio_filtered_metal = division_zero_div_handling(total_atom_count_metal_ligands,
                                                                  motive_count_metal_ligands)
         hetatm_count_filtered_nometal = total_atom_count - total_atom_count_metal_ligands
-        ligand_count_filtered_nometal = ligand_count_filtered - motive_count_metal_ligands
+        ligand_count_filtered_nometal = int(ligand_count_filtered - motive_count_metal_ligands)
 
         self.result_dict.update(
             {'hetatmCountFiltered': total_atom_count, 'ligandCarbonChiraAtomCountFiltered': total_c_chiral_count,
