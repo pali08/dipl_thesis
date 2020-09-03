@@ -1,23 +1,38 @@
+import math
 import os
-import xml.etree.ElementTree as etree
+import xml.etree.ElementTree as eTree
 
-from src.main import fileset_xml
+from src.global_constants_and_functions import NAN_VALUE
+from src.parser import Parser
 
 
-class XmlParser:
+def get_value_none_handle(function, parameter):
+    """
+    if parameter in xml tree does not exist (e.g. tree.getroot()[0].get('somenonexistingparam')),
+    get function returns None instead of throwing exception
+    :param function: applied function
+    :param parameter: wanted parameter
+    :return: 'nan' if parameter does not exist. Parameter's value otherwise
+    """
+    return_value = function(parameter)
+    return NAN_VALUE if return_value is None else return_value
+
+
+class XmlParser(Parser):
     def __init__(self, filename):
-        self.tree = etree.parse(filename)
+        super().__init__(filename)
+        self.tree = eTree.parse(self.filename)
+        self.result_dict = {'clashscore': NAN_VALUE}
 
-    def get_clashscore_from_xml(self):
+    def get_data(self):
         """
-        xml file is loaded in etree format
+        xml file is loaded in eTree format
         :param filename:
-        :return: clashscore gotten from etree
+        :return: clashscore gotten from eTree
         """
-        clashscore = self.tree.getroot()[0].get('clashscore')
-        if clashscore is None or float(clashscore) <= 0.0:
-            clashscore = 'nan'
-        clashscore_full_length = self.tree.getroot()[0].get('clashscore-full-length')
-        if clashscore_full_length is None or float(clashscore_full_length) <= 0.0:
-            clashscore_full_length = 'nan'
-        return clashscore, clashscore_full_length
+        clashscore = get_value_none_handle(self.tree.getroot()[0].get, 'clashscore')
+        if math.isnan(float(clashscore)):
+            clashscore = get_value_none_handle(self.tree.getroot()[0].get, 'clashscore-full-length')
+        if clashscore < 0:
+            return NAN_VALUE
+        rama_outliers = get_value_none_handle(self.tree.getroot()[0].get, 'percent-rama-outliers')

@@ -3,7 +3,7 @@ import unittest
 from src.global_constants_and_functions import NAN_VALUE
 from src.pdb_parser import PdbParser
 from src.vdb_parser import VdbParser
-from src.pdb_vdb_computer import PdbVdbComputer
+from src.combined_data_computer import CombinedDataComputer
 
 
 class PdbVdbComputerTest(unittest.TestCase):
@@ -27,7 +27,7 @@ class PdbVdbComputerTest(unittest.TestCase):
                     'hetatmCountFilteredNometal': 'nan', 'ligandCountFilteredNometal': 0.0, 'wrong_chiral_count': 0,
                     'ligandCountFilteredMetal': 4, 'total_bond_count': 50, 'sigma_bond_count': 35,
                     'ligandBondRotationFreedom': 0.7}
-        computer = PdbVdbComputer(pdb_dict, vdb_dict)
+        computer = CombinedDataComputer(pdb_dict, vdb_dict)
         self.assertAlmostEqual(computer.result_dict['aaLigandCountFiltered'], 159)
 
 

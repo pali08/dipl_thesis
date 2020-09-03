@@ -2,7 +2,7 @@ import os
 
 from src.global_constants_and_functions import is_float
 from src.pdb_parser import PdbParser
-from src.pdb_vdb_computer import PdbVdbComputer
+from src.combined_data_computer import CombinedDataComputer
 from src.vdb_parser import VdbParser
 
 
@@ -13,7 +13,7 @@ class AllFilesParser:
         self.molecule = molecule
         self.pdb_dict = PdbParser(self.get_pdb_filepath()).result_dict
         self.vdb_dict = VdbParser(self.get_vdb_filepath()).result_dict
-        self.pdb_vdb_dict = PdbVdbComputer(self.pdb_dict, self.vdb_dict).result_dict
+        self.pdb_vdb_dict = CombinedDataComputer(self.pdb_dict, self.vdb_dict).result_dict
         self.result_dict = {**self.pdb_dict, **self.vdb_dict, **self.pdb_vdb_dict}
 
     order_list = ['PDB ID', 'resolution', 'releaseDate', 'StructureWeight', 'PolymerWeight',

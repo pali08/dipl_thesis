@@ -1,9 +1,9 @@
 from src.global_constants_and_functions import addition_nan_handling, key_error_output
 
 
-class PdbVdbComputer:
+class CombinedDataComputer:
     """
-    computes factors that needs data from pdb and vdb files
+    computes factors that needs data from multiple files
     """
 
     def __init__(self, pdb_values_dict, vdb_values_dict):
