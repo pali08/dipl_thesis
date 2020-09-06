@@ -115,3 +115,4 @@ def multiplying_question_mark_handling(multiplier1, multiplier2):
     if is_float(multiplier1) and is_float(multiplier2):
         return float(multiplier1) * float(multiplier2)
     return 0
+
