@@ -2,7 +2,7 @@ import math
 import os
 import xml.etree.ElementTree as eTree
 
-from src.global_constants_and_functions import NAN_VALUE
+from src.global_constants_and_functions import NAN_VALUE, division_zero_div_handling
 from src.parser import Parser
 
 
@@ -28,7 +28,8 @@ class XmlParser(Parser):
                             'SidechainOutliersPercentile': NAN_VALUE, 'combinedGeometryQuality': NAN_VALUE,
                             'DCC_R': NAN_VALUE, 'DCC_Rfree': NAN_VALUE, 'absolute-percentile-DCC_Rfree': NAN_VALUE,
                             'AngleRMSZstructure': NAN_VALUE, 'BondRMSZstructure': NAN_VALUE, 'RSRZoutliers': NAN_VALUE,
-                            'RSRZoutliersPercentile': NAN_VALUE, 'combinedXrayQualityMetric': NAN_VALUE}
+                            'RSRZoutliersPercentile': NAN_VALUE, 'combinedXrayQualityMetric': NAN_VALUE,
+                            'highestChainBondsRMSZ': NAN_VALUE}
 
     def get_data(self):
         """
@@ -63,7 +64,7 @@ class XmlParser(Parser):
         dcc_r = get_value_none_handle(root_zero_get, 'DCC_R')
         dcc_r_free = get_value_none_handle(root_zero_get, 'DCC_Rfree')
         dcc_r_free_percentil = get_value_none_handle(root_zero_get, 'absolute-percentile-DCC_Rfree')
-        angle_rmsz_structure = get_value_none_handle(root_zero_get, 'angles_rmsz')
+        angles_rmsz_structure = get_value_none_handle(root_zero_get, 'angles_rmsz')
         bonds_rmsz_structure = get_value_none_handle(root_zero_get, 'bonds_rmsz')
         percent_rsrz_outliers = get_value_none_handle(root_zero_get, 'percent-RSRZ-outliers')
         rsrz_outliers_percentil = get_value_none_handle(root_zero_get, 'absolute-percentile-percent-RSRZ-outliers')
@@ -72,3 +73,26 @@ class XmlParser(Parser):
             combined_xray_quality_metric = 1 / (summation_percentiles_2 / 2)
         else:
             combined_xray_quality_metric = NAN_VALUE
+        # guess this is not needed: if modelledentity instance is zero, then bonds rmsz is none
+        # if self.tree.find('ModelledEntityInstance') is not None:
+        #     if bonds_rmsz_structure > 0.0:
+        #         highest_chain_bonds_rmsz = bonds_rmsz_structure
+        #     else:
+        #         highest_chain_bonds_rmsz = 0.0
+        # else:
+        #     highest_chain_bonds_rmsz = NAN_VALUE
+        try:
+            highest_chain_bonds_rmsz = bonds_rmsz_structure if bonds_rmsz_structure > 0.0 else 0.0
+        # comparing text and
+        except TypeError:
+            highest_chain_bonds_rmsz = 0.0
+        try:
+            highest_chain_angles_rmsz = angles_rmsz_structure if angles_rmsz_structure > 0.0 else 0.0
+        except TypeError:
+            highest_chain_angles_rmsz = 0.0
+        residue_count = len(list(filter(lambda x: x.tag == 'ModelledSubgroup' and 'mogul_bonds_rmsz' not in x.attrib,
+                                        list(self.tree.getroot()))))
+        residue_rsr_num = sum([float(i.attrib['rsr']) for i in
+                               list(filter(lambda x: x.tag == 'ModelledSubgroup' and 'mogul_bonds_rmsz' not in x.attrib,
+                                           list(self.tree.getroot())))])
+        average_residue_rsr = division_zero_div_handling(residue_rsr_num, residue_count)
