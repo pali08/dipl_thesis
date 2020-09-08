@@ -97,6 +97,18 @@ class VdbParser(JsonParser):
              'ligandCountFilteredMetal': motive_count_metal_ligands,
              'ligandBondRotationFreedom': ligand_bond_rotation_freedom})
 
+    def get_undivided_data(self):
+        chiral_problem_ligand_ratio = division_zero_div_handling(
+            sum([self.json_dict['Models'][i]['Summary']['HasAll_BadChirality_Carbon'] for i in
+                 range(0, len(self.json_dict['Models']))]), self.result_dict['ligandCountFiltered'])
+        good_ligand_ratio = division_zero_div_handling((self.result_dict['ligandCounrFiltered'] - sum(
+            [self.json_dict['Models'][i]['Summary']['HasAll_BadChirality_Carbon'] for i in
+             range(0, len(self.json_dict['Models']))]) - sum(
+            [self.json_dict['Models'][i]['Summary']['Missing_Rings'] for i in
+             range(0, len(self.json_dict['Models']))]) - sum(
+            [self.json_dict['Models'][i]['Summary']['Missing_Atoms'] for i in
+             range(0, len(self.json_dict['Models']))])), self.result_dict['ligandCounrFiltered'])
+
     def create_result_dict(self):
         if super().file_exists():
             self.get_counts()
