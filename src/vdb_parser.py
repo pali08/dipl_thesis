@@ -13,7 +13,10 @@ class VdbParser(JsonParser):
                             'hetatmCountFilteredNometal': NAN_VALUE,
                             'ligandCountFilteredNometal': NAN_VALUE,
                             'ligandCountFilteredMetal': NAN_VALUE,
-                            'ligandBondRotationFreedom': NAN_VALUE}
+                            'ligandBondRotationFreedom': NAN_VALUE,
+                            'ChiralProblemLigandRatio': NAN_VALUE,
+                            'GoodLigandRatio': NAN_VALUE,
+                            'TopologyProblemLigandRatio': NAN_VALUE}
         self.create_result_dict()
 
     def detect_metal(self, model_num):
@@ -101,14 +104,42 @@ class VdbParser(JsonParser):
         chiral_problem_ligand_ratio = division_zero_div_handling(
             sum([self.json_dict['Models'][i]['Summary']['HasAll_BadChirality_Carbon'] for i in
                  range(0, len(self.json_dict['Models']))]), self.result_dict['ligandCountFiltered'])
-        good_ligand_ratio = division_zero_div_handling((self.result_dict['ligandCounrFiltered'] - sum(
-            [self.json_dict['Models'][i]['Summary']['HasAll_BadChirality_Carbon'] for i in
-             range(0, len(self.json_dict['Models']))]) - sum(
-            [self.json_dict['Models'][i]['Summary']['Missing_Rings'] for i in
-             range(0, len(self.json_dict['Models']))]) - sum(
+        missing_atoms = sum(
             [self.json_dict['Models'][i]['Summary']['Missing_Atoms'] for i in
-             range(0, len(self.json_dict['Models']))])), self.result_dict['ligandCounrFiltered'])
+             range(0, len(self.json_dict['Models']))])
+        missing_rings = sum(
+            [self.json_dict['Models'][i]['Summary']['Missing_Rings'] for i in
+             range(0, len(self.json_dict['Models']))])
+        missing_atoms_rings = missing_atoms + missing_rings
+        good_ligand_ratio = division_zero_div_handling((self.result_dict['ligandCountFiltered'] - sum(
+            [self.json_dict['Models'][i]['Summary']['HasAll_BadChirality_Carbon'] for i in
+             range(0, len(self.json_dict['Models']))])) - missing_atoms_rings, self.result_dict['ligandCountFiltered'])
+        topology_problem_ligand_ratio = missing_rings / self.result_dict['ligandCountFiltered']
+        missing_atom_count = len([self.json_dict['Models'][i]['Entries'][j]['MissingAtoms'][k] for i in
+                                  range(0, len(self.json_dict['Models'])) for j in
+                                  range(0, len(self.json_dict['Models'][i]['Entries'])) for k in
+                                  range(0, len(self.json_dict['Models'][i]['Entries'][j]['MissingAtoms']))])
+        missing_atom_ratio = missing_atom_count / self.result_dict['hetatmCountFiltered']
+        wrong_c_chira_count = len([
+            list(self.json_dict['Models'][i]['Entries'][j]['ChiralityMismatches'].values())[k].split()[1] for i in
+            range(0, len(self.json_dict['Models'])) for j in
+            range(0, len(self.json_dict['Models'][i]['Entries'])) for k in
+            range(0, len(self.json_dict['Models'][i]['Entries'][j]['ChiralityMismatches'].values())) if
+            list(self.json_dict['Models'][i]['Entries'][j]['ChiralityMismatches'].values())[k].split()[1] == 'C'])
+        total_c_chira_count = sum(
+            [len(self.json_dict['Models'][i]['ChiralAtomsInfo']['Carbon']) * len(self.json_dict['Models'][i]['Entries'])
+             for i in range(0, len(self.json_dict['Models']))])
+        carbon_chira_problem_ratio = wrong_c_chira_count / total_c_chira_count  # ChiraProblemsPrecise
+        both_problem_ratio = carbon_chira_problem_ratio + missing_atom_ratio  # LigandTopologyCarbonChiraProblemsPrecise
+
+        self.result_dict.update(
+            {'ChiralProblemLigandRatio': chiral_problem_ligand_ratio, 'GoodLigandRatio': good_ligand_ratio,
+             'TopologyProblemLigandRatio': topology_problem_ligand_ratio,
+             'LigandTopologyProblemsPrecise': missing_atom_ratio,
+             'LigandTopologyCarbonChiraProblemsPrecise': both_problem_ratio,
+             'ChiraProblemsPrecise': carbon_chira_problem_ratio})
 
     def create_result_dict(self):
         if super().file_exists():
             self.get_counts()
+            self.get_undivided_data()
