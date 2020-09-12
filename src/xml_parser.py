@@ -96,3 +96,13 @@ class XmlParser(Parser):
                                list(filter(lambda x: x.tag == 'ModelledSubgroup' and 'mogul_bonds_rmsz' not in x.attrib,
                                            list(self.tree.getroot())))])
         average_residue_rsr = division_zero_div_handling(residue_rsr_num, residue_count)
+        ligand_rsr_sum = sum([float(i.get('rsr')) for i in
+                              list(filter(lambda x: x.tag == 'ModelledSubgroup', list(self.tree.getroot())))])
+        ligand_count = len(list(filter(lambda x: 'mogul_bonds_rmsz' not in x.attrib,
+                                       list(self.tree.getroot()))))
+        average_ligand_rsr = division_zero_div_handling(ligand_rsr_sum / ligand_count)
+        ligand_rmsz_sum_angles = sum([float(i.get('rsr')) for i in
+                                      list(filter(lambda x: x.tag == 'ModelledSubgroup'
+                                                            and 'mogul_angles_rmsz' in x.attrib,
+                                                  list(self.tree.getroot())))])
+        average_ligand_angle_rmsz = ligand_rmsz_sum_angles / ligand_count
