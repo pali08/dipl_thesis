@@ -116,3 +116,18 @@ def multiplying_question_mark_handling(multiplier1, multiplier2):
         return float(multiplier1) * float(multiplier2)
     return 0
 
+
+def nan_if_list_empty(input_iterable):
+    """
+    :param input_iterable: list, tuple, set or dictionary
+    :return: 'nan' if list is empty (bool value of list is false in that case),
+    otherwise return list
+    """
+    if type(input_iterable) in (list, tuple, set, dict):
+        return list if list else NAN_VALUE
+    else:
+        raise ValueError(
+            'list_emptiness function: input argument must be list, tuple, dict or set, not' + str(type(input_iterable)))
+
+
+

@@ -2,7 +2,7 @@ import math
 import os
 import xml.etree.ElementTree as eTree
 
-from src.global_constants_and_functions import NAN_VALUE, division_zero_div_handling
+from src.global_constants_and_functions import NAN_VALUE, division_zero_div_handling, nan_if_list_empty
 from src.parser import Parser
 
 
@@ -96,13 +96,38 @@ class XmlParser(Parser):
                                list(filter(lambda x: x.tag == 'ModelledSubgroup' and 'mogul_bonds_rmsz' not in x.attrib,
                                            list(self.tree.getroot())))])
         average_residue_rsr = division_zero_div_handling(residue_rsr_num, residue_count)
-        ligand_rsr_sum = sum([float(i.get('rsr')) for i in
-                              list(filter(lambda x: x.tag == 'ModelledSubgroup', list(self.tree.getroot())))])
         ligand_count = len(list(filter(lambda x: 'mogul_bonds_rmsz' not in x.attrib,
                                        list(self.tree.getroot()))))
-        average_ligand_rsr = division_zero_div_handling(ligand_rsr_sum / ligand_count)
-        ligand_rmsz_sum_angles = sum([float(i.get('rsr')) for i in
-                                      list(filter(lambda x: x.tag == 'ModelledSubgroup'
-                                                            and 'mogul_angles_rmsz' in x.attrib,
-                                                  list(self.tree.getroot())))])
-        average_ligand_angle_rmsz = ligand_rmsz_sum_angles / ligand_count
+        ligand_rsr_list = nan_if_list_empty([float(i.get('rsr')) for i in
+                                             list(filter(lambda x: x.tag == 'ModelledSubgroup',
+                                                         list(self.tree.getroot())))])
+        try:
+            ligand_rsr_sum = sum(ligand_rsr_list)
+        except TypeError:
+            ligand_rsr_sum = ligand_rsr_list  # NAN
+        average_ligand_rsr = division_zero_div_handling(ligand_rsr_sum, ligand_count)
+        rmsz_angles_list = nan_if_list_empty([float(i.get('rsr')) for i in list(
+            filter(lambda x: x.tag == 'ModelledSubgroup' and 'mogul_angles_rmsz' in x.attrib,
+                   list(self.tree.getroot())))])
+        try:
+            ligand_rmsz_sum_angles = sum(rmsz_angles_list)
+        except TypeError:
+            ligand_rmsz_sum_angles = rmsz_angles_list  # NAN
+        average_ligand_angle_rmsz = division_zero_div_handling(ligand_rmsz_sum_angles, ligand_count)
+        rmsz_bonds_list = nan_if_list_empty([float(i.get('rsr')) for i in list(
+            filter(lambda x: x.tag == 'ModelledSubgroup' and 'mogul_bonds_rmsz' in x.attrib,
+                   list(self.tree.getroot())))])
+        try:
+            ligand_rmsz_sum_bonds = sum(rmsz_bonds_list)
+        except TypeError:
+            ligand_rmsz_sum_bonds = rmsz_angles_list  # NAN
+        average_ligand_bonds_rmsz = division_zero_div_handling(ligand_rmsz_sum_bonds, ligand_count)
+        ligand_rscc_list = nan_if_list_empty([float(i.get('rscc')) for i in
+                                              list(filter(lambda x: x.tag == 'ModelledSubgroup',
+                                                          list(self.tree.getroot())))])
+        try:
+            ligand_rscc_sum = sum(ligand_rsr_list)
+        except TypeError:
+            ligand_rscc_sum = ligand_rsr_list  # NAN
+        average_ligand_rscc = division_zero_div_handling(ligand_rscc_sum, ligand_count)
+        ligand_rscc_outlier_count = len(list(filter(lambda x: x < 0.8, ligand_rscc_list)))
