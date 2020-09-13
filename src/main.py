@@ -52,7 +52,8 @@ def get_all_molecules(*filepaths):
 
 def get_dicts(cpu_cores_count, molecules, *filepaths):
     pool = Pool(cpu_cores_count)
-    result_tuple = pool.starmap_async(AllFilesParser, zip(molecules, repeat(filepaths[0]), repeat(filepaths[1]))).get()
+    result_tuple = pool.starmap_async(AllFilesParser, zip(molecules, repeat(filepaths[0]), repeat(filepaths[1]),
+                                                          repeat(filepaths[2]))).get()
     pool.close()
     pool.join()
     result_tuple_list = [AllFilesParser.order_list]
@@ -95,7 +96,7 @@ def main():
     csvname = csv_name()
     molecules = get_all_molecules(args.xml_files, args.mmcif_files, args.vdb_files, args.rest_files)
     start = time.time()
-    list_of_rec_lists = get_dicts(args.cpu_count, molecules, args.mmcif_files, args.vdb_files)
+    list_of_rec_lists = get_dicts(args.cpu_count, molecules, args.mmcif_files, args.vdb_files, args.xml_files)
     end = time.time()
     print("Loading files lasted {:.3f} seconds".format(end - start))
     write_csv_file(csvname, list_of_rec_lists)

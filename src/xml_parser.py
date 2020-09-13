@@ -29,7 +29,11 @@ class XmlParser(Parser):
                             'DCC_R': NAN_VALUE, 'DCC_Rfree': NAN_VALUE, 'absolute-percentile-DCC_Rfree': NAN_VALUE,
                             'AngleRMSZstructure': NAN_VALUE, 'BondRMSZstructure': NAN_VALUE, 'RSRZoutliers': NAN_VALUE,
                             'RSRZoutliersPercentile': NAN_VALUE, 'combinedXrayQualityMetric': NAN_VALUE,
-                            'highestChainBondsRMSZ': NAN_VALUE}
+                            'highestChainBondsRMSZ': NAN_VALUE, 'highestChainAnglesRMSZ': NAN_VALUE,
+                            'averageResidueRSR': NAN_VALUE, 'averageLigandRSR': NAN_VALUE,
+                            'averageLigandAngleRMSZ': NAN_VALUE, 'averageLigandBondRMSZ': NAN_VALUE,
+                            'averageLigandRSCC': NAN_VALUE, 'ligandRSCCoutlierRatio': NAN_VALUE}
+        self.create_result_dict()
 
     def get_data(self):
         """
@@ -38,7 +42,7 @@ class XmlParser(Parser):
         :return: clashscore gotten from eTree
         """
         root_zero_get = self.tree.getroot()[0].get
-        clashscore = get_value_none_handle(root_zero_get, 'clashscore')
+        clashscore = float(get_value_none_handle(root_zero_get, 'clashscore'))
         if clashscore == NAN_VALUE:
             clashscore = get_value_none_handle(root_zero_get, 'clashscore-full-length')
         if clashscore < 0:
@@ -131,3 +135,21 @@ class XmlParser(Parser):
             ligand_rscc_sum = ligand_rsr_list  # NAN
         average_ligand_rscc = division_zero_div_handling(ligand_rscc_sum, ligand_count)
         ligand_rscc_outlier_count = len(list(filter(lambda x: x < 0.8, ligand_rscc_list)))
+        ligand_rscc_outlier_ratio = ligand_rscc_outlier_count / ligand_count
+        self.result_dict.update(
+            {'clashscore': clashscore, 'RamaOutliers': rama_outliers, 'SidechainOutliers': sidechain_outliers,
+             'ClashscorePercentile': clashscore_percentil, 'RamaOutliersPercentile': rama_outliers_percentil,
+             'SidechainOutliersPercentile': sidechain_outliers_percentil,
+             'combinedGeometryQuality': combined_quality_geometry,
+             'DCC_R': dcc_r, 'DCC_Rfree': dcc_r_free, 'absolute-percentile-DCC_Rfree': dcc_r_free_percentil,
+             'AngleRMSZstructure': angles_rmsz_structure, 'BondRMSZstructure': bonds_rmsz_structure,
+             'RSRZoutliers': percent_rsrz_outliers,
+             'RSRZoutliersPercentile': percent_rsrz_outliers, 'combinedXrayQualityMetric': combined_xray_quality_metric,
+             'highestChainBondsRMSZ': highest_chain_bonds_rmsz, 'highestChainAnglesRMSZ': highest_chain_angles_rmsz,
+             'averageResidueRSR': average_residue_rsr, 'averageLigandRSR': average_ligand_rsr,
+             'averageLigandAngleRMSZ': average_ligand_angle_rmsz, 'averageLigandBondRMSZ': average_ligand_bonds_rmsz,
+             'averageLigandRSCC': average_ligand_rscc, 'ligandRSCCoutlierRatio': ligand_rscc_outlier_ratio})
+
+    def create_result_dict(self):
+        if super().file_exists():
+            self.get_data()

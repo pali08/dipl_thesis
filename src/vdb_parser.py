@@ -16,7 +16,16 @@ class VdbParser(JsonParser):
                             'ligandBondRotationFreedom': NAN_VALUE,
                             'ChiralProblemLigandRatio': NAN_VALUE,
                             'GoodLigandRatio': NAN_VALUE,
-                            'TopologyProblemLigandRatio': NAN_VALUE}
+                            'TopologyProblemLigandRatio': NAN_VALUE,
+                            'LigandTopologyProblemsPrecise': NAN_VALUE,
+                            'LigandTopologyCarbonChiraProblemsPrecise': NAN_VALUE,
+                            'ChiraProblemsPrecise': NAN_VALUE,
+                            'GoodLigandRatioBinary': NAN_VALUE,
+                            'LigandTopologyProblemsPreciseBinary': NAN_VALUE,
+                            'LigandTopologyCarbonChiraProblemsPreciseBinary': NAN_VALUE,
+                            'ChiraProblemsPreciseBinary': NAN_VALUE
+                            }
+
         self.create_result_dict()
 
     def detect_metal(self, model_num):
@@ -125,12 +134,13 @@ class VdbParser(JsonParser):
             [self.json_dict['Models'][i]['Summary']['HasAll_BadChirality_Carbon'] for i in
              range(0, len(self.json_dict['Models']))])) - missing_atoms_rings
         good_ligand_ratio = division_zero_div_handling(good_ligand_count, self.result_dict['ligandCountFiltered'])
-        topology_problem_ligand_ratio = missing_rings / self.result_dict['ligandCountFiltered']
+        topology_problem_ligand_ratio = division_zero_div_handling(missing_rings,
+                                                                   self.result_dict['ligandCountFiltered'])
         missing_atom_count = len([self.json_dict['Models'][i]['Entries'][j]['MissingAtoms'][k] for i in
                                   range(0, len(self.json_dict['Models'])) for j in
                                   range(0, len(self.json_dict['Models'][i]['Entries'])) for k in
                                   range(0, len(self.json_dict['Models'][i]['Entries'][j]['MissingAtoms']))])
-        missing_atom_ratio = missing_atom_count / self.result_dict['hetatmCountFiltered']
+        missing_atom_ratio = division_zero_div_handling(missing_atom_count, self.result_dict['hetatmCountFiltered'])
         wrong_c_chira_count = len([
             list(self.json_dict['Models'][i]['Entries'][j]['ChiralityMismatches'].values())[k].split()[1] for i in
             range(0, len(self.json_dict['Models'])) for j in
@@ -140,20 +150,24 @@ class VdbParser(JsonParser):
         total_c_chira_count = sum(
             [len(self.json_dict['Models'][i]['ChiralAtomsInfo']['Carbon']) * len(self.json_dict['Models'][i]['Entries'])
              for i in range(0, len(self.json_dict['Models']))])
-        carbon_chira_problem_ratio = wrong_c_chira_count / total_c_chira_count  # ChiraProblemsPrecise
+        carbon_chira_problem_ratio = division_zero_div_handling(wrong_c_chira_count,
+                                                                total_c_chira_count)  # ChiraProblemsPrecise
         both_problem_ratio = carbon_chira_problem_ratio + missing_atom_ratio  # LigandTopologyCarbonChiraProblemsPrecise
         good_ligand_ratio_binary = self.get_binary(good_ligand_ratio, 1)
         missing_atom_ratio_binary = self.get_binary(missing_atom_ratio, 0)
         both_problem_ratio_binary = self.get_binary(both_problem_ratio, 0)
         carbon_chira_problem_ratio_binary = self.get_binary(carbon_chira_problem_ratio, 0)
-
-
         self.result_dict.update(
-            {'ChiralProblemLigandRatio': chiral_problem_ligand_ratio, 'GoodLigandRatio': good_ligand_ratio,
+            {'ChiralProblemLigandRatio': chiral_problem_ligand_ratio,
+             'GoodLigandRatio': good_ligand_ratio,
              'TopologyProblemLigandRatio': topology_problem_ligand_ratio,
              'LigandTopologyProblemsPrecise': missing_atom_ratio,
              'LigandTopologyCarbonChiraProblemsPrecise': both_problem_ratio,
-             'ChiraProblemsPrecise': carbon_chira_problem_ratio})
+             'ChiraProblemsPrecise': carbon_chira_problem_ratio,
+             'GoodLigandRatioBinary': good_ligand_ratio_binary,
+             'LigandTopologyProblemsPreciseBinary': missing_atom_ratio_binary,
+             'LigandTopologyCarbonChiraProblemsPreciseBinary': both_problem_ratio_binary,
+             'ChiraProblemsPreciseBinary': carbon_chira_problem_ratio_binary})
 
     def create_result_dict(self):
         if super().file_exists():
