@@ -1,4 +1,4 @@
-from src.global_constants_and_functions import METALS, division_zero_div_handling, NAN_VALUE
+from src.global_constants_and_functions import METALS, division_zero_div_handling, NAN_VALUE, is_float
 from src.json_parser import JsonParser
 
 
@@ -152,7 +152,8 @@ class VdbParser(JsonParser):
              for i in range(0, len(self.json_dict['Models']))])
         carbon_chira_problem_ratio = division_zero_div_handling(wrong_c_chira_count,
                                                                 total_c_chira_count)  # ChiraProblemsPrecise
-        both_problem_ratio = carbon_chira_problem_ratio + missing_atom_ratio  # LigandTopologyCarbonChiraProblemsPrecise
+        both_problem_ratio = sum([i for i in [float(carbon_chira_problem_ratio), float(missing_atom_ratio)] if
+                                  is_float(i)])  # LigandTopologyCarbonChiraProblemsPrecise
         good_ligand_ratio_binary = self.get_binary(good_ligand_ratio, 1)
         missing_atom_ratio_binary = self.get_binary(missing_atom_ratio, 0)
         both_problem_ratio_binary = self.get_binary(both_problem_ratio, 0)

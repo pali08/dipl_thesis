@@ -102,6 +102,8 @@ def is_float(val):
         return True
     except ValueError:
         return False
+    except TypeError:
+        return False
 
 
 def multiplying_question_mark_handling(multiplier1, multiplier2):
@@ -124,7 +126,7 @@ def nan_if_list_empty(input_iterable):
     otherwise return list
     """
     if type(input_iterable) in (list, tuple, set, dict):
-        return list if list else NAN_VALUE
+        return input_iterable if input_iterable else NAN_VALUE
     else:
         raise ValueError(
             'list_emptiness function: input argument must be list, tuple, dict or set, not' + str(type(input_iterable)))

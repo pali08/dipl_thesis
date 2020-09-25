@@ -40,6 +40,7 @@ def get_result_dicts(molecules, *filepaths):
     for i in molecules:
         # print(i)
         list_of_result_dicts.append(AllFilesParser(i, *filepaths).result_dict)
+    print(list_of_result_dicts)
     return list_of_result_dicts
 
 
@@ -65,6 +66,7 @@ def compare(random_data_csv_dicts, result_dicts):
                             print('Test failed: ' + key + ' not in data.csv')
                             errors += 1
                         else:
+                            # print(key)
                             if str(value).lower() == str(random_data_csv_dict[key].lower()) \
                                     and not is_float(value) \
                                     and not is_float(random_data_csv_dict[key]):
@@ -84,8 +86,9 @@ def compare(random_data_csv_dicts, result_dicts):
                                           random_data_csv_dict[key])
                                     # either values are completely different (e.g. 1.0 vs 1000.0)
                                     # or one of values is nan and one is not
-                            elif (is_float(value) and not is_float(random_data_csv_dicts[key])) \
-                                    or (not is_float(value) and is_float(random_data_csv_dicts[key])):
+                                # print(random_data_csv_dicts)
+                            elif (is_float(value) and not is_float(random_data_csv_dict[key])) \
+                                    or (not is_float(value) and is_float(random_data_csv_dict[key])):
                                 errors += 1
                                 print('Second Test failed: ' + key + ':' + 'Actual: ' + value + ' Expected: ' +
                                       random_data_csv_dict[key])
