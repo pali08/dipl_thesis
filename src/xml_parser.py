@@ -43,7 +43,8 @@ class XmlParser(Parser):
         :param filename:
         :return: clashscore gotten from eTree
         """
-        root_zero_get = self.tree.getroot()[0].get
+        root = self.tree.getroot()
+        root_zero_get = root[0].get
         clashscore = float(get_value_none_handle(root_zero_get, 'clashscore'))
         if clashscore == NAN_VALUE:
             clashscore = get_value_none_handle(root_zero_get, 'clashscore-full-length')
@@ -81,8 +82,12 @@ class XmlParser(Parser):
         dcc_r = get_value_none_handle(root_zero_get, 'DCC_R')
         dcc_r_free = get_value_none_handle(root_zero_get, 'DCC_Rfree')
         dcc_r_free_percentil = get_value_none_handle(root_zero_get, 'absolute-percentile-DCC_Rfree')
-        angles_rmsz_structure = get_value_none_handle(root_zero_get, 'angles_rmsz')
-        bonds_rmsz_structure = get_value_none_handle(root_zero_get, 'bonds_rmsz')
+        angles_rmsz_structure = max(
+            [float(root[i].get('angles_rmsz')) for i in range(0, len(root)) if
+             root[i].get('angles_rmsz') is not None])
+        bonds_rmsz_structure = max(
+            [float(root[i].get('bonds_rmsz')) for i in range(0, len(root)) if
+             root[i].get('bonds_rmsz') is not None])
         percent_rsrz_outliers = get_value_none_handle(root_zero_get, 'percent-RSRZ-outliers')
         rsrz_outliers_percentil = get_value_none_handle(root_zero_get, 'absolute-percentile-percent-RSRZ-outliers')
         if dcc_r_free_percentil != NAN_VALUE and rsrz_outliers_percentil != NAN_VALUE:
@@ -100,7 +105,7 @@ class XmlParser(Parser):
         # else:
         #     highest_chain_bonds_rmsz = NAN_VALUE
         try:
-            highest_chain_bonds_rmsz = bonds_rmsz_structure if bonds_rmsz_structure > 0.0 else 0.0
+            highest_chain_bonds_rmsz = float(bonds_rmsz_structure) if float(bonds_rmsz_structure) > 0.0 else 0.0
         # comparing text and
         except TypeError:
             highest_chain_bonds_rmsz = 0.0
@@ -166,7 +171,8 @@ class XmlParser(Parser):
              'DCC_R': dcc_r, 'DCC_Rfree': dcc_r_free, 'absolute-percentile-DCC_Rfree': dcc_r_free_percentil,
              'AngleRMSZstructure': angles_rmsz_structure, 'BondRMSZstructure': bonds_rmsz_structure,
              'RSRZoutliers': percent_rsrz_outliers,
-             'RSRZoutliersPercentile': percent_rsrz_outliers, 'combinedXrayQualityMetric': combined_xray_quality_metric,
+             'RSRZoutliersPercentile': rsrz_outliers_percentil,
+             'combinedXrayQualityMetric': combined_xray_quality_metric,
              'highestChainBondsRMSZ': highest_chain_bonds_rmsz, 'highestChainAnglesRMSZ': highest_chain_angles_rmsz,
              'averageResidueRSR': average_residue_rsr, 'averageLigandRSR': average_ligand_rsr,
              'averageLigandAngleRMSZ': average_ligand_angle_rmsz, 'averageLigandBondRMSZ': average_ligand_bonds_rmsz,

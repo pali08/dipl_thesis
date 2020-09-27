@@ -2,6 +2,17 @@ from src.global_constants_and_functions import METALS, division_zero_div_handlin
 from src.json_parser import JsonParser
 
 
+def get_binary(value, topval):
+    if type(value) == float or type(value) == int:
+        if topval == 0:
+            return int(bool(value))
+        if topval == 1 and value == 1:
+            return topval
+        return 0
+    else:
+        return NAN_VALUE
+
+
 class VdbParser(JsonParser):
     def __init__(self, filename):
         super().__init__(filename)
@@ -36,16 +47,6 @@ class VdbParser(JsonParser):
         """
         return bool(
             {i.lower() for i in self.json_dict['Models'][model_num]['ModelAtomTypes'].values()}.intersection(METALS))
-
-    def get_binary(self, value, topval):
-        if type(value) == float or type(value) == int:
-            if topval == 0:
-                return int(bool(value))
-            if topval == 1 and value == 1:
-                return topval
-            return 0
-        else:
-            return NAN_VALUE
 
     def get_counts(self):
         try:
@@ -152,12 +153,15 @@ class VdbParser(JsonParser):
              for i in range(0, len(self.json_dict['Models']))])
         carbon_chira_problem_ratio = division_zero_div_handling(wrong_c_chira_count,
                                                                 total_c_chira_count)  # ChiraProblemsPrecise
-        both_problem_ratio = sum([i for i in [float(carbon_chira_problem_ratio), float(missing_atom_ratio)] if
-                                  is_float(i)])  # LigandTopologyCarbonChiraProblemsPrecise
-        good_ligand_ratio_binary = self.get_binary(good_ligand_ratio, 1)
-        missing_atom_ratio_binary = self.get_binary(missing_atom_ratio, 0)
-        both_problem_ratio_binary = self.get_binary(both_problem_ratio, 0)
-        carbon_chira_problem_ratio_binary = self.get_binary(carbon_chira_problem_ratio, 0)
+        if carbon_chira_problem_ratio != NAN_VALUE and missing_atom_ratio != NAN_VALUE:
+            both_problem_ratio = sum([i for i in [float(carbon_chira_problem_ratio), float(missing_atom_ratio)] if
+                                      is_float(i)])  # LigandTopologyCarbonChiraProblemsPrecise
+        else:
+            both_problem_ratio = NAN_VALUE
+        good_ligand_ratio_binary = get_binary(good_ligand_ratio, 1)
+        missing_atom_ratio_binary = get_binary(missing_atom_ratio, 0)
+        both_problem_ratio_binary = get_binary(both_problem_ratio, 0)
+        carbon_chira_problem_ratio_binary = get_binary(carbon_chira_problem_ratio, 0)
         self.result_dict.update(
             {'ChiralProblemLigandRatio': chiral_problem_ligand_ratio,
              'GoodLigandRatio': good_ligand_ratio,
