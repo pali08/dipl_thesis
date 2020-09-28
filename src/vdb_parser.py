@@ -151,13 +151,23 @@ class VdbParser(JsonParser):
         total_c_chira_count = sum(
             [len(self.json_dict['Models'][i]['ChiralAtomsInfo']['Carbon']) * len(self.json_dict['Models'][i]['Entries'])
              for i in range(0, len(self.json_dict['Models']))])
-        carbon_chira_problem_ratio = division_zero_div_handling(wrong_c_chira_count,
-                                                                total_c_chira_count)  # ChiraProblemsPrecise
-        if carbon_chira_problem_ratio != NAN_VALUE and missing_atom_ratio != NAN_VALUE:
-            both_problem_ratio = sum([i for i in [float(carbon_chira_problem_ratio), float(missing_atom_ratio)] if
-                                      is_float(i)])  # LigandTopologyCarbonChiraProblemsPrecise
-        else:
-            both_problem_ratio = NAN_VALUE
+        # carbon_chira_problem_ratio = division_zero_div_handling(wrong_c_chira_count,
+        #                                                         total_c_chira_count)  # ChiraProblemsPrecise
+        # if carbon_chira_problem_ratio != NAN_VALUE or missing_atom_ratio != NAN_VALUE:
+        #     both_problem_ratio = sum([float(i) for i in [carbon_chira_problem_ratio, missing_atom_ratio] if
+        #                               is_float(i) if is_float(i)])  # LigandTopologyCarbonChiraProblemsPrecise
+        # else:
+        #     both_problem_ratio = 0
+        carbon_chira_problem_ratio = NAN_VALUE
+        both_problem_ratio = NAN_VALUE
+        if total_c_chira_count != 0:
+            carbon_chira_problem_ratio = division_zero_div_handling(wrong_c_chira_count,
+                                                                    total_c_chira_count)  # ChiraProblemsPrecise
+            both_problem_ratio = sum([float(i) for i in [carbon_chira_problem_ratio, missing_atom_ratio] if
+                                      is_float(i) if is_float(i)])  # LigandTopologyCarbonChiraProblemsPrecise
+        elif self.result_dict['hetatmCountFiltered'] != 0:
+            carbon_chira_problem_ratio = 0
+            both_problem_ratio = 0
         good_ligand_ratio_binary = get_binary(good_ligand_ratio, 1)
         missing_atom_ratio_binary = get_binary(missing_atom_ratio, 0)
         both_problem_ratio_binary = get_binary(both_problem_ratio, 0)
