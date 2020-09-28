@@ -81,13 +81,17 @@ class XmlParser(Parser):
             combined_quality_geometry = NAN_VALUE
         dcc_r = get_value_none_handle(root_zero_get, 'DCC_R')
         dcc_r_free = get_value_none_handle(root_zero_get, 'DCC_Rfree')
+        if not is_float(dcc_r_free):
+            dcc_r_free = NAN_VALUE
         dcc_r_free_percentil = get_value_none_handle(root_zero_get, 'absolute-percentile-DCC_Rfree')
-        angles_rmsz_structure = max(
-            [float(root[i].get('angles_rmsz')) for i in range(0, len(root)) if
-             root[i].get('angles_rmsz') is not None])
-        bonds_rmsz_structure = max(
-            [float(root[i].get('bonds_rmsz')) for i in range(0, len(root)) if
-             root[i].get('bonds_rmsz') is not None])
+        # angles_rmsz_structure = max(
+        #     [float(root[i].get('angles_rmsz')) for i in range(0, len(root)) if
+        #      root[i].get('angles_rmsz') is not None])
+        angles_rmsz_structure = get_value_none_handle(root_zero_get, 'angles_rmsz')
+        # bonds_rmsz_structure = max(
+        #     [float(root[i].get('bonds_rmsz')) for i in range(0, len(root)) if
+        #      root[i].get('bonds_rmsz') is not None])
+        bonds_rmsz_structure = get_value_none_handle(root_zero_get, 'bonds_rmsz')
         percent_rsrz_outliers = get_value_none_handle(root_zero_get, 'percent-RSRZ-outliers')
         rsrz_outliers_percentil = get_value_none_handle(root_zero_get, 'absolute-percentile-percent-RSRZ-outliers')
         if dcc_r_free_percentil != NAN_VALUE and rsrz_outliers_percentil != NAN_VALUE:
@@ -105,14 +109,23 @@ class XmlParser(Parser):
         # else:
         #     highest_chain_bonds_rmsz = NAN_VALUE
         try:
-            highest_chain_bonds_rmsz = float(bonds_rmsz_structure) if float(bonds_rmsz_structure) > 0.0 else 0.0
-        # comparing text and
+            highest_chain_bonds_rmsz = max(
+                [float(root[i].get('bonds_rmsz')) for i in range(0, len(root)) if
+                 root[i].get('bonds_rmsz') is not None])
+            # highest_chain_bonds_rmsz = float(bonds_rmsz_structure) if float(bonds_rmsz_structure) > 0.0 else 0.0
         except TypeError:
             highest_chain_bonds_rmsz = 0.0
+        except ValueError:
+            highest_chain_bonds_rmsz = NAN_VALUE
         try:
-            highest_chain_angles_rmsz = angles_rmsz_structure if angles_rmsz_structure > 0.0 else 0.0
+            highest_chain_angles_rmsz = max(
+                [float(root[i].get('angles_rmsz')) for i in range(0, len(root)) if
+                 root[i].get('angles_rmsz') is not None])
+            # highest_chain_angles_rmsz = angles_rmsz_structure if angles_rmsz_structure > 0.0 else 0.0
         except TypeError:
             highest_chain_angles_rmsz = 0.0
+        except ValueError:
+            highest_chain_angles_rmsz = NAN_VALUE
         residue_count = len(list(filter(lambda x: x.tag == 'ModelledSubgroup' and 'mogul_bonds_rmsz' not in x.attrib,
                                         list(self.tree.getroot()))))
         try:
@@ -123,46 +136,56 @@ class XmlParser(Parser):
         except KeyError:
             residue_rsr_num = NAN_VALUE
         average_residue_rsr = division_zero_div_handling(residue_rsr_num, residue_count)
-        ligand_count = len(list(filter(lambda x: 'mogul_bonds_rmsz' not in x.attrib,
+        ligand_count = len(list(filter(lambda x: 'mogul_bonds_rmsz' in x.attrib,
                                        list(self.tree.getroot()))))
         ligand_rsr_list = nan_if_list_empty([float(i.get('rsr')) for i in
                                              list(filter(
-                                                 lambda x: x.tag == 'ModelledSubgroup' and x.get('rsr') is not None,
+                                                 lambda x: x.tag == 'ModelledSubgroup'
+                                                           and x.get('rsr') is not None
+                                                           and x.get('mogul_bonds_rmsz') is not None,
                                                  list(self.tree.getroot())))])
         try:
             ligand_rsr_sum = sum(ligand_rsr_list)
         except TypeError:
             ligand_rsr_sum = ligand_rsr_list  # NAN
         average_ligand_rsr = division_zero_div_handling(ligand_rsr_sum, ligand_count)
-        rmsz_angles_list = nan_if_list_empty([float(i.get('rsr')) for i in list(
+        rmsz_angles_list = nan_if_list_empty([float(i.get('mogul_angles_rmsz')) for i in list(
             filter(
-                lambda x: x.tag == 'ModelledSubgroup' and 'mogul_angles_rmsz' in x.attrib and x.get('rsr') is not None,
+                lambda x: x.tag == 'ModelledSubgroup' and 'mogul_angles_rmsz' in x.attrib
+                # and x.get('rsr') is not None
+                ,
                 list(self.tree.getroot())))])
         try:
             ligand_rmsz_sum_angles = sum(rmsz_angles_list)
         except TypeError:
             ligand_rmsz_sum_angles = rmsz_angles_list  # NAN
         average_ligand_angle_rmsz = division_zero_div_handling(ligand_rmsz_sum_angles, ligand_count)
-        rmsz_bonds_list = nan_if_list_empty([float(i.get('rsr')) for i in list(
+        rmsz_bonds_list = nan_if_list_empty([float(i.get('mogul_bonds_rmsz')) for i in list(
             filter(
-                lambda x: x.tag == 'ModelledSubgroup' and 'mogul_bonds_rmsz' in x.attrib and x.get('rsr') is not None,
+                lambda x: x.tag == 'ModelledSubgroup' and 'mogul_bonds_rmsz' in x.attrib  # and x.get('rsr') is not None
+                ,
                 list(self.tree.getroot())))])
         try:
             ligand_rmsz_sum_bonds = sum(rmsz_bonds_list)
         except TypeError:
-            ligand_rmsz_sum_bonds = rmsz_angles_list  # NAN
+            ligand_rmsz_sum_bonds = rmsz_bonds_list  # NAN
         average_ligand_bonds_rmsz = division_zero_div_handling(ligand_rmsz_sum_bonds, ligand_count)
         ligand_rscc_list = nan_if_list_empty([float(i.get('rscc')) for i in
                                               list(filter(
-                                                  lambda x: x.tag == 'ModelledSubgroup' and x.get('rscc') is not None,
+                                                  lambda x: x.tag == 'ModelledSubgroup'
+                                                            and x.get('rscc') is not None
+                                                            and x.get('mogul_bonds_rmsz') is not None,
                                                   list(self.tree.getroot())))])
         try:
-            ligand_rscc_sum = sum(ligand_rsr_list)
+            ligand_rscc_sum = sum(ligand_rscc_list)
         except TypeError:
-            ligand_rscc_sum = ligand_rsr_list  # NAN
+            ligand_rscc_sum = ligand_rscc_list  # NAN
         average_ligand_rscc = division_zero_div_handling(ligand_rscc_sum, ligand_count)
-        ligand_rscc_outlier_count = len(list(filter(lambda x: is_float(x) and float(x) < 0.8, ligand_rscc_list)))
-        ligand_rscc_outlier_ratio = ligand_rscc_outlier_count / ligand_count
+        if ligand_rscc_list != NAN_VALUE:
+            ligand_rscc_outlier_count = len(list(filter(lambda x: is_float(x) and float(x) < 0.8, ligand_rscc_list)))
+            ligand_rscc_outlier_ratio = division_zero_div_handling(ligand_rscc_outlier_count, ligand_count)
+        else:
+            ligand_rscc_outlier_ratio = NAN_VALUE
         self.result_dict.update(
             {'clashscore': clashscore, 'RamaOutliers': rama_outliers, 'SidechainOutliers': sidechain_outliers,
              'ClashscorePercentile': clashscore_percentil, 'RamaOutliersPercentile': rama_outliers_percentil,
