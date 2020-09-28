@@ -56,7 +56,6 @@ class PdbParser(Parser):
         Get different structure weights based on type of molecules
         :return: list of weights
         """
-        #print(self.filename)
         try:
             entities_list = list(zip(self.mmcif_dict['_entity.type'],
                                      [multiplying_question_mark_handling(i[0], i[1]) for i in
@@ -64,7 +63,6 @@ class PdbParser(Parser):
                                                self.mmcif_dict[
                                                    '_entity.pdbx_number_of_molecules'
                                                ]))]))
-            # debug output:
             polymer_weight = float(sum([i[1] for i in entities_list if i[0] == "polymer"])) / 1000  # in kDaltons
             non_polymer_weight = float(sum([i[1] for i in entities_list if i[0] == "non-polymer"]))  # in Daltons
             water_weight = float(sum([i[1] for i in entities_list if i[0] == "water"]))  # in Daltons
@@ -123,7 +121,10 @@ class PdbParser(Parser):
         except KeyError:
             ligand_count = NAN_VALUE
             print(self.key_error_output('ligand count'))
-        aa_ligand_count = int(addition_nan_handling(aa_count, ligand_count))
+        try:
+            aa_ligand_count = int(addition_nan_handling(aa_count, ligand_count))
+        except ValueError:
+            aa_ligand_count = NAN_VALUE
         try:
             nonwater_ligand_count = len(set(
                 [(self.mmcif_dict['_atom_site.auth_seq_id'][i], self.mmcif_dict['_atom_site.auth_asym_id'][i]) for i in

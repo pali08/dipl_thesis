@@ -55,7 +55,6 @@ class VdbParser(JsonParser):
             ligand_count_filtered = NAN_VALUE
             print(self.key_error_output('ligand count filtered'))
         try:
-            # total_atom_count = len([j for i in self.json_dict['Models'] for j in i['ModelAtomTypes']])
             total_atom_count = sum(
                 [len(self.json_dict['Models'][i]['ModelAtomTypes']) * len(self.json_dict['Models'][i]['Entries']) for i
                  in range(0, len(self.json_dict['Models']))])
@@ -69,14 +68,11 @@ class VdbParser(JsonParser):
             total_atom_count_metal_ligands = sum([i * j for i, j in
                                                   zip(total_atom_count_metal_ligands_modelatomtypes,
                                                       total_atom_count_metal_ligands_entries)])
-            # print(total_atom_count_metal_ligands)
         except KeyError:
             total_atom_count = NAN_VALUE
             total_atom_count_metal_ligands = NAN_VALUE
             print(self.key_error_output('hetatm count filtered (metal)'))
         try:
-            # total_c_chiral_count = sum(map(len, [self.json_dict['Models'][i]['ChiralAtomsInfo']['Carbon'] for i in
-            #                                      range(len(self.json_dict['Models']))]))
             total_c_chiral_count = sum([len(self.json_dict['Models'][i]['ChiralAtomsInfo']['Carbon']) * len(
                 self.json_dict['Models'][i]['Entries']) for i in range(0, len(self.json_dict['Models']))])
         except KeyError:
@@ -135,7 +131,7 @@ class VdbParser(JsonParser):
             [self.json_dict['Models'][i]['Summary']['HasAll_BadChirality_Carbon'] for i in
              range(0, len(self.json_dict['Models']))])) - missing_atoms_rings
         good_ligand_ratio = division_zero_div_handling(good_ligand_count, self.result_dict['ligandCountFiltered'])
-        topology_problem_ligand_ratio = division_zero_div_handling(missing_rings,
+        topology_problem_ligand_ratio = division_zero_div_handling(missing_atoms_rings,
                                                                    self.result_dict['ligandCountFiltered'])
         missing_atom_count = len([self.json_dict['Models'][i]['Entries'][j]['MissingAtoms'][k] for i in
                                   range(0, len(self.json_dict['Models'])) for j in
@@ -151,13 +147,6 @@ class VdbParser(JsonParser):
         total_c_chira_count = sum(
             [len(self.json_dict['Models'][i]['ChiralAtomsInfo']['Carbon']) * len(self.json_dict['Models'][i]['Entries'])
              for i in range(0, len(self.json_dict['Models']))])
-        # carbon_chira_problem_ratio = division_zero_div_handling(wrong_c_chira_count,
-        #                                                         total_c_chira_count)  # ChiraProblemsPrecise
-        # if carbon_chira_problem_ratio != NAN_VALUE or missing_atom_ratio != NAN_VALUE:
-        #     both_problem_ratio = sum([float(i) for i in [carbon_chira_problem_ratio, missing_atom_ratio] if
-        #                               is_float(i) if is_float(i)])  # LigandTopologyCarbonChiraProblemsPrecise
-        # else:
-        #     both_problem_ratio = 0
         carbon_chira_problem_ratio = NAN_VALUE
         both_problem_ratio = NAN_VALUE
         if total_c_chira_count != 0:

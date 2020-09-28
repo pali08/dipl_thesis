@@ -63,16 +63,16 @@ class XmlParser(Parser):
                 [1 / i for i in
                  [float(clashscore_percentil), float(rama_outliers_percentil), float(sidechain_outliers_percentil)] if
                  is_float(i) and not np.isclose(i, 0)])
-            print(summation_percentiles_1)
-            print(type(summation_percentiles_1))
+            # print(summation_percentiles_1)
+            # print(type(summation_percentiles_1))
             if rna_percentil == NAN_VALUE:
                 combined_quality_geometry = division_zero_div_handling(1, (
                     division_zero_div_handling(summation_percentiles_1, 3)))
             else:
-                print(summation_percentiles_1)
-                print(type(summation_percentiles_1))
-                print(rna_percentil)
-                print(type(rna_percentil))
+                # print(summation_percentiles_1)
+                # print(type(summation_percentiles_1))
+                # print(rna_percentil)
+                # print(type(rna_percentil))
                 summation_percentiles_1 += division_zero_div_handling(1, float(rna_percentil)) if is_float(
                     division_zero_div_handling(1, float(rna_percentil))) else summation_percentiles_1
                 combined_quality_geometry = division_zero_div_handling(1, (

@@ -38,17 +38,12 @@ def get_molecules(random_data_csv_dicts):
 def get_result_dicts(molecules, *filepaths):
     list_of_result_dicts = []
     for i in molecules:
-        # print(i)
         list_of_result_dicts.append(AllFilesParser(i, *filepaths).result_dict)
-    print(list_of_result_dicts)
     return list_of_result_dicts
 
 
 def compare(random_data_csv_dicts, result_dicts):
     success_rate = {'Passed': 0, 'Failed': 0}
-    # print(result_dicts)
-    # print(result_dicts[0])
-    # print(random_data_csv_dicts[0])
     for result_dict in result_dicts:
         errors = 0
         if 'PDB ID' not in result_dict:
@@ -58,7 +53,6 @@ def compare(random_data_csv_dicts, result_dicts):
             print('Testing ' + result_dict['PDB ID'])
             for random_data_csv_dict in random_data_csv_dicts:
                 if random_data_csv_dict['PDB ID'].upper() == result_dict['PDB ID'].upper():
-                    # print('Its a match')
                     for key, value in result_dict.items():
                         if key not in random_data_csv_dict:
                             # TODO When we will parse all data, we also need to compare, that all data.csv column are
@@ -66,7 +60,6 @@ def compare(random_data_csv_dicts, result_dicts):
                             print('Test failed: ' + key + ' not in data.csv')
                             errors += 1
                         else:
-                            # print(key)
                             if str(value).lower() == str(random_data_csv_dict[key].lower()) \
                                     and not is_float(value) \
                                     and not is_float(random_data_csv_dict[key]):
