@@ -132,4 +132,18 @@ def nan_if_list_empty(input_iterable):
             'list_emptiness function: input argument must be list, tuple, dict or set, not' + str(type(input_iterable)))
 
 
+def value_for_result_dictionary(input_dictionary, key):
+    """
+    :param input_dictionary:
+    :param key:
+    :return: If key is in input dictionary get its value which will be added to result dictionary.
+    NAN value otherwise
+    """
+    if key in input_dictionary:
+        return input_dictionary['value']
+    return NAN_VALUE
 
+
+biopolymers = ['polypeptide(L)', 'polypeptide(D)', 'polyribonucleotide', 'polydeoxyribonucleotide', 'polysaccharide(D)',
+               'polysaccharide(L)', 'polydeoxyribonucleotide/polyribonucleotide hybrid', 'cyclic-pseudo-peptide',
+               'peptide nucleic acid']

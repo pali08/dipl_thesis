@@ -3,6 +3,7 @@ import os
 from src.global_constants_and_functions import is_float
 from src.pdb_parser import PdbParser
 from src.combined_data_computer import CombinedDataComputer
+from src.rest_parser import RestParser
 from src.vdb_parser import VdbParser
 from src.xml_parser import XmlParser
 
@@ -15,6 +16,10 @@ class AllFilesParser:
         self.pdb_result_dict = PdbParser(self.get_pdb_filepath()).result_dict
         self.vdb_result_dict = VdbParser(self.get_vdb_filepath()).result_dict
         self.xml_result_dict = XmlParser(self.get_xml_filepath()).result_dict
+        self.rest_result_dict_assembly = RestParser(self.get_rest_filepath()[0]).result_dict
+        self.rest_result_dict_molecules = RestParser(self.get_rest_filepath()[1]).result_dict
+        self.rest_result_dict_summary = RestParser(self.get_rest_filepath()[2]).result_dict
+
         self.combined_data_result_dict = CombinedDataComputer(self.pdb_result_dict, self.vdb_result_dict,
                                                               self.xml_result_dict).result_dict
         self.result_dict = {**self.pdb_result_dict, **self.vdb_result_dict,
@@ -66,9 +71,11 @@ class AllFilesParser:
     def get_xml_filepath(self):
         return os.path.join(self.filepaths[2], self.molecule + '_validation.xml')
 
-    def get_rest_filepath(self, subfolder):
-        pass
-        # TODO return os.path.join(self.filepaths[3], subfolder, self.molecule + '.json')
+    def get_rest_filepath(self):
+        assembly = os.path.join(self.filepaths[3], 'assembly', self.molecule + '.json')
+        molecules = os.path.join(self.filepaths[3], 'molecules', self.molecule + '.json')
+        summary = os.path.join(self.filepaths[3], 'summary', self.molecule + '.json')
+        return assembly, molecules, summary
 
     def result_dict_final_edit(self):
         """
