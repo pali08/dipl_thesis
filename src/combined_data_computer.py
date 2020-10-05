@@ -38,6 +38,16 @@ class CombinedDataComputer:
         if self.rest_assembly_values_dict and self.rest_molecules_values_dict:
             total_biopolymer_weight = sum(
                 [self.rest_assembly_values_dict.biopolymers_entities_list[i] *
-                 self.rest_assembly_values_dict.all_values_list[0]['weight'] for i in
-                 range(0, len(self.rest_assembly_values_dict.biopolymers_entities_list))])
-            self.result_dict.update({'AssemblyBiopolymerWeight': total_biopolymer_weight})
+                 self.rest_molecules_values_dict.all_values_list[0]['weight'] for i in
+                 range(0, len(self.rest_assembly_values_dict.biopolymers_entities_list))]) / 1000
+            total_ligand_weight = sum(
+                [self.rest_assembly_values_dict.ligand_entities_list[i] *
+                 self.rest_molecules_values_dict.all_values_list[0]['weight'] for i in
+                 range(0, len(self.rest_assembly_values_dict.ligand_entities_list))])
+            total_water_weight = sum(
+                [self.rest_assembly_values_dict.water_entities_list[i] *
+                 self.rest_molecules_values_dict.all_values_list[0]['weight'] for i in
+                 range(0, len(self.rest_assembly_values_dict.water_entities_list))])
+            self.result_dict.update(
+                {'AssemblyBiopolymerWeight': total_biopolymer_weight, 'AssemblyLigandWeight': total_ligand_weight,
+                 'AssemblyWaterWeight': total_water_weight})

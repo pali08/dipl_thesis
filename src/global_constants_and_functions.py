@@ -13,7 +13,7 @@ WATER_MOLECULE = 'HOH'
 WATER_MOL_WEIGHT = 18.015
 NAN_VALUE = 'nan'
 
-columns = ['pdbid', 'resolution', 'year', 'structureWeight', 'polymerWeight', 'nonPolymerWeightWithWater',
+COLUMNS = ['pdbid', 'resolution', 'year', 'structureWeight', 'polymerWeight', 'nonPolymerWeightWithWater',
            'nonPolymerWeight', 'waterWeight',
            'atomCount', 'hetatmCount', 'allAtomCount', 'allAtomCountLn',
            'aaCount', 'ligandCount', 'aaLigandCount',
@@ -21,6 +21,11 @@ columns = ['pdbid', 'resolution', 'year', 'structureWeight', 'polymerWeight', 'n
            'hetatmCount_metal', 'ligandCount_metal', 'ligandRatio_metal', 'hetatmCountNometal', 'ligandCountNometal',
            'ligandRatioNometal', 'hetatmCountNowaterNometal', 'ligandCountNowaterNometal',
            'ligandRatioNowaterNometal']
+
+BIOPOLYMERS = ['polypeptide(L)', 'polypeptide(D)', 'polyribonucleotide', 'polydeoxyribonucleotide', 'polysaccharide(D)',
+               'polysaccharide(L)', 'polydeoxyribonucleotide/polyribonucleotide hybrid', 'cyclic-pseudo-peptide',
+               'peptide nucleic acid']
+CORRELATION_COEF_THRESHOLD_RSCC = 0.8
 
 
 def to_float(val):
@@ -142,8 +147,3 @@ def value_for_result_dictionary(input_dictionary, key):
     if key in input_dictionary:
         return input_dictionary['value']
     return NAN_VALUE
-
-
-biopolymers = ['polypeptide(L)', 'polypeptide(D)', 'polyribonucleotide', 'polydeoxyribonucleotide', 'polysaccharide(D)',
-               'polysaccharide(L)', 'polydeoxyribonucleotide/polyribonucleotide hybrid', 'cyclic-pseudo-peptide',
-               'peptide nucleic acid']

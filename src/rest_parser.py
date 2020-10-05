@@ -1,6 +1,6 @@
 import os
 
-from src.global_constants_and_functions import NAN_VALUE, value_for_result_dictionary, biopolymers
+from src.global_constants_and_functions import NAN_VALUE, value_for_result_dictionary, BIOPOLYMERS
 from src.json_parser import JsonParser
 
 
@@ -16,6 +16,8 @@ class RestParser(JsonParser):
         self.all_values_list = self.json_dict[self.molecule_name]
         if self.subfolder.lower() == 'assembly':
             self.biopolymers_entities_list = None
+            self.ligand_entities_list = None
+            self.water_entities_list = None
             self.result_dict = {}
             self.get_assembly_data()
         elif self.subfolder.lower() == 'molecules':
@@ -33,18 +35,20 @@ class RestParser(JsonParser):
         molecular_weight = value_for_result_dictionary(self.all_values_list[0], 'molecular_weight')
         biopolymers_entities_list = [float(self.all_values_list[0]['entities'][i]['number_of_copies']) for i in
                                      range(0, len(self.all_values_list[0]['entities'])) if
-                                     self.all_values_list[0]['entities'][i]['molecule_type'] in biopolymers]
+                                     self.all_values_list[0]['entities'][i]['molecule_type'] in BIOPOLYMERS]
         self.biopolymers_entities_list = biopolymers_entities_list
         total_biopolymer_count = sum(biopolymers_entities_list)
         assembly_unique_biopolymer_count = len(biopolymers_entities_list)
         ligand_entities_list = [float(self.all_values_list[0]['entities'][i]['number_of_copies']) for i in
                                 range(0, len(self.all_values_list[0]['entities'])) if
                                 self.all_values_list[0]['entities'][i]['molecule_type'].lower() == 'bound']
+        self.ligand_entities_list = ligand_entities_list
         total_ligand_count = sum(ligand_entities_list)
         ligand_entity_count = len(ligand_entities_list)
         water_entities_list = [float(self.all_values_list[0]['entities'][i]['number_of_copies']) for i in
                                range(0, len(self.all_values_list[0]['entities'])) if
                                self.all_values_list[0]['entities'][i]['molecule_type'].lower() == 'water']
+        self.water_entities_list = water_entities_list
         total_water_count = sum(water_entities_list)
         self.result_dict.update(
             {'AssemblyTotalWeight': molecular_weight, 'AssemblyBiopolymerCount': total_biopolymer_count,

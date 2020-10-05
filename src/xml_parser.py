@@ -4,7 +4,8 @@ import xml.etree.ElementTree as eTree
 
 import numpy as np
 
-from src.global_constants_and_functions import NAN_VALUE, division_zero_div_handling, nan_if_list_empty, is_float
+from src.global_constants_and_functions import NAN_VALUE, division_zero_div_handling, nan_if_list_empty, is_float, \
+    CORRELATION_COEF_THRESHOLD_RSCC
 from src.parser import Parser
 
 
@@ -182,10 +183,26 @@ class XmlParser(Parser):
             ligand_rscc_sum = ligand_rscc_list  # NAN
         average_ligand_rscc = division_zero_div_handling(ligand_rscc_sum, ligand_count)
         if ligand_rscc_list != NAN_VALUE:
-            ligand_rscc_outlier_count = len(list(filter(lambda x: is_float(x) and float(x) < 0.8, ligand_rscc_list)))
+            ligand_rscc_outlier_count = len(
+                list(filter(lambda x: is_float(x) and float(x) < CORRELATION_COEF_THRESHOLD_RSCC, ligand_rscc_list)))
             ligand_rscc_outlier_ratio = division_zero_div_handling(ligand_rscc_outlier_count, ligand_count)
         else:
             ligand_rscc_outlier_ratio = NAN_VALUE
+
+        residue_rscc_list = nan_if_list_empty([float(i.get('rscc')) for i in
+                                               list(filter(
+                                                   lambda x: x.tag == 'ModelledSubgroup'
+                                                             and x.get('rscc') is not None
+                                                             and x.get('mogul_bonds_rmsz') is None,
+                                                   list(self.tree.getroot())))])
+        try:
+            residue_rscc_sum = sum(residue_rscc_list)
+        except TypeError:
+            residue_rscc_sum = residue_rscc_list # NAN_VALUE
+        average_residue_rscc = division_zero_div_handling(residue_rscc_sum, residue_count)
+        residue_rscc_outlier_count = len(
+            list(filter(lambda x: is_float(x) and float(x) < CORRELATION_COEF_THRESHOLD_RSCC, residue_rscc_list)))
+        residue_rscc_outlier_ratio = division_zero_div_handling(residue_rscc_outlier_count, residue_count)
         self.result_dict.update(
             {'clashscore': clashscore, 'RamaOutliers': rama_outliers, 'SidechainOutliers': sidechain_outliers,
              'ClashscorePercentile': clashscore_percentil, 'RamaOutliersPercentile': rama_outliers_percentil,
@@ -199,7 +216,8 @@ class XmlParser(Parser):
              'highestChainBondsRMSZ': highest_chain_bonds_rmsz, 'highestChainAnglesRMSZ': highest_chain_angles_rmsz,
              'averageResidueRSR': average_residue_rsr, 'averageLigandRSR': average_ligand_rsr,
              'averageLigandAngleRMSZ': average_ligand_angle_rmsz, 'averageLigandBondRMSZ': average_ligand_bonds_rmsz,
-             'averageLigandRSCC': average_ligand_rscc, 'ligandRSCCoutlierRatio': ligand_rscc_outlier_ratio})
+             'averageLigandRSCC': average_ligand_rscc, 'ligandRSCCoutlierRatio': ligand_rscc_outlier_ratio,
+             'averageResidueRSCC': average_residue_rscc, 'residueRSCCoutlierRatio': residue_rscc_outlier_ratio})
 
     def create_result_dict(self):
         if super().file_exists():
