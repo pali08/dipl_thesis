@@ -9,16 +9,15 @@ from src.xml_parser import XmlParser
 
 
 class AllFilesParser:
-
-    def __init__(self, molecule, *filepaths):
+    def __init__(self, molecule, ligand_stats_csv, *filepaths):
         self.filepaths = filepaths
         self.molecule = molecule
         self.pdb_result_dict = PdbParser(self.get_pdb_filepath()).result_dict
         self.vdb_result_dict = VdbParser(self.get_vdb_filepath()).result_dict
         self.xml_result_dict = XmlParser(self.get_xml_filepath()).result_dict
-        self.rest_result_dict_assembly = RestParser(self.get_rest_filepath()[0]).result_dict
-        self.rest_result_dict_molecules = RestParser(self.get_rest_filepath()[1]).result_dict
-        self.rest_result_dict_summary = RestParser(self.get_rest_filepath()[2]).result_dict
+        self.rest_result_dict_assembly = RestParser(self.get_rest_filepath()[0], ligand_stats_csv).result_dict
+        self.rest_result_dict_molecules = RestParser(self.get_rest_filepath()[1], ligand_stats_csv).result_dict
+        self.rest_result_dict_summary = RestParser(self.get_rest_filepath()[2], ligand_stats_csv).result_dict
 
         self.combined_data_result_dict = CombinedDataComputer(self.pdb_result_dict, self.vdb_result_dict,
                                                               self.xml_result_dict).result_dict

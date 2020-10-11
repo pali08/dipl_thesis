@@ -1,3 +1,4 @@
+import csv
 import inspect
 
 METALS = {'li', 'na', 'k', 'rb', 'cs', 'fr',
@@ -147,3 +148,5 @@ def value_for_result_dictionary(input_dictionary, key):
     if key in input_dictionary:
         return input_dictionary['value']
     return NAN_VALUE
+
+

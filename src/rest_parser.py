@@ -1,7 +1,17 @@
 import os
-
+import csv
 from src.global_constants_and_functions import NAN_VALUE, value_for_result_dictionary, BIOPOLYMERS
 from src.json_parser import JsonParser
+
+
+def get_ligand_stats_csv(filename):
+    """
+    :param filename: ligand_stats.csv
+    :return: ligand stats in format: [<key(ligand name)>: [<heavyAtomSize (index 0)>, <flexibility (index 1)>]]
+    """
+    with open(filename, encoding='utf-8', mode='r') as csvfile:
+        reader = csv.reader(csvfile, delimiter=';')
+        return {i[0]: [i[1], i[2]] for i in list(reader)}
 
 
 class UnknownSubfolderException(Exception):
@@ -9,8 +19,15 @@ class UnknownSubfolderException(Exception):
 
 
 class RestParser(JsonParser):
-    def __init__(self, filename):
+    # ligand_stats is static variable - when creating first RestParser object it is initialized
+    # None -> dictionary.  When creating second, third... instances of the class, ligand stats dictionary
+    # is already initialized - no need to initialize it again - it is same for all instances
+    ligand_stats = None
+
+    def __init__(self, filename, ligand_stats_csv_filename):
         super().__init__(filename)
+        if RestParser.ligand_stats is None:
+            RestParser.ligand_stats = get_ligand_stats_csv(ligand_stats_csv_filename)
         self.subfolder = filename.split(os.linesep)[-2]
         self.molecule_name = filename.split(os.linesep)[-1].split('.')[0].lower()
         self.all_values_list = self.json_dict[self.molecule_name]
@@ -61,4 +78,3 @@ class RestParser(JsonParser):
 
     def get_summary_data(self):
         release_date = value_for_result_dictionary(self.json_dict[self.filename][0], 'release_date')
-

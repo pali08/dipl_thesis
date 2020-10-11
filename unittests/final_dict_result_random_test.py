@@ -35,10 +35,10 @@ def get_molecules(random_data_csv_dicts):
     return [random_data_csv_dicts[i]['PDB ID'] for i in range(0, len(random_data_csv_dicts))]
 
 
-def get_result_dicts(molecules, *filepaths):
+def get_result_dicts(molecules, ligand_stats_csv, *filepaths):
     list_of_result_dicts = []
     for i in molecules:
-        list_of_result_dicts.append(AllFilesParser(i, *filepaths).result_dict)
+        list_of_result_dicts.append(AllFilesParser(i, ligand_stats_csv, *filepaths).result_dict)
     return list_of_result_dicts
 
 
@@ -98,5 +98,5 @@ def compare(random_data_csv_dicts, result_dicts):
 if __name__ == '__main__':
     data_csv_dicts = get_data_csv_random_records_dicts(int(sys.argv[1]), sys.argv[2])
     molecules_globalvar = get_molecules(data_csv_dicts)
-    result_dicts_globalvar = get_result_dicts(molecules_globalvar, *sys.argv[3:])
+    result_dicts_globalvar = get_result_dicts(molecules_globalvar, sys.argv[3], *sys.argv[4:])
     compare(data_csv_dicts, result_dicts_globalvar)
