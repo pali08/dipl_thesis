@@ -177,6 +177,12 @@ class XmlParser(Parser):
                                                             and x.get('rscc') is not None
                                                             and x.get('mogul_bonds_rmsz') is not None,
                                                   list(self.tree.getroot())))])
+        ligand_rscc_list_tuples_with_resid = nan_if_list_empty([(float(i.get('rscc')), i.get('resname')) for i in
+                                                                list(filter(
+                                                                    lambda x: x.tag == 'ModelledSubgroup'
+                                                                              and x.get('rscc') is not None
+                                                                              and x.get('mogul_bonds_rmsz') is not None,
+                                                                    list(self.tree.getroot())))])
         try:
             ligand_rscc_sum = sum(ligand_rscc_list)
         except TypeError:
@@ -198,7 +204,7 @@ class XmlParser(Parser):
         try:
             residue_rscc_sum = sum(residue_rscc_list)
         except TypeError:
-            residue_rscc_sum = residue_rscc_list # NAN_VALUE
+            residue_rscc_sum = residue_rscc_list  # NAN_VALUE
         average_residue_rscc = division_zero_div_handling(residue_rscc_sum, residue_count)
         residue_rscc_outlier_count = len(
             list(filter(lambda x: is_float(x) and float(x) < CORRELATION_COEF_THRESHOLD_RSCC, residue_rscc_list)))

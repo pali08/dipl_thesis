@@ -11,7 +11,7 @@ def get_ligand_stats_csv(filename):
     """
     with open(filename, encoding='utf-8', mode='r') as csvfile:
         reader = csv.reader(csvfile, delimiter=';')
-        return {i[0]: [i[1], i[2]] for i in list(reader)}
+        return {i[0].upper(): [i[1], i[2]] for i in list(reader)}
 
 
 class UnknownSubfolderException(Exception):
@@ -32,12 +32,14 @@ class RestParser(JsonParser):
         self.molecule_name = filename.split(os.linesep)[-1].split('.')[0].lower()
         self.all_values_list = self.json_dict[self.molecule_name]
         if self.subfolder.lower() == 'assembly':
-            self.biopolymers_entities_list = None
-            self.ligand_entities_list = None
-            self.water_entities_list = None
+            self.biopolymers_entities_list = NAN_VALUE
+            self.ligand_entities_list = NAN_VALUE
+            self.water_entities_list = NAN_VALUE
+            self.ligand_entities_ids_list = NAN_VALUE
             self.result_dict = {}
             self.get_assembly_data()
         elif self.subfolder.lower() == 'molecules':
+            self.ligand_flexibility_raw = NAN_VALUE
             self.result_dict = {}
             self.get_molecules_data()
         elif self.subfolder.lower() == 'summary':
@@ -59,7 +61,11 @@ class RestParser(JsonParser):
         ligand_entities_list = [float(self.all_values_list[0]['entities'][i]['number_of_copies']) for i in
                                 range(0, len(self.all_values_list[0]['entities'])) if
                                 self.all_values_list[0]['entities'][i]['molecule_type'].lower() == 'bound']
+        ligand_entity_ids_list = [self.all_values_list[0]['entities'][i]['entity_id'] for i in
+                                  range(0, len(self.all_values_list[0]['entities'])) if
+                                  self.all_values_list[0]['entities'][i]['molecule_type'].lower() == 'bound']
         self.ligand_entities_list = ligand_entities_list
+        self.ligand_entities_ids_list = ligand_entity_ids_list
         total_ligand_count = sum(ligand_entities_list)
         ligand_entity_count = len(ligand_entities_list)
         water_entities_list = [float(self.all_values_list[0]['entities'][i]['number_of_copies']) for i in
@@ -74,7 +80,16 @@ class RestParser(JsonParser):
              'AssemblyWaterCount': total_water_count})
 
     def get_molecules_data(self):
-        pass
+        chem_comp_ids_num_of_copies_pairs = [
+            [self.all_values_list[i]['chem_comp_ids'], self.all_values_list[i]['number_of_copies']] for i in
+            range(0, len(self.all_values_list)) if
+            'chem_comp_ids' in self.all_values_list[i] and 'molecule_type' in self.all_values_list[i] and
+            self.all_values_list[i]['molecule_type'].lower() == 'bound']
+        ligand_flexibility_raw = sum(
+            [float(i[1]) * float(RestParser.ligand_stats[j][1]) for i in chem_comp_ids_num_of_copies_pairs for j in i[0]
+             if
+             j.upper() in RestParser.ligand_stats])
+        self.ligand_flexibility_raw = ligand_flexibility_raw
 
     def get_summary_data(self):
         release_date = value_for_result_dictionary(self.json_dict[self.filename][0], 'release_date')

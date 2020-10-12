@@ -1,4 +1,5 @@
-from src.global_constants_and_functions import addition_nan_handling, key_error_output, NAN_VALUE
+from src.global_constants_and_functions import addition_nan_handling, key_error_output, NAN_VALUE, \
+    division_zero_div_handling
 
 
 class CombinedDataComputer:
@@ -48,6 +49,9 @@ class CombinedDataComputer:
                 [self.rest_assembly_values_dict.water_entities_list[i] *
                  self.rest_molecules_values_dict.all_values_list[0]['weight'] for i in
                  range(0, len(self.rest_assembly_values_dict.water_entities_list))])
+            assembly_ligand_flexibility = division_zero_div_handling(
+                sum(self.rest_assembly_values_dict.ligand_entities_list),
+                self.rest_molecules_values_dict.ligand_flexibility_raw)
             self.result_dict.update(
                 {'AssemblyBiopolymerWeight': total_biopolymer_weight, 'AssemblyLigandWeight': total_ligand_weight,
-                 'AssemblyWaterWeight': total_water_weight})
+                 'AssemblyWaterWeight': total_water_weight, 'AssemblyLigandFlexibility': assembly_ligand_flexibility})
