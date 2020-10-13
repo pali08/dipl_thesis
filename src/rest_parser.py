@@ -4,16 +4,6 @@ from src.global_constants_and_functions import NAN_VALUE, value_for_result_dicti
 from src.json_parser import JsonParser
 
 
-def get_ligand_stats_csv(filename):
-    """
-    :param filename: ligand_stats.csv
-    :return: ligand stats in format: [<key(ligand name)>: [<heavyAtomSize (index 0)>, <flexibility (index 1)>]]
-    """
-    with open(filename, encoding='utf-8', mode='r') as csvfile:
-        reader = csv.reader(csvfile, delimiter=';')
-        return {i[0].upper(): [i[1], i[2]] for i in list(reader)}
-
-
 class UnknownSubfolderException(Exception):
     pass
 
@@ -22,12 +12,9 @@ class RestParser(JsonParser):
     # ligand_stats is static variable - when creating first RestParser object it is initialized
     # None -> dictionary.  When creating second, third... instances of the class, ligand stats dictionary
     # is already initialized - no need to initialize it again - it is same for all instances
-    ligand_stats = None
-
-    def __init__(self, filename, ligand_stats_csv_filename):
+    def __init__(self, filename, ligand_stats):
         super().__init__(filename)
-        if RestParser.ligand_stats is None:
-            RestParser.ligand_stats = get_ligand_stats_csv(ligand_stats_csv_filename)
+        self.ligand_stats = ligand_stats
         self.subfolder = filename.split(os.linesep)[-2]
         self.molecule_name = filename.split(os.linesep)[-1].split('.')[0].lower()
         self.all_values_list = self.json_dict[self.molecule_name]
@@ -86,9 +73,9 @@ class RestParser(JsonParser):
             'chem_comp_ids' in self.all_values_list[i] and 'molecule_type' in self.all_values_list[i] and
             self.all_values_list[i]['molecule_type'].lower() == 'bound']
         ligand_flexibility_raw = sum(
-            [float(i[1]) * float(RestParser.ligand_stats[j][1]) for i in chem_comp_ids_num_of_copies_pairs for j in i[0]
+            [float(i[1]) * float(self.ligand_stats[j][1]) for i in chem_comp_ids_num_of_copies_pairs for j in i[0]
              if
-             j.upper() in RestParser.ligand_stats])
+             j.upper() in self.ligand_stats])
         self.ligand_flexibility_raw = ligand_flexibility_raw
 
     def get_summary_data(self):

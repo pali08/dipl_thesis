@@ -23,8 +23,9 @@ def get_value_none_handle(function, parameter):
 
 
 class XmlParser(Parser):
-    def __init__(self, filename):
+    def __init__(self, filename, ligand_stats):
         super().__init__(filename)
+        self.ligand_stats = ligand_stats
         self.tree = eTree.parse(self.filename)
         self.result_dict = {'clashscore': NAN_VALUE, 'RamaOutliers': NAN_VALUE, 'SidechainOutliers': NAN_VALUE,
                             'ClashscorePercentile': NAN_VALUE, 'RamaOutliersPercentile': NAN_VALUE,
@@ -209,6 +210,22 @@ class XmlParser(Parser):
         residue_rscc_outlier_count = len(
             list(filter(lambda x: is_float(x) and float(x) < CORRELATION_COEF_THRESHOLD_RSCC, residue_rscc_list)))
         residue_rscc_outlier_ratio = division_zero_div_handling(residue_rscc_outlier_count, residue_count)
+        ligand_rscc_list_10_and_below = [ligand_rscc_list_tuples_with_resid[i][0] for i in
+                                         range(0, len(ligand_rscc_list_tuples_with_resid)) if
+                                         ligand_rscc_list_tuples_with_resid[i][
+                                             1].upper() in self.ligand_stats and float(
+                                             self.ligand_stats[ligand_rscc_list_tuples_with_resid[i][1]][0]) <= 10]
+        ligand_rscc_list_11_and_above = [ligand_rscc_list_tuples_with_resid[i][0] for i in
+                                         range(0, len(ligand_rscc_list_tuples_with_resid)) if
+                                         ligand_rscc_list_tuples_with_resid[i][
+                                             1].upper() in self.ligand_stats and float(
+                                             self.ligand_stats[ligand_rscc_list_tuples_with_resid[i][1]][0]) > 10]
+        average_ligand_rscc_small_ligs = division_zero_div_handling(sum(ligand_rscc_list_10_and_below),
+                                                                    len(ligand_rscc_list_10_and_below))
+
+        average_ligand_rscc_large_ligs = division_zero_div_handling(sum(ligand_rscc_list_11_and_above),
+                                                                    len(ligand_rscc_list_11_and_above))
+
         self.result_dict.update(
             {'clashscore': clashscore, 'RamaOutliers': rama_outliers, 'SidechainOutliers': sidechain_outliers,
              'ClashscorePercentile': clashscore_percentil, 'RamaOutliersPercentile': rama_outliers_percentil,
@@ -223,7 +240,10 @@ class XmlParser(Parser):
              'averageResidueRSR': average_residue_rsr, 'averageLigandRSR': average_ligand_rsr,
              'averageLigandAngleRMSZ': average_ligand_angle_rmsz, 'averageLigandBondRMSZ': average_ligand_bonds_rmsz,
              'averageLigandRSCC': average_ligand_rscc, 'ligandRSCCoutlierRatio': ligand_rscc_outlier_ratio,
-             'averageResidueRSCC': average_residue_rscc, 'residueRSCCoutlierRatio': residue_rscc_outlier_ratio})
+             'averageResidueRSCC': average_residue_rscc, 'residueRSCCoutlierRatio': residue_rscc_outlier_ratio,
+             'averageLigandRSCCsmallLigs': average_ligand_rscc_small_ligs,
+             'averageLigandRSCClargeLigs': average_ligand_rscc_large_ligs,
+             'absolute-percentile-RNAsuiteness': rna_percentil})
 
     def create_result_dict(self):
         if super().file_exists():

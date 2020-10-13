@@ -6,18 +6,35 @@ from src.combined_data_computer import CombinedDataComputer
 from src.rest_parser import RestParser
 from src.vdb_parser import VdbParser
 from src.xml_parser import XmlParser
+import csv
+
+
+def get_ligand_stats_csv(filename):
+    """
+    :param filename: ligand_stats.csv
+    :return: ligand stats in format: [<key(ligand name)>: [<heavyAtomSize (index 0)>, <flexibility (index 1)>]]
+    """
+    with open(filename, encoding='utf-8', mode='r') as csvfile:
+        reader = csv.reader(csvfile, delimiter=';')
+        return {i[0].upper(): [i[1], i[2]] for i in list(reader)}
 
 
 class AllFilesParser:
+    ligand_stats = None
+
     def __init__(self, molecule, ligand_stats_csv, *filepaths):
+        if AllFilesParser.ligand_stats is None:
+            AllFilesParser.ligand_stats = get_ligand_stats_csv(ligand_stats_csv)
         self.filepaths = filepaths
         self.molecule = molecule
         self.pdb_result_dict = PdbParser(self.get_pdb_filepath()).result_dict
         self.vdb_result_dict = VdbParser(self.get_vdb_filepath()).result_dict
-        self.xml_result_dict = XmlParser(self.get_xml_filepath()).result_dict
-        self.rest_result_dict_assembly = RestParser(self.get_rest_filepath()[0], ligand_stats_csv).result_dict
-        self.rest_result_dict_molecules = RestParser(self.get_rest_filepath()[1], ligand_stats_csv).result_dict
-        self.rest_result_dict_summary = RestParser(self.get_rest_filepath()[2], ligand_stats_csv).result_dict
+        self.xml_result_dict = XmlParser(self.get_xml_filepath(), self.ligand_stats).result_dict
+        self.rest_result_dict_assembly = RestParser(self.get_rest_filepath()[0],
+                                                    AllFilesParser.ligand_stats).result_dict
+        self.rest_result_dict_molecules = RestParser(self.get_rest_filepath()[1],
+                                                     AllFilesParser.ligand_stats).result_dict
+        self.rest_result_dict_summary = RestParser(self.get_rest_filepath()[2], AllFilesParser.ligand_stats).result_dict
 
         self.combined_data_result_dict = CombinedDataComputer(self.pdb_result_dict, self.vdb_result_dict,
                                                               self.xml_result_dict).result_dict
