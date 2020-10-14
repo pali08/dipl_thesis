@@ -30,16 +30,24 @@ class AllFilesParser:
         self.pdb_result_dict = PdbParser(self.get_pdb_filepath()).result_dict
         self.vdb_result_dict = VdbParser(self.get_vdb_filepath()).result_dict
         self.xml_result_dict = XmlParser(self.get_xml_filepath(), self.ligand_stats).result_dict
-        self.rest_result_dict_assembly = RestParser(self.get_rest_filepath()[0],
-                                                    AllFilesParser.ligand_stats).result_dict
-        self.rest_result_dict_molecules = RestParser(self.get_rest_filepath()[1],
-                                                     AllFilesParser.ligand_stats).result_dict
+        self.rest_assembly_parser = RestParser(self.get_rest_filepath()[0],
+                                               AllFilesParser.ligand_stats)
+        self.rest_result_dict_assembly = self.rest_assembly_parser.result_dict
+        self.rest_molecules_parser = RestParser(self.get_rest_filepath()[1],
+                                                AllFilesParser.ligand_stats)
+        self.rest_result_dict_molecules = self.rest_molecules_parser.result_dict
         self.rest_result_dict_summary = RestParser(self.get_rest_filepath()[2], AllFilesParser.ligand_stats).result_dict
 
         self.combined_data_result_dict = CombinedDataComputer(self.pdb_result_dict, self.vdb_result_dict,
-                                                              self.xml_result_dict).result_dict
+                                                              self.xml_result_dict, self.rest_result_dict_assembly,
+                                                              self.rest_result_dict_molecules,
+                                                              self.rest_result_dict_summary,
+                                                              self.rest_assembly_parser,
+                                                              self.rest_molecules_parser).result_dict
         self.result_dict = {**self.pdb_result_dict, **self.vdb_result_dict,
-                            **self.xml_result_dict, **self.combined_data_result_dict}
+                            **self.xml_result_dict, **self.rest_result_dict_assembly, **self.rest_result_dict_molecules,
+                            **self.rest_result_dict_summary,
+                            **self.combined_data_result_dict}
 
     order_list = ['PDB ID', 'resolution', 'releaseDate', 'StructureWeight', 'PolymerWeight',
                   'NonpolymerWeight',
@@ -64,7 +72,11 @@ class AllFilesParser:
                   'LigandTopologyCarbonChiraProblemsPrecise', 'ChiraProblemsPrecise', 'GoodLigandRatioBinary',
                   'LigandTopologyProblemsPreciseBinary', 'LigandTopologyCarbonChiraProblemsPreciseBinary',
                   'ChiraProblemsPreciseBinary', 'averageLigandRSR', 'averageLigandAngleRMSZ', 'averageLigandBondRMSZ',
-                  'averageLigandRSCC', 'ligandRSCCoutlierRatio']
+                  'averageLigandRSCC', 'ligandRSCCoutlierRatio', 'AssemblyTotalWeight', 'AssemblyBiopolymerCount',
+                  'AssemblyUniqueBiopolymerCount', 'AssemblyLigandCount', 'AssemblyUniqueLigandCount',
+                  'AssemblyWaterCount', 'AssemblyBiopolymerWeight', 'AssemblyLigandWeight', 'AssemblyWaterWeight',
+                  'averageResidueRSCC', 'residueRSCCoutlierRatio', 'AssemblyLigandFlexibility',
+                  'averageLigandRSCCsmallLigs', 'averageLigandRSCClargeLigs', 'absolute-percentile-RNAsuiteness']
 
     def get_data_ordered(self):
         """
@@ -77,8 +89,6 @@ class AllFilesParser:
         return ordered_list
 
     def get_pdb_filepath(self):
-        # print(self.molecule)
-        # print(self.filepaths[0])
         return os.path.join(self.filepaths[0], self.molecule + '_updated.cif')
 
     def get_vdb_filepath(self):

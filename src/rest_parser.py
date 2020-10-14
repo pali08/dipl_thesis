@@ -23,15 +23,24 @@ class RestParser(JsonParser):
             self.ligand_entities_list = NAN_VALUE
             self.water_entities_list = NAN_VALUE
             self.ligand_entities_ids_list = NAN_VALUE
-            self.result_dict = {}
-            self.get_assembly_data()
+            self.result_dict = {'AssemblyTotalWeight': NAN_VALUE,
+                                'AssemblyBiopolymerCount': NAN_VALUE,
+                                'AssemblyUniqueBiopolymerCount': NAN_VALUE,
+                                'AssemblyLigandCount': NAN_VALUE,
+                                'AssemblyUniqueLigandCount': NAN_VALUE,
+                                'AssemblyWaterCount': NAN_VALUE}
+            if super().file_exists():
+                self.get_assembly_data()
         elif self.subfolder.lower() == 'molecules':
             self.ligand_flexibility_raw = NAN_VALUE
             self.result_dict = {}
-            self.get_molecules_data()
+            if super().file_exists():
+                self.get_molecules_data()
         elif self.subfolder.lower() == 'summary':
-            self.result_dict = {}
+            self.result_dict = {'releaseDate': NAN_VALUE}
             self.get_summary_data()
+            if super().file_exists():
+                self.get_summary_data()
         else:
             raise UnknownSubfolderException(
                 'Unknown subfolder name' + filename + 'names of subfolders in rest folders shoud be assembly, '
@@ -80,3 +89,4 @@ class RestParser(JsonParser):
 
     def get_summary_data(self):
         release_date = value_for_result_dictionary(self.json_dict[self.filename][0], 'release_date')
+        self.result_dict.update({'releaseDate': release_date})

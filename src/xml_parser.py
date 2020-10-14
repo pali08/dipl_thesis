@@ -36,7 +36,11 @@ class XmlParser(Parser):
                             'highestChainBondsRMSZ': NAN_VALUE, 'highestChainAnglesRMSZ': NAN_VALUE,
                             'averageResidueRSR': NAN_VALUE, 'averageLigandRSR': NAN_VALUE,
                             'averageLigandAngleRMSZ': NAN_VALUE, 'averageLigandBondRMSZ': NAN_VALUE,
-                            'averageLigandRSCC': NAN_VALUE, 'ligandRSCCoutlierRatio': NAN_VALUE}
+                            'averageLigandRSCC': NAN_VALUE, 'ligandRSCCoutlierRatio': NAN_VALUE,
+                            'averageResidueRSCC': NAN_VALUE, 'averageLigandRSCCsmallLigs': NAN_VALUE,
+                            'averageLigandRSCClargeLigs': NAN_VALUE, 'absolute-percentile-RNAsuiteness': NAN_VALUE
+                            }
+
         self.create_result_dict()
 
     def get_data(self):

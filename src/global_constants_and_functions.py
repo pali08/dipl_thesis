@@ -150,3 +150,10 @@ def value_for_result_dictionary(input_dictionary, key):
     return NAN_VALUE
 
 
+def check_dictionary_contains_only_nan_values(dictionary):
+    """
+    true if all values in dictionary are NAN - probably parsed file from which dictionary was created does not exist
+    :param dictionary: input dixctionary
+    :return: see above
+    """
+    return set(dictionary.values()) == {NAN_VALUE}
