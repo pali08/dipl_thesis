@@ -1,5 +1,5 @@
 from src.global_constants_and_functions import addition_nan_handling, key_error_output, NAN_VALUE, \
-    division_zero_div_handling
+    division_zero_div_handling, check_dictionary_contains_only_nan_values
 
 
 class CombinedDataComputer:
@@ -27,7 +27,8 @@ class CombinedDataComputer:
         get filtered values that need values from vdb and pdb/mmcif files
         :return: dict of values
         """
-        if self.vdb_values_dict and self.pdb_values_dict:
+        if not check_dictionary_contains_only_nan_values(self.vdb_values_dict) and \
+                not check_dictionary_contains_only_nan_values(self.pdb_values_dict):
             try:
                 aa_ligand_count_filtered = addition_nan_handling(self.vdb_values_dict['ligandCountFiltered'] +
                                                                  self.pdb_values_dict['aaCount'])
@@ -41,7 +42,8 @@ class CombinedDataComputer:
                                                                       self.xml_values_dict[
                                                                           'combinedXrayQualityMetric'] - 30 *
                                                                       self.pdb_values_dict['resolution']) / 2})
-        if self.rest_assembly_values_dict and self.rest_molecules_values_dict:
+        if not check_dictionary_contains_only_nan_values(self.rest_assembly_values_dict) and \
+                not check_dictionary_contains_only_nan_values(self.rest_molecules_values_dict):
             total_biopolymer_weight = sum(
                 [self.rest_assembly_parser.biopolymers_entities_list[i] *
                  self.rest_molecules_parser.all_values_list[0]['weight'] for i in

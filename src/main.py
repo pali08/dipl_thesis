@@ -52,9 +52,11 @@ def get_all_molecules(*filepaths):
 
 def get_dicts(cpu_cores_count, molecules, ligand_stats_csv, *filepaths):
     pool = Pool(cpu_cores_count)
-    result_tuple = pool.starmap_async(AllFilesParser, zip(molecules, repeat(ligand_stats_csv), repeat(filepaths[0]),
+    result_tuple = pool.starmap_async(AllFilesParser, zip(molecules, repeat(ligand_stats_csv),
+                                                          repeat(filepaths[0]),
                                                           repeat(filepaths[1]),
-                                                          repeat(filepaths[2]))).get()
+                                                          repeat(filepaths[2]),
+                                                          repeat(filepaths[3]))).get()
     pool.close()
     pool.join()
     result_tuple_list = [AllFilesParser.order_list]

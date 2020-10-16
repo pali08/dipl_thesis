@@ -214,21 +214,26 @@ class XmlParser(Parser):
         residue_rscc_outlier_count = len(
             list(filter(lambda x: is_float(x) and float(x) < CORRELATION_COEF_THRESHOLD_RSCC, residue_rscc_list)))
         residue_rscc_outlier_ratio = division_zero_div_handling(residue_rscc_outlier_count, residue_count)
-        ligand_rscc_list_10_and_below = [ligand_rscc_list_tuples_with_resid[i][0] for i in
-                                         range(0, len(ligand_rscc_list_tuples_with_resid)) if
-                                         ligand_rscc_list_tuples_with_resid[i][
-                                             1].upper() in self.ligand_stats and float(
-                                             self.ligand_stats[ligand_rscc_list_tuples_with_resid[i][1]][0]) <= 10]
-        ligand_rscc_list_11_and_above = [ligand_rscc_list_tuples_with_resid[i][0] for i in
-                                         range(0, len(ligand_rscc_list_tuples_with_resid)) if
-                                         ligand_rscc_list_tuples_with_resid[i][
-                                             1].upper() in self.ligand_stats and float(
-                                             self.ligand_stats[ligand_rscc_list_tuples_with_resid[i][1]][0]) > 10]
-        average_ligand_rscc_small_ligs = division_zero_div_handling(sum(ligand_rscc_list_10_and_below),
-                                                                    len(ligand_rscc_list_10_and_below))
+        ligand_rscc_list_10_and_below = NAN_VALUE
+        ligand_rscc_list_11_and_above = NAN_VALUE
+        average_ligand_rscc_small_ligs = NAN_VALUE
+        average_ligand_rscc_large_ligs = NAN_VALUE
+        if ligand_rscc_list_tuples_with_resid != NAN_VALUE:
+            ligand_rscc_list_10_and_below = [ligand_rscc_list_tuples_with_resid[i][0] for i in
+                                             range(0, len(ligand_rscc_list_tuples_with_resid)) if
+                                             ligand_rscc_list_tuples_with_resid[i][
+                                                 1].upper() in self.ligand_stats and float(
+                                                 self.ligand_stats[ligand_rscc_list_tuples_with_resid[i][1]][0]) <= 10]
+            ligand_rscc_list_11_and_above = [ligand_rscc_list_tuples_with_resid[i][0] for i in
+                                             range(0, len(ligand_rscc_list_tuples_with_resid)) if
+                                             ligand_rscc_list_tuples_with_resid[i][
+                                                 1].upper() in self.ligand_stats and float(
+                                                 self.ligand_stats[ligand_rscc_list_tuples_with_resid[i][1]][0]) > 10]
+            average_ligand_rscc_small_ligs = division_zero_div_handling(sum(ligand_rscc_list_10_and_below),
+                                                                        len(ligand_rscc_list_10_and_below))
 
-        average_ligand_rscc_large_ligs = division_zero_div_handling(sum(ligand_rscc_list_11_and_above),
-                                                                    len(ligand_rscc_list_11_and_above))
+            average_ligand_rscc_large_ligs = division_zero_div_handling(sum(ligand_rscc_list_11_and_above),
+                                                                        len(ligand_rscc_list_11_and_above))
 
         self.result_dict.update(
             {'clashscore': clashscore, 'RamaOutliers': rama_outliers, 'SidechainOutliers': sidechain_outliers,

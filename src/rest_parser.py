@@ -15,8 +15,9 @@ class RestParser(JsonParser):
     def __init__(self, filename, ligand_stats):
         super().__init__(filename)
         self.ligand_stats = ligand_stats
-        self.subfolder = filename.split(os.linesep)[-2]
-        self.molecule_name = filename.split(os.linesep)[-1].split('.')[0].lower()
+        print(filename)
+        self.subfolder = filename.split(os.sep)[-2]
+        self.molecule_name = filename.split(os.sep)[-1].split('.')[0].lower()
         self.all_values_list = self.json_dict[self.molecule_name]
         if self.subfolder.lower() == 'assembly':
             self.biopolymers_entities_list = NAN_VALUE
