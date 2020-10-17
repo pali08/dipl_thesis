@@ -146,7 +146,7 @@ def value_for_result_dictionary(input_dictionary, key):
     NAN value otherwise
     """
     if key in input_dictionary:
-        return input_dictionary['value']
+        return input_dictionary[key]
     return NAN_VALUE
 
 

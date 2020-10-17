@@ -102,8 +102,10 @@ class XmlParser(Parser):
         rsrz_outliers_percentil = get_value_none_handle(root_zero_get, 'absolute-percentile-percent-RSRZ-outliers')
         if dcc_r_free_percentil != NAN_VALUE and rsrz_outliers_percentil != NAN_VALUE:
             summation_percentiles_2 = sum(
-                [1 / i for i in [float(dcc_r_free_percentil), float(rsrz_outliers_percentil)]])
-            combined_xray_quality_metric = 1 / (summation_percentiles_2 / 2)
+                [division_zero_div_handling(1, i) for i in
+                 [float(dcc_r_free_percentil), float(rsrz_outliers_percentil)]])
+            combined_xray_quality_metric = division_zero_div_handling(1, (
+                division_zero_div_handling(summation_percentiles_2, 2)))
         else:
             combined_xray_quality_metric = NAN_VALUE
         # guess this is not needed: if modelledentity instance is zero, then bonds rmsz is none

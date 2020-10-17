@@ -18,7 +18,8 @@ class RestParser(JsonParser):
         print(filename)
         self.subfolder = filename.split(os.sep)[-2]
         self.molecule_name = filename.split(os.sep)[-1].split('.')[0].lower()
-        self.all_values_list = self.json_dict[self.molecule_name]
+        if super().file_exists():
+            self.all_values_list = self.json_dict[self.molecule_name]
         if self.subfolder.lower() == 'assembly':
             self.biopolymers_entities_list = NAN_VALUE
             self.ligand_entities_list = NAN_VALUE
@@ -39,7 +40,6 @@ class RestParser(JsonParser):
                 self.get_molecules_data()
         elif self.subfolder.lower() == 'summary':
             self.result_dict = {'releaseDate': NAN_VALUE}
-            self.get_summary_data()
             if super().file_exists():
                 self.get_summary_data()
         else:
@@ -89,5 +89,5 @@ class RestParser(JsonParser):
         self.ligand_flexibility_raw = ligand_flexibility_raw
 
     def get_summary_data(self):
-        release_date = value_for_result_dictionary(self.json_dict[self.filename][0], 'release_date')
-        self.result_dict.update({'releaseDate': release_date})
+        release_date = value_for_result_dictionary(self.all_values_list[0], 'release_date')
+        self.result_dict.update({'releaseDate': str(release_date)[:4]})

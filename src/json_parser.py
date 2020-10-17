@@ -17,5 +17,5 @@ def load_json(filename):
 class JsonParser(Parser):
     def __init__(self, filename):
         super().__init__(filename)
-        self.json_dict = load_json(filename)
-
+        if super().file_exists():
+            self.json_dict = load_json(filename)

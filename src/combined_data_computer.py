@@ -53,9 +53,18 @@ class CombinedDataComputer:
                  self.rest_molecules_parser.all_values_list[0]['weight'] for i in
                  range(0, len(self.rest_assembly_parser.ligand_entities_list))])
             total_water_weight = sum(
-                [self.rest_assembly_parser.water_entities_list[i] *
-                 self.rest_molecules_parser.all_values_list[0]['weight'] for i in
-                 range(0, len(self.rest_assembly_parser.water_entities_list))])
+                [j['weight'] * i['number_of_copies'] for j in self.rest_molecules_parser.all_values_list for i in
+                 self.rest_assembly_parser.all_values_list[0]['entities'] if
+                 i['entity_id'] == j['entity_id'] and 'water' in [k.lower() for k in j['molecule_name']]])
+            # sum([self.rest_assembly_parser.all_values_list[0]['entities'][i]['number_of_copies'] *
+            #      self.rest_molecules_parser.all_values_list[i]['weight'] for i in
+            #      range(0, len(self.rest_molecules_parser.all_values_list)) if
+            #      'water' in [j.lower() for j in
+            #                  self.rest_molecules_parser.all_values_list[i]['molecule_name']]])
+            # sum(
+            # [self.rest_assembly_parser.water_entities_list[i] *
+            #  self.rest_molecules_parser.all_values_list[0]['weight'] for i in
+            #  range(0, len(self.rest_assembly_parser.water_entities_list))])
             assembly_ligand_flexibility = division_zero_div_handling(
                 sum(self.rest_assembly_parser.ligand_entities_list),
                 self.rest_molecules_parser.ligand_flexibility_raw)
