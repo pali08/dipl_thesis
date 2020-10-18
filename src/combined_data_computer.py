@@ -1,5 +1,5 @@
 from src.global_constants_and_functions import addition_nan_handling, key_error_output, NAN_VALUE, \
-    division_zero_div_handling, check_dictionary_contains_only_nan_values
+    division_zero_div_handling, check_dictionary_contains_only_nan_values, BIOPOLYMERS
 
 
 class CombinedDataComputer:
@@ -44,27 +44,24 @@ class CombinedDataComputer:
                                                                       self.pdb_values_dict['resolution']) / 2})
         if not check_dictionary_contains_only_nan_values(self.rest_assembly_values_dict) and \
                 not check_dictionary_contains_only_nan_values(self.rest_molecules_values_dict):
-            total_biopolymer_weight = sum(
-                [self.rest_assembly_parser.biopolymers_entities_list[i] *
-                 self.rest_molecules_parser.all_values_list[0]['weight'] for i in
-                 range(0, len(self.rest_assembly_parser.biopolymers_entities_list))]) / 1000
+            total_biopolymer_weight = (sum(
+                [j['weight'] * i['number_of_copies'] for j in self.rest_molecules_parser.all_values_list for i in
+                 self.rest_assembly_parser.all_values_list[-1]['entities'] if
+                 i['entity_id'] == j['entity_id'] and j['molecule_type'] in BIOPOLYMERS and j[
+                     'weight'] is not None and i[
+                     'number_of_copies'] is not None]) / 1000)  # / self.rest_assembly_parser.polymeric_count
             total_ligand_weight = sum(
-                [self.rest_assembly_parser.ligand_entities_list[i] *
-                 self.rest_molecules_parser.all_values_list[0]['weight'] for i in
-                 range(0, len(self.rest_assembly_parser.ligand_entities_list))])
+                [j['weight'] * i['number_of_copies'] for j in self.rest_molecules_parser.all_values_list for i in
+                 self.rest_assembly_parser.all_values_list[-1]['entities'] if
+                 i['entity_id'] == j['entity_id'] and j['molecule_type'].lower() == 'bound' and j[
+                     'weight'] is not None and i[
+                     'number_of_copies'] is not None])  # / self.rest_assembly_parser.polymeric_count
             total_water_weight = sum(
                 [j['weight'] * i['number_of_copies'] for j in self.rest_molecules_parser.all_values_list for i in
-                 self.rest_assembly_parser.all_values_list[0]['entities'] if
-                 i['entity_id'] == j['entity_id'] and 'water' in [k.lower() for k in j['molecule_name']]])
-            # sum([self.rest_assembly_parser.all_values_list[0]['entities'][i]['number_of_copies'] *
-            #      self.rest_molecules_parser.all_values_list[i]['weight'] for i in
-            #      range(0, len(self.rest_molecules_parser.all_values_list)) if
-            #      'water' in [j.lower() for j in
-            #                  self.rest_molecules_parser.all_values_list[i]['molecule_name']]])
-            # sum(
-            # [self.rest_assembly_parser.water_entities_list[i] *
-            #  self.rest_molecules_parser.all_values_list[0]['weight'] for i in
-            #  range(0, len(self.rest_assembly_parser.water_entities_list))])
+                 self.rest_assembly_parser.all_values_list[-1]['entities'] if
+                 i['entity_id'] == j['entity_id'] and 'water' in [k.lower() for k in j['molecule_name']] and j[
+                     'weight'] is not None and i[
+                     'number_of_copies'] is not None])  # / self.rest_assembly_parser.polymeric_count
             assembly_ligand_flexibility = division_zero_div_handling(
                 sum(self.rest_assembly_parser.ligand_entities_list),
                 self.rest_molecules_parser.ligand_flexibility_raw)

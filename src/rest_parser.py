@@ -25,6 +25,7 @@ class RestParser(JsonParser):
             self.ligand_entities_list = NAN_VALUE
             self.water_entities_list = NAN_VALUE
             self.ligand_entities_ids_list = NAN_VALUE
+            self.polymeric_count = NAN_VALUE
             self.result_dict = {'AssemblyTotalWeight': NAN_VALUE,
                                 'AssemblyBiopolymerCount': NAN_VALUE,
                                 'AssemblyUniqueBiopolymerCount': NAN_VALUE,
@@ -48,28 +49,30 @@ class RestParser(JsonParser):
                                                       'molecules and summary')
 
     def get_assembly_data(self):
-        molecular_weight = value_for_result_dictionary(self.all_values_list[0], 'molecular_weight')
-        biopolymers_entities_list = [float(self.all_values_list[0]['entities'][i]['number_of_copies']) for i in
-                                     range(0, len(self.all_values_list[0]['entities'])) if
-                                     self.all_values_list[0]['entities'][i]['molecule_type'] in BIOPOLYMERS]
+        self.polymeric_count = int(self.all_values_list[0]['polymeric_count'])
+        molecular_weight = value_for_result_dictionary(self.all_values_list[-1],
+                                                       'molecular_weight')  # / self.polymeric_count
+        biopolymers_entities_list = [float(self.all_values_list[-1]['entities'][i]['number_of_copies']) for i in
+                                     range(0, len(self.all_values_list[-1]['entities'])) if
+                                     self.all_values_list[-1]['entities'][i]['molecule_type'] in BIOPOLYMERS]
         self.biopolymers_entities_list = biopolymers_entities_list
-        total_biopolymer_count = sum(biopolymers_entities_list)
+        total_biopolymer_count = sum(biopolymers_entities_list)  # / self.polymeric_count
         assembly_unique_biopolymer_count = len(biopolymers_entities_list)
-        ligand_entities_list = [float(self.all_values_list[0]['entities'][i]['number_of_copies']) for i in
-                                range(0, len(self.all_values_list[0]['entities'])) if
-                                self.all_values_list[0]['entities'][i]['molecule_type'].lower() == 'bound']
+        ligand_entities_list = [float(self.all_values_list[-1]['entities'][i]['number_of_copies']) for i in
+                                range(0, len(self.all_values_list[-1]['entities'])) if
+                                self.all_values_list[-1]['entities'][i]['molecule_type'].lower() == 'bound']
         ligand_entity_ids_list = [self.all_values_list[0]['entities'][i]['entity_id'] for i in
                                   range(0, len(self.all_values_list[0]['entities'])) if
                                   self.all_values_list[0]['entities'][i]['molecule_type'].lower() == 'bound']
         self.ligand_entities_list = ligand_entities_list
         self.ligand_entities_ids_list = ligand_entity_ids_list
-        total_ligand_count = sum(ligand_entities_list)
+        total_ligand_count = sum(ligand_entities_list)  # / self.polymeric_count
         ligand_entity_count = len(ligand_entities_list)
-        water_entities_list = [float(self.all_values_list[0]['entities'][i]['number_of_copies']) for i in
-                               range(0, len(self.all_values_list[0]['entities'])) if
-                               self.all_values_list[0]['entities'][i]['molecule_type'].lower() == 'water']
+        water_entities_list = [float(self.all_values_list[-1]['entities'][i]['number_of_copies']) for i in
+                               range(0, len(self.all_values_list[-1]['entities'])) if
+                               self.all_values_list[-1]['entities'][i]['molecule_type'].lower() == 'water']
         self.water_entities_list = water_entities_list
-        total_water_count = sum(water_entities_list)
+        total_water_count = sum(water_entities_list)  # / self.polymeric_count
         self.result_dict.update(
             {'AssemblyTotalWeight': molecular_weight, 'AssemblyBiopolymerCount': total_biopolymer_count,
              'AssemblyUniqueBiopolymerCount': assembly_unique_biopolymer_count,

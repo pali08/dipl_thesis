@@ -103,7 +103,8 @@ class XmlParser(Parser):
         if dcc_r_free_percentil != NAN_VALUE and rsrz_outliers_percentil != NAN_VALUE:
             summation_percentiles_2 = sum(
                 [division_zero_div_handling(1, i) for i in
-                 [float(dcc_r_free_percentil), float(rsrz_outliers_percentil)]])
+                 [float(dcc_r_free_percentil), float(rsrz_outliers_percentil)] if
+                 is_float(division_zero_div_handling(1, i))])
             combined_xray_quality_metric = division_zero_div_handling(1, (
                 division_zero_div_handling(summation_percentiles_2, 2)))
         else:
