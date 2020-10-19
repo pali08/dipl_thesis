@@ -36,6 +36,7 @@ class AllFilesParser:
         self.rest_molecules_parser = RestParser(self.get_rest_filepath()[1],
                                                 AllFilesParser.ligand_stats)
         self.rest_result_dict_molecules = self.rest_molecules_parser.result_dict
+        self.rest_summary_parser = RestParser(self.get_rest_filepath()[2], AllFilesParser.ligand_stats)
         self.rest_result_dict_summary = RestParser(self.get_rest_filepath()[2], AllFilesParser.ligand_stats).result_dict
 
         self.combined_data_result_dict = CombinedDataComputer(self.pdb_result_dict, self.vdb_result_dict,
@@ -43,7 +44,8 @@ class AllFilesParser:
                                                               self.rest_result_dict_molecules,
                                                               self.rest_result_dict_summary,
                                                               self.rest_assembly_parser,
-                                                              self.rest_molecules_parser).result_dict
+                                                              self.rest_molecules_parser,
+                                                              self.rest_summary_parser, self.ligand_stats).result_dict
         self.result_dict = {**self.pdb_result_dict, **self.vdb_result_dict,
                             **self.xml_result_dict, **self.rest_result_dict_assembly, **self.rest_result_dict_molecules,
                             **self.rest_result_dict_summary,

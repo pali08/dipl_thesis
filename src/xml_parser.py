@@ -216,7 +216,10 @@ class XmlParser(Parser):
         average_residue_rscc = division_zero_div_handling(residue_rscc_sum, residue_count)
         residue_rscc_outlier_count = len(
             list(filter(lambda x: is_float(x) and float(x) < CORRELATION_COEF_THRESHOLD_RSCC, residue_rscc_list)))
-        residue_rscc_outlier_ratio = division_zero_div_handling(residue_rscc_outlier_count, residue_count)
+        if int(residue_rscc_outlier_count) > 0:
+            residue_rscc_outlier_ratio = division_zero_div_handling(residue_rscc_outlier_count, residue_count)
+        else:
+            residue_rscc_outlier_ratio = NAN_VALUE
         ligand_rscc_list_10_and_below = NAN_VALUE
         ligand_rscc_list_11_and_above = NAN_VALUE
         average_ligand_rscc_small_ligs = NAN_VALUE
