@@ -40,7 +40,7 @@ class CombinedDataComputer:
         if not check_dictionary_contains_only_nan_values(self.vdb_values_dict) and \
                 not check_dictionary_contains_only_nan_values(self.pdb_values_dict):
             try:
-                aa_ligand_count_filtered = addition_nan_handling(self.vdb_values_dict['ligandCountFiltered'] +
+                aa_ligand_count_filtered = addition_nan_handling(self.vdb_values_dict['ligandCountFiltered'],
                                                                  self.pdb_values_dict['aaCount'])
                 self.result_dict.update({'aaLigandCountFiltered': aa_ligand_count_filtered})
             except KeyError:

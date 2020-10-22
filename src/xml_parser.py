@@ -5,7 +5,7 @@ import xml.etree.ElementTree as eTree
 import numpy as np
 
 from src.global_constants_and_functions import NAN_VALUE, division_zero_div_handling, nan_if_list_empty, is_float, \
-    CORRELATION_COEF_THRESHOLD_RSCC
+    CORRELATION_COEF_THRESHOLD_RSCC, addition_nan_handling
 from src.parser import Parser
 
 
@@ -100,11 +100,13 @@ class XmlParser(Parser):
         bonds_rmsz_structure = get_value_none_handle(root_zero_get, 'bonds_rmsz')
         percent_rsrz_outliers = get_value_none_handle(root_zero_get, 'percent-RSRZ-outliers')
         rsrz_outliers_percentil = get_value_none_handle(root_zero_get, 'absolute-percentile-percent-RSRZ-outliers')
-        if dcc_r_free_percentil != NAN_VALUE and rsrz_outliers_percentil != NAN_VALUE:
-            summation_percentiles_2 = sum(
-                [division_zero_div_handling(1, i) for i in
-                 [float(dcc_r_free_percentil), float(rsrz_outliers_percentil)] if
-                 is_float(division_zero_div_handling(1, i))])
+        if not (dcc_r_free_percentil == NAN_VALUE or rsrz_outliers_percentil == NAN_VALUE):
+            print('DCC rfree percentil: ' + str(dcc_r_free_percentil))
+            print('rsrz_outlier_percentil: ' + str(rsrz_outliers_percentil))
+            summation_percentiles_2 = addition_nan_handling(
+                *[division_zero_div_handling(1, i) for i in
+                  [float(dcc_r_free_percentil), float(rsrz_outliers_percentil)] if
+                  is_float(division_zero_div_handling(1, i))])
             combined_xray_quality_metric = division_zero_div_handling(1, (
                 division_zero_div_handling(summation_percentiles_2, 2)))
         else:
@@ -140,11 +142,15 @@ class XmlParser(Parser):
         try:
             residue_rsr_num = sum([float(i.attrib['rsr']) for i in
                                    list(filter(
-                                       lambda x: x.tag == 'ModelledSubgroup' and 'mogul_bonds_rmsz' not in x.attrib,
+                                       lambda x: x.tag == 'ModelledSubgroup' and 'mogul_bonds_rmsz' not in x.attrib and
+                                                 'rsr' in x.attrib,
                                        list(self.tree.getroot())))])
         except KeyError:
             residue_rsr_num = NAN_VALUE
         average_residue_rsr = division_zero_div_handling(residue_rsr_num, residue_count)
+        if is_float(average_residue_rsr):
+            if np.isclose(average_residue_rsr, 0.000):
+                average_residue_rsr = NAN_VALUE
         ligand_count = len(list(filter(lambda x: 'mogul_bonds_rmsz' in x.attrib,
                                        list(self.tree.getroot()))))
         ligand_rsr_list = nan_if_list_empty([float(i.get('rsr')) for i in
@@ -216,7 +222,7 @@ class XmlParser(Parser):
         average_residue_rscc = division_zero_div_handling(residue_rscc_sum, residue_count)
         residue_rscc_outlier_count = len(
             list(filter(lambda x: is_float(x) and float(x) < CORRELATION_COEF_THRESHOLD_RSCC, residue_rscc_list)))
-        if int(residue_rscc_outlier_count) > 0:
+        if residue_rscc_list != NAN_VALUE:
             residue_rscc_outlier_ratio = division_zero_div_handling(residue_rscc_outlier_count, residue_count)
         else:
             residue_rscc_outlier_ratio = NAN_VALUE

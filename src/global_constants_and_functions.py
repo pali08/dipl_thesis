@@ -103,6 +103,8 @@ def key_error_output(pdbid, note=''):
 
 
 def is_float(val):
+    if str(val).lower() == 'nan':
+        return False
     try:
         float(val)
         return True

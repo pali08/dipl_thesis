@@ -100,7 +100,7 @@ class PdbParser(Parser):
             atom_count = NAN_VALUE
             hetatm_count = NAN_VALUE
             print(self.key_error_output('Atom and hetatm counts'))
-        all_atom_count = int(addition_nan_handling(atom_count, hetatm_count))
+        all_atom_count = addition_nan_handling(atom_count, hetatm_count)
         all_atom_count_ln = round(np.log(all_atom_count),
                                   5) if all_atom_count != 0 and all_atom_count != NAN_VALUE else NAN_VALUE
         try:
@@ -122,7 +122,7 @@ class PdbParser(Parser):
             ligand_count = NAN_VALUE
             print(self.key_error_output('ligand count'))
         try:
-            aa_ligand_count = int(addition_nan_handling(aa_count, ligand_count))
+            aa_ligand_count = addition_nan_handling(aa_count, ligand_count)
         except ValueError:
             aa_ligand_count = NAN_VALUE
         try:
@@ -139,7 +139,7 @@ class PdbParser(Parser):
         except KeyError:
             nonwater_ligand_count = NAN_VALUE
             print(self.key_error_output('nonwater ligand count'))
-        aa_ligand_count_nowater = int(addition_nan_handling(aa_count + nonwater_ligand_count))
+        aa_ligand_count_nowater = addition_nan_handling(aa_count, nonwater_ligand_count)
         ligand_ratio = division_zero_div_handling(hetatm_count, ligand_count)
         try:
             hetatm_count_nowater = int(hetatm_count - len(
