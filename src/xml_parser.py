@@ -90,19 +90,13 @@ class XmlParser(Parser):
         if not is_float(dcc_r_free):
             dcc_r_free = NAN_VALUE
         dcc_r_free_percentil = get_value_none_handle(root_zero_get, 'absolute-percentile-DCC_Rfree')
-        # angles_rmsz_structure = max(
-        #     [float(root[i].get('angles_rmsz')) for i in range(0, len(root)) if
-        #      root[i].get('angles_rmsz') is not None])
         angles_rmsz_structure = get_value_none_handle(root_zero_get, 'angles_rmsz')
-        # bonds_rmsz_structure = max(
-        #     [float(root[i].get('bonds_rmsz')) for i in range(0, len(root)) if
-        #      root[i].get('bonds_rmsz') is not None])
         bonds_rmsz_structure = get_value_none_handle(root_zero_get, 'bonds_rmsz')
         percent_rsrz_outliers = get_value_none_handle(root_zero_get, 'percent-RSRZ-outliers')
         rsrz_outliers_percentil = get_value_none_handle(root_zero_get, 'absolute-percentile-percent-RSRZ-outliers')
         if not (dcc_r_free_percentil == NAN_VALUE or rsrz_outliers_percentil == NAN_VALUE):
-            print('DCC rfree percentil: ' + str(dcc_r_free_percentil))
-            print('rsrz_outlier_percentil: ' + str(rsrz_outliers_percentil))
+            # print('DCC rfree percentil: ' + str(dcc_r_free_percentil))
+            # print('rsrz_outlier_percentil: ' + str(rsrz_outliers_percentil))
             summation_percentiles_2 = addition_nan_handling(
                 *[division_zero_div_handling(1, i) for i in
                   [float(dcc_r_free_percentil), float(rsrz_outliers_percentil)] if
@@ -111,14 +105,6 @@ class XmlParser(Parser):
                 division_zero_div_handling(summation_percentiles_2, 2)))
         else:
             combined_xray_quality_metric = NAN_VALUE
-        # guess this is not needed: if modelledentity instance is zero, then bonds rmsz is none
-        # if self.tree.find('ModelledEntityInstance') is not None:
-        #     if bonds_rmsz_structure > 0.0:
-        #         highest_chain_bonds_rmsz = bonds_rmsz_structure
-        #     else:
-        #         highest_chain_bonds_rmsz = 0.0
-        # else:
-        #     highest_chain_bonds_rmsz = NAN_VALUE
         try:
             highest_chain_bonds_rmsz = max(
                 [float(root[i].get('bonds_rmsz')) for i in range(0, len(root)) if

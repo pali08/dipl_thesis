@@ -106,8 +106,8 @@ class PdbParser(Parser):
         try:
             aa_count = len(self.mmcif_dict['_entity_poly_seq.entity_id'])
         except KeyError:
-            aa_count = NAN_VALUE
-            print(self.key_error_output('aa count'))
+            aa_count = 0
+            # print(self.key_error_output('aa count'))
         try:
             ligand_count = len(set(
                 [(self.mmcif_dict['_atom_site.auth_seq_id'][i], self.mmcif_dict['_atom_site.auth_asym_id'][i]) for i in
@@ -150,11 +150,17 @@ class PdbParser(Parser):
         ligand_count_nowater = nonwater_ligand_count
         ligand_ratio_nowater = division_zero_div_handling(hetatm_count_nowater, ligand_count_nowater)
         try:
+            ligand_unique_names = list(set([self.mmcif_dict['_atom_site.label_comp_id'][i] for i in
+                                            range(0, len(self.mmcif_dict['_atom_site.label_comp_id'])) if
+                                            self.mmcif_dict['_atom_site.group_PDB'][i].upper() == 'HETATM' and
+                                            self.mmcif_dict['_atom_site.type_symbol'][i].lower() in METALS and
+                                            self.mmcif_dict['_atom_site.label_comp_id'][i] != 'HOH']))
+            hetatm_count_metal = len([self.mmcif_dict['_atom_site.type_symbol'][i] for i in
+                                      range(0, len(self.mmcif_dict['_atom_site.type_symbol'])) if
+                                      self.mmcif_dict['_atom_site.label_comp_id'][i] in ligand_unique_names])
             asym_ids_with_metal = set([i[0] for i in set(
                 zip(self.mmcif_dict['_atom_site.label_asym_id'], self.mmcif_dict['_atom_site.type_symbol']))
-                                   if i[1].lower() in METALS])
-            hetatm_count_metal = len(
-                [i for i in self.mmcif_dict['_atom_site.label_asym_id'] if i in asym_ids_with_metal])
+                                       if i[1].lower() in METALS])
             ligand_count_metal = len(asym_ids_with_metal)
             if ('_pdbx_nmr_ensemble.conformers_submitted_total_number' in self.mmcif_dict and is_float(
                     self.mmcif_dict['_pdbx_nmr_ensemble.conformers_submitted_total_number'][0])):
