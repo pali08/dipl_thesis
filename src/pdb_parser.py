@@ -21,7 +21,6 @@ class PdbParser(Parser):
 
     def __init__(self, filename):
         super().__init__(filename)
-        self.mmcif_dict = get_mmcif_dictionary(filename)
         self.result_dict = {'PDB ID': NAN_VALUE, 'releaseDate': NAN_VALUE, 'StructureWeight': 0,
                             'PolymerWeight': NAN_VALUE,
                             'NonpolymerWeight': NAN_VALUE,
@@ -37,7 +36,9 @@ class PdbParser(Parser):
                             'hetatmCountNowaterNometal': NAN_VALUE,
                             'ligandCountNowaterNometal': NAN_VALUE,
                             'ligandRatioNowaterNometal': NAN_VALUE, 'resolution': NAN_VALUE}
-        self.create_result_dict()
+        if super().file_exists():
+            self.mmcif_dict = get_mmcif_dictionary(filename)
+            self.create_result_dict()
 
     def get_pdb_id(self):
         try:
@@ -192,9 +193,8 @@ class PdbParser(Parser):
                                  'ligandRatioNowaterNometal': ligand_ratio_nowater_nometal})
 
     def create_result_dict(self):
-        if super().file_exists():
-            self.get_pdb_id()
-            self.get_mmcif_resolution()
-            self.get_pdb_release_date()
-            self.get_structure_counts()
-            self.get_structure_weights()
+        self.get_pdb_id()
+        self.get_mmcif_resolution()
+        self.get_pdb_release_date()
+        self.get_structure_counts()
+        self.get_structure_weights()

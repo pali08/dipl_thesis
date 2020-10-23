@@ -26,7 +26,6 @@ class XmlParser(Parser):
     def __init__(self, filename, ligand_stats):
         super().__init__(filename)
         self.ligand_stats = ligand_stats
-        self.tree = eTree.parse(self.filename)
         self.result_dict = {'clashscore': NAN_VALUE, 'RamaOutliers': NAN_VALUE, 'SidechainOutliers': NAN_VALUE,
                             'ClashscorePercentile': NAN_VALUE, 'RamaOutliersPercentile': NAN_VALUE,
                             'SidechainOutliersPercentile': NAN_VALUE, 'combinedGeometryQuality': NAN_VALUE,
@@ -40,8 +39,9 @@ class XmlParser(Parser):
                             'averageResidueRSCC': NAN_VALUE, 'averageLigandRSCCsmallLigs': NAN_VALUE,
                             'averageLigandRSCClargeLigs': NAN_VALUE, 'absolute-percentile-RNAsuiteness': NAN_VALUE
                             }
-
-        self.create_result_dict()
+        if super().file_exists():
+            self.tree = eTree.parse(self.filename)
+            self.create_result_dict()
 
     def get_data(self):
         """
@@ -253,5 +253,4 @@ class XmlParser(Parser):
              'absolute-percentile-RNAsuiteness': rna_percentil})
 
     def create_result_dict(self):
-        if super().file_exists():
-            self.get_data()
+        self.get_data()

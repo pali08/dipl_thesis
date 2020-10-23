@@ -36,8 +36,8 @@ class VdbParser(JsonParser):
                             'LigandTopologyCarbonChiraProblemsPreciseBinary': NAN_VALUE,
                             'ChiraProblemsPreciseBinary': NAN_VALUE
                             }
-
-        self.create_result_dict()
+        if super().file_exists():
+            self.create_result_dict()
 
     def detect_metal(self, model_num):
         """
@@ -174,6 +174,5 @@ class VdbParser(JsonParser):
              'ChiraProblemsPreciseBinary': carbon_chira_problem_ratio_binary})
 
     def create_result_dict(self):
-        if super().file_exists():
-            self.get_counts()
-            self.get_undivided_data()
+        self.get_counts()
+        self.get_undivided_data()
