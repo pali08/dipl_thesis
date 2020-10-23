@@ -1,6 +1,6 @@
 import os
 
-from src.global_constants_and_functions import is_float
+from src.global_constants_and_functions import is_float, NAN_VALUE
 from src.pdb_parser import PdbParser
 from src.combined_data_computer import CombinedDataComputer
 from src.rest_parser import RestParser
@@ -23,33 +23,41 @@ class AllFilesParser:
     ligand_stats = None
 
     def __init__(self, molecule, ligand_stats_csv, *filepaths):
-        if AllFilesParser.ligand_stats is None:
-            AllFilesParser.ligand_stats = get_ligand_stats_csv(ligand_stats_csv)
-        self.filepaths = filepaths
-        self.molecule = molecule
-        self.pdb_result_dict = PdbParser(self.get_pdb_filepath()).result_dict
-        self.vdb_result_dict = VdbParser(self.get_vdb_filepath()).result_dict
-        self.xml_result_dict = XmlParser(self.get_xml_filepath(), self.ligand_stats).result_dict
-        self.rest_assembly_parser = RestParser(self.get_rest_filepath()[0],
-                                               AllFilesParser.ligand_stats)
-        self.rest_result_dict_assembly = self.rest_assembly_parser.result_dict
-        self.rest_molecules_parser = RestParser(self.get_rest_filepath()[1],
-                                                AllFilesParser.ligand_stats)
-        self.rest_result_dict_molecules = self.rest_molecules_parser.result_dict
-        self.rest_summary_parser = RestParser(self.get_rest_filepath()[2], AllFilesParser.ligand_stats)
-        self.rest_result_dict_summary = RestParser(self.get_rest_filepath()[2], AllFilesParser.ligand_stats).result_dict
+        try:
+            if AllFilesParser.ligand_stats is None:
+                AllFilesParser.ligand_stats = get_ligand_stats_csv(ligand_stats_csv)
+            self.filepaths = filepaths
+            self.molecule = molecule
+            self.pdb_result_dict = PdbParser(self.get_pdb_filepath()).result_dict
+            self.vdb_result_dict = VdbParser(self.get_vdb_filepath()).result_dict
+            self.xml_result_dict = XmlParser(self.get_xml_filepath(), self.ligand_stats).result_dict
+            self.rest_assembly_parser = RestParser(self.get_rest_filepath()[0],
+                                                   AllFilesParser.ligand_stats)
+            self.rest_result_dict_assembly = self.rest_assembly_parser.result_dict
+            self.rest_molecules_parser = RestParser(self.get_rest_filepath()[1],
+                                                    AllFilesParser.ligand_stats)
+            self.rest_result_dict_molecules = self.rest_molecules_parser.result_dict
+            self.rest_summary_parser = RestParser(self.get_rest_filepath()[2], AllFilesParser.ligand_stats)
+            self.rest_result_dict_summary = RestParser(self.get_rest_filepath()[2],
+                                                       AllFilesParser.ligand_stats).result_dict
 
-        self.combined_data_result_dict = CombinedDataComputer(self.pdb_result_dict, self.vdb_result_dict,
-                                                              self.xml_result_dict, self.rest_result_dict_assembly,
-                                                              self.rest_result_dict_molecules,
-                                                              self.rest_result_dict_summary,
-                                                              self.rest_assembly_parser,
-                                                              self.rest_molecules_parser,
-                                                              self.rest_summary_parser, self.ligand_stats).result_dict
-        self.result_dict = {**self.pdb_result_dict, **self.vdb_result_dict,
-                            **self.xml_result_dict, **self.rest_result_dict_assembly, **self.rest_result_dict_molecules,
-                            **self.rest_result_dict_summary,
-                            **self.combined_data_result_dict}
+            self.combined_data_result_dict = CombinedDataComputer(self.pdb_result_dict, self.vdb_result_dict,
+                                                                  self.xml_result_dict, self.rest_result_dict_assembly,
+                                                                  self.rest_result_dict_molecules,
+                                                                  self.rest_result_dict_summary,
+                                                                  self.rest_assembly_parser,
+                                                                  self.rest_molecules_parser,
+                                                                  self.rest_summary_parser,
+                                                                  self.ligand_stats).result_dict
+            self.result_dict = {**self.pdb_result_dict, **self.vdb_result_dict,
+                                **self.xml_result_dict, **self.rest_result_dict_assembly,
+                                **self.rest_result_dict_molecules,
+                                **self.rest_result_dict_summary,
+                                **self.combined_data_result_dict}
+        except Exception as e:
+            print(str(molecule) + ': There was some problem with parsing this molecule. Stacktrace follows:')
+            print(e)
+            self.result_dict = {i: NAN_VALUE for i in self.order_list}
 
     order_list = ['PDB ID', 'resolution', 'releaseDate', 'StructureWeight', 'PolymerWeight',
                   'NonpolymerWeight',
