@@ -8,11 +8,8 @@ from datetime import datetime
 from itertools import repeat
 from multiprocessing import Pool
 
+sys.path.append('..')
 from src.all_files_parser import AllFilesParser
-from src.global_constants_and_functions import COLUMNS
-from src.pdb_parser import PdbParser
-from src.combined_data_computer import CombinedDataComputer
-from src.vdb_parser import VdbParser
 
 
 def get_molecule_name_from_filepath(filepath):
