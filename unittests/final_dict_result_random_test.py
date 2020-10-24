@@ -8,6 +8,8 @@ from multiprocessing import Pool
 
 import numpy
 import random
+
+sys.path.append('..')
 from src.all_files_parser import AllFilesParser
 from src.global_constants_and_functions import NAN_VALUE, is_float
 
@@ -109,8 +111,9 @@ def compare(random_data_csv_dicts, result_dicts):
                             elif (is_float(value) and not is_float(random_data_csv_dict[key])) \
                                     or (not is_float(value) and is_float(random_data_csv_dict[key])):
                                 errors += 1
-                                print('Second Test failed: ' + str(key) + ':' + 'Actual: ' + str(value) + ' Expected: ' +
-                                      random_data_csv_dict[key])
+                                print(
+                                    'Second Test failed: ' + str(key) + ':' + 'Actual: ' + str(value) + ' Expected: ' +
+                                    random_data_csv_dict[key])
                                 # not sure if this can happen - maybe question mark in pdb file ?
                             else:
                                 print('compare function: This else branch should never happen')
