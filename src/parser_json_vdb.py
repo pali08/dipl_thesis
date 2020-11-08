@@ -1,5 +1,5 @@
 from src.global_constants_and_functions import METALS, division_zero_div_handling, NAN_VALUE, is_float
-from src.json_parser import JsonParser
+from src.parser_json import JsonParser
 
 
 def get_binary(value, topval):

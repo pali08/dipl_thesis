@@ -1,11 +1,11 @@
 import os
 
 from src.global_constants_and_functions import is_float, NAN_VALUE
-from src.pdb_parser import PdbParser
-from src.combined_data_computer import CombinedDataComputer
-from src.rest_parser import RestParser
-from src.vdb_parser import VdbParser
-from src.xml_parser import XmlParser
+from src.parser_pdb import PdbParser
+from src.computer_combined_data import CombinedDataComputer
+from src.parser_json_rest import RestParser
+from src.parser_json_vdb import VdbParser
+from src.parser_xml import XmlParser
 import csv
 
 

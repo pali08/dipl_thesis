@@ -1,7 +1,7 @@
 import unittest
 
 from src.global_constants_and_functions import NAN_VALUE
-from src.pdb_parser import PdbParser
+from src.parser_pdb import PdbParser
 
 
 class PdbParserTest(unittest.TestCase):

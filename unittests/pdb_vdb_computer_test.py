@@ -1,9 +1,9 @@
 import unittest
 
 from src.global_constants_and_functions import NAN_VALUE
-from src.pdb_parser import PdbParser
-from src.vdb_parser import VdbParser
-from src.combined_data_computer import CombinedDataComputer
+from src.parser_pdb import PdbParser
+from src.parser_json_vdb import VdbParser
+from src.computer_combined_data import CombinedDataComputer
 
 
 class PdbVdbComputerTest(unittest.TestCase):

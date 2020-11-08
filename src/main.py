@@ -9,7 +9,7 @@ from itertools import repeat
 from multiprocessing import Pool
 
 sys.path.append('..')
-from src.all_files_parser import AllFilesParser
+from src.parser_all_files import AllFilesParser
 
 
 def get_molecule_name_from_filepath(filepath):

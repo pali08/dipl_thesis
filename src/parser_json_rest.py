@@ -1,7 +1,7 @@
 import os
 import csv
 from src.global_constants_and_functions import NAN_VALUE, value_for_result_dictionary, BIOPOLYMERS
-from src.json_parser import JsonParser
+from src.parser_json import JsonParser
 
 
 class UnknownSubfolderException(Exception):

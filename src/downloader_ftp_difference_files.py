@@ -3,7 +3,7 @@ import filecmp
 import time
 import os
 
-from src.ftp_file_downloader import FtpFileDownloader
+from src.downloader_ftp import FtpFileDownloader
 
 
 class DifferenceFilesDownloader(FtpFileDownloader):
@@ -31,4 +31,10 @@ class DifferenceFilesDownloader(FtpFileDownloader):
                     print('File was replaced with newer version.')
                     return
 
+    def get_set_of_added_modified_or_obsolete_files(self):
+        with open(self.save_filepath) as f:
+            return [i.strip() for i in f.readlines()]
 
+
+a = DifferenceFilesDownloader('ftp://ftp.ebi.ac.uk/pub/databases/msd/status/obsolete.late', './obsolete.latest', 10)
+a.get_file()

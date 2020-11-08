@@ -10,7 +10,7 @@ import numpy
 import random
 
 sys.path.append('..')
-from src.all_files_parser import AllFilesParser
+from src.parser_all_files import AllFilesParser
 from src.global_constants_and_functions import NAN_VALUE, is_float
 
 """
