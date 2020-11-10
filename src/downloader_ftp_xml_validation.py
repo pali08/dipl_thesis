@@ -8,8 +8,8 @@ class XmlValidationDownloader(FtpFileDownloader):
         super().__init__(url, save_filepath)
 
     def get_url(self):
-        return 'ftp://files.rcsb.org/pub/pdb/validation_reports/' + self.molecule[
-                                                                    1:-1] + '/' + self.molecule + '/' + self.molecule + \
+        return 'ftp://files.rcsb.org/pub/pdb/validation_reports/' + \
+               self.molecule[1:-1] + '/' + self.molecule + '/' + self.molecule + \
                '_validation.xml.gz'
 
     def get_file(self):
