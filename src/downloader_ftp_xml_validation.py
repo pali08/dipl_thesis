@@ -12,6 +12,3 @@ class XmlValidationDownloader(FtpFileDownloader):
                self.molecule[1:-1] + '/' + self.molecule + '/' + self.molecule + \
                '_validation.xml.gz'
 
-    def get_file(self):
-        if not self.file_exists_on_ftp():
-            searched_string = self.molecule + '_validation.xml'

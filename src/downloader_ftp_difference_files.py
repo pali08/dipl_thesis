@@ -1,19 +1,18 @@
 import datetime
 import json
 import os
-import filecmp
 import time
-import os
 from ftplib import FTP
 
 from src.downloader_ftp import FtpFileDownloader
 
 
 class DifferenceFilesDownloader(FtpFileDownloader):
+    timestamp_file = '..' + os.sep + 'metadata_files' + os.sep + 'added_modified_obsolete_timestamps.json'
+
     def __init__(self, url, save_filepath, wait_time):
         super().__init__(url, save_filepath)
         self.wait_time = wait_time
-        self.timestamp_file = '..' + os.sep + 'metadata_files' + os.sep + 'added_modified_obsolete_timestamps.json'
 
     def get_file(self):
         print('Downloading file: ' + str(self.save_filepath.rsplit(os.path.sep, 1)[1]))
@@ -43,7 +42,8 @@ class DifferenceFilesDownloader(FtpFileDownloader):
             with open(self.timestamp_file, "r+") as file:
                 data = json.load(file)
                 data.update(timestamp_dict)
-                file.seek(0)
+            os.remove(self.timestamp_file)
+            with open(self.timestamp_file, 'w+') as file:
                 json.dump(data, file, indent=4)
 
     def get_timestamp_dict_ftp(self):
@@ -55,8 +55,7 @@ class DifferenceFilesDownloader(FtpFileDownloader):
         for line in lines:
             tokens = line.split(maxsplit=9)
             time_str = tokens[5] + " " + tokens[6] + " " + tokens[7]
-            timestamp = datetime.datetime.strptime(str(datetime.datetime.now().year) + ' ' + time_str, "%Y %b %d %H:%M")
-        timestamp_dict = {self.url: str(timestamp)}
+        timestamp_dict = {self.url: str(datetime.datetime.now().year) + ' ' + time_str}
         return timestamp_dict
 
     def get_timestamp_local(self):
