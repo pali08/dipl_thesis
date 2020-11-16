@@ -1,4 +1,5 @@
 import json
+import time
 
 import requests
 
@@ -6,21 +7,26 @@ from src.downloader import FileDownloader
 
 
 class RestJsonDownloader(FileDownloader):
-    def __init__(self, molecule, rest_type, save_filepath):
+    def __init__(self, url, save_filepath):
         """
-        :param molecule: 4 letters code
-        :param rest_type: assembly, molecules or summary
         :param save_filepath:
         """
-        self.molecule = molecule
-        self.rest_type = rest_type
-        self.url = self.get_url()
-        super().__init__(self.url, save_filepath)
+        super().__init__(url, save_filepath)
 
-    def get_url(self):
-        return 'https://www.ebi.ac.uk/pdbe/api/pdb/entry/' + self.rest_type + '/' + self.molecule
+    def is_connection_working(self):
+        try:
+            requests.get(self.url)
+            return True
+        except requests.exceptions.ConnectionError as rec:
+            return False
 
     def get_file(self):
-        json_dict = requests.get(self.url).json()
-        with open(self.save_filepath, 'w+') as file:
-            json.dump(json_dict, self.save_filepath, indent=4)
+        while not self.is_connection_working():
+            print('Connection is not working. Sleeping 5 minutes and retrying')
+            time.sleep(300)
+        try:
+            json_dict = requests.get(self.url).json()
+            with open(self.save_filepath, 'w+') as file:
+                json.dump(json_dict, file, indent=4)
+        except json.decoder.JSONDecodeError:
+            print('WARNING: Connection is OK, but system was not able to get file. Skipping.')

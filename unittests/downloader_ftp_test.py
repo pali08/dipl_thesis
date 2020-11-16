@@ -21,6 +21,8 @@ class TestFtpDownloader(unittest.TestCase):
         self.assertEqual(os.path.isfile(os.path.join('.', 'modified.latest')), True)
         self.addCleanup(os.remove, 'modified.latest')
 
+    # TODO test situation where connection is working and file is not on FTP
+
 
 if __name__ == '__main__':
     unittest.main()

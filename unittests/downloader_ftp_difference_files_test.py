@@ -30,19 +30,16 @@ class TestDifferenceFileDownloader(unittest.TestCase):
     }
 
     def step1(self):
-        DifferenceFilesDownloader('ftp://ftp.ebi.ac.uk/pub/databases/msd/status/modified.latest',
-                                  '..' + os.sep + 'metadata_files' + os.sep + 'modified.latest', 300).get_file()
+        DifferenceFilesDownloader('modified').get_file()
         self.assertEqual(os.path.exists('../metadata_files/modified.latest'), True)
         # self.assertEqual(False, True)
 
     def step2(self):
-        DifferenceFilesDownloader('ftp://ftp.ebi.ac.uk/pub/databases/msd/status/added.latest',
-                                  '..' + os.sep + 'metadata_files' + os.sep + 'added.latest', 300).get_file()
+        DifferenceFilesDownloader('added').get_file()
         self.assertEqual(os.path.exists('../metadata_files/added.latest'), True)
 
     def step3(self):
-        DifferenceFilesDownloader('ftp://ftp.ebi.ac.uk/pub/databases/msd/status/obsolete.latest',
-                                  '..' + os.sep + 'metadata_files' + os.sep + 'obsolete.latest', 300).get_file()
+        DifferenceFilesDownloader('obsolete').get_file()
         self.assertEqual(os.path.exists('../metadata_files/obsolete.latest'), True)
 
     def step4(self):
@@ -54,8 +51,7 @@ class TestDifferenceFileDownloader(unittest.TestCase):
             json.dump(data, file, indent=4)
 
     def step5(self):
-        DifferenceFilesDownloader('ftp://ftp.ebi.ac.uk/pub/databases/msd/status/modified.latest',
-                                  '..' + os.sep + 'metadata_files' + os.sep + 'modified.latest', 300).get_file()
+        DifferenceFilesDownloader('modified').get_file()
         first_condition = os.path.exists('../metadata_files/modified.latest')
         print(str(first_condition))
         with open('../metadata_files/added_modified_obsolete_timestamps.json', "r+") as file:
@@ -65,8 +61,7 @@ class TestDifferenceFileDownloader(unittest.TestCase):
         self.assertEqual(first_condition and second_condition, True)
 
     def step6(self):
-        DifferenceFilesDownloader('ftp://ftp.ebi.ac.uk/pub/databases/msd/status/added.latest',
-                                  '..' + os.sep + 'metadata_files' + os.sep + 'added.latest', 300).get_file()
+        DifferenceFilesDownloader('added').get_file()
         first_condition = os.path.exists('../metadata_files/added.latest')
         with open('../metadata_files/added_modified_obsolete_timestamps.json', "r+") as file:
             data = json.load(file)
@@ -74,18 +69,18 @@ class TestDifferenceFileDownloader(unittest.TestCase):
         self.assertEqual(first_condition and second_condition, True)
 
     def step7(self):
-        DifferenceFilesDownloader('ftp://ftp.ebi.ac.uk/pub/databases/msd/status/obsolete.latest',
-                                  '..' + os.sep + 'metadata_files' + os.sep + 'obsolete.latest', 300).get_file()
+        DifferenceFilesDownloader('obsolete').get_file()
         first_condition = os.path.exists('../metadata_files/obsolete.latest')
         with open('../metadata_files/added_modified_obsolete_timestamps.json', "r+") as file:
             data = json.load(file)
             second_condition = is_timestamp(data['ftp://ftp.ebi.ac.uk/pub/databases/msd/status/obsolete.latest'])
         self.assertEqual(first_condition and second_condition, True)
 
-    # def step8(self):
-    #     files = glob.glob('..' + os.sep + 'metadata_files' + os.sep + '*')
-    #     for f in files:
-    #         os.remove(f)
+    def step8(self):
+        os.remove(DifferenceFilesDownloader.timestamp_file)
+        os.remove('../metadata_files/added.latest')
+        os.remove('../metadata_files/modified.latest')
+        os.remove('../metadata_files/obsolete.latest')
 
     def _steps(self):
         for name in dir(self):  # dir() result is implicitly sorted

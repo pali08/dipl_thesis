@@ -3,6 +3,8 @@ import sys
 import time
 import urllib
 
+from urllib3 import HTTPSConnectionPool
+
 from src.downloader import FileDownloader
 import shutil
 import urllib.request as request
@@ -19,19 +21,21 @@ class FtpFileDownloader(FileDownloader):
         Check connection and download file trough ftp.
         !!! Overwrites existing file if not told otherwise
         """
-        while not (self.is_connection_working() and self.file_exists_on_ftp()):
-            print('Connection is not working or file not exists on ftp. Sleep 5 minutes and retry')
+        while not (self.is_connection_working()):
+            print('Connection is not working. Sleeping 5 minutes and retrying.')
             time.sleep(300)
-        with closing(request.urlopen(self.url, )) as r:
-            with open(self.save_filepath, 'wb') as f:
-                shutil.copyfileobj(r, f)
+        if self.file_exists_on_ftp():
+            with closing(request.urlopen(self.url, )) as r:
+                with open(self.save_filepath, 'wb') as f:
+                    shutil.copyfileobj(r, f)
+                    return
+        print('WARNING: Connection is OK, but system was not able to get file. Skipping.')
 
     def is_connection_working(self):
         try:
             ftplib.FTP(host=self.url.split('/')[2])
             return True
         except ftplib.socket.gaierror as sge:
-            print('Problem encountered when connecting trough FTP: ' + str(sge) + '. Is the Internet working ?')
             return False
         except Exception as e:
             print(
