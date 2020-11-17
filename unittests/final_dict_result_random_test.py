@@ -127,7 +127,6 @@ def compare(random_data_csv_dicts, result_dicts):
 def main():
     data_csv_dicts = get_data_csv_random_records_dicts(int(sys.argv[1]), sys.argv[2])
     molecules_globalvar = get_molecules(data_csv_dicts)
-
     start = time.time()
     result_dicts_globalvar = get_result_dicts(molecules_globalvar, sys.argv[3], int(sys.argv[4]), *sys.argv[5:])
     end = time.time()

@@ -1,6 +1,7 @@
 import os
 
 from src import global_constants_and_functions
+from src.generate_filepaths import FilepathGenerator
 from src.global_constants_and_functions import is_float, NAN_VALUE, MMCIF_UPDATED_SUFFIX, XML_VALIDATION_SUFFIX, \
     VDB_JSON_UNIVERSAL_NAME, ASSEMBLY_FOLDER, MOLECULES_FOLDER, SUMMARY_FOLDER, JSON_SUFFIX
 from src.parser_pdb import PdbParser
@@ -30,17 +31,19 @@ class AllFilesParser:
                 AllFilesParser.ligand_stats = get_ligand_stats_csv(ligand_stats_csv)
             self.filepaths = filepaths
             self.molecule = molecule
-            self.pdb_result_dict = PdbParser(self.get_pdb_filepath()).result_dict
-            self.vdb_result_dict = VdbParser(self.get_vdb_filepath()).result_dict
-            self.xml_result_dict = XmlParser(self.get_xml_filepath(), self.ligand_stats).result_dict
-            self.rest_assembly_parser = RestParser(self.get_rest_filepath()[0],
+            self.filepath_generator = FilepathGenerator(molecule, *filepaths)
+            self.pdb_result_dict = PdbParser(self.filepath_generator.get_pdb_filepath()).result_dict
+            self.vdb_result_dict = VdbParser(self.filepath_generator.get_vdb_filepath()).result_dict
+            self.xml_result_dict = XmlParser(self.filepath_generator.get_xml_filepath(), self.ligand_stats).result_dict
+            self.rest_assembly_parser = RestParser(self.filepath_generator.get_rest_filepath()[0],
                                                    AllFilesParser.ligand_stats)
             self.rest_result_dict_assembly = self.rest_assembly_parser.result_dict
-            self.rest_molecules_parser = RestParser(self.get_rest_filepath()[1],
+            self.rest_molecules_parser = RestParser(self.filepath_generator.get_rest_filepath()[1],
                                                     AllFilesParser.ligand_stats)
             self.rest_result_dict_molecules = self.rest_molecules_parser.result_dict
-            self.rest_summary_parser = RestParser(self.get_rest_filepath()[2], AllFilesParser.ligand_stats)
-            self.rest_result_dict_summary = RestParser(self.get_rest_filepath()[2],
+            self.rest_summary_parser = RestParser(self.filepath_generator.get_rest_filepath()[2],
+                                                  AllFilesParser.ligand_stats)
+            self.rest_result_dict_summary = RestParser(self.filepath_generator.get_rest_filepath()[2],
                                                        AllFilesParser.ligand_stats).result_dict
 
             self.combined_data_result_dict = CombinedDataComputer(self.pdb_result_dict, self.vdb_result_dict,
@@ -99,21 +102,6 @@ class AllFilesParser:
         for i in AllFilesParser.order_list:
             ordered_list.append(self.result_dict[i])
         return ordered_list
-
-    def get_pdb_filepath(self):
-        return os.path.join(self.filepaths[0], self.molecule + MMCIF_UPDATED_SUFFIX)
-
-    def get_vdb_filepath(self):
-        return os.path.join(self.filepaths[1], self.molecule, VDB_JSON_UNIVERSAL_NAME)
-
-    def get_xml_filepath(self):
-        return os.path.join(self.filepaths[2], self.molecule + XML_VALIDATION_SUFFIX)
-
-    def get_rest_filepath(self):
-        assembly = os.path.join(self.filepaths[3], ASSEMBLY_FOLDER, self.molecule + JSON_SUFFIX)
-        molecules = os.path.join(self.filepaths[3], MOLECULES_FOLDER, self.molecule + JSON_SUFFIX)
-        summary = os.path.join(self.filepaths[3], SUMMARY_FOLDER, self.molecule + JSON_SUFFIX)
-        return assembly, molecules, summary
 
     def result_dict_final_edit(self):
         """
