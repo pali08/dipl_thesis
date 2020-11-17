@@ -1,10 +1,14 @@
 import datetime
 import json
 import os
+import sys
 import time
 from ftplib import FTP
 
+sys.path.append('..')
+from src.downloader import FileDownloader
 from src.downloader_ftp import FtpFileDownloader
+from src.global_constants_and_functions import LATEST_SUFFIX, A_M_O_FILENAME, METADATA_FILES_PATH
 
 
 class DifferenceFilesDownloader(FtpFileDownloader):
@@ -16,7 +20,7 @@ class DifferenceFilesDownloader(FtpFileDownloader):
     same timestamp as files on ftp server. If result is True, it means, that files have not been updated. In that case
     it waits 5 minutes and tries again. This is repeated until files are updated on ftp server.
     """
-    timestamp_file = '..' + os.sep + 'metadata_files' + os.sep + 'added_modified_obsolete_timestamps.json'
+    timestamp_file = os.path.join(METADATA_FILES_PATH, A_M_O_FILENAME)
 
     def __init__(self, a_m_o):
         """
@@ -43,10 +47,11 @@ class DifferenceFilesDownloader(FtpFileDownloader):
         return
 
     def set_url(self):
-        self.url = 'ftp://ftp.ebi.ac.uk/pub/databases/msd/status/' + self.a_m_o + '.latest'
+        self.url = FileDownloader.FTP_SERVER + FileDownloader.FTP_PATH_TO_A_M_O_FILES + self.a_m_o + LATEST_SUFFIX
 
     def set_savepath(self):
-        self.save_filepath = os.path.join('..', 'metadata_files', self.a_m_o + '.latest')
+        self.save_filepath = os.path.join(METADATA_FILES_PATH, self.a_m_o + LATEST_SUFFIX)
+        self.save_filepath = os.path.join('..', 'metadata_files', self.a_m_o + LATEST_SUFFIX)
 
     def sync_timestamp(self):
         """
@@ -69,18 +74,14 @@ class DifferenceFilesDownloader(FtpFileDownloader):
 
     def get_timestamp_dict_ftp(self):
         ftp_connection = FTP(self.url.split('/')[2])
-        lines = []
         ftp_connection.sendcmd("USER anonymous")
-        ftp_dir = '/' + '/'.join(self.url.split('/')[3:])
-        ftp_connection.dir(ftp_dir, lines.append)
-        for line in lines:
-            tokens = line.split(maxsplit=9)
-            time_str = tokens[5] + " " + tokens[6] + " " + tokens[7]
-        timestamp_dict = {self.url: str(datetime.datetime.now().year) + ' ' + time_str}
+        timestamp_dict = {
+            self.url: ftp_connection.voidcmd(
+                'MDTM ' + FileDownloader.FTP_PATH_TO_A_M_O_FILES + self.a_m_o + LATEST_SUFFIX)[
+                      4:].strip()}
         return timestamp_dict
 
     def get_timestamp_local(self):
         with open(self.timestamp_file, "r+") as file:
             data = json.load(file)
         return data[self.url]
-

@@ -1,3 +1,6 @@
+import sys
+
+sys.path.append('..')
 from src.global_constants_and_functions import addition_nan_handling, key_error_output, NAN_VALUE, \
     division_zero_div_handling, check_dictionary_contains_only_nan_values, BIOPOLYMERS, value_for_result_dictionary
 

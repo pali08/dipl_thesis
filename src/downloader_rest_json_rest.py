@@ -1,7 +1,9 @@
 import json
+import sys
 
 import requests
 
+sys.path.append('..')
 from src.downloader import FileDownloader
 from src.downloader_rest_json import RestJsonDownloader
 
@@ -19,5 +21,4 @@ class RestJsonDownloaderRest(RestJsonDownloader):
         super().__init__(self.url, save_filepath)
 
     def set_url(self):
-        self.url = 'https://www.ebi.ac.uk/pdbe/api/pdb/entry/' + self.a_m_s + '/' + self.molecule
-
+        self.url = FileDownloader.HTTP_SERVER + FileDownloader.HTTP_PATH_TO_REST_FILES + self.a_m_s + '/' + self.molecule

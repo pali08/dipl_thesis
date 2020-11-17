@@ -1,8 +1,9 @@
 import json
+import sys
 import time
-
 import requests
 
+sys.path.append('..')
 from src.downloader import FileDownloader
 
 

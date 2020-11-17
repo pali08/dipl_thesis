@@ -1,5 +1,6 @@
 import csv
 import inspect
+import os
 
 METALS = {'li', 'na', 'k', 'rb', 'cs', 'fr',
           'be', 'mg', 'ca', 'sr', 'ba', 'ra',
@@ -10,18 +11,26 @@ METALS = {'li', 'na', 'k', 'rb', 'cs', 'fr',
           'hf', 'ta', 'w', 're', 'os', 'ir', 'pt', 'au', 'hg',
           'rf', 'db', 'sg', 'bh', 'hs', 'cn',
           'al', 'ga', 'in', 'sn', 'tl', 'pb', 'bi', 'po', 'fl'}
+
 WATER_MOLECULE = 'HOH'
 WATER_MOL_WEIGHT = 18.015
 NAN_VALUE = 'nan'
-
-COLUMNS = ['pdbid', 'resolution', 'year', 'structureWeight', 'polymerWeight', 'nonPolymerWeightWithWater',
-           'nonPolymerWeight', 'waterWeight',
-           'atomCount', 'hetatmCount', 'allAtomCount', 'allAtomCountLn',
-           'aaCount', 'ligandCount', 'aaLigandCount',
-           'aaLigandCountNowater', 'ligandRatio', 'hetatmCountNowater', 'ligandCountNowater', 'ligandRatioNowater',
-           'hetatmCount_metal', 'ligandCount_metal', 'ligandRatio_metal', 'hetatmCountNometal', 'ligandCountNometal',
-           'ligandRatioNometal', 'hetatmCountNowaterNometal', 'ligandCountNowaterNometal',
-           'ligandRatioNowaterNometal']
+MMCIF_UPDATED_SUFFIX = '_updated.cif'
+MMCIF_SUFFIX = '.cif'
+XML_VALIDATION_SUFFIX = '_validation.xml'
+XML_SUFFIX = '.xml'
+SUFFIX_GZIP = '.gz'
+ADDED = 'added'
+MODIFIED = 'modified'
+OBSOLETE = 'obsolete'
+LATEST_SUFFIX = '.latest'
+JSON_SUFFIX = '.json'
+VDB_JSON_UNIVERSAL_NAME = 'result' + JSON_SUFFIX
+A_M_O_FILENAME = 'added_modified_obsolete_timestamps' + JSON_SUFFIX
+METADATA_FILES_PATH = os.path.join('..', 'metadata_files', '')
+ASSEMBLY_FOLDER = 'assembly'
+MOLECULES_FOLDER = 'molecules'
+SUMMARY_FOLDER = 'summary'
 
 BIOPOLYMERS = ['polypeptide(L)', 'polypeptide(D)', 'polyribonucleotide', 'polydeoxyribonucleotide', 'polysaccharide(D)',
                'polysaccharide(L)', 'polydeoxyribonucleotide/polyribonucleotide hybrid', 'cyclic-pseudo-peptide',

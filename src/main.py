@@ -8,13 +8,15 @@ from datetime import datetime
 from itertools import repeat
 from multiprocessing import Pool
 
+from src.global_constants_and_functions import VDB_JSON_UNIVERSAL_NAME
+
 sys.path.append('..')
 from src.parser_all_files import AllFilesParser
 
 
 def get_molecule_name_from_filepath(filepath):
     filename = os.path.split(filepath)[1]
-    if filename == 'result.json':
+    if filename == VDB_JSON_UNIVERSAL_NAME:
         return os.path.split(os.path.split(filepath)[0])[1]
     else:
         return filename.split('.')[0].split("_")[0]

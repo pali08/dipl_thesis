@@ -1,6 +1,7 @@
 import os
 import csv
-from src.global_constants_and_functions import NAN_VALUE, value_for_result_dictionary, BIOPOLYMERS
+from src.global_constants_and_functions import NAN_VALUE, value_for_result_dictionary, BIOPOLYMERS, ASSEMBLY_FOLDER, \
+    MOLECULES_FOLDER, SUMMARY_FOLDER
 from src.parser_json import JsonParser
 
 
@@ -19,7 +20,7 @@ class RestParser(JsonParser):
         self.molecule_name = filename.split(os.sep)[-1].split('.')[0].lower()
         if super().file_exists():
             self.all_values_list = self.json_dict[self.molecule_name]
-        if self.subfolder.lower() == 'assembly':
+        if self.subfolder.lower() == ASSEMBLY_FOLDER:
             self.biopolymers_entities_list = NAN_VALUE
             self.ligand_entities_list = NAN_VALUE
             self.water_entities_list = NAN_VALUE
@@ -32,12 +33,12 @@ class RestParser(JsonParser):
                                 'AssemblyWaterCount': NAN_VALUE}
             if super().file_exists():
                 self.get_assembly_data()
-        elif self.subfolder.lower() == 'molecules':
+        elif self.subfolder.lower() == MOLECULES_FOLDER:
             self.ligand_flexibility_raw = NAN_VALUE
             self.result_dict = {}
             if super().file_exists():
                 self.get_molecules_data()
-        elif self.subfolder.lower() == 'summary':
+        elif self.subfolder.lower() == SUMMARY_FOLDER:
             self.prefered_assembly_id = NAN_VALUE
             self.result_dict = {'releaseDate': NAN_VALUE}
             if super().file_exists():

@@ -1,6 +1,8 @@
 import os
 
-from src.global_constants_and_functions import is_float, NAN_VALUE
+from src import global_constants_and_functions
+from src.global_constants_and_functions import is_float, NAN_VALUE, MMCIF_UPDATED_SUFFIX, XML_VALIDATION_SUFFIX, \
+    VDB_JSON_UNIVERSAL_NAME, ASSEMBLY_FOLDER, MOLECULES_FOLDER, SUMMARY_FOLDER, JSON_SUFFIX
 from src.parser_pdb import PdbParser
 from src.computer_combined_data import CombinedDataComputer
 from src.parser_json_rest import RestParser
@@ -99,18 +101,18 @@ class AllFilesParser:
         return ordered_list
 
     def get_pdb_filepath(self):
-        return os.path.join(self.filepaths[0], self.molecule + '_updated.cif')
+        return os.path.join(self.filepaths[0], self.molecule + MMCIF_UPDATED_SUFFIX)
 
     def get_vdb_filepath(self):
-        return os.path.join(self.filepaths[1], self.molecule, 'result.json')
+        return os.path.join(self.filepaths[1], self.molecule, VDB_JSON_UNIVERSAL_NAME)
 
     def get_xml_filepath(self):
-        return os.path.join(self.filepaths[2], self.molecule + '_validation.xml')
+        return os.path.join(self.filepaths[2], self.molecule + XML_VALIDATION_SUFFIX)
 
     def get_rest_filepath(self):
-        assembly = os.path.join(self.filepaths[3], 'assembly', self.molecule + '.json')
-        molecules = os.path.join(self.filepaths[3], 'molecules', self.molecule + '.json')
-        summary = os.path.join(self.filepaths[3], 'summary', self.molecule + '.json')
+        assembly = os.path.join(self.filepaths[3], ASSEMBLY_FOLDER, self.molecule + JSON_SUFFIX)
+        molecules = os.path.join(self.filepaths[3], MOLECULES_FOLDER, self.molecule + JSON_SUFFIX)
+        summary = os.path.join(self.filepaths[3], SUMMARY_FOLDER, self.molecule + JSON_SUFFIX)
         return assembly, molecules, summary
 
     def result_dict_final_edit(self):

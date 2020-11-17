@@ -2,13 +2,13 @@ import ftplib
 import sys
 import time
 import urllib
-
-from urllib3 import HTTPSConnectionPool
-
-from src.downloader import FileDownloader
 import shutil
 import urllib.request as request
 from contextlib import closing
+from urllib3 import HTTPSConnectionPool
+
+sys.path.append('..')
+from src.downloader import FileDownloader
 
 
 class FtpFileDownloader(FileDownloader):
@@ -22,7 +22,7 @@ class FtpFileDownloader(FileDownloader):
         !!! Overwrites existing file if not told otherwise
         """
         while not (self.is_connection_working()):
-            print('Connection is not working. Sleeping 5 minutes and retrying.')
+            print('Connection is not working. Reason should be printed above. Sleeping 5 minutes and retrying.')
             time.sleep(300)
         if self.file_exists_on_ftp():
             with closing(request.urlopen(self.url, )) as r:
@@ -36,11 +36,17 @@ class FtpFileDownloader(FileDownloader):
             ftplib.FTP(host=self.url.split('/')[2])
             return True
         except ftplib.socket.gaierror as sge:
+            print(str(sge))
+            print('socket.gaierror - probably internet connection is not working')
             return False
+        except ftplib.error_temp as et:
+            print(str(et))
+            print('error_temp - this probably means, that too many users are connected to server.'
+                  'Or we are downloading files too fast one after another')
         except Exception as e:
             print(
-                'System encountered problem when getting FTP file although connection with server is working:\n' + str(
-                    e) + '\nPlease contact author of this program.')
+                'Program encountered problem when getting FTP file although connection with server is working:\n' + str(
+                    e) + '\nPlease contact author of this program (p.mikulaj@mail.muni.cz)')
             sys.exit()
 
     def file_exists_on_ftp(self):

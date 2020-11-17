@@ -11,6 +11,7 @@ class TestRestJsonDownloaderVdb(unittest.TestCase):
         RestJsonDownloaderVdb('3wgt', os.path.join('.', '3wgt.json')).get_file()
         hetatm_count_filtered = VdbParser(os.path.join('.', '3wgt.json')).result_dict['hetatmCountFiltered']
         self.assertEqual(is_float(hetatm_count_filtered), True)
+        self.addCleanup(os.remove, '3wgt.json')
 
 
 if __name__ == '__main__':
