@@ -1,6 +1,7 @@
 import csv
 import inspect
 import os
+import shutil
 
 METALS = {'li', 'na', 'k', 'rb', 'cs', 'fr',
           'be', 'mg', 'ca', 'sr', 'ba', 'ra',
@@ -168,3 +169,18 @@ def check_dictionary_contains_only_nan_values(dictionary):
     :return: see above
     """
     return set(dictionary.values()) == {NAN_VALUE}
+
+
+def remove_custom(path):
+    """
+    param <path> could either be relative or absolute.
+    remove:
+    file if path is file
+    folder with all content if path is folder
+    """
+    if os.path.isfile(path) or os.path.islink(path):
+        os.remove(path)  # remove the file
+    elif os.path.isdir(path):
+        shutil.rmtree(path)  # remove dir and all contains
+    else:
+        raise ValueError("file {} is not a file or dir.".format(path))

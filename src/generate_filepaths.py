@@ -25,3 +25,6 @@ class FilepathGenerator:
         molecules = os.path.join(self.filepaths[3], MOLECULES_FOLDER, self.molecule + JSON_SUFFIX)
         summary = os.path.join(self.filepaths[3], SUMMARY_FOLDER, self.molecule + JSON_SUFFIX)
         return assembly, molecules, summary
+
+    def get_all_paths(self):
+        return self.get_pdb_filepath(), self.get_vdb_filepath(), self.get_xml_filepath(), *self.get_rest_filepath()

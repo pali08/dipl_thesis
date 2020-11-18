@@ -1,20 +1,9 @@
 import os
-import shutil
 import unittest
 
 from src.downloader_rest_json_rest import RestJsonDownloaderRest
-from src.global_constants_and_functions import MOLECULES_FOLDER, SUMMARY_FOLDER, ASSEMBLY_FOLDER
+from src.global_constants_and_functions import MOLECULES_FOLDER, SUMMARY_FOLDER, ASSEMBLY_FOLDER, remove_custom
 from src.parser_json_rest import RestParser
-
-
-def remove(path):
-    """ param <path> could either be relative or absolute. """
-    if os.path.isfile(path) or os.path.islink(path):
-        os.remove(path)  # remove the file
-    elif os.path.isdir(path):
-        shutil.rmtree(path)  # remove dir and all contains
-    else:
-        raise ValueError("file {} is not a file or dir.".format(path))
 
 
 class TestRestJsonDownloaderRest(unittest.TestCase):
@@ -30,7 +19,7 @@ class TestRestJsonDownloaderRest(unittest.TestCase):
             test_assembly = False
             print(str(e))
         self.assertEqual(test_assembly, True)
-        self.addCleanup(remove, os.path.join('.', ASSEMBLY_FOLDER))
+        self.addCleanup(remove_custom, os.path.join('.', ASSEMBLY_FOLDER))
 
     def test_molecules_file_downloading(self):
         os.mkdir(MOLECULES_FOLDER)
@@ -44,7 +33,7 @@ class TestRestJsonDownloaderRest(unittest.TestCase):
             test_molecules = False
             print(str(e))
         self.assertEqual(test_molecules, True)
-        self.addCleanup(remove, os.path.join('.', MOLECULES_FOLDER))
+        self.addCleanup(remove_custom, os.path.join('.', MOLECULES_FOLDER))
 
     def test_summary_file_downloading(self):
         os.mkdir(SUMMARY_FOLDER)
@@ -57,7 +46,7 @@ class TestRestJsonDownloaderRest(unittest.TestCase):
             test_summary = False
             print(str(e))
         self.assertEqual(test_summary, True)
-        self.addCleanup(remove, os.path.join('.', SUMMARY_FOLDER))
+        self.addCleanup(remove_custom, os.path.join('.', SUMMARY_FOLDER))
 
 
 if __name__ == '__main__':
