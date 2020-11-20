@@ -28,8 +28,10 @@ class XmlValidationDownloader(FtpFileDownloader):
         """
         self.save_filepath = self.save_filepath + SUFFIX_GZIP
         super().get_file()
-        with gzip.open(self.save_filepath, 'rb') as file_input:
-            with open(self.save_filepath[:-3], 'wb') as file_output:
-                # [:-3] - without gzip
-                shutil.copyfileobj(file_input, file_output)
-        os.remove(self.save_filepath)
+        # ungzip if exists
+        if os.path.exists(self.save_filepath):
+            with gzip.open(self.save_filepath, 'rb') as file_input:
+                with open(self.save_filepath[:-3], 'wb') as file_output:
+                    # [:-3] - without gzip
+                    shutil.copyfileobj(file_input, file_output)
+            os.remove(self.save_filepath)

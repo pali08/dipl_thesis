@@ -171,6 +171,10 @@ def check_dictionary_contains_only_nan_values(dictionary):
     return set(dictionary.values()) == {NAN_VALUE}
 
 
+class DirOrFileNotFoundError(Exception):
+    pass
+
+
 def remove_custom(path):
     """
     param <path> could either be relative or absolute.
@@ -183,4 +187,4 @@ def remove_custom(path):
     elif os.path.isdir(path):
         shutil.rmtree(path)  # remove dir and all contains
     else:
-        raise ValueError("file {} is not a file or dir.".format(path))
+        raise DirOrFileNotFoundError("file {} is not a file or dir.".format(path))
