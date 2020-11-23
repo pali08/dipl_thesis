@@ -15,6 +15,9 @@ class TestFtpPdbDownloader(unittest.TestCase):
         self.assertEqual(pdb_id.lower() == '1flv', True)
         self.addCleanup(os.remove, '1flv' + MMCIF_UPDATED_SUFFIX)
 
+    def test_downloading_non_existing_file(self):
+        pass
+
 
 if __name__ == '__main__':
     unittest.main()

@@ -20,9 +20,10 @@ def download_metadata():
 def get_lists_of_changed_molecules():
     lists_of_changed_molecules = []
     for i in [ADDED, MODIFIED, OBSOLETE]:
-        with open(os.path.join(METADATA_FILES_PATH, i, LATEST_SUFFIX), mode='r', encoding='utf-8') as changelist:
+        with open(os.path.join(METADATA_FILES_PATH, i + LATEST_SUFFIX), mode='r', encoding='utf-8') as changelist:
             files = [i.strip() for i in changelist.readlines()]
             lists_of_changed_molecules.append(files)
+    return lists_of_changed_molecules
 
 
 def get_filepaths_from_list(molecules_list, *filepaths):

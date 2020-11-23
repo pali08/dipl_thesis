@@ -35,7 +35,7 @@ class TestDifferenceFileDownloader(unittest.TestCase):
 
     def step1(self):
         DifferenceFilesDownloader(MODIFIED).get_file()
-        self.assertEqual(os.path.exists(os.path.join(METADATA_FILES_PATH,  MODIFIED + LATEST_SUFFIX )), True)
+        self.assertEqual(os.path.exists(os.path.join(METADATA_FILES_PATH, MODIFIED + LATEST_SUFFIX)), True)
 
         # self.assertEqual(False, True)
 
@@ -45,7 +45,7 @@ class TestDifferenceFileDownloader(unittest.TestCase):
 
     def step3(self):
         DifferenceFilesDownloader(OBSOLETE).get_file()
-        self.assertEqual(os.path.exists(os.path.join(METADATA_FILES_PATH,  OBSOLETE + LATEST_SUFFIX )), True)
+        self.assertEqual(os.path.exists(os.path.join(METADATA_FILES_PATH, OBSOLETE + LATEST_SUFFIX)), True)
 
     def step4(self):
         with open(DifferenceFilesDownloader.timestamp_file, "r+") as file:
@@ -57,7 +57,7 @@ class TestDifferenceFileDownloader(unittest.TestCase):
 
     def step5(self):
         DifferenceFilesDownloader(MODIFIED).get_file()
-        first_condition = os.path.exists(os.path.join(METADATA_FILES_PATH,  MODIFIED + LATEST_SUFFIX ))
+        first_condition = os.path.exists(os.path.join(METADATA_FILES_PATH, MODIFIED + LATEST_SUFFIX))
         print(str(first_condition))
         with open(METADATA_FILES_PATH + A_M_O_FILENAME, "r+") as file:
             data = json.load(file)
@@ -77,7 +77,7 @@ class TestDifferenceFileDownloader(unittest.TestCase):
 
     def step7(self):
         DifferenceFilesDownloader(OBSOLETE).get_file()
-        first_condition = os.path.exists(os.path.join(METADATA_FILES_PATH,  OBSOLETE + LATEST_SUFFIX ))
+        first_condition = os.path.exists(os.path.join(METADATA_FILES_PATH, OBSOLETE + LATEST_SUFFIX))
         with open(METADATA_FILES_PATH + A_M_O_FILENAME, "r+") as file:
             data = json.load(file)
             second_condition = is_timestamp(
@@ -87,8 +87,8 @@ class TestDifferenceFileDownloader(unittest.TestCase):
     def step8(self):
         os.remove(DifferenceFilesDownloader.timestamp_file)
         os.remove(os.path.join(METADATA_FILES_PATH, ADDED + LATEST_SUFFIX))
-        os.remove(os.path.join(METADATA_FILES_PATH,  MODIFIED + LATEST_SUFFIX ))
-        os.remove(os.path.join(METADATA_FILES_PATH,  OBSOLETE + LATEST_SUFFIX ))
+        os.remove(os.path.join(METADATA_FILES_PATH, MODIFIED + LATEST_SUFFIX))
+        os.remove(os.path.join(METADATA_FILES_PATH, OBSOLETE + LATEST_SUFFIX))
 
     def _steps(self):
         for name in dir(self):  # dir() result is implicitly sorted
@@ -99,7 +99,7 @@ class TestDifferenceFileDownloader(unittest.TestCase):
         for name, step in self._steps():
             try:
                 step()
-                time.sleep(2) # this should handle problem with too many connected users
+                time.sleep(2)  # this should handle problem with too many connected users
             except Exception as e:
                 self.fail("{} failed ({}: {})".format(step, type(e), e))
 

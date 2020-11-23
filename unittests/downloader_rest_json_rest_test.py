@@ -48,6 +48,9 @@ class TestRestJsonDownloaderRest(unittest.TestCase):
         self.assertEqual(test_summary, True)
         self.addCleanup(remove_custom, os.path.join('.', SUMMARY_FOLDER))
 
+    def test_downloading_non_existing_file(self):
+        pass
+
 
 if __name__ == '__main__':
     unittest.main()

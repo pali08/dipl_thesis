@@ -16,6 +16,9 @@ class TestFtpXmlValidationDownloader(unittest.TestCase):
         self.assertEqual(is_float(clashscore), True)
         self.addCleanup(os.remove, '1cjv' + XML_VALIDATION_SUFFIX)
 
+    def test_downloading_non_existing_file(self):
+        pass
+
 
 if __name__ == '__main__':
     unittest.main()
