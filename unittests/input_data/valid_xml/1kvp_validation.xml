@@ -1,0 +1,10 @@
+<?xml version="1.0" ?>
+<wwPDB-validation-information xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="http://wwpdb.org/validation/schema/wwpdb_validation_v002.xsd">
+	<Entry PDB-R="NotAvailable" PDB-Rfree="NotAvailable" PDB-deposition-date="1997-12-12" PDB-resolution="27.00" PDB-resolution-low="NotAvailable" PDB-revision-date="2011-07-13" PDB-revision-number="3" XMLcreationDate="Feb 23, 2018 -- 08:07 am GMT" absolute-percentile-clashscore="100.0" attemptedValidationSteps="mogul,molprobity,validation-pack,percentiles,writexml" clashscore="-1.00" no-ligands-for-mogul="yes" num-H-reduce="0" numPDBids-absolute-percentile-clashscore="136279" numPDBids-relative-percentile-clashscore="1886" pdbid="1KVP" percentilebins="all,em" protein-DNA-RNA-entities="1" relative-percentile-clashscore="100.0"/>
+	<programs>
+		<program name="mogul" properties="no-ligands-for-mogul" version="unknown"/>
+		<program name="molprobity" properties="clashscore,num-H-reduce" version="4.02b-467"/>
+		<program name="percentiles" properties="numPDBids-absolute-percentile-clashscore,numPDBids-relative-percentile-clashscore,relative-percentile-clashscore,absolute-percentile-clashscore" version="20171227.v01 (using entries in the PDB archive December 27th 2017)"/>
+		<program name="validation-pipeline" properties="PDB-revision-date,PDB-resolution,protein-DNA-RNA-entities,PDB-Rfree,PDB-R,percentilebins,PDB-resolution-low,pdbid,PDB-revision-number,attemptedValidationSteps,XMLcreationDate,PDB-deposition-date" version="trunk30686"/>
+	</programs>
+</wwPDB-validation-information>

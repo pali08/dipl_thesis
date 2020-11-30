@@ -1,21 +1,70 @@
+import io
 import os
+import shutil
 import unittest
 import sys
 from shutil import copy2
 
-from src.global_constants_and_functions import ADDED, LATEST_SUFFIX, METADATA_FILES_PATH, MODIFIED, OBSOLETE
+from src.global_constants_and_functions import ADDED, LATEST_SUFFIX, METADATA_FILES_PATH, MODIFIED, OBSOLETE, \
+    remove_custom, DirOrFileNotFoundError
 
 sys.path.append('..')
-from src.exe_update_files import get_lists_of_changed_molecules, get_filepaths_from_list
+from src.exe_update_files import get_lists_of_changed_molecules, get_filepaths_from_list, remove_files
 
 INPUT_DATA_PATH = os.path.join('.', 'input_data')
-pdb_filepath = './input_data/pdb'
-vdb_filepath = './input_data/vdb'
-xml_filepath = './input_data/valid_xml'
-rest_filepath = './input_data/rest'
+INPUT_DATA_PATH_BCK = os.path.join('.', 'input_data_backup')
+pdb_filepath = os.path.join('.', 'input_data', 'pdb')
+vdb_filepath = os.path.join('.', 'input_data', 'vdb')
+xml_filepath = os.path.join('.', 'input_data', 'valid_xml')
+rest_filepath = os.path.join('.', 'input_data', 'rest')
+non_existing_files = 'File or directory ./input_data/pdb/1omg_updated.cif not exists so not removed.' + \
+                     os.linesep + \
+                     'File or directory ./input_data/vdb/1omg not exists so not removed.' + \
+                     os.linesep + \
+                     'File or directory ./input_data/valid_xml/1omg_validation.xml not exists so not removed.' + \
+                     os.linesep + \
+                     'File or directory ./input_data/rest/assembly/1omg.json not exists so not removed.' + \
+                     os.linesep + \
+                     'File or directory ./input_data/rest/molecules/1omg.json not exists so not removed.' + \
+                     os.linesep + \
+                     'File or directory ./input_data/rest/summary/1omg.json not exists so not removed.' + \
+                     os.linesep + \
+                     'File or directory ./input_data/pdb/1img_updated.cif not exists so not removed.' + \
+                     os.linesep + \
+                     'File or directory ./input_data/vdb/1img not exists so not removed.' + \
+                     os.linesep + \
+                     'File or directory ./input_data/valid_xml/1img_validation.xml not exists so not removed.' + \
+                     os.linesep + \
+                     'File or directory ./input_data/rest/assembly/1img.json not exists so not removed.' + \
+                     os.linesep + \
+                     'File or directory ./input_data/rest/molecules/1img.json not exists so not removed.' + \
+                     os.linesep + \
+                     'File or directory ./input_data/rest/summary/1img.json not exists so not removed.' \
+                     + os.linesep
 
 
 class MyTestCase(unittest.TestCase):
+
+    @classmethod
+    def setUpClass(cls):
+        """
+        backup files before
+        :return:
+        """
+        shutil.copytree(INPUT_DATA_PATH, INPUT_DATA_PATH_BCK)
+
+    @classmethod
+    def tearDownClass(cls):
+        """
+        restore files after test
+        :return:
+        """
+        if os.path.exists(os.path.join(INPUT_DATA_PATH_BCK)):
+            remove_custom(os.path.join(INPUT_DATA_PATH))
+            os.rename(INPUT_DATA_PATH_BCK, INPUT_DATA_PATH)
+        else:
+            print('input_data does not exist, input_data will not be removed')
+
     def test_get_filepaths_from_lists(self):
         for i in [os.path.join(INPUT_DATA_PATH, ADDED + LATEST_SUFFIX),
                   os.path.join(INPUT_DATA_PATH, MODIFIED + LATEST_SUFFIX),
@@ -81,11 +130,39 @@ class MyTestCase(unittest.TestCase):
         self.addCleanup(os.remove, os.path.join(METADATA_FILES_PATH, OBSOLETE + LATEST_SUFFIX))
         self.assertEqual(result_a and result_m and result_o, True)
 
-    def test_remove(self):
-        pass
+    def test_remove_a_non_existing_file(self):
+        molecules_to_remove = ['1omg', '1img']
+        filepaths = get_filepaths_from_list(molecules_to_remove, pdb_filepath, vdb_filepath, xml_filepath,
+                                            rest_filepath)
+        orig_stdout = sys.stdout
+        captured_output = io.StringIO()  # Create StringIO object
+        sys.stdout = captured_output  # and redirect stdout.
+        remove_files(filepaths)
+        sys.stdout = orig_stdout  # Reset redirect.
+        print(captured_output.getvalue())
+        self.assertEqual(captured_output.getvalue(), non_existing_files)
 
-    def test_remove_non_existing_file(self):
-        pass
+    def test_remove_b(self):
+        """
+        tests are executed in alphabetical order - a must be executed first as b removes existing files
+        :return:
+        """
+        molecules_to_remove = ['1cam', '1kvp', '1iob']
+        filepaths = get_filepaths_from_list(molecules_to_remove, pdb_filepath, vdb_filepath, xml_filepath,
+                                            rest_filepath)
+        # print(filepaths)
+        for i in filepaths:
+            for j in i:
+                if not os.path.exists(j):
+                    raise DirOrFileNotFoundError('Directory or file' + str(j) + 'not exists before removing files')
+        remove_files(filepaths)
+        filepaths_not_exist_after = True
+        for i in filepaths:
+            for j in i:
+                if os.path.exists(j):
+                    filepaths_not_exist_after = False
+                    break
+        self.assertEqual(filepaths_not_exist_after, True)
 
 
 if __name__ == '__main__':

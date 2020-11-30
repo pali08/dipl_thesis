@@ -1,0 +1,197 @@
+<?xml version="1.0" ?>
+<wwPDB-validation-information xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="http://wwpdb.org/validation/schema/wwpdb_validation_v002.xsd">
+	<Entry PDB-R="NotAvailable" PDB-Rfree="NotAvailable" PDB-deposition-date="1993-06-24" PDB-resolution="NotAvailable" PDB-resolution-low="NotAvailable" PDB-revision-date="2011-07-13" PDB-revision-number="3" XMLcreationDate="Feb 19, 2018 -- 06:30 am GMT" absolute-percentile-clashscore="50.0" angles_rmsz="3.10" attemptedValidationSteps="mogul,molprobity,validation-pack,coreclust,chemicalshifts,percentiles,writexml,writepdf" bonds_rmsz="2.54" clashscore="6.54" clashscore-full-length="6.54" cyrange_error=" No amino acid residues in sequence." cyrange_version="Kirchner and G\&quot;{u}ntert (2011)" nmr_models_consistency_flag="True" nmrclust_error="Wrapper check: not enough residues in core to run NmrClust" nmrclust_version="Kelley et al. (1996)" no-ligands-for-mogul="yes" no-percentile-property="true" num-H-reduce="270" numPDBids-absolute-percentile-clashscore="136279" numPDBids-relative-percentile-clashscore="12091" num_angles_rmsz="844" num_bonds_rmsz="552" panav_version="Wang et al. (2010)" pdbid="132D" percentilebins="all,nmr" protein-DNA-RNA-entities="1" rci_version="v_1n_11_5_13_A (Berjanski et al., 2005)" relative-percentile-clashscore="64.6" shiftchecker_version="trunk30686"/>
+	<ModelledSubgroup altcode=" " chain="A" ent="1" icode=" " model="1" num-H-reduce="11" resname="DG" resnum="1" said="A" seq="1" validate="True">
+		<bond-outlier atom0="P" atom1="OP2" mean="1.485" obs="1.602" stdev="0.017" z="6.91"/>
+		<bond-outlier atom0="OP3" atom1="P" mean="1.607" obs="1.480" stdev="0.012" z="-10.61"/>
+		<bond-outlier atom0="C2'" atom1="C1'" mean="1.518" obs="1.435" stdev="0.010" z="-8.27"/>
+		<angle-outlier atom0="P" atom1="O3'" atom2="C3'" link="yes" mean="119.700" obs="127.674" stdev="1.200" z="6.64"/>
+		<angle-outlier atom0="OP1" atom1="P" atom2="OP2" mean="119.600" obs="109.166" stdev="1.500" z="-6.96"/>
+		<angle-outlier atom0="O4'" atom1="C1'" atom2="N9" mean="108.000" obs="101.488" stdev="0.700" z="-9.30"/>
+	</ModelledSubgroup>
+	<ModelledSubgroup altcode=" " chain="A" ent="1" icode=" " model="1" num-H-reduce="11" resname="DC" resnum="2" said="A" seq="2" validate="True">
+		<clash atom="C2" cid="1" clashmag="0.53" dist="2.97"/>
+		<bond-outlier atom0="O3'" atom1="P" link="yes" mean="1.607" obs="1.525" stdev="0.012" z="-6.82"/>
+		<angle-outlier atom0="P" atom1="O3'" atom2="C3'" link="yes" mean="119.700" obs="136.570" stdev="1.200" z="14.06"/>
+		<angle-outlier atom0="O4'" atom1="C1'" atom2="N1" mean="108.000" obs="96.895" stdev="0.700" z="-15.86"/>
+	</ModelledSubgroup>
+	<ModelledSubgroup altcode=" " chain="A" ent="1" icode=" " model="1" num-H-reduce="11" resname="DC" resnum="3" said="A" seq="3" validate="True">
+		<angle-outlier atom0="P" atom1="O3'" atom2="C3'" link="yes" mean="119.700" obs="133.940" stdev="1.200" z="11.87"/>
+		<angle-outlier atom0="O4'" atom1="C1'" atom2="N1" mean="108.000" obs="97.825" stdev="0.700" z="-14.54"/>
+		<plane-outlier planeRMSD="0.06" type="sidechain"/>
+		<clash atom="C5" cid="1" clashmag="0.53" dist="2.97"/>
+		<bond-outlier atom0="O3'" atom1="P" link="yes" mean="1.607" obs="1.543" stdev="0.012" z="-5.37"/>
+		<bond-outlier atom0="O4'" atom1="C1'" mean="1.418" obs="1.481" stdev="0.012" z="5.28"/>
+	</ModelledSubgroup>
+	<ModelledSubgroup altcode=" " chain="A" ent="1" icode=" " model="1" num-H-reduce="11" resname="DG" resnum="4" said="A" seq="4" validate="True">
+		<bond-outlier atom0="O3'" atom1="P" link="yes" mean="1.607" obs="1.475" stdev="0.012" z="-10.96"/>
+		<bond-outlier atom0="P" atom1="O5'" mean="1.593" obs="1.649" stdev="0.010" z="5.62"/>
+		<angle-outlier atom0="P" atom1="O3'" atom2="C3'" link="yes" mean="119.700" obs="136.710" stdev="1.200" z="14.18"/>
+		<angle-outlier atom0="C5'" atom1="C4'" atom2="O4'" mean="109.300" obs="123.566" stdev="1.900" z="7.51"/>
+		<angle-outlier atom0="O4'" atom1="C1'" atom2="N9" mean="108.000" obs="103.615" stdev="0.700" z="-6.26"/>
+	</ModelledSubgroup>
+	<ModelledSubgroup altcode=" " chain="A" ent="1" icode=" " model="1" num-H-reduce="12" resname="DT" resnum="5" said="A" seq="5" validate="True">
+		<angle-outlier atom0="P" atom1="O3'" atom2="C3'" link="yes" mean="119.700" obs="132.028" stdev="1.200" z="10.27"/>
+		<angle-outlier atom0="N1" atom1="C2" atom2="N3" mean="114.600" obs="118.274" stdev="0.600" z="6.12"/>
+		<angle-outlier atom0="C5" atom1="C6" atom2="N1" mean="123.700" obs="119.904" stdev="0.600" z="-6.33"/>
+		<angle-outlier atom0="O4'" atom1="C1'" atom2="C2'" mean="105.900" obs="100.100" stdev="0.800" z="-7.25"/>
+		<angle-outlier atom0="C1'" atom1="O4'" atom2="C4'" mean="110.100" obs="104.970" stdev="1.000" z="-5.13"/>
+		<angle-outlier atom0="N3" atom1="C4" atom2="C5" mean="115.200" obs="118.259" stdev="0.600" z="5.10"/>
+		<angle-outlier atom0="O4'" atom1="C1'" atom2="N1" mean="108.000" obs="101.190" stdev="0.700" z="-9.73"/>
+		<angle-outlier atom0="C2" atom1="N3" atom2="C4" mean="127.200" obs="122.839" stdev="0.600" z="-7.27"/>
+		<plane-outlier planeRMSD="0.08" type="sidechain"/>
+		<clash atom="C2'" cid="4" clashmag="0.42" dist="2.45"/>
+		<clash atom="C2" cid="2" clashmag="0.51" dist="2.99"/>
+		<bond-outlier atom0="O3'" atom1="P" link="yes" mean="1.607" obs="1.513" stdev="0.012" z="-7.86"/>
+		<bond-outlier atom0="O4'" atom1="C1'" mean="1.418" obs="1.507" stdev="0.012" z="7.42"/>
+		<bond-outlier atom0="C4" atom1="C5" mean="1.445" obs="1.394" stdev="0.009" z="-5.65"/>
+		<bond-outlier atom0="C5" atom1="C6" mean="1.339" obs="1.389" stdev="0.007" z="7.21"/>
+	</ModelledSubgroup>
+	<ModelledSubgroup altcode=" " chain="A" ent="1" icode=" " model="1" num-H-reduce="12" resname="DT" resnum="6" said="A" seq="6" validate="True">
+		<angle-outlier atom0="P" atom1="O3'" atom2="C3'" link="yes" mean="119.700" obs="133.534" stdev="1.200" z="11.53"/>
+		<angle-outlier atom0="C2" atom1="N3" atom2="C4" mean="127.200" obs="122.881" stdev="0.600" z="-7.20"/>
+		<angle-outlier atom0="C5'" atom1="C4'" atom2="O4'" mean="109.300" obs="119.473" stdev="1.900" z="5.35"/>
+		<angle-outlier atom0="C5" atom1="C6" atom2="N1" mean="123.700" obs="119.823" stdev="0.600" z="-6.46"/>
+		<angle-outlier atom0="O4'" atom1="C1'" atom2="N1" mean="108.000" obs="97.623" stdev="0.700" z="-14.82"/>
+		<angle-outlier atom0="N1" atom1="C2" atom2="N3" mean="114.600" obs="118.118" stdev="0.600" z="5.86"/>
+		<plane-outlier planeRMSD="0.08" type="sidechain"/>
+		<clash atom="H71" cid="4" clashmag="0.42" dist="2.45"/>
+		<clash atom="C5" cid="2" clashmag="0.51" dist="2.99"/>
+		<bond-outlier atom0="O3'" atom1="P" link="yes" mean="1.607" obs="1.492" stdev="0.012" z="-9.61"/>
+		<bond-outlier atom0="P" atom1="O5'" mean="1.593" obs="1.651" stdev="0.010" z="5.79"/>
+		<bond-outlier atom0="C5" atom1="C6" mean="1.339" obs="1.387" stdev="0.007" z="6.86"/>
+		<bond-outlier atom0="O4'" atom1="C1'" mean="1.418" obs="1.486" stdev="0.012" z="5.69"/>
+		<bond-outlier atom0="C4'" atom1="O4'" mean="1.446" obs="1.394" stdev="0.010" z="-5.24"/>
+		<bond-outlier atom0="C4" atom1="C5" mean="1.445" obs="1.395" stdev="0.009" z="-5.59"/>
+	</ModelledSubgroup>
+	<ModelledSubgroup altcode=" " chain="A" ent="1" icode=" " model="1" num-H-reduce="11" resname="DA" resnum="7" said="A" seq="7" validate="True">
+		<angle-outlier atom0="P" atom1="O3'" atom2="C3'" link="yes" mean="119.700" obs="131.402" stdev="1.200" z="9.75"/>
+		<angle-outlier atom0="C5'" atom1="C4'" atom2="O4'" mean="109.300" obs="120.768" stdev="1.900" z="6.04"/>
+		<angle-outlier atom0="O4'" atom1="C1'" atom2="C2'" mean="105.900" obs="100.177" stdev="0.800" z="-7.15"/>
+		<angle-outlier atom0="O4'" atom1="C1'" atom2="N9" mean="108.000" obs="102.135" stdev="0.700" z="-8.38"/>
+		<plane-outlier planeRMSD="0.07" type="sidechain"/>
+	</ModelledSubgroup>
+	<ModelledSubgroup altcode=" " chain="A" ent="1" icode=" " model="1" num-H-reduce="11" resname="DA" resnum="8" said="A" seq="8" validate="True"/>
+	<ModelledSubgroup altcode=" " chain="A" ent="1" icode=" " model="1" num-H-reduce="11" resname="DC" resnum="9" said="A" seq="9" validate="True">
+		<bond-outlier atom0="O3'" atom1="P" link="yes" mean="1.607" obs="1.540" stdev="0.012" z="-5.62"/>
+		<angle-outlier atom0="P" atom1="O3'" atom2="C3'" link="yes" mean="119.700" obs="137.444" stdev="1.200" z="14.79"/>
+		<angle-outlier atom0="O4'" atom1="C1'" atom2="N1" mean="108.000" obs="103.374" stdev="0.700" z="-6.61"/>
+		<plane-outlier planeRMSD="0.06" type="sidechain"/>
+	</ModelledSubgroup>
+	<ModelledSubgroup altcode=" " chain="A" ent="1" icode=" " model="1" num-H-reduce="11" resname="DG" resnum="10" said="A" seq="10" validate="True">
+		<angle-outlier atom0="P" atom1="O3'" atom2="C3'" link="yes" mean="119.700" obs="130.927" stdev="1.200" z="9.36"/>
+	</ModelledSubgroup>
+	<ModelledSubgroup altcode=" " chain="A" ent="1" icode=" " model="1" num-H-reduce="11" resname="DG" resnum="11" said="A" seq="11" validate="True">
+		<angle-outlier atom0="P" atom1="O3'" atom2="C3'" link="yes" mean="119.700" obs="126.959" stdev="1.200" z="6.05"/>
+		<angle-outlier atom0="O4'" atom1="C1'" atom2="N9" mean="108.000" obs="103.665" stdev="0.700" z="-6.19"/>
+	</ModelledSubgroup>
+	<ModelledSubgroup altcode=" " chain="A" ent="1" icode=" " model="1" num-H-reduce="12" resname="DC" resnum="12" said="A" seq="12" validate="True">
+		<bond-outlier atom0="O4'" atom1="C1'" mean="1.418" obs="1.557" stdev="0.012" z="11.55"/>
+		<angle-outlier atom0="O4'" atom1="C1'" atom2="C2'" mean="105.900" obs="100.693" stdev="0.800" z="-6.51"/>
+		<angle-outlier atom0="O4'" atom1="C1'" atom2="N1" mean="108.000" obs="98.959" stdev="0.700" z="-12.92"/>
+		<angle-outlier atom0="C1'" atom1="O4'" atom2="C4'" mean="110.100" obs="101.732" stdev="1.000" z="-8.37"/>
+		<plane-outlier planeRMSD="0.06" type="sidechain"/>
+	</ModelledSubgroup>
+	<ModelledSubgroup altcode=" " chain="B" ent="1" icode=" " model="1" num-H-reduce="11" resname="DG" resnum="13" said="B" seq="1" validate="True">
+		<bond-outlier atom0="OP3" atom1="P" mean="1.607" obs="1.481" stdev="0.012" z="-10.53"/>
+		<bond-outlier atom0="C2'" atom1="C1'" mean="1.518" obs="1.437" stdev="0.010" z="-8.05"/>
+		<bond-outlier atom0="P" atom1="OP2" mean="1.485" obs="1.601" stdev="0.017" z="6.85"/>
+		<angle-outlier atom0="P" atom1="O3'" atom2="C3'" link="yes" mean="119.700" obs="127.497" stdev="1.200" z="6.50"/>
+		<angle-outlier atom0="OP1" atom1="P" atom2="OP2" mean="119.600" obs="109.137" stdev="1.500" z="-6.98"/>
+		<angle-outlier atom0="O4'" atom1="C1'" atom2="N9" mean="108.000" obs="101.426" stdev="0.700" z="-9.39"/>
+	</ModelledSubgroup>
+	<ModelledSubgroup altcode=" " chain="B" ent="1" icode=" " model="1" num-H-reduce="11" resname="DC" resnum="14" said="B" seq="2" validate="True">
+		<clash atom="C2" cid="0" clashmag="0.53" dist="2.97"/>
+		<bond-outlier atom0="O3'" atom1="P" link="yes" mean="1.607" obs="1.526" stdev="0.012" z="-6.79"/>
+		<angle-outlier atom0="P" atom1="O3'" atom2="C3'" link="yes" mean="119.700" obs="136.519" stdev="1.200" z="14.02"/>
+		<angle-outlier atom0="O4'" atom1="C1'" atom2="N1" mean="108.000" obs="96.728" stdev="0.700" z="-16.10"/>
+	</ModelledSubgroup>
+	<ModelledSubgroup altcode=" " chain="B" ent="1" icode=" " model="1" num-H-reduce="11" resname="DC" resnum="15" said="B" seq="3" validate="True">
+		<clash atom="C5" cid="0" clashmag="0.53" dist="2.97"/>
+		<bond-outlier atom0="O3'" atom1="P" link="yes" mean="1.607" obs="1.544" stdev="0.012" z="-5.21"/>
+		<bond-outlier atom0="O4'" atom1="C1'" mean="1.418" obs="1.481" stdev="0.012" z="5.25"/>
+		<angle-outlier atom0="P" atom1="O3'" atom2="C3'" link="yes" mean="119.700" obs="133.660" stdev="1.200" z="11.63"/>
+		<angle-outlier atom0="O4'" atom1="C1'" atom2="N1" mean="108.000" obs="97.578" stdev="0.700" z="-14.89"/>
+	</ModelledSubgroup>
+	<ModelledSubgroup altcode=" " chain="B" ent="1" icode=" " model="1" num-H-reduce="11" resname="DG" resnum="16" said="B" seq="4" validate="True">
+		<bond-outlier atom0="O3'" atom1="P" link="yes" mean="1.607" obs="1.477" stdev="0.012" z="-10.84"/>
+		<bond-outlier atom0="P" atom1="O5'" mean="1.593" obs="1.650" stdev="0.010" z="5.68"/>
+		<angle-outlier atom0="P" atom1="O3'" atom2="C3'" link="yes" mean="119.700" obs="136.555" stdev="1.200" z="14.05"/>
+		<angle-outlier atom0="O4'" atom1="C1'" atom2="N9" mean="108.000" obs="103.504" stdev="0.700" z="-6.42"/>
+		<angle-outlier atom0="C5'" atom1="C4'" atom2="O4'" mean="109.300" obs="123.318" stdev="1.900" z="7.38"/>
+	</ModelledSubgroup>
+	<ModelledSubgroup altcode=" " chain="B" ent="1" icode=" " model="1" num-H-reduce="12" resname="DT" resnum="17" said="B" seq="5" validate="True">
+		<angle-outlier atom0="P" atom1="O3'" atom2="C3'" link="yes" mean="119.700" obs="131.880" stdev="1.200" z="10.15"/>
+		<angle-outlier atom0="C1'" atom1="O4'" atom2="C4'" mean="110.100" obs="104.741" stdev="1.000" z="-5.36"/>
+		<angle-outlier atom0="C5" atom1="C6" atom2="N1" mean="123.700" obs="119.895" stdev="0.600" z="-6.34"/>
+		<angle-outlier atom0="C2" atom1="N3" atom2="C4" mean="127.200" obs="122.847" stdev="0.600" z="-7.25"/>
+		<angle-outlier atom0="O4'" atom1="C1'" atom2="C2'" mean="105.900" obs="100.308" stdev="0.800" z="-6.99"/>
+		<angle-outlier atom0="N1" atom1="C2" atom2="N3" mean="114.600" obs="118.325" stdev="0.600" z="6.21"/>
+		<angle-outlier atom0="O4'" atom1="C1'" atom2="N1" mean="108.000" obs="101.059" stdev="0.700" z="-9.92"/>
+		<plane-outlier planeRMSD="0.08" type="sidechain"/>
+		<clash atom="C2" cid="3" clashmag="0.50" dist="3.00"/>
+		<bond-outlier atom0="O3'" atom1="P" link="yes" mean="1.607" obs="1.513" stdev="0.012" z="-7.84"/>
+		<bond-outlier atom0="C5" atom1="C6" mean="1.339" obs="1.389" stdev="0.007" z="7.12"/>
+		<bond-outlier atom0="C4" atom1="C5" mean="1.445" obs="1.394" stdev="0.009" z="-5.61"/>
+		<bond-outlier atom0="O4'" atom1="C1'" mean="1.418" obs="1.505" stdev="0.012" z="7.29"/>
+	</ModelledSubgroup>
+	<ModelledSubgroup altcode=" " chain="B" ent="1" icode=" " model="1" num-H-reduce="12" resname="DT" resnum="18" said="B" seq="6" validate="True">
+		<angle-outlier atom0="P" atom1="O3'" atom2="C3'" link="yes" mean="119.700" obs="133.292" stdev="1.200" z="11.33"/>
+		<angle-outlier atom0="C2" atom1="N3" atom2="C4" mean="127.200" obs="122.920" stdev="0.600" z="-7.13"/>
+		<angle-outlier atom0="C5'" atom1="C4'" atom2="O4'" mean="109.300" obs="119.161" stdev="1.900" z="5.19"/>
+		<angle-outlier atom0="C5" atom1="C6" atom2="N1" mean="123.700" obs="119.818" stdev="0.600" z="-6.47"/>
+		<angle-outlier atom0="N1" atom1="C2" atom2="N3" mean="114.600" obs="118.069" stdev="0.600" z="5.78"/>
+		<angle-outlier atom0="O4'" atom1="C1'" atom2="N1" mean="108.000" obs="97.475" stdev="0.700" z="-15.04"/>
+		<plane-outlier planeRMSD="0.08" type="sidechain"/>
+		<clash atom="C5" cid="3" clashmag="0.50" dist="3.00"/>
+		<bond-outlier atom0="O3'" atom1="P" link="yes" mean="1.607" obs="1.494" stdev="0.012" z="-9.39"/>
+		<bond-outlier atom0="C5" atom1="C6" mean="1.339" obs="1.386" stdev="0.007" z="6.78"/>
+		<bond-outlier atom0="C4'" atom1="O4'" mean="1.446" obs="1.393" stdev="0.010" z="-5.31"/>
+		<bond-outlier atom0="O4'" atom1="C1'" mean="1.418" obs="1.488" stdev="0.012" z="5.80"/>
+		<bond-outlier atom0="C4" atom1="C5" mean="1.445" obs="1.394" stdev="0.009" z="-5.65"/>
+		<bond-outlier atom0="P" atom1="O5'" mean="1.593" obs="1.651" stdev="0.010" z="5.83"/>
+	</ModelledSubgroup>
+	<ModelledSubgroup altcode=" " chain="B" ent="1" icode=" " model="1" num-H-reduce="11" resname="DA" resnum="19" said="B" seq="7" validate="True">
+		<angle-outlier atom0="P" atom1="O3'" atom2="C3'" link="yes" mean="119.700" obs="131.684" stdev="1.200" z="9.99"/>
+		<angle-outlier atom0="O4'" atom1="C1'" atom2="N9" mean="108.000" obs="102.205" stdev="0.700" z="-8.28"/>
+		<angle-outlier atom0="C5'" atom1="C4'" atom2="O4'" mean="109.300" obs="120.877" stdev="1.900" z="6.09"/>
+		<angle-outlier atom0="O4'" atom1="C1'" atom2="C2'" mean="105.900" obs="100.079" stdev="0.800" z="-7.28"/>
+		<plane-outlier planeRMSD="0.07" type="sidechain"/>
+	</ModelledSubgroup>
+	<ModelledSubgroup altcode=" " chain="B" ent="1" icode=" " model="1" num-H-reduce="11" resname="DA" resnum="20" said="B" seq="8" validate="True">
+		<angle-outlier atom0="P" atom1="O3'" atom2="C3'" link="yes" mean="119.700" obs="125.780" stdev="1.200" z="5.07"/>
+	</ModelledSubgroup>
+	<ModelledSubgroup altcode=" " chain="B" ent="1" icode=" " model="1" num-H-reduce="11" resname="DC" resnum="21" said="B" seq="9" validate="True">
+		<bond-outlier atom0="O3'" atom1="P" link="yes" mean="1.607" obs="1.537" stdev="0.012" z="-5.80"/>
+		<angle-outlier atom0="P" atom1="O3'" atom2="C3'" link="yes" mean="119.700" obs="137.680" stdev="1.200" z="14.98"/>
+		<angle-outlier atom0="O4'" atom1="C1'" atom2="N1" mean="108.000" obs="103.519" stdev="0.700" z="-6.40"/>
+		<plane-outlier planeRMSD="0.07" type="sidechain"/>
+	</ModelledSubgroup>
+	<ModelledSubgroup altcode=" " chain="B" ent="1" icode=" " model="1" num-H-reduce="11" resname="DG" resnum="22" said="B" seq="10" validate="True">
+		<bond-outlier atom0="O3'" atom1="P" link="yes" mean="1.607" obs="1.546" stdev="0.012" z="-5.09"/>
+		<angle-outlier atom0="P" atom1="O3'" atom2="C3'" link="yes" mean="119.700" obs="131.058" stdev="1.200" z="9.46"/>
+	</ModelledSubgroup>
+	<ModelledSubgroup altcode=" " chain="B" ent="1" icode=" " model="1" num-H-reduce="11" resname="DG" resnum="23" said="B" seq="11" validate="True">
+		<angle-outlier atom0="P" atom1="O3'" atom2="C3'" link="yes" mean="119.700" obs="126.816" stdev="1.200" z="5.93"/>
+		<angle-outlier atom0="O4'" atom1="C1'" atom2="N9" mean="108.000" obs="104.099" stdev="0.700" z="-5.57"/>
+	</ModelledSubgroup>
+	<ModelledSubgroup altcode=" " chain="B" ent="1" icode=" " model="1" num-H-reduce="12" resname="DC" resnum="24" said="B" seq="12" validate="True">
+		<bond-outlier atom0="O4'" atom1="C1'" mean="1.418" obs="1.557" stdev="0.012" z="11.58"/>
+		<angle-outlier atom0="C1'" atom1="O4'" atom2="C4'" mean="110.100" obs="101.761" stdev="1.000" z="-8.34"/>
+		<angle-outlier atom0="O4'" atom1="C1'" atom2="N1" mean="108.000" obs="98.918" stdev="0.700" z="-12.97"/>
+		<angle-outlier atom0="O4'" atom1="C1'" atom2="C2'" mean="105.900" obs="100.663" stdev="0.800" z="-6.55"/>
+		<plane-outlier planeRMSD="0.06" type="sidechain"/>
+	</ModelledSubgroup>
+	<ModelledEntityInstance angles_rmsz="3.10" bonds_rmsz="2.55" chain="A" ent="1" model="1" num_angles_rmsz="422" num_bonds_rmsz="276" said="A"/>
+	<ModelledEntityInstance angles_rmsz="3.10" bonds_rmsz="2.54" chain="B" ent="1" model="1" num_angles_rmsz="422" num_bonds_rmsz="276" said="B"/>
+	<programs>
+		<program name="coreclust" properties="cyrange_error,cyrange_version,nmrclust_version,nmr_models_consistency_flag,validate,nmrclust_error" version="trunk30686"/>
+		<program name="nmrwriter" properties="clashscore" version="trunk30686"/>
+		<program name="validation-pipeline" properties="PDB-revision-date,PDB-resolution,protein-DNA-RNA-entities,PDB-Rfree,PDB-R,percentilebins,PDB-resolution-low,pdbid,PDB-revision-number,attemptedValidationSteps,XMLcreationDate,PDB-deposition-date" version="trunk30686"/>
+		<program name="mogul" properties="no-ligands-for-mogul" version="unknown"/>
+		<program name="molprobity" properties="bond-outlier,num-H-reduce,clash,angle-outlier,num_bonds_rmsz,bonds_rmsz,clashscore-full-length,angles_rmsz,num_angles_rmsz" version="4.02b-467"/>
+		<program name="validation-pack" properties="plane-outlier" version="unknown"/>
+		<program name="chemicalshifts" properties="rci_version,shiftchecker_version,panav_version" version="trunk30686"/>
+		<program name="percentiles" properties="numPDBids-absolute-percentile-clashscore,absolute-percentile-clashscore,relative-percentile-clashscore,no-percentile-property,numPDBids-relative-percentile-clashscore" version="20171227.v01 (using entries in the PDB archive December 27th 2017)"/>
+	</programs>
+</wwPDB-validation-information>
