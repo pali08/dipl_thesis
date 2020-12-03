@@ -1,12 +1,15 @@
+import argparse
 import csv
 import itertools
 import os
+import time
 
 from src.downloader_ftp_difference_files import DifferenceFilesDownloader
 from src.downloader_ftp_pdb import PdbDownloader
 from src.downloader_ftp_xml_validation import XmlValidationDownloader
 from src.downloader_rest_json_rest import RestJsonDownloaderRest
 from src.downloader_rest_json_vdb import RestJsonDownloaderVdb
+from src.exe_compute_data_all import get_dicts, write_csv_file
 from src.generate_filepaths import FilepathGenerator
 from src.global_constants_and_functions import OBSOLETE, MODIFIED, ADDED, LATEST_SUFFIX, METADATA_FILES_PATH, \
     VDB_JSON_UNIVERSAL_NAME, remove_custom, DirOrFileNotFoundError, SUMMARY_FOLDER, MOLECULES_FOLDER, ASSEMBLY_FOLDER
@@ -15,14 +18,15 @@ from src.global_constants_and_functions import OBSOLETE, MODIFIED, ADDED, LATEST
 def download_metadata():
     for i in [ADDED, MODIFIED, OBSOLETE]:
         DifferenceFilesDownloader(i).get_file()
+    print('Metadata downloaded.')
 
 
 def get_lists_of_changed_molecules():
     lists_of_changed_molecules = []
     for i in [ADDED, MODIFIED, OBSOLETE]:
         with open(os.path.join(METADATA_FILES_PATH, i + LATEST_SUFFIX), mode='r', encoding='utf-8') as changelist:
-            files = [i.strip() for i in changelist.readlines()]
-            lists_of_changed_molecules.append(files)
+            molecules = [i.strip() for i in changelist.readlines()]
+            lists_of_changed_molecules.append(molecules)
     return lists_of_changed_molecules
 
 
@@ -73,26 +77,65 @@ def update_input_files(molecules_added, molecules_modified, files_added, files_m
     download_files(molecules_added + molecules_modified, files_added + files_modified)
 
 
-def update_csv(path_to_csv, list_added, list_modified, list_obsolete):
+def update_csv(path_to_csv, molecule_records_update, molecules_added, molecules_modified, molecules_obsolete):
     """
     :param path_to_csv:
-    :param list_added: list of added lists with ordered items (result of AllFilesParser.get_data_ordered())
-    :param list_modified: list of modified...
-    :param list_obsolete:  list of obsolete
+    :param molecules_added: set of added lists with ordered items (result of AllFilesParser.get_data_ordered())
+    :param molecules_modified: set of modified...
+    :param molecules_obsolete: set of obsolete
+    :param molecule_records_update: added and modified files
     :return:
     """
     with open(path_to_csv, mode='r', encoding='utf-8') as f:
         molecule_records = list(csv.reader(f, delimiter=';', lineterminator='\n'))
-        obsolete_molecules = set([i[0].strip().lower() for i in list_obsolete])
-        modified_molecules = set([i[0].strip().lower() for i in list_modified])
+        molecules_added_modified = set.union(molecules_added, molecules_modified)
+        # TODO: check if this is necessary - in molecule_records_update, there should be only added+modified molecules
+        molecule_records_added_modified = [i for i in molecule_records_update if
+                                           i[0].strip().lower() in molecules_added_modified]
         # remove obsolete and modified
         molecule_records = [i for i in molecule_records if
-                            not i[0].strip().lower() in set.union(obsolete_molecules, modified_molecules)]
-        # add added and updated modified
-        molecule_records.append(list_added + list_modified)
+                            # keep files that are either not in updated files at all - unchanged:
+                            (i[0].strip().lower() not in set.union(molecules_added, molecules_modified,
+                                                                   molecules_obsolete)) or
+                            # or in added molecules
+                            i[0].strip().lower() in molecules_added]
+        # add added and modified
+        molecule_records.extend(molecule_records_added_modified)
+    remove_custom(path_to_csv)
+    write_csv_file(path_to_csv, molecule_records)
 
 
 def update():
+    parser = argparse.ArgumentParser(description='Intro task - parse different types of the data.')
+    parser.add_argument('mmcif_files', help='Folder with mmcif files files', type=str)
+    parser.add_argument('vdb_files', help='Folder with original json files', type=str)
+    parser.add_argument('xml_files', help='Folder with xml files', type=str)
+    parser.add_argument('rest_files', help='Folder with results of validation.'
+                                           'Files can be stored in subfolder', type=str)
+    parser.add_argument('ligand_stats_csv', help='CSV file with ligand statistics (heavy atoms size and flexibility)',
+                        type=str)
+    parser.add_argument('data_csv', help='Data.csv - csv file to update', type=str)
+    parser.add_argument('--cpu_count', '-c', nargs='?', const=1, default=1, help='Folder with original json files',
+                        type=int)
+    args = parser.parse_args()
+    download_metadata()
+    added_molecules, modified_molecules, obsolete_molecules = get_lists_of_changed_molecules()
+    added_files = get_filepaths_from_list(added_molecules, args.mmcif_files, args.vdb_files, args.xml_files,
+                                          args.rest_files)
+    modified_files = get_filepaths_from_list(modified_molecules, args.mmcif_files, args.vdb_files, args.xml_files,
+                                             args.rest_files)
+    obsolete_files = get_filepaths_from_list(obsolete_molecules, args.mmcif_files, args.vdb_files, args.xml_files,
+                                             args.rest_files)
+    update_input_files(added_molecules, modified_molecules, added_files, modified_files, obsolete_files)
+
+    start = time.time()
+    list_of_rec_lists = get_dicts(args.cpu_count, added_molecules + modified_molecules, args.ligand_stats_csv,
+                                  args.mmcif_files, args.vdb_files,
+                                  args.xml_files, args.rest_files)
+    end = time.time()
+    print("Loading files lasted {:.3f} seconds".format(end - start))
+    update_csv(args.data_csv, list_of_rec_lists, added_molecules, modified_molecules, obsolete_molecules)
+    print(os.linesep + "Data were successfully written to data.csv.")
     pass
 
 
