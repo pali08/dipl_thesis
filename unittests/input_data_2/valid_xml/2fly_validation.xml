@@ -1,0 +1,556 @@
+<?xml version="1.0" ?>
+<wwPDB-validation-information xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="http://wwpdb.org/validation/schema/wwpdb_validation_v002.xsd">
+	<Entry PDB-R="NotAvailable" PDB-Rfree="NotAvailable" PDB-deposition-date="2006-01-06" PDB-resolution="NotAvailable" PDB-resolution-low="NotAvailable" PDB-revision-date="2011-07-13" PDB-revision-number="3" RestypesNotcheckedForBondAngleGeometry="NH2" XMLcreationDate="Feb 16, 2018 -- 10:36 pm GMT" absolute-percentile-clashscore="68.6" absolute-percentile-percent-rama-outliers="46.5" absolute-percentile-percent-rota-outliers="1.7" angles_rmsz="0.25" attemptedValidationSteps="mogul,molprobity,validation-pack,coreclust,chemicalshifts,percentiles,writexml,writepdf" bonds_rmsz="0.22" clashscore="4.08" clashscore-full-length="3.93" cyrange_error="success" cyrange_number_of_domains="1" cyrange_version="Kirchner and G\&quot;{u}ntert (2011)" medoid_model="6" nmr_models_consistency_flag="True" nmrclust_error="success" nmrclust_number_of_clusters="4" nmrclust_number_of_models="20" nmrclust_number_of_outliers="0" nmrclust_representative_model="2" nmrclust_version="Kelley et al. (1996)" no-ligands-for-mogul="yes" no-percentile-property="true" num-H-reduce="3620" numPDBids-absolute-percentile-clashscore="136279" numPDBids-absolute-percentile-percent-rama-outliers="132675" numPDBids-absolute-percentile-percent-rota-outliers="132484" numPDBids-relative-percentile-clashscore="12091" numPDBids-relative-percentile-percent-rama-outliers="10835" numPDBids-relative-percentile-percent-rota-outliers="10811" num_angles_rmsz="4740" num_bonds_rmsz="3560" panav_version="Wang et al. (2010)" pdbid="2FLY" percent-rama-outliers="0.28" percent-rama-outliers-full-length="0.26" percent-rota-outliers="29.06" percent-rota-outliers-full-length="31.76" percentilebins="all,nmr" protein-DNA-RNA-entities="1" rci_version="v_1n_11_5_13_A (Berjanski et al., 2005)" relative-percentile-clashscore="71.7" relative-percentile-percent-rama-outliers="81.2" relative-percentile-percent-rota-outliers="17.9" shiftchecker_version="trunk30686"/>
+	<Model model="1" nmrclust_cluster_id="4"/>
+	<ModelledSubgroup altcode=" " chain="A" ent="1" icode=" " model="1" num-H-reduce="7" resname="ALA" resnum="1" said="A" seq="1" validate="False"/>
+	<ModelledSubgroup altcode=" " chain="A" ent="1" icode=" " model="1" num-H-reduce="13" phi="-123.5" psi="29.7" rama="Favored" resname="ARG" resnum="2" rota="mtp85" said="A" seq="2" validate="False"/>
+	<ModelledSubgroup altcode=" " chain="A" cyrange_domain_id="1" ent="1" icode=" " model="1" num-H-reduce="11" phi="-90.6" psi="-46.6" rama="Favored" resname="LEU" resnum="3" rota="tt" said="A" seq="3" validate="True"/>
+	<ModelledSubgroup altcode=" " chain="A" cyrange_domain_id="1" ent="1" icode=" " model="1" num-H-reduce="4" phi="-57.4" psi="-39.4" rama="Favored" resname="ASP" resnum="4" rota="m-20" said="A" seq="4" validate="True"/>
+	<ModelledSubgroup altcode=" " chain="A" cyrange_domain_id="1" ent="1" icode=" " model="1" num-H-reduce="9" phi="-80.0" psi="-44.9" rama="Favored" resname="VAL" resnum="5" rota="t" said="A" seq="5" validate="True"/>
+	<ModelledSubgroup altcode=" " chain="A" cyrange_domain_id="1" ent="1" icode=" " model="1" num-H-reduce="5" phi="-60.2" psi="-31.5" rama="Favored" resname="ALA" resnum="6" said="A" seq="6" validate="True"/>
+	<ModelledSubgroup altcode=" " chain="A" cyrange_domain_id="1" ent="1" icode=" " model="1" num-H-reduce="5" phi="-80.2" psi="-39.4" rama="Favored" resname="SER" resnum="7" rota="p" said="A" seq="7" validate="True"/>
+	<ModelledSubgroup altcode=" " chain="A" cyrange_domain_id="1" ent="1" icode=" " model="1" num-H-reduce="6" phi="-64.8" psi="-35.5" rama="Favored" resname="GLU" resnum="8" rota="tt0" said="A" seq="8" validate="True"/>
+	<ModelledSubgroup altcode=" " chain="A" cyrange_domain_id="1" ent="1" icode=" " model="1" num-H-reduce="9" phi="-66.2" psi="-29.4" rama="Favored" resname="PHE" resnum="9" rota="m-85" said="A" seq="9" validate="True"/>
+	<ModelledSubgroup altcode=" " chain="A" cyrange_domain_id="1" ent="1" icode=" " model="1" num-H-reduce="13" phi="-69.7" psi="-33.7" rama="Favored" resname="ARG" resnum="10" rota="OUTLIER" said="A" seq="10" validate="True"/>
+	<ModelledSubgroup altcode=" " chain="A" cyrange_domain_id="1" ent="1" icode=" " model="1" num-H-reduce="13" phi="-70.0" psi="-38.0" rama="Favored" resname="LYS" resnum="11" rota="OUTLIER" said="A" seq="11" validate="True"/>
+	<ModelledSubgroup altcode=" " chain="A" cyrange_domain_id="1" ent="1" icode=" " model="1" num-H-reduce="13" phi="-71.4" psi="-30.9" rama="Favored" resname="LYS" resnum="12" rota="mttm" said="A" seq="12" validate="True"/>
+	<ModelledSubgroup altcode=" " chain="A" cyrange_domain_id="1" ent="1" icode=" " model="1" num-H-reduce="10" phi="-78.9" psi="-32.4" rama="Favored" resname="TRP" resnum="13" rota="OUTLIER" said="A" seq="13" validate="True"/>
+	<ModelledSubgroup altcode=" " chain="A" cyrange_domain_id="1" ent="1" icode=" " model="1" num-H-reduce="6" phi="-55.3" psi="-38.0" rama="Favored" resname="ASN" resnum="14" rota="OUTLIER" said="A" seq="14" validate="True"/>
+	<ModelledSubgroup altcode=" " chain="A" cyrange_domain_id="1" ent="1" icode=" " model="1" num-H-reduce="13" phi="-63.4" psi="-30.3" rama="Favored" resname="LYS" resnum="15" rota="mtmt" said="A" seq="15" validate="True"/>
+	<ModelledSubgroup altcode=" " chain="A" cyrange_domain_id="1" ent="1" icode=" " model="1" num-H-reduce="10" phi="-71.3" psi="-34.1" rama="Favored" resname="TRP" resnum="16" rota="m0" said="A" seq="16" validate="True"/>
+	<ModelledSubgroup altcode=" " chain="A" cyrange_domain_id="1" ent="1" icode=" " model="1" num-H-reduce="5" phi="-75.5" psi="-36.7" rama="Favored" resname="ALA" resnum="17" said="A" seq="17" validate="True"/>
+	<ModelledSubgroup altcode=" " chain="A" cyrange_domain_id="1" ent="1" icode=" " model="1" num-H-reduce="11" phi="-78.0" psi="-23.5" rama="Favored" resname="LEU" resnum="18" rota="pp" said="A" seq="18" validate="True">
+		<clash atom="C" cid="8" clashmag="0.55" dist="2.21"/>
+		<clash atom="HD12" cid="8" clashmag="0.55" dist="2.21"/>
+	</ModelledSubgroup>
+	<ModelledSubgroup altcode=" " chain="A" cyrange_domain_id="1" ent="1" icode=" " model="1" num-H-reduce="5" phi="-89.2" psi="-28.2" rama="Favored" resname="SER" resnum="19" rota="m" said="A" seq="19" validate="True"/>
+	<ModelledSubgroup altcode=" " chain="A" cyrange_domain_id="1" ent="1" icode=" " model="1" num-H-reduce="13" phi="-83.6" psi="111.0" rama="Favored" resname="ARG" resnum="20" rota="OUTLIER" said="A" seq="20" validate="True"/>
+	<ModelledSubgroup altcode=" " chain="A" ent="1" icode=" " model="1" resname="NH2" resnum="21" said="A" seq="21" validate="False"/>
+	<Model model="2" nmrclust_cluster_id="1" nmrclust_representative="True"/>
+	<ModelledSubgroup altcode=" " chain="A" ent="1" icode=" " model="2" num-H-reduce="7" resname="ALA" resnum="1" said="A" seq="1" validate="False"/>
+	<ModelledSubgroup altcode=" " chain="A" ent="1" icode=" " model="2" num-H-reduce="13" phi="-100.0" psi="-28.7" rama="Favored" resname="ARG" resnum="2" rota="OUTLIER" said="A" seq="2" validate="False"/>
+	<ModelledSubgroup altcode=" " chain="A" cyrange_domain_id="1" ent="1" icode=" " model="2" num-H-reduce="11" phi="-60.0" psi="-47.1" rama="Favored" resname="LEU" resnum="3" rota="mm?" said="A" seq="3" validate="True"/>
+	<ModelledSubgroup altcode=" " chain="A" cyrange_domain_id="1" ent="1" icode=" " model="2" num-H-reduce="4" phi="-59.2" psi="-30.0" rama="Favored" resname="ASP" resnum="4" rota="m-20" said="A" seq="4" validate="True"/>
+	<ModelledSubgroup altcode=" " chain="A" cyrange_domain_id="1" ent="1" icode=" " model="2" num-H-reduce="9" phi="-78.3" psi="-45.5" rama="Favored" resname="VAL" resnum="5" rota="t" said="A" seq="5" validate="True"/>
+	<ModelledSubgroup altcode=" " chain="A" cyrange_domain_id="1" ent="1" icode=" " model="2" num-H-reduce="5" phi="-57.0" psi="-30.7" rama="Favored" resname="ALA" resnum="6" said="A" seq="6" validate="True"/>
+	<ModelledSubgroup altcode=" " chain="A" cyrange_domain_id="1" ent="1" icode=" " model="2" num-H-reduce="5" phi="-79.7" psi="-38.7" rama="Favored" resname="SER" resnum="7" rota="OUTLIER" said="A" seq="7" validate="True"/>
+	<ModelledSubgroup altcode=" " chain="A" cyrange_domain_id="1" ent="1" icode=" " model="2" num-H-reduce="6" phi="-63.8" psi="-36.4" rama="Favored" resname="GLU" resnum="8" rota="tt0" said="A" seq="8" validate="True"/>
+	<ModelledSubgroup altcode=" " chain="A" cyrange_domain_id="1" ent="1" icode=" " model="2" num-H-reduce="9" phi="-63.3" psi="-30.0" rama="Favored" resname="PHE" resnum="9" rota="m-85" said="A" seq="9" validate="True"/>
+	<ModelledSubgroup altcode=" " chain="A" cyrange_domain_id="1" ent="1" icode=" " model="2" num-H-reduce="13" phi="-70.7" psi="-36.8" rama="Favored" resname="ARG" resnum="10" rota="OUTLIER" said="A" seq="10" validate="True"/>
+	<ModelledSubgroup altcode=" " chain="A" cyrange_domain_id="1" ent="1" icode=" " model="2" num-H-reduce="13" phi="-67.6" psi="-32.4" rama="Favored" resname="LYS" resnum="11" rota="OUTLIER" said="A" seq="11" validate="True"/>
+	<ModelledSubgroup altcode=" " chain="A" cyrange_domain_id="1" ent="1" icode=" " model="2" num-H-reduce="13" phi="-71.3" psi="-30.7" rama="Favored" resname="LYS" resnum="12" rota="mmtp" said="A" seq="12" validate="True"/>
+	<ModelledSubgroup altcode=" " chain="A" cyrange_domain_id="1" ent="1" icode=" " model="2" num-H-reduce="10" phi="-79.1" psi="-40.5" rama="Favored" resname="TRP" resnum="13" rota="OUTLIER" said="A" seq="13" validate="True"/>
+	<ModelledSubgroup altcode=" " chain="A" cyrange_domain_id="1" ent="1" icode=" " model="2" num-H-reduce="6" phi="-59.6" psi="-43.2" rama="Favored" resname="ASN" resnum="14" rota="m-80" said="A" seq="14" validate="True"/>
+	<ModelledSubgroup altcode=" " chain="A" cyrange_domain_id="1" ent="1" icode=" " model="2" num-H-reduce="13" phi="-59.9" psi="-34.4" rama="Favored" resname="LYS" resnum="15" rota="mmtm" said="A" seq="15" validate="True"/>
+	<ModelledSubgroup altcode=" " chain="A" cyrange_domain_id="1" ent="1" icode=" " model="2" num-H-reduce="10" phi="-64.7" psi="-38.6" rama="Favored" resname="TRP" resnum="16" rota="m0" said="A" seq="16" validate="True"/>
+	<ModelledSubgroup altcode=" " chain="A" cyrange_domain_id="1" ent="1" icode=" " model="2" num-H-reduce="5" phi="-64.3" psi="-33.1" rama="Favored" resname="ALA" resnum="17" said="A" seq="17" validate="True"/>
+	<ModelledSubgroup altcode=" " chain="A" cyrange_domain_id="1" ent="1" icode=" " model="2" num-H-reduce="11" phi="-71.5" psi="-45.8" rama="Favored" resname="LEU" resnum="18" rota="OUTLIER" said="A" seq="18" validate="True"/>
+	<ModelledSubgroup altcode=" " chain="A" cyrange_domain_id="1" ent="1" icode=" " model="2" num-H-reduce="5" phi="-69.8" psi="-28.0" rama="Favored" resname="SER" resnum="19" rota="m" said="A" seq="19" validate="True"/>
+	<ModelledSubgroup altcode=" " chain="A" cyrange_domain_id="1" ent="1" icode=" " model="2" num-H-reduce="13" phi="-70.3" psi="-34.7" rama="Favored" resname="ARG" resnum="20" rota="mtm-85" said="A" seq="20" validate="True"/>
+	<ModelledSubgroup altcode=" " chain="A" ent="1" icode=" " model="2" resname="NH2" resnum="21" said="A" seq="21" validate="False"/>
+	<Model model="3" nmrclust_cluster_id="2"/>
+	<ModelledSubgroup altcode=" " chain="A" ent="1" icode=" " model="3" num-H-reduce="7" resname="ALA" resnum="1" said="A" seq="1" validate="False"/>
+	<ModelledSubgroup altcode=" " chain="A" ent="1" icode=" " model="3" num-H-reduce="13" phi="-129.0" psi="30.7" rama="Favored" resname="ARG" resnum="2" rota="OUTLIER" said="A" seq="2" validate="False"/>
+	<ModelledSubgroup altcode=" " chain="A" cyrange_domain_id="1" ent="1" icode=" " model="3" num-H-reduce="11" phi="-84.4" psi="-52.3" rama="Favored" resname="LEU" resnum="3" rota="mm?" said="A" seq="3" validate="True">
+		<clash atom="CD2" cid="5" clashmag="0.40" dist="2.85"/>
+		<clash atom="N" cid="3" clashmag="0.43" dist="2.29"/>
+		<clash atom="N" cid="5" clashmag="0.40" dist="2.85"/>
+		<clash atom="HD22" cid="3" clashmag="0.43" dist="2.29"/>
+	</ModelledSubgroup>
+	<ModelledSubgroup altcode=" " chain="A" cyrange_domain_id="1" ent="1" icode=" " model="3" num-H-reduce="4" phi="-59.0" psi="-31.0" rama="Favored" resname="ASP" resnum="4" rota="m-20" said="A" seq="4" validate="True"/>
+	<ModelledSubgroup altcode=" " chain="A" cyrange_domain_id="1" ent="1" icode=" " model="3" num-H-reduce="9" phi="-76.1" psi="-43.0" rama="Favored" resname="VAL" resnum="5" rota="t" said="A" seq="5" validate="True"/>
+	<ModelledSubgroup altcode=" " chain="A" cyrange_domain_id="1" ent="1" icode=" " model="3" num-H-reduce="5" phi="-58.9" psi="-34.3" rama="Favored" resname="ALA" resnum="6" said="A" seq="6" validate="True"/>
+	<ModelledSubgroup altcode=" " chain="A" cyrange_domain_id="1" ent="1" icode=" " model="3" num-H-reduce="5" phi="-79.0" psi="-36.7" rama="Favored" resname="SER" resnum="7" rota="m" said="A" seq="7" validate="True"/>
+	<ModelledSubgroup altcode=" " chain="A" cyrange_domain_id="1" ent="1" icode=" " model="3" num-H-reduce="6" phi="-67.0" psi="-39.4" rama="Favored" resname="GLU" resnum="8" rota="tt0" said="A" seq="8" validate="True"/>
+	<ModelledSubgroup altcode=" " chain="A" cyrange_domain_id="1" ent="1" icode=" " model="3" num-H-reduce="9" phi="-65.8" psi="-30.0" rama="Favored" resname="PHE" resnum="9" rota="m-85" said="A" seq="9" validate="True"/>
+	<ModelledSubgroup altcode=" " chain="A" cyrange_domain_id="1" ent="1" icode=" " model="3" num-H-reduce="13" phi="-72.5" psi="-36.8" rama="Favored" resname="ARG" resnum="10" rota="tmm_?" said="A" seq="10" validate="True"/>
+	<ModelledSubgroup altcode=" " chain="A" cyrange_domain_id="1" ent="1" icode=" " model="3" num-H-reduce="13" phi="-69.9" psi="-31.4" rama="Favored" resname="LYS" resnum="11" rota="OUTLIER" said="A" seq="11" validate="True"/>
+	<ModelledSubgroup altcode=" " chain="A" cyrange_domain_id="1" ent="1" icode=" " model="3" num-H-reduce="13" phi="-75.1" psi="-29.1" rama="Favored" resname="LYS" resnum="12" rota="mmtt" said="A" seq="12" validate="True"/>
+	<ModelledSubgroup altcode=" " chain="A" cyrange_domain_id="1" ent="1" icode=" " model="3" num-H-reduce="10" phi="-93.5" psi="-31.4" rama="Favored" resname="TRP" resnum="13" rota="m95" said="A" seq="13" validate="True"/>
+	<ModelledSubgroup altcode=" " chain="A" cyrange_domain_id="1" ent="1" icode=" " model="3" num-H-reduce="6" phi="-58.3" psi="-48.4" rama="Favored" resname="ASN" resnum="14" rota="t-20" said="A" seq="14" validate="True">
+		<clash atom="OD1" cid="2" clashmag="0.48" dist="2.09"/>
+	</ModelledSubgroup>
+	<ModelledSubgroup altcode=" " chain="A" cyrange_domain_id="1" ent="1" icode=" " model="3" num-H-reduce="13" phi="-58.2" psi="-31.0" rama="Favored" resname="LYS" resnum="15" rota="mmtm" said="A" seq="15" validate="True"/>
+	<ModelledSubgroup altcode=" " chain="A" cyrange_domain_id="1" ent="1" icode=" " model="3" num-H-reduce="10" phi="-67.5" psi="-39.1" rama="Favored" resname="TRP" resnum="16" rota="OUTLIER" said="A" seq="16" validate="True"/>
+	<ModelledSubgroup altcode=" " chain="A" cyrange_domain_id="1" ent="1" icode=" " model="3" num-H-reduce="5" phi="-64.8" psi="-33.4" rama="Favored" resname="ALA" resnum="17" said="A" seq="17" validate="True"/>
+	<ModelledSubgroup altcode=" " chain="A" cyrange_domain_id="1" ent="1" icode=" " model="3" num-H-reduce="11" phi="-70.8" psi="-43.9" rama="Favored" resname="LEU" resnum="18" rota="OUTLIER" said="A" seq="18" validate="True">
+		<clash atom="HD23" cid="4" clashmag="0.41" dist="2.30"/>
+		<clash atom="HD21" cid="2" clashmag="0.48" dist="2.09"/>
+		<clash atom="N" cid="4" clashmag="0.41" dist="2.30"/>
+	</ModelledSubgroup>
+	<ModelledSubgroup altcode=" " chain="A" cyrange_domain_id="1" ent="1" icode=" " model="3" num-H-reduce="5" phi="-64.7" psi="-27.9" rama="Favored" resname="SER" resnum="19" rota="OUTLIER" said="A" seq="19" validate="True"/>
+	<ModelledSubgroup altcode=" " chain="A" cyrange_domain_id="1" ent="1" icode=" " model="3" num-H-reduce="13" phi="-57.3" psi="131.6" rama="Favored" resname="ARG" resnum="20" rota="OUTLIER" said="A" seq="20" validate="True"/>
+	<ModelledSubgroup altcode=" " chain="A" ent="1" icode=" " model="3" resname="NH2" resnum="21" said="A" seq="21" validate="False"/>
+	<Model model="4" nmrclust_cluster_id="3"/>
+	<ModelledSubgroup altcode=" " chain="A" ent="1" icode=" " model="4" num-H-reduce="7" resname="ALA" resnum="1" said="A" seq="1" validate="False"/>
+	<ModelledSubgroup altcode=" " chain="A" ent="1" icode=" " model="4" num-H-reduce="13" phi="-108.7" psi="-30.9" rama="Favored" resname="ARG" resnum="2" rota="OUTLIER" said="A" seq="2" validate="False"/>
+	<ModelledSubgroup altcode=" " chain="A" cyrange_domain_id="1" ent="1" icode=" " model="4" num-H-reduce="11" phi="-75.8" psi="-36.1" rama="Favored" resname="LEU" resnum="3" rota="OUTLIER" said="A" seq="3" validate="True"/>
+	<ModelledSubgroup altcode=" " chain="A" cyrange_domain_id="1" ent="1" icode=" " model="4" num-H-reduce="4" phi="-67.9" psi="-34.3" rama="Favored" resname="ASP" resnum="4" rota="m-20" said="A" seq="4" validate="True"/>
+	<ModelledSubgroup altcode=" " chain="A" cyrange_domain_id="1" ent="1" icode=" " model="4" num-H-reduce="9" phi="-81.4" psi="-34.6" rama="Favored" resname="VAL" resnum="5" rota="t" said="A" seq="5" validate="True">
+		<clash atom="CG1" cid="24" clashmag="0.41" dist="3.03"/>
+	</ModelledSubgroup>
+	<ModelledSubgroup altcode=" " chain="A" cyrange_domain_id="1" ent="1" icode=" " model="4" num-H-reduce="5" phi="-60.7" psi="-32.8" rama="Favored" resname="ALA" resnum="6" said="A" seq="6" validate="True"/>
+	<ModelledSubgroup altcode=" " chain="A" cyrange_domain_id="1" ent="1" icode=" " model="4" num-H-reduce="5" phi="-80.6" psi="-41.6" rama="Favored" resname="SER" resnum="7" rota="m" said="A" seq="7" validate="True"/>
+	<ModelledSubgroup altcode=" " chain="A" cyrange_domain_id="1" ent="1" icode=" " model="4" num-H-reduce="6" phi="-64.6" psi="-39.3" rama="Favored" resname="GLU" resnum="8" rota="tt0" said="A" seq="8" validate="True"/>
+	<ModelledSubgroup altcode=" " chain="A" cyrange_domain_id="1" ent="1" icode=" " model="4" num-H-reduce="9" phi="-63.0" psi="-31.8" rama="Favored" resname="PHE" resnum="9" rota="m-85" said="A" seq="9" validate="True">
+		<clash atom="CE1" cid="24" clashmag="0.41" dist="3.03"/>
+	</ModelledSubgroup>
+	<ModelledSubgroup altcode=" " chain="A" cyrange_domain_id="1" ent="1" icode=" " model="4" num-H-reduce="13" phi="-67.7" psi="-39.9" rama="Favored" resname="ARG" resnum="10" rota="ttp180" said="A" seq="10" validate="True"/>
+	<ModelledSubgroup altcode=" " chain="A" cyrange_domain_id="1" ent="1" icode=" " model="4" num-H-reduce="13" phi="-66.5" psi="-37.7" rama="Favored" resname="LYS" resnum="11" rota="OUTLIER" said="A" seq="11" validate="True"/>
+	<ModelledSubgroup altcode=" " chain="A" cyrange_domain_id="1" ent="1" icode=" " model="4" num-H-reduce="13" phi="-67.3" psi="-35.9" rama="Favored" resname="LYS" resnum="12" rota="mmtm" said="A" seq="12" validate="True"/>
+	<ModelledSubgroup altcode=" " chain="A" cyrange_domain_id="1" ent="1" icode=" " model="4" num-H-reduce="10" phi="-68.3" psi="-37.6" rama="Favored" resname="TRP" resnum="13" rota="OUTLIER" said="A" seq="13" validate="True"/>
+	<ModelledSubgroup altcode=" " chain="A" cyrange_domain_id="1" ent="1" icode=" " model="4" num-H-reduce="6" phi="-60.6" psi="-53.1" rama="Favored" resname="ASN" resnum="14" rota="m-80" said="A" seq="14" validate="True"/>
+	<ModelledSubgroup altcode=" " chain="A" cyrange_domain_id="1" ent="1" icode=" " model="4" num-H-reduce="13" phi="-61.1" psi="-33.4" rama="Favored" resname="LYS" resnum="15" rota="OUTLIER" said="A" seq="15" validate="True">
+		<clash atom="HE2" cid="25" clashmag="0.41" dist="1.93"/>
+	</ModelledSubgroup>
+	<ModelledSubgroup altcode=" " chain="A" cyrange_domain_id="1" ent="1" icode=" " model="4" num-H-reduce="10" phi="-65.5" psi="-37.4" rama="Favored" resname="TRP" resnum="16" rota="OUTLIER" said="A" seq="16" validate="True"/>
+	<ModelledSubgroup altcode=" " chain="A" cyrange_domain_id="1" ent="1" icode=" " model="4" num-H-reduce="5" phi="-65.6" psi="-33.3" rama="Favored" resname="ALA" resnum="17" said="A" seq="17" validate="True"/>
+	<ModelledSubgroup altcode=" " chain="A" cyrange_domain_id="1" ent="1" icode=" " model="4" num-H-reduce="11" phi="-73.3" psi="-44.9" rama="Favored" resname="LEU" resnum="18" rota="OUTLIER" said="A" seq="18" validate="True">
+		<clash atom="N" cid="23" clashmag="0.45" dist="2.26"/>
+		<clash atom="HD12" cid="25" clashmag="0.41" dist="1.93"/>
+		<clash atom="HD23" cid="23" clashmag="0.45" dist="2.26"/>
+	</ModelledSubgroup>
+	<ModelledSubgroup altcode=" " chain="A" cyrange_domain_id="1" ent="1" icode=" " model="4" num-H-reduce="5" phi="-75.9" psi="-24.2" rama="Favored" resname="SER" resnum="19" rota="m" said="A" seq="19" validate="True"/>
+	<ModelledSubgroup altcode=" " chain="A" cyrange_domain_id="1" ent="1" icode=" " model="4" num-H-reduce="13" phi="-58.7" psi="88.5" rama="OUTLIER" resname="ARG" resnum="20" rota="OUTLIER" said="A" seq="20" validate="True"/>
+	<ModelledSubgroup altcode=" " chain="A" ent="1" icode=" " model="4" resname="NH2" resnum="21" said="A" seq="21" validate="False"/>
+	<Model model="5" nmrclust_cluster_id="4"/>
+	<ModelledSubgroup altcode=" " chain="A" ent="1" icode=" " model="5" num-H-reduce="7" resname="ALA" resnum="1" said="A" seq="1" validate="False"/>
+	<ModelledSubgroup altcode=" " chain="A" ent="1" icode=" " model="5" num-H-reduce="13" phi="-95.3" psi="-23.4" rama="Favored" resname="ARG" resnum="2" rota="OUTLIER" said="A" seq="2" validate="False"/>
+	<ModelledSubgroup altcode=" " chain="A" cyrange_domain_id="1" ent="1" icode=" " model="5" num-H-reduce="11" phi="-54.2" psi="-39.4" rama="Favored" resname="LEU" resnum="3" rota="OUTLIER" said="A" seq="3" validate="True"/>
+	<ModelledSubgroup altcode=" " chain="A" cyrange_domain_id="1" ent="1" icode=" " model="5" num-H-reduce="4" phi="-58.9" psi="-40.9" rama="Favored" resname="ASP" resnum="4" rota="m-20" said="A" seq="4" validate="True"/>
+	<ModelledSubgroup altcode=" " chain="A" cyrange_domain_id="1" ent="1" icode=" " model="5" num-H-reduce="9" phi="-77.6" psi="-43.9" rama="Favored" resname="VAL" resnum="5" rota="t" said="A" seq="5" validate="True"/>
+	<ModelledSubgroup altcode=" " chain="A" cyrange_domain_id="1" ent="1" icode=" " model="5" num-H-reduce="5" phi="-58.1" psi="-31.9" rama="Favored" resname="ALA" resnum="6" said="A" seq="6" validate="True"/>
+	<ModelledSubgroup altcode=" " chain="A" cyrange_domain_id="1" ent="1" icode=" " model="5" num-H-reduce="5" phi="-79.2" psi="-39.1" rama="Favored" resname="SER" resnum="7" rota="OUTLIER" said="A" seq="7" validate="True"/>
+	<ModelledSubgroup altcode=" " chain="A" cyrange_domain_id="1" ent="1" icode=" " model="5" num-H-reduce="6" phi="-63.7" psi="-40.3" rama="Favored" resname="GLU" resnum="8" rota="tt0" said="A" seq="8" validate="True"/>
+	<ModelledSubgroup altcode=" " chain="A" cyrange_domain_id="1" ent="1" icode=" " model="5" num-H-reduce="9" phi="-60.8" psi="-31.7" rama="Favored" resname="PHE" resnum="9" rota="m-85" said="A" seq="9" validate="True"/>
+	<ModelledSubgroup altcode=" " chain="A" cyrange_domain_id="1" ent="1" icode=" " model="5" num-H-reduce="13" phi="-63.8" psi="-37.0" rama="Favored" resname="ARG" resnum="10" rota="mtt-85" said="A" seq="10" validate="True"/>
+	<ModelledSubgroup altcode=" " chain="A" cyrange_domain_id="1" ent="1" icode=" " model="5" num-H-reduce="13" phi="-63.2" psi="-27.4" rama="Favored" resname="LYS" resnum="11" rota="OUTLIER" said="A" seq="11" validate="True"/>
+	<ModelledSubgroup altcode=" " chain="A" cyrange_domain_id="1" ent="1" icode=" " model="5" num-H-reduce="13" phi="-75.6" psi="-36.9" rama="Favored" resname="LYS" resnum="12" rota="OUTLIER" said="A" seq="12" validate="True"/>
+	<ModelledSubgroup altcode=" " chain="A" cyrange_domain_id="1" ent="1" icode=" " model="5" num-H-reduce="10" phi="-81.8" psi="-30.9" rama="Favored" resname="TRP" resnum="13" rota="m95" said="A" seq="13" validate="True"/>
+	<ModelledSubgroup altcode=" " chain="A" cyrange_domain_id="1" ent="1" icode=" " model="5" num-H-reduce="6" phi="-51.5" psi="-62.5" rama="Allowed" resname="ASN" resnum="14" rota="m-20" said="A" seq="14" validate="True"/>
+	<ModelledSubgroup altcode=" " chain="A" cyrange_domain_id="1" ent="1" icode=" " model="5" num-H-reduce="13" phi="-57.8" psi="-35.2" rama="Favored" resname="LYS" resnum="15" rota="mmtt" said="A" seq="15" validate="True"/>
+	<ModelledSubgroup altcode=" " chain="A" cyrange_domain_id="1" ent="1" icode=" " model="5" num-H-reduce="10" phi="-64.5" psi="-39.9" rama="Favored" resname="TRP" resnum="16" rota="m0" said="A" seq="16" validate="True"/>
+	<ModelledSubgroup altcode=" " chain="A" cyrange_domain_id="1" ent="1" icode=" " model="5" num-H-reduce="5" phi="-63.4" psi="-33.0" rama="Favored" resname="ALA" resnum="17" said="A" seq="17" validate="True"/>
+	<ModelledSubgroup altcode=" " chain="A" cyrange_domain_id="1" ent="1" icode=" " model="5" num-H-reduce="11" phi="-70.8" psi="-45.9" rama="Favored" resname="LEU" resnum="18" rota="OUTLIER" said="A" seq="18" validate="True">
+		<clash atom="HD23" cid="22" clashmag="0.40" dist="2.30"/>
+		<clash atom="N" cid="22" clashmag="0.40" dist="2.30"/>
+	</ModelledSubgroup>
+	<ModelledSubgroup altcode=" " chain="A" cyrange_domain_id="1" ent="1" icode=" " model="5" num-H-reduce="5" phi="-66.8" psi="-28.7" rama="Favored" resname="SER" resnum="19" rota="OUTLIER" said="A" seq="19" validate="True"/>
+	<ModelledSubgroup altcode=" " chain="A" cyrange_domain_id="1" ent="1" icode=" " model="5" num-H-reduce="13" phi="-58.6" psi="135.8" rama="Favored" resname="ARG" resnum="20" rota="OUTLIER" said="A" seq="20" validate="True"/>
+	<ModelledSubgroup altcode=" " chain="A" ent="1" icode=" " model="5" resname="NH2" resnum="21" said="A" seq="21" validate="False"/>
+	<Model model="6" nmrclust_cluster_id="1"/>
+	<ModelledSubgroup altcode=" " chain="A" ent="1" icode=" " model="6" num-H-reduce="7" resname="ALA" resnum="1" said="A" seq="1" validate="False"/>
+	<ModelledSubgroup altcode=" " chain="A" ent="1" icode=" " model="6" num-H-reduce="13" phi="-95.3" psi="-33.7" rama="Favored" resname="ARG" resnum="2" rota="OUTLIER" said="A" seq="2" validate="False"/>
+	<ModelledSubgroup altcode=" " chain="A" cyrange_domain_id="1" ent="1" icode=" " model="6" num-H-reduce="11" phi="-67.1" psi="-39.2" rama="Favored" resname="LEU" resnum="3" rota="tt" said="A" seq="3" validate="True"/>
+	<ModelledSubgroup altcode=" " chain="A" cyrange_domain_id="1" ent="1" icode=" " model="6" num-H-reduce="4" phi="-57.5" psi="-41.1" rama="Favored" resname="ASP" resnum="4" rota="OUTLIER" said="A" seq="4" validate="True"/>
+	<ModelledSubgroup altcode=" " chain="A" cyrange_domain_id="1" ent="1" icode=" " model="6" num-H-reduce="9" phi="-74.6" psi="-46.2" rama="Favored" resname="VAL" resnum="5" rota="t" said="A" seq="5" validate="True"/>
+	<ModelledSubgroup altcode=" " chain="A" cyrange_domain_id="1" ent="1" icode=" " model="6" num-H-reduce="5" phi="-60.6" psi="-32.3" rama="Favored" resname="ALA" resnum="6" said="A" seq="6" validate="True"/>
+	<ModelledSubgroup altcode=" " chain="A" cyrange_domain_id="1" ent="1" icode=" " model="6" num-H-reduce="5" phi="-79.7" psi="-38.4" rama="Favored" resname="SER" resnum="7" rota="t" said="A" seq="7" validate="True"/>
+	<ModelledSubgroup altcode=" " chain="A" cyrange_domain_id="1" ent="1" icode=" " model="6" num-H-reduce="6" phi="-64.6" psi="-39.3" rama="Favored" resname="GLU" resnum="8" rota="tp10" said="A" seq="8" validate="True"/>
+	<ModelledSubgroup altcode=" " chain="A" cyrange_domain_id="1" ent="1" icode=" " model="6" num-H-reduce="9" phi="-62.9" psi="-31.4" rama="Favored" resname="PHE" resnum="9" rota="m-85" said="A" seq="9" validate="True"/>
+	<ModelledSubgroup altcode=" " chain="A" cyrange_domain_id="1" ent="1" icode=" " model="6" num-H-reduce="13" phi="-73.1" psi="-34.3" rama="Favored" resname="ARG" resnum="10" rota="ttm-85" said="A" seq="10" validate="True"/>
+	<ModelledSubgroup altcode=" " chain="A" cyrange_domain_id="1" ent="1" icode=" " model="6" num-H-reduce="13" phi="-71.5" psi="-32.1" rama="Favored" resname="LYS" resnum="11" rota="mmtm" said="A" seq="11" validate="True"/>
+	<ModelledSubgroup altcode=" " chain="A" cyrange_domain_id="1" ent="1" icode=" " model="6" num-H-reduce="13" phi="-73.8" psi="-30.9" rama="Favored" resname="LYS" resnum="12" rota="mmtp" said="A" seq="12" validate="True"/>
+	<ModelledSubgroup altcode=" " chain="A" cyrange_domain_id="1" ent="1" icode=" " model="6" num-H-reduce="10" phi="-80.5" psi="-36.0" rama="Favored" resname="TRP" resnum="13" rota="t-105" said="A" seq="13" validate="True"/>
+	<ModelledSubgroup altcode=" " chain="A" cyrange_domain_id="1" ent="1" icode=" " model="6" num-H-reduce="6" phi="-60.3" psi="-45.5" rama="Favored" resname="ASN" resnum="14" rota="m-20" said="A" seq="14" validate="True"/>
+	<ModelledSubgroup altcode=" " chain="A" cyrange_domain_id="1" ent="1" icode=" " model="6" num-H-reduce="13" phi="-59.4" psi="-33.5" rama="Favored" resname="LYS" resnum="15" rota="tptm" said="A" seq="15" validate="True"/>
+	<ModelledSubgroup altcode=" " chain="A" cyrange_domain_id="1" ent="1" icode=" " model="6" num-H-reduce="10" phi="-65.0" psi="-37.5" rama="Favored" resname="TRP" resnum="16" rota="m0" said="A" seq="16" validate="True"/>
+	<ModelledSubgroup altcode=" " chain="A" cyrange_domain_id="1" ent="1" icode=" " model="6" num-H-reduce="5" phi="-66.0" psi="-32.7" rama="Favored" resname="ALA" resnum="17" said="A" seq="17" validate="True"/>
+	<ModelledSubgroup altcode=" " chain="A" cyrange_domain_id="1" ent="1" icode=" " model="6" num-H-reduce="11" phi="-73.9" psi="-44.0" rama="Favored" resname="LEU" resnum="18" rota="OUTLIER" said="A" seq="18" validate="True"/>
+	<ModelledSubgroup altcode=" " chain="A" cyrange_domain_id="1" ent="1" icode=" " model="6" num-H-reduce="5" phi="-75.6" psi="-26.5" rama="Favored" resname="SER" resnum="19" rota="m" said="A" seq="19" validate="True"/>
+	<ModelledSubgroup altcode=" " chain="A" cyrange_domain_id="1" ent="1" icode=" " model="6" num-H-reduce="13" phi="-89.5" psi="54.0" rama="Favored" resname="ARG" resnum="20" rota="ttm180" said="A" seq="20" validate="True"/>
+	<ModelledSubgroup altcode=" " chain="A" ent="1" icode=" " model="6" resname="NH2" resnum="21" said="A" seq="21" validate="False"/>
+	<Model model="7" nmrclust_cluster_id="2"/>
+	<ModelledSubgroup altcode=" " chain="A" ent="1" icode=" " model="7" num-H-reduce="7" resname="ALA" resnum="1" said="A" seq="1" validate="False"/>
+	<ModelledSubgroup altcode=" " chain="A" ent="1" icode=" " model="7" num-H-reduce="13" phi="-103.6" psi="30.9" rama="Favored" resname="ARG" resnum="2" rota="OUTLIER" said="A" seq="2" validate="False"/>
+	<ModelledSubgroup altcode=" " chain="A" cyrange_domain_id="1" ent="1" icode=" " model="7" num-H-reduce="11" phi="-69.9" psi="-49.0" rama="Favored" resname="LEU" resnum="3" rota="OUTLIER" said="A" seq="3" validate="True"/>
+	<ModelledSubgroup altcode=" " chain="A" cyrange_domain_id="1" ent="1" icode=" " model="7" num-H-reduce="4" phi="-57.8" psi="-36.7" rama="Favored" resname="ASP" resnum="4" rota="t70" said="A" seq="4" validate="True"/>
+	<ModelledSubgroup altcode=" " chain="A" cyrange_domain_id="1" ent="1" icode=" " model="7" num-H-reduce="9" phi="-76.9" psi="-45.5" rama="Favored" resname="VAL" resnum="5" rota="t" said="A" seq="5" validate="True"/>
+	<ModelledSubgroup altcode=" " chain="A" cyrange_domain_id="1" ent="1" icode=" " model="7" num-H-reduce="5" phi="-64.9" psi="-30.1" rama="Favored" resname="ALA" resnum="6" said="A" seq="6" validate="True"/>
+	<ModelledSubgroup altcode=" " chain="A" cyrange_domain_id="1" ent="1" icode=" " model="7" num-H-reduce="5" phi="-84.0" psi="-38.1" rama="Favored" resname="SER" resnum="7" rota="p" said="A" seq="7" validate="True"/>
+	<ModelledSubgroup altcode=" " chain="A" cyrange_domain_id="1" ent="1" icode=" " model="7" num-H-reduce="6" phi="-66.9" psi="-34.9" rama="Favored" resname="GLU" resnum="8" rota="tt0" said="A" seq="8" validate="True"/>
+	<ModelledSubgroup altcode=" " chain="A" cyrange_domain_id="1" ent="1" icode=" " model="7" num-H-reduce="9" phi="-68.3" psi="-26.6" rama="Favored" resname="PHE" resnum="9" rota="m-85" said="A" seq="9" validate="True"/>
+	<ModelledSubgroup altcode=" " chain="A" cyrange_domain_id="1" ent="1" icode=" " model="7" num-H-reduce="13" phi="-73.5" psi="-34.5" rama="Favored" resname="ARG" resnum="10" rota="ttm-85" said="A" seq="10" validate="True"/>
+	<ModelledSubgroup altcode=" " chain="A" cyrange_domain_id="1" ent="1" icode=" " model="7" num-H-reduce="13" phi="-71.7" psi="-34.1" rama="Favored" resname="LYS" resnum="11" rota="mtmm" said="A" seq="11" validate="True"/>
+	<ModelledSubgroup altcode=" " chain="A" cyrange_domain_id="1" ent="1" icode=" " model="7" num-H-reduce="13" phi="-74.8" psi="-30.7" rama="Favored" resname="LYS" resnum="12" rota="mttt" said="A" seq="12" validate="True"/>
+	<ModelledSubgroup altcode=" " chain="A" cyrange_domain_id="1" ent="1" icode=" " model="7" num-H-reduce="10" phi="-86.6" psi="-33.0" rama="Favored" resname="TRP" resnum="13" rota="t-105" said="A" seq="13" validate="True"/>
+	<ModelledSubgroup altcode=" " chain="A" cyrange_domain_id="1" ent="1" icode=" " model="7" num-H-reduce="6" phi="-60.3" psi="-41.2" rama="Favored" resname="ASN" resnum="14" rota="m-20" said="A" seq="14" validate="True"/>
+	<ModelledSubgroup altcode=" " chain="A" cyrange_domain_id="1" ent="1" icode=" " model="7" num-H-reduce="13" phi="-58.7" psi="-32.5" rama="Favored" resname="LYS" resnum="15" rota="mttt" said="A" seq="15" validate="True"/>
+	<ModelledSubgroup altcode=" " chain="A" cyrange_domain_id="1" ent="1" icode=" " model="7" num-H-reduce="10" phi="-65.4" psi="-39.8" rama="Favored" resname="TRP" resnum="16" rota="OUTLIER" said="A" seq="16" validate="True"/>
+	<ModelledSubgroup altcode=" " chain="A" cyrange_domain_id="1" ent="1" icode=" " model="7" num-H-reduce="5" phi="-64.1" psi="-33.2" rama="Favored" resname="ALA" resnum="17" said="A" seq="17" validate="True"/>
+	<ModelledSubgroup altcode=" " chain="A" cyrange_domain_id="1" ent="1" icode=" " model="7" num-H-reduce="11" phi="-72.3" psi="-44.3" rama="Favored" resname="LEU" resnum="18" rota="OUTLIER" said="A" seq="18" validate="True"/>
+	<ModelledSubgroup altcode=" " chain="A" cyrange_domain_id="1" ent="1" icode=" " model="7" num-H-reduce="5" phi="-71.1" psi="-28.2" rama="Favored" resname="SER" resnum="19" rota="t" said="A" seq="19" validate="True"/>
+	<ModelledSubgroup altcode=" " chain="A" cyrange_domain_id="1" ent="1" icode=" " model="7" num-H-reduce="13" phi="-68.6" psi="147.4" rama="Favored" resname="ARG" resnum="20" rota="ttm180" said="A" seq="20" validate="True"/>
+	<ModelledSubgroup altcode=" " chain="A" ent="1" icode=" " model="7" resname="NH2" resnum="21" said="A" seq="21" validate="False"/>
+	<Model model="8" nmrclust_cluster_id="1"/>
+	<ModelledSubgroup altcode=" " chain="A" ent="1" icode=" " model="8" num-H-reduce="7" resname="ALA" resnum="1" said="A" seq="1" validate="False"/>
+	<ModelledSubgroup altcode=" " chain="A" ent="1" icode=" " model="8" num-H-reduce="13" phi="-98.6" psi="29.6" rama="Favored" resname="ARG" resnum="2" rota="OUTLIER" said="A" seq="2" validate="False">
+		<clash atom="C" cid="19" clashmag="0.51" dist="2.27"/>
+	</ModelledSubgroup>
+	<ModelledSubgroup altcode=" " chain="A" cyrange_domain_id="1" ent="1" icode=" " model="8" num-H-reduce="11" phi="-115.8" psi="-50.7" rama="Favored" resname="LEU" resnum="3" rota="mm?" said="A" seq="3" validate="True">
+		<clash atom="HD22" cid="19" clashmag="0.51" dist="2.27"/>
+		<clash atom="HD22" cid="20" clashmag="0.50" dist="2.22"/>
+		<clash atom="N" cid="20" clashmag="0.50" dist="2.22"/>
+		<clash atom="N" cid="21" clashmag="0.41" dist="2.84"/>
+		<clash atom="CD2" cid="21" clashmag="0.41" dist="2.84"/>
+	</ModelledSubgroup>
+	<ModelledSubgroup altcode=" " chain="A" cyrange_domain_id="1" ent="1" icode=" " model="8" num-H-reduce="4" phi="-58.2" psi="-34.0" rama="Favored" resname="ASP" resnum="4" rota="OUTLIER" said="A" seq="4" validate="True"/>
+	<ModelledSubgroup altcode=" " chain="A" cyrange_domain_id="1" ent="1" icode=" " model="8" num-H-reduce="9" phi="-72.0" psi="-42.5" rama="Favored" resname="VAL" resnum="5" rota="t" said="A" seq="5" validate="True"/>
+	<ModelledSubgroup altcode=" " chain="A" cyrange_domain_id="1" ent="1" icode=" " model="8" num-H-reduce="5" phi="-57.8" psi="-34.5" rama="Favored" resname="ALA" resnum="6" said="A" seq="6" validate="True"/>
+	<ModelledSubgroup altcode=" " chain="A" cyrange_domain_id="1" ent="1" icode=" " model="8" num-H-reduce="5" phi="-75.0" psi="-36.0" rama="Favored" resname="SER" resnum="7" rota="t" said="A" seq="7" validate="True"/>
+	<ModelledSubgroup altcode=" " chain="A" cyrange_domain_id="1" ent="1" icode=" " model="8" num-H-reduce="6" phi="-65.3" psi="-37.9" rama="Favored" resname="GLU" resnum="8" rota="tp10" said="A" seq="8" validate="True"/>
+	<ModelledSubgroup altcode=" " chain="A" cyrange_domain_id="1" ent="1" icode=" " model="8" num-H-reduce="9" phi="-63.0" psi="-31.1" rama="Favored" resname="PHE" resnum="9" rota="m-85" said="A" seq="9" validate="True"/>
+	<ModelledSubgroup altcode=" " chain="A" cyrange_domain_id="1" ent="1" icode=" " model="8" num-H-reduce="13" phi="-67.0" psi="-33.3" rama="Favored" resname="ARG" resnum="10" rota="mtt180" said="A" seq="10" validate="True"/>
+	<ModelledSubgroup altcode=" " chain="A" cyrange_domain_id="1" ent="1" icode=" " model="8" num-H-reduce="13" phi="-65.9" psi="-32.2" rama="Favored" resname="LYS" resnum="11" rota="OUTLIER" said="A" seq="11" validate="True"/>
+	<ModelledSubgroup altcode=" " chain="A" cyrange_domain_id="1" ent="1" icode=" " model="8" num-H-reduce="13" phi="-68.9" psi="-38.1" rama="Favored" resname="LYS" resnum="12" rota="mttt" said="A" seq="12" validate="True"/>
+	<ModelledSubgroup altcode=" " chain="A" cyrange_domain_id="1" ent="1" icode=" " model="8" num-H-reduce="10" phi="-70.6" psi="-35.8" rama="Favored" resname="TRP" resnum="13" rota="m0" said="A" seq="13" validate="True"/>
+	<ModelledSubgroup altcode=" " chain="A" cyrange_domain_id="1" ent="1" icode=" " model="8" num-H-reduce="6" phi="-60.9" psi="-39.3" rama="Favored" resname="ASN" resnum="14" rota="m-80" said="A" seq="14" validate="True"/>
+	<ModelledSubgroup altcode=" " chain="A" cyrange_domain_id="1" ent="1" icode=" " model="8" num-H-reduce="13" phi="-64.6" psi="-33.6" rama="Favored" resname="LYS" resnum="15" rota="tttp" said="A" seq="15" validate="True"/>
+	<ModelledSubgroup altcode=" " chain="A" cyrange_domain_id="1" ent="1" icode=" " model="8" num-H-reduce="10" phi="-69.6" psi="-33.5" rama="Favored" resname="TRP" resnum="16" rota="m0" said="A" seq="16" validate="True"/>
+	<ModelledSubgroup altcode=" " chain="A" cyrange_domain_id="1" ent="1" icode=" " model="8" num-H-reduce="5" phi="-76.7" psi="-37.3" rama="Favored" resname="ALA" resnum="17" said="A" seq="17" validate="True"/>
+	<ModelledSubgroup altcode=" " chain="A" cyrange_domain_id="1" ent="1" icode=" " model="8" num-H-reduce="11" phi="-78.4" psi="-23.0" rama="Favored" resname="LEU" resnum="18" rota="pp" said="A" seq="18" validate="True">
+		<clash atom="HD12" cid="18" clashmag="0.54" dist="2.23"/>
+		<clash atom="C" cid="18" clashmag="0.54" dist="2.23"/>
+	</ModelledSubgroup>
+	<ModelledSubgroup altcode=" " chain="A" cyrange_domain_id="1" ent="1" icode=" " model="8" num-H-reduce="5" phi="-90.0" psi="-27.1" rama="Favored" resname="SER" resnum="19" rota="t" said="A" seq="19" validate="True"/>
+	<ModelledSubgroup altcode=" " chain="A" cyrange_domain_id="1" ent="1" icode=" " model="8" num-H-reduce="13" phi="-86.7" psi="92.0" rama="Favored" resname="ARG" resnum="20" rota="ttm-85" said="A" seq="20" validate="True"/>
+	<ModelledSubgroup altcode=" " chain="A" ent="1" icode=" " model="8" resname="NH2" resnum="21" said="A" seq="21" validate="False"/>
+	<Model model="9" nmrclust_cluster_id="1"/>
+	<ModelledSubgroup altcode=" " chain="A" ent="1" icode=" " model="9" num-H-reduce="7" resname="ALA" resnum="1" said="A" seq="1" validate="False"/>
+	<ModelledSubgroup altcode=" " chain="A" ent="1" icode=" " model="9" num-H-reduce="13" phi="-106.8" psi="-28.9" rama="Favored" resname="ARG" resnum="2" rota="OUTLIER" said="A" seq="2" validate="False"/>
+	<ModelledSubgroup altcode=" " chain="A" cyrange_domain_id="1" ent="1" icode=" " model="9" num-H-reduce="11" phi="-58.6" psi="-45.6" rama="Favored" resname="LEU" resnum="3" rota="OUTLIER" said="A" seq="3" validate="True"/>
+	<ModelledSubgroup altcode=" " chain="A" cyrange_domain_id="1" ent="1" icode=" " model="9" num-H-reduce="4" phi="-58.2" psi="-37.3" rama="Favored" resname="ASP" resnum="4" rota="OUTLIER" said="A" seq="4" validate="True"/>
+	<ModelledSubgroup altcode=" " chain="A" cyrange_domain_id="1" ent="1" icode=" " model="9" num-H-reduce="9" phi="-75.6" psi="-46.0" rama="Favored" resname="VAL" resnum="5" rota="t" said="A" seq="5" validate="True"/>
+	<ModelledSubgroup altcode=" " chain="A" cyrange_domain_id="1" ent="1" icode=" " model="9" num-H-reduce="5" phi="-60.8" psi="-32.5" rama="Favored" resname="ALA" resnum="6" said="A" seq="6" validate="True"/>
+	<ModelledSubgroup altcode=" " chain="A" cyrange_domain_id="1" ent="1" icode=" " model="9" num-H-reduce="5" phi="-83.3" psi="-40.0" rama="Favored" resname="SER" resnum="7" rota="OUTLIER" said="A" seq="7" validate="True"/>
+	<ModelledSubgroup altcode=" " chain="A" cyrange_domain_id="1" ent="1" icode=" " model="9" num-H-reduce="6" phi="-65.0" psi="-34.3" rama="Favored" resname="GLU" resnum="8" rota="OUTLIER" said="A" seq="8" validate="True"/>
+	<ModelledSubgroup altcode=" " chain="A" cyrange_domain_id="1" ent="1" icode=" " model="9" num-H-reduce="9" phi="-66.3" psi="-29.2" rama="Favored" resname="PHE" resnum="9" rota="m-85" said="A" seq="9" validate="True"/>
+	<ModelledSubgroup altcode=" " chain="A" cyrange_domain_id="1" ent="1" icode=" " model="9" num-H-reduce="13" phi="-68.9" psi="-33.6" rama="Favored" resname="ARG" resnum="10" rota="OUTLIER" said="A" seq="10" validate="True"/>
+	<ModelledSubgroup altcode=" " chain="A" cyrange_domain_id="1" ent="1" icode=" " model="9" num-H-reduce="13" phi="-66.0" psi="-32.8" rama="Favored" resname="LYS" resnum="11" rota="OUTLIER" said="A" seq="11" validate="True"/>
+	<ModelledSubgroup altcode=" " chain="A" cyrange_domain_id="1" ent="1" icode=" " model="9" num-H-reduce="13" phi="-68.8" psi="-38.0" rama="Favored" resname="LYS" resnum="12" rota="mttt" said="A" seq="12" validate="True"/>
+	<ModelledSubgroup altcode=" " chain="A" cyrange_domain_id="1" ent="1" icode=" " model="9" num-H-reduce="10" phi="-72.5" psi="-38.8" rama="Favored" resname="TRP" resnum="13" rota="m95" said="A" seq="13" validate="True"/>
+	<ModelledSubgroup altcode=" " chain="A" cyrange_domain_id="1" ent="1" icode=" " model="9" num-H-reduce="6" phi="-61.5" psi="-40.8" rama="Favored" resname="ASN" resnum="14" rota="m-80" said="A" seq="14" validate="True"/>
+	<ModelledSubgroup altcode=" " chain="A" cyrange_domain_id="1" ent="1" icode=" " model="9" num-H-reduce="13" phi="-70.1" psi="-32.2" rama="Favored" resname="LYS" resnum="15" rota="OUTLIER" said="A" seq="15" validate="True"/>
+	<ModelledSubgroup altcode=" " chain="A" cyrange_domain_id="1" ent="1" icode=" " model="9" num-H-reduce="10" phi="-70.2" psi="-32.1" rama="Favored" resname="TRP" resnum="16" rota="m0" said="A" seq="16" validate="True"/>
+	<ModelledSubgroup altcode=" " chain="A" cyrange_domain_id="1" ent="1" icode=" " model="9" num-H-reduce="5" phi="-78.1" psi="-35.6" rama="Favored" resname="ALA" resnum="17" said="A" seq="17" validate="True"/>
+	<ModelledSubgroup altcode=" " chain="A" cyrange_domain_id="1" ent="1" icode=" " model="9" num-H-reduce="11" phi="-80.2" psi="-23.1" rama="Favored" resname="LEU" resnum="18" rota="pp" said="A" seq="18" validate="True">
+		<clash atom="C" cid="6" clashmag="0.54" dist="2.23"/>
+		<clash atom="HD12" cid="6" clashmag="0.54" dist="2.23"/>
+	</ModelledSubgroup>
+	<ModelledSubgroup altcode=" " chain="A" cyrange_domain_id="1" ent="1" icode=" " model="9" num-H-reduce="5" phi="-93.1" psi="-27.3" rama="Favored" resname="SER" resnum="19" rota="t" said="A" seq="19" validate="True"/>
+	<ModelledSubgroup altcode=" " chain="A" cyrange_domain_id="1" ent="1" icode=" " model="9" num-H-reduce="13" phi="-79.7" psi="-33.3" rama="Favored" resname="ARG" resnum="20" rota="ttp180" said="A" seq="20" validate="True"/>
+	<ModelledSubgroup altcode=" " chain="A" ent="1" icode=" " model="9" resname="NH2" resnum="21" said="A" seq="21" validate="False"/>
+	<Model model="10" nmrclust_cluster_id="4"/>
+	<ModelledSubgroup altcode=" " chain="A" ent="1" icode=" " model="10" num-H-reduce="7" resname="ALA" resnum="1" said="A" seq="1" validate="False"/>
+	<ModelledSubgroup altcode=" " chain="A" ent="1" icode=" " model="10" num-H-reduce="13" phi="-133.5" psi="34.6" rama="Favored" resname="ARG" resnum="2" rota="OUTLIER" said="A" seq="2" validate="False"/>
+	<ModelledSubgroup altcode=" " chain="A" cyrange_domain_id="1" ent="1" icode=" " model="10" num-H-reduce="11" phi="-87.0" psi="-48.0" rama="Favored" resname="LEU" resnum="3" rota="mm?" said="A" seq="3" validate="True">
+		<clash atom="CD2" cid="14" clashmag="0.41" dist="2.84"/>
+		<clash atom="N" cid="13" clashmag="0.55" dist="2.16"/>
+		<clash atom="N" cid="14" clashmag="0.41" dist="2.84"/>
+		<clash atom="HD22" cid="13" clashmag="0.55" dist="2.16"/>
+	</ModelledSubgroup>
+	<ModelledSubgroup altcode=" " chain="A" cyrange_domain_id="1" ent="1" icode=" " model="10" num-H-reduce="4" phi="-59.4" psi="-33.0" rama="Favored" resname="ASP" resnum="4" rota="m-20" said="A" seq="4" validate="True"/>
+	<ModelledSubgroup altcode=" " chain="A" cyrange_domain_id="1" ent="1" icode=" " model="10" num-H-reduce="9" phi="-79.0" psi="-42.0" rama="Favored" resname="VAL" resnum="5" rota="t" said="A" seq="5" validate="True"/>
+	<ModelledSubgroup altcode=" " chain="A" cyrange_domain_id="1" ent="1" icode=" " model="10" num-H-reduce="5" phi="-57.5" psi="-29.7" rama="Favored" resname="ALA" resnum="6" said="A" seq="6" validate="True"/>
+	<ModelledSubgroup altcode=" " chain="A" cyrange_domain_id="1" ent="1" icode=" " model="10" num-H-reduce="5" phi="-82.3" psi="-42.3" rama="Favored" resname="SER" resnum="7" rota="OUTLIER" said="A" seq="7" validate="True"/>
+	<ModelledSubgroup altcode=" " chain="A" cyrange_domain_id="1" ent="1" icode=" " model="10" num-H-reduce="6" phi="-65.6" psi="-41.2" rama="Favored" resname="GLU" resnum="8" rota="tt0" said="A" seq="8" validate="True"/>
+	<ModelledSubgroup altcode=" " chain="A" cyrange_domain_id="1" ent="1" icode=" " model="10" num-H-reduce="9" phi="-66.5" psi="-27.6" rama="Favored" resname="PHE" resnum="9" rota="m-85" said="A" seq="9" validate="True"/>
+	<ModelledSubgroup altcode=" " chain="A" cyrange_domain_id="1" ent="1" icode=" " model="10" num-H-reduce="13" phi="-71.3" psi="-36.7" rama="Favored" resname="ARG" resnum="10" rota="OUTLIER" said="A" seq="10" validate="True"/>
+	<ModelledSubgroup altcode=" " chain="A" cyrange_domain_id="1" ent="1" icode=" " model="10" num-H-reduce="13" phi="-67.0" psi="-33.4" rama="Favored" resname="LYS" resnum="11" rota="OUTLIER" said="A" seq="11" validate="True"/>
+	<ModelledSubgroup altcode=" " chain="A" cyrange_domain_id="1" ent="1" icode=" " model="10" num-H-reduce="13" phi="-69.5" psi="-39.3" rama="Favored" resname="LYS" resnum="12" rota="mmtt" said="A" seq="12" validate="True"/>
+	<ModelledSubgroup altcode=" " chain="A" cyrange_domain_id="1" ent="1" icode=" " model="10" num-H-reduce="10" phi="-71.1" psi="-34.9" rama="Favored" resname="TRP" resnum="13" rota="m95" said="A" seq="13" validate="True"/>
+	<ModelledSubgroup altcode=" " chain="A" cyrange_domain_id="1" ent="1" icode=" " model="10" num-H-reduce="6" phi="-55.7" psi="-49.6" rama="Favored" resname="ASN" resnum="14" rota="m-80" said="A" seq="14" validate="True"/>
+	<ModelledSubgroup altcode=" " chain="A" cyrange_domain_id="1" ent="1" icode=" " model="10" num-H-reduce="13" phi="-65.1" psi="-30.7" rama="Favored" resname="LYS" resnum="15" rota="mmtt" said="A" seq="15" validate="True"/>
+	<ModelledSubgroup altcode=" " chain="A" cyrange_domain_id="1" ent="1" icode=" " model="10" num-H-reduce="10" phi="-69.7" psi="-35.9" rama="Favored" resname="TRP" resnum="16" rota="OUTLIER" said="A" seq="16" validate="True"/>
+	<ModelledSubgroup altcode=" " chain="A" cyrange_domain_id="1" ent="1" icode=" " model="10" num-H-reduce="5" phi="-74.1" psi="-38.7" rama="Favored" resname="ALA" resnum="17" said="A" seq="17" validate="True"/>
+	<ModelledSubgroup altcode=" " chain="A" cyrange_domain_id="1" ent="1" icode=" " model="10" num-H-reduce="11" phi="-76.8" psi="-23.4" rama="Favored" resname="LEU" resnum="18" rota="pp" said="A" seq="18" validate="True">
+		<clash atom="C" cid="12" clashmag="0.55" dist="2.22"/>
+		<clash atom="HD12" cid="12" clashmag="0.55" dist="2.22"/>
+	</ModelledSubgroup>
+	<ModelledSubgroup altcode=" " chain="A" cyrange_domain_id="1" ent="1" icode=" " model="10" num-H-reduce="5" phi="-88.5" psi="-28.1" rama="Favored" resname="SER" resnum="19" rota="t" said="A" seq="19" validate="True"/>
+	<ModelledSubgroup altcode=" " chain="A" cyrange_domain_id="1" ent="1" icode=" " model="10" num-H-reduce="13" phi="-75.6" psi="-46.0" rama="Favored" resname="ARG" resnum="20" rota="OUTLIER" said="A" seq="20" validate="True"/>
+	<ModelledSubgroup altcode=" " chain="A" ent="1" icode=" " model="10" resname="NH2" resnum="21" said="A" seq="21" validate="False"/>
+	<Model model="11" nmrclust_cluster_id="1"/>
+	<ModelledSubgroup altcode=" " chain="A" ent="1" icode=" " model="11" num-H-reduce="7" resname="ALA" resnum="1" said="A" seq="1" validate="False"/>
+	<ModelledSubgroup altcode=" " chain="A" ent="1" icode=" " model="11" num-H-reduce="13" phi="-147.4" psi="30.9" rama="Allowed" resname="ARG" resnum="2" rota="mtt180" said="A" seq="2" validate="False"/>
+	<ModelledSubgroup altcode=" " chain="A" cyrange_domain_id="1" ent="1" icode=" " model="11" num-H-reduce="11" phi="-85.8" psi="-48.3" rama="Favored" resname="LEU" resnum="3" rota="mm?" said="A" seq="3" validate="True">
+		<clash atom="N" cid="10" clashmag="0.55" dist="2.17"/>
+		<clash atom="HD22" cid="10" clashmag="0.55" dist="2.17"/>
+	</ModelledSubgroup>
+	<ModelledSubgroup altcode=" " chain="A" cyrange_domain_id="1" ent="1" icode=" " model="11" num-H-reduce="4" phi="-58.1" psi="-33.0" rama="Favored" resname="ASP" resnum="4" rota="m-20" said="A" seq="4" validate="True"/>
+	<ModelledSubgroup altcode=" " chain="A" cyrange_domain_id="1" ent="1" icode=" " model="11" num-H-reduce="9" phi="-69.0" psi="-45.0" rama="Favored" resname="VAL" resnum="5" rota="t" said="A" seq="5" validate="True"/>
+	<ModelledSubgroup altcode=" " chain="A" cyrange_domain_id="1" ent="1" icode=" " model="11" num-H-reduce="5" phi="-59.2" psi="-32.4" rama="Favored" resname="ALA" resnum="6" said="A" seq="6" validate="True"/>
+	<ModelledSubgroup altcode=" " chain="A" cyrange_domain_id="1" ent="1" icode=" " model="11" num-H-reduce="5" phi="-78.3" psi="-36.4" rama="Favored" resname="SER" resnum="7" rota="m" said="A" seq="7" validate="True"/>
+	<ModelledSubgroup altcode=" " chain="A" cyrange_domain_id="1" ent="1" icode=" " model="11" num-H-reduce="6" phi="-65.9" psi="-37.8" rama="Favored" resname="GLU" resnum="8" rota="tt0" said="A" seq="8" validate="True"/>
+	<ModelledSubgroup altcode=" " chain="A" cyrange_domain_id="1" ent="1" icode=" " model="11" num-H-reduce="9" phi="-64.2" psi="-30.1" rama="Favored" resname="PHE" resnum="9" rota="m-85" said="A" seq="9" validate="True"/>
+	<ModelledSubgroup altcode=" " chain="A" cyrange_domain_id="1" ent="1" icode=" " model="11" num-H-reduce="13" phi="-69.0" psi="-39.3" rama="Favored" resname="ARG" resnum="10" rota="mtt180" said="A" seq="10" validate="True"/>
+	<ModelledSubgroup altcode=" " chain="A" cyrange_domain_id="1" ent="1" icode=" " model="11" num-H-reduce="13" phi="-64.0" psi="-34.5" rama="Favored" resname="LYS" resnum="11" rota="OUTLIER" said="A" seq="11" validate="True"/>
+	<ModelledSubgroup altcode=" " chain="A" cyrange_domain_id="1" ent="1" icode=" " model="11" num-H-reduce="13" phi="-68.7" psi="-31.9" rama="Favored" resname="LYS" resnum="12" rota="mttm" said="A" seq="12" validate="True"/>
+	<ModelledSubgroup altcode=" " chain="A" cyrange_domain_id="1" ent="1" icode=" " model="11" num-H-reduce="10" phi="-82.6" psi="-43.1" rama="Favored" resname="TRP" resnum="13" rota="OUTLIER" said="A" seq="13" validate="True"/>
+	<ModelledSubgroup altcode=" " chain="A" cyrange_domain_id="1" ent="1" icode=" " model="11" num-H-reduce="6" phi="-58.3" psi="-49.9" rama="Favored" resname="ASN" resnum="14" rota="m-20" said="A" seq="14" validate="True"/>
+	<ModelledSubgroup altcode=" " chain="A" cyrange_domain_id="1" ent="1" icode=" " model="11" num-H-reduce="13" phi="-58.9" psi="-34.8" rama="Favored" resname="LYS" resnum="15" rota="OUTLIER" said="A" seq="15" validate="True"/>
+	<ModelledSubgroup altcode=" " chain="A" cyrange_domain_id="1" ent="1" icode=" " model="11" num-H-reduce="10" phi="-64.9" psi="-35.1" rama="Favored" resname="TRP" resnum="16" rota="OUTLIER" said="A" seq="16" validate="True"/>
+	<ModelledSubgroup altcode=" " chain="A" cyrange_domain_id="1" ent="1" icode=" " model="11" num-H-reduce="5" phi="-69.6" psi="-29.1" rama="Favored" resname="ALA" resnum="17" said="A" seq="17" validate="True"/>
+	<ModelledSubgroup altcode=" " chain="A" cyrange_domain_id="1" ent="1" icode=" " model="11" num-H-reduce="11" phi="-79.6" psi="-36.6" rama="Favored" resname="LEU" resnum="18" rota="OUTLIER" said="A" seq="18" validate="True">
+		<clash atom="HD23" cid="11" clashmag="0.46" dist="2.25"/>
+		<clash atom="N" cid="11" clashmag="0.46" dist="2.25"/>
+	</ModelledSubgroup>
+	<ModelledSubgroup altcode=" " chain="A" cyrange_domain_id="1" ent="1" icode=" " model="11" num-H-reduce="5" phi="-79.5" psi="-28.4" rama="Favored" resname="SER" resnum="19" rota="m" said="A" seq="19" validate="True"/>
+	<ModelledSubgroup altcode=" " chain="A" cyrange_domain_id="1" ent="1" icode=" " model="11" num-H-reduce="13" phi="-78.9" psi="138.5" rama="Favored" resname="ARG" resnum="20" rota="OUTLIER" said="A" seq="20" validate="True"/>
+	<ModelledSubgroup altcode=" " chain="A" ent="1" icode=" " model="11" resname="NH2" resnum="21" said="A" seq="21" validate="False"/>
+	<Model model="12" nmrclust_cluster_id="3" nmrclust_representative="True"/>
+	<ModelledSubgroup altcode=" " chain="A" ent="1" icode=" " model="12" num-H-reduce="7" resname="ALA" resnum="1" said="A" seq="1" validate="False"/>
+	<ModelledSubgroup altcode=" " chain="A" ent="1" icode=" " model="12" num-H-reduce="13" phi="50.0" psi="32.4" rama="Favored" resname="ARG" resnum="2" rota="OUTLIER" said="A" seq="2" validate="False"/>
+	<ModelledSubgroup altcode=" " chain="A" cyrange_domain_id="1" ent="1" icode=" " model="12" num-H-reduce="11" phi="-79.2" psi="-48.2" rama="Favored" resname="LEU" resnum="3" rota="tt" said="A" seq="3" validate="True"/>
+	<ModelledSubgroup altcode=" " chain="A" cyrange_domain_id="1" ent="1" icode=" " model="12" num-H-reduce="4" phi="-57.5" psi="-39.2" rama="Favored" resname="ASP" resnum="4" rota="OUTLIER" said="A" seq="4" validate="True"/>
+	<ModelledSubgroup altcode=" " chain="A" cyrange_domain_id="1" ent="1" icode=" " model="12" num-H-reduce="9" phi="-79.3" psi="-43.4" rama="Favored" resname="VAL" resnum="5" rota="t" said="A" seq="5" validate="True"/>
+	<ModelledSubgroup altcode=" " chain="A" cyrange_domain_id="1" ent="1" icode=" " model="12" num-H-reduce="5" phi="-61.3" psi="-31.3" rama="Favored" resname="ALA" resnum="6" said="A" seq="6" validate="True"/>
+	<ModelledSubgroup altcode=" " chain="A" cyrange_domain_id="1" ent="1" icode=" " model="12" num-H-reduce="5" phi="-83.0" psi="-39.9" rama="Favored" resname="SER" resnum="7" rota="t" said="A" seq="7" validate="True"/>
+	<ModelledSubgroup altcode=" " chain="A" cyrange_domain_id="1" ent="1" icode=" " model="12" num-H-reduce="6" phi="-66.2" psi="-38.7" rama="Favored" resname="GLU" resnum="8" rota="tt0" said="A" seq="8" validate="True"/>
+	<ModelledSubgroup altcode=" " chain="A" cyrange_domain_id="1" ent="1" icode=" " model="12" num-H-reduce="9" phi="-66.1" psi="-28.0" rama="Favored" resname="PHE" resnum="9" rota="m-85" said="A" seq="9" validate="True"/>
+	<ModelledSubgroup altcode=" " chain="A" cyrange_domain_id="1" ent="1" icode=" " model="12" num-H-reduce="13" phi="-71.2" psi="-37.0" rama="Favored" resname="ARG" resnum="10" rota="ttm180" said="A" seq="10" validate="True"/>
+	<ModelledSubgroup altcode=" " chain="A" cyrange_domain_id="1" ent="1" icode=" " model="12" num-H-reduce="13" phi="-68.0" psi="-32.0" rama="Favored" resname="LYS" resnum="11" rota="mtmt" said="A" seq="11" validate="True"/>
+	<ModelledSubgroup altcode=" " chain="A" cyrange_domain_id="1" ent="1" icode=" " model="12" num-H-reduce="13" phi="-69.9" psi="-33.7" rama="Favored" resname="LYS" resnum="12" rota="mttp" said="A" seq="12" validate="True"/>
+	<ModelledSubgroup altcode=" " chain="A" cyrange_domain_id="1" ent="1" icode=" " model="12" num-H-reduce="10" phi="-70.8" psi="-37.3" rama="Favored" resname="TRP" resnum="13" rota="m95" said="A" seq="13" validate="True"/>
+	<ModelledSubgroup altcode=" " chain="A" cyrange_domain_id="1" ent="1" icode=" " model="12" num-H-reduce="6" phi="-59.3" psi="-55.8" rama="Favored" resname="ASN" resnum="14" rota="m-20" said="A" seq="14" validate="True"/>
+	<ModelledSubgroup altcode=" " chain="A" cyrange_domain_id="1" ent="1" icode=" " model="12" num-H-reduce="13" phi="-60.6" psi="-31.9" rama="Favored" resname="LYS" resnum="15" rota="mmmp?" said="A" seq="15" validate="True"/>
+	<ModelledSubgroup altcode=" " chain="A" cyrange_domain_id="1" ent="1" icode=" " model="12" num-H-reduce="10" phi="-66.8" psi="-37.9" rama="Favored" resname="TRP" resnum="16" rota="OUTLIER" said="A" seq="16" validate="True"/>
+	<ModelledSubgroup altcode=" " chain="A" cyrange_domain_id="1" ent="1" icode=" " model="12" num-H-reduce="5" phi="-65.6" psi="-34.0" rama="Favored" resname="ALA" resnum="17" said="A" seq="17" validate="True"/>
+	<ModelledSubgroup altcode=" " chain="A" cyrange_domain_id="1" ent="1" icode=" " model="12" num-H-reduce="11" phi="-73.1" psi="-42.5" rama="Favored" resname="LEU" resnum="18" rota="OUTLIER" said="A" seq="18" validate="True">
+		<clash atom="N" cid="0" clashmag="0.48" dist="2.24"/>
+		<clash atom="HD23" cid="0" clashmag="0.48" dist="2.24"/>
+	</ModelledSubgroup>
+	<ModelledSubgroup altcode=" " chain="A" cyrange_domain_id="1" ent="1" icode=" " model="12" num-H-reduce="5" phi="-70.0" psi="-29.1" rama="Favored" resname="SER" resnum="19" rota="t" said="A" seq="19" validate="True"/>
+	<ModelledSubgroup altcode=" " chain="A" cyrange_domain_id="1" ent="1" icode=" " model="12" num-H-reduce="13" phi="-64.4" psi="124.9" rama="Favored" resname="ARG" resnum="20" rota="OUTLIER" said="A" seq="20" validate="True"/>
+	<ModelledSubgroup altcode=" " chain="A" ent="1" icode=" " model="12" resname="NH2" resnum="21" said="A" seq="21" validate="False"/>
+	<Model model="13" nmrclust_cluster_id="1"/>
+	<ModelledSubgroup altcode=" " chain="A" ent="1" icode=" " model="13" num-H-reduce="7" resname="ALA" resnum="1" said="A" seq="1" validate="False"/>
+	<ModelledSubgroup altcode=" " chain="A" ent="1" icode=" " model="13" num-H-reduce="13" phi="-67.0" psi="-32.1" rama="Favored" resname="ARG" resnum="2" rota="mmm180" said="A" seq="2" validate="False"/>
+	<ModelledSubgroup altcode=" " chain="A" cyrange_domain_id="1" ent="1" icode=" " model="13" num-H-reduce="11" phi="-60.1" psi="-42.9" rama="Favored" resname="LEU" resnum="3" rota="tt" said="A" seq="3" validate="True"/>
+	<ModelledSubgroup altcode=" " chain="A" cyrange_domain_id="1" ent="1" icode=" " model="13" num-H-reduce="4" phi="-57.2" psi="-40.2" rama="Favored" resname="ASP" resnum="4" rota="OUTLIER" said="A" seq="4" validate="True"/>
+	<ModelledSubgroup altcode=" " chain="A" cyrange_domain_id="1" ent="1" icode=" " model="13" num-H-reduce="9" phi="-74.2" psi="-46.9" rama="Favored" resname="VAL" resnum="5" rota="t" said="A" seq="5" validate="True"/>
+	<ModelledSubgroup altcode=" " chain="A" cyrange_domain_id="1" ent="1" icode=" " model="13" num-H-reduce="5" phi="-61.0" psi="-36.2" rama="Favored" resname="ALA" resnum="6" said="A" seq="6" validate="True"/>
+	<ModelledSubgroup altcode=" " chain="A" cyrange_domain_id="1" ent="1" icode=" " model="13" num-H-reduce="5" phi="-77.9" psi="-35.5" rama="Favored" resname="SER" resnum="7" rota="m" said="A" seq="7" validate="True"/>
+	<ModelledSubgroup altcode=" " chain="A" cyrange_domain_id="1" ent="1" icode=" " model="13" num-H-reduce="6" phi="-68.4" psi="-41.3" rama="Favored" resname="GLU" resnum="8" rota="tp10" said="A" seq="8" validate="True"/>
+	<ModelledSubgroup altcode=" " chain="A" cyrange_domain_id="1" ent="1" icode=" " model="13" num-H-reduce="9" phi="-66.2" psi="-29.6" rama="Favored" resname="PHE" resnum="9" rota="m-85" said="A" seq="9" validate="True"/>
+	<ModelledSubgroup altcode=" " chain="A" cyrange_domain_id="1" ent="1" icode=" " model="13" num-H-reduce="13" phi="-71.1" psi="-32.3" rama="Favored" resname="ARG" resnum="10" rota="OUTLIER" said="A" seq="10" validate="True"/>
+	<ModelledSubgroup altcode=" " chain="A" cyrange_domain_id="1" ent="1" icode=" " model="13" num-H-reduce="13" phi="-68.0" psi="-35.5" rama="Favored" resname="LYS" resnum="11" rota="OUTLIER" said="A" seq="11" validate="True"/>
+	<ModelledSubgroup altcode=" " chain="A" cyrange_domain_id="1" ent="1" icode=" " model="13" num-H-reduce="13" phi="-65.0" psi="-35.9" rama="Favored" resname="LYS" resnum="12" rota="mmtm" said="A" seq="12" validate="True"/>
+	<ModelledSubgroup altcode=" " chain="A" cyrange_domain_id="1" ent="1" icode=" " model="13" num-H-reduce="10" phi="-65.6" psi="-41.9" rama="Favored" resname="TRP" resnum="13" rota="OUTLIER" said="A" seq="13" validate="True"/>
+	<ModelledSubgroup altcode=" " chain="A" cyrange_domain_id="1" ent="1" icode=" " model="13" num-H-reduce="6" phi="-59.2" psi="-40.2" rama="Favored" resname="ASN" resnum="14" rota="m-80" said="A" seq="14" validate="True"/>
+	<ModelledSubgroup altcode=" " chain="A" cyrange_domain_id="1" ent="1" icode=" " model="13" num-H-reduce="13" phi="-61.4" psi="-32.3" rama="Favored" resname="LYS" resnum="15" rota="tttt" said="A" seq="15" validate="True"/>
+	<ModelledSubgroup altcode=" " chain="A" cyrange_domain_id="1" ent="1" icode=" " model="13" num-H-reduce="10" phi="-65.8" psi="-39.0" rama="Favored" resname="TRP" resnum="16" rota="OUTLIER" said="A" seq="16" validate="True"/>
+	<ModelledSubgroup altcode=" " chain="A" cyrange_domain_id="1" ent="1" icode=" " model="13" num-H-reduce="5" phi="-64.4" psi="-33.3" rama="Favored" resname="ALA" resnum="17" said="A" seq="17" validate="True"/>
+	<ModelledSubgroup altcode=" " chain="A" cyrange_domain_id="1" ent="1" icode=" " model="13" num-H-reduce="11" phi="-70.4" psi="-45.0" rama="Favored" resname="LEU" resnum="18" rota="OUTLIER" said="A" seq="18" validate="True"/>
+	<ModelledSubgroup altcode=" " chain="A" cyrange_domain_id="1" ent="1" icode=" " model="13" num-H-reduce="5" phi="-65.4" psi="-29.0" rama="Favored" resname="SER" resnum="19" rota="OUTLIER" said="A" seq="19" validate="True"/>
+	<ModelledSubgroup altcode=" " chain="A" cyrange_domain_id="1" ent="1" icode=" " model="13" num-H-reduce="13" phi="-59.1" psi="147.7" rama="Favored" resname="ARG" resnum="20" rota="mtm-85" said="A" seq="20" validate="True"/>
+	<ModelledSubgroup altcode=" " chain="A" ent="1" icode=" " model="13" resname="NH2" resnum="21" said="A" seq="21" validate="False"/>
+	<Model model="14" nmrclust_cluster_id="3"/>
+	<ModelledSubgroup altcode=" " chain="A" ent="1" icode=" " model="14" num-H-reduce="7" resname="ALA" resnum="1" said="A" seq="1" validate="False"/>
+	<ModelledSubgroup altcode=" " chain="A" ent="1" icode=" " model="14" num-H-reduce="13" phi="-109.9" psi="-30.3" rama="Favored" resname="ARG" resnum="2" rota="OUTLIER" said="A" seq="2" validate="False"/>
+	<ModelledSubgroup altcode=" " chain="A" cyrange_domain_id="1" ent="1" icode=" " model="14" num-H-reduce="11" phi="-59.0" psi="-34.7" rama="Favored" resname="LEU" resnum="3" rota="OUTLIER" said="A" seq="3" validate="True"/>
+	<ModelledSubgroup altcode=" " chain="A" cyrange_domain_id="1" ent="1" icode=" " model="14" num-H-reduce="4" phi="-68.2" psi="-33.7" rama="Favored" resname="ASP" resnum="4" rota="m-20" said="A" seq="4" validate="True"/>
+	<ModelledSubgroup altcode=" " chain="A" cyrange_domain_id="1" ent="1" icode=" " model="14" num-H-reduce="9" phi="-80.2" psi="-36.6" rama="Favored" resname="VAL" resnum="5" rota="t" said="A" seq="5" validate="True">
+		<clash atom="CG1" cid="1" clashmag="0.44" dist="3.00"/>
+	</ModelledSubgroup>
+	<ModelledSubgroup altcode=" " chain="A" cyrange_domain_id="1" ent="1" icode=" " model="14" num-H-reduce="5" phi="-60.7" psi="-32.5" rama="Favored" resname="ALA" resnum="6" said="A" seq="6" validate="True"/>
+	<ModelledSubgroup altcode=" " chain="A" cyrange_domain_id="1" ent="1" icode=" " model="14" num-H-reduce="5" phi="-79.9" psi="-40.0" rama="Favored" resname="SER" resnum="7" rota="m" said="A" seq="7" validate="True"/>
+	<ModelledSubgroup altcode=" " chain="A" cyrange_domain_id="1" ent="1" icode=" " model="14" num-H-reduce="6" phi="-64.4" psi="-38.9" rama="Favored" resname="GLU" resnum="8" rota="tt0" said="A" seq="8" validate="True"/>
+	<ModelledSubgroup altcode=" " chain="A" cyrange_domain_id="1" ent="1" icode=" " model="14" num-H-reduce="9" phi="-63.7" psi="-30.3" rama="Favored" resname="PHE" resnum="9" rota="m-85" said="A" seq="9" validate="True">
+		<clash atom="CE1" cid="1" clashmag="0.44" dist="3.00"/>
+	</ModelledSubgroup>
+	<ModelledSubgroup altcode=" " chain="A" cyrange_domain_id="1" ent="1" icode=" " model="14" num-H-reduce="13" phi="-68.0" psi="-38.7" rama="Favored" resname="ARG" resnum="10" rota="ttp180" said="A" seq="10" validate="True"/>
+	<ModelledSubgroup altcode=" " chain="A" cyrange_domain_id="1" ent="1" icode=" " model="14" num-H-reduce="13" phi="-68.3" psi="-37.0" rama="Favored" resname="LYS" resnum="11" rota="OUTLIER" said="A" seq="11" validate="True"/>
+	<ModelledSubgroup altcode=" " chain="A" cyrange_domain_id="1" ent="1" icode=" " model="14" num-H-reduce="13" phi="-71.1" psi="-29.5" rama="Favored" resname="LYS" resnum="12" rota="mttm" said="A" seq="12" validate="True"/>
+	<ModelledSubgroup altcode=" " chain="A" cyrange_domain_id="1" ent="1" icode=" " model="14" num-H-reduce="10" phi="-77.4" psi="-35.3" rama="Favored" resname="TRP" resnum="13" rota="OUTLIER" said="A" seq="13" validate="True"/>
+	<ModelledSubgroup altcode=" " chain="A" cyrange_domain_id="1" ent="1" icode=" " model="14" num-H-reduce="6" phi="-60.4" psi="-53.5" rama="Favored" resname="ASN" resnum="14" rota="m-20" said="A" seq="14" validate="True"/>
+	<ModelledSubgroup altcode=" " chain="A" cyrange_domain_id="1" ent="1" icode=" " model="14" num-H-reduce="13" phi="-61.0" psi="-32.8" rama="Favored" resname="LYS" resnum="15" rota="mttm" said="A" seq="15" validate="True"/>
+	<ModelledSubgroup altcode=" " chain="A" cyrange_domain_id="1" ent="1" icode=" " model="14" num-H-reduce="10" phi="-66.2" psi="-34.0" rama="Favored" resname="TRP" resnum="16" rota="m0" said="A" seq="16" validate="True"/>
+	<ModelledSubgroup altcode=" " chain="A" cyrange_domain_id="1" ent="1" icode=" " model="14" num-H-reduce="5" phi="-68.7" psi="-33.2" rama="Favored" resname="ALA" resnum="17" said="A" seq="17" validate="True"/>
+	<ModelledSubgroup altcode=" " chain="A" cyrange_domain_id="1" ent="1" icode=" " model="14" num-H-reduce="11" phi="-74.6" psi="-43.9" rama="Favored" resname="LEU" resnum="18" rota="OUTLIER" said="A" seq="18" validate="True"/>
+	<ModelledSubgroup altcode=" " chain="A" cyrange_domain_id="1" ent="1" icode=" " model="14" num-H-reduce="5" phi="-82.2" psi="-9.6" rama="Favored" resname="SER" resnum="19" rota="m" said="A" seq="19" validate="True"/>
+	<ModelledSubgroup altcode=" " chain="A" cyrange_domain_id="1" ent="1" icode=" " model="14" num-H-reduce="13" phi="-51.8" psi="-63.6" rama="Allowed" resname="ARG" resnum="20" rota="ttm180" said="A" seq="20" validate="True"/>
+	<ModelledSubgroup altcode=" " chain="A" ent="1" icode=" " model="14" resname="NH2" resnum="21" said="A" seq="21" validate="False"/>
+	<Model model="15" nmrclust_cluster_id="2"/>
+	<ModelledSubgroup altcode=" " chain="A" ent="1" icode=" " model="15" num-H-reduce="7" resname="ALA" resnum="1" said="A" seq="1" validate="False"/>
+	<ModelledSubgroup altcode=" " chain="A" ent="1" icode=" " model="15" num-H-reduce="13" phi="-154.4" psi="-46.5" rama="Allowed" resname="ARG" resnum="2" rota="OUTLIER" said="A" seq="2" validate="False"/>
+	<ModelledSubgroup altcode=" " chain="A" cyrange_domain_id="1" ent="1" icode=" " model="15" num-H-reduce="11" phi="-70.9" psi="-34.1" rama="Favored" resname="LEU" resnum="3" rota="OUTLIER" said="A" seq="3" validate="True"/>
+	<ModelledSubgroup altcode=" " chain="A" cyrange_domain_id="1" ent="1" icode=" " model="15" num-H-reduce="4" phi="-65.6" psi="-33.7" rama="Favored" resname="ASP" resnum="4" rota="m-20" said="A" seq="4" validate="True"/>
+	<ModelledSubgroup altcode=" " chain="A" cyrange_domain_id="1" ent="1" icode=" " model="15" num-H-reduce="9" phi="-81.9" psi="-47.0" rama="Favored" resname="VAL" resnum="5" rota="t" said="A" seq="5" validate="True"/>
+	<ModelledSubgroup altcode=" " chain="A" cyrange_domain_id="1" ent="1" icode=" " model="15" num-H-reduce="5" phi="-62.9" psi="-29.6" rama="Favored" resname="ALA" resnum="6" said="A" seq="6" validate="True"/>
+	<ModelledSubgroup altcode=" " chain="A" cyrange_domain_id="1" ent="1" icode=" " model="15" num-H-reduce="5" phi="-83.3" psi="-37.8" rama="Favored" resname="SER" resnum="7" rota="t" said="A" seq="7" validate="True"/>
+	<ModelledSubgroup altcode=" " chain="A" cyrange_domain_id="1" ent="1" icode=" " model="15" num-H-reduce="6" phi="-68.3" psi="-38.8" rama="Favored" resname="GLU" resnum="8" rota="OUTLIER" said="A" seq="8" validate="True"/>
+	<ModelledSubgroup altcode=" " chain="A" cyrange_domain_id="1" ent="1" icode=" " model="15" num-H-reduce="9" phi="-68.0" psi="-28.2" rama="Favored" resname="PHE" resnum="9" rota="m-85" said="A" seq="9" validate="True"/>
+	<ModelledSubgroup altcode=" " chain="A" cyrange_domain_id="1" ent="1" icode=" " model="15" num-H-reduce="13" phi="-73.4" psi="-36.2" rama="Favored" resname="ARG" resnum="10" rota="ttm180" said="A" seq="10" validate="True"/>
+	<ModelledSubgroup altcode=" " chain="A" cyrange_domain_id="1" ent="1" icode=" " model="15" num-H-reduce="13" phi="-70.2" psi="-30.0" rama="Favored" resname="LYS" resnum="11" rota="mttm" said="A" seq="11" validate="True"/>
+	<ModelledSubgroup altcode=" " chain="A" cyrange_domain_id="1" ent="1" icode=" " model="15" num-H-reduce="13" phi="-73.5" psi="-30.5" rama="Favored" resname="LYS" resnum="12" rota="mmtt" said="A" seq="12" validate="True"/>
+	<ModelledSubgroup altcode=" " chain="A" cyrange_domain_id="1" ent="1" icode=" " model="15" num-H-reduce="10" phi="-81.9" psi="-36.6" rama="Favored" resname="TRP" resnum="13" rota="OUTLIER" said="A" seq="13" validate="True"/>
+	<ModelledSubgroup altcode=" " chain="A" cyrange_domain_id="1" ent="1" icode=" " model="15" num-H-reduce="6" phi="-60.1" psi="-39.7" rama="Favored" resname="ASN" resnum="14" rota="m-80" said="A" seq="14" validate="True"/>
+	<ModelledSubgroup altcode=" " chain="A" cyrange_domain_id="1" ent="1" icode=" " model="15" num-H-reduce="13" phi="-62.0" psi="-30.6" rama="Favored" resname="LYS" resnum="15" rota="mmtt" said="A" seq="15" validate="True"/>
+	<ModelledSubgroup altcode=" " chain="A" cyrange_domain_id="1" ent="1" icode=" " model="15" num-H-reduce="10" phi="-67.5" psi="-34.3" rama="Favored" resname="TRP" resnum="16" rota="m0" said="A" seq="16" validate="True"/>
+	<ModelledSubgroup altcode=" " chain="A" cyrange_domain_id="1" ent="1" icode=" " model="15" num-H-reduce="5" phi="-75.3" psi="-39.6" rama="Favored" resname="ALA" resnum="17" said="A" seq="17" validate="True"/>
+	<ModelledSubgroup altcode=" " chain="A" cyrange_domain_id="1" ent="1" icode=" " model="15" num-H-reduce="11" phi="-77.0" psi="-22.6" rama="Favored" resname="LEU" resnum="18" rota="pp" said="A" seq="18" validate="True">
+		<clash atom="HD12" cid="9" clashmag="0.54" dist="2.23"/>
+		<clash atom="C" cid="9" clashmag="0.54" dist="2.23"/>
+	</ModelledSubgroup>
+	<ModelledSubgroup altcode=" " chain="A" cyrange_domain_id="1" ent="1" icode=" " model="15" num-H-reduce="5" phi="-89.0" psi="-27.3" rama="Favored" resname="SER" resnum="19" rota="m" said="A" seq="19" validate="True"/>
+	<ModelledSubgroup altcode=" " chain="A" cyrange_domain_id="1" ent="1" icode=" " model="15" num-H-reduce="13" phi="-95.8" psi="-73.8" rama="Allowed" resname="ARG" resnum="20" rota="mtp85" said="A" seq="20" validate="True"/>
+	<ModelledSubgroup altcode=" " chain="A" ent="1" icode=" " model="15" resname="NH2" resnum="21" said="A" seq="21" validate="False"/>
+	<Model model="16" nmrclust_cluster_id="4" nmrclust_representative="True"/>
+	<ModelledSubgroup altcode=" " chain="A" ent="1" icode=" " model="16" num-H-reduce="7" resname="ALA" resnum="1" said="A" seq="1" validate="False"/>
+	<ModelledSubgroup altcode=" " chain="A" ent="1" icode=" " model="16" num-H-reduce="13" phi="-102.7" psi="29.8" rama="Favored" resname="ARG" resnum="2" rota="OUTLIER" said="A" seq="2" validate="False"/>
+	<ModelledSubgroup altcode=" " chain="A" cyrange_domain_id="1" ent="1" icode=" " model="16" num-H-reduce="11" phi="-71.5" psi="-49.8" rama="Favored" resname="LEU" resnum="3" rota="tt" said="A" seq="3" validate="True"/>
+	<ModelledSubgroup altcode=" " chain="A" cyrange_domain_id="1" ent="1" icode=" " model="16" num-H-reduce="4" phi="-56.6" psi="-34.3" rama="Favored" resname="ASP" resnum="4" rota="m-20" said="A" seq="4" validate="True"/>
+	<ModelledSubgroup altcode=" " chain="A" cyrange_domain_id="1" ent="1" icode=" " model="16" num-H-reduce="9" phi="-79.0" psi="-48.0" rama="Favored" resname="VAL" resnum="5" rota="t" said="A" seq="5" validate="True"/>
+	<ModelledSubgroup altcode=" " chain="A" cyrange_domain_id="1" ent="1" icode=" " model="16" num-H-reduce="5" phi="-59.9" psi="-31.3" rama="Favored" resname="ALA" resnum="6" said="A" seq="6" validate="True"/>
+	<ModelledSubgroup altcode=" " chain="A" cyrange_domain_id="1" ent="1" icode=" " model="16" num-H-reduce="5" phi="-79.3" psi="-39.0" rama="Favored" resname="SER" resnum="7" rota="t" said="A" seq="7" validate="True"/>
+	<ModelledSubgroup altcode=" " chain="A" cyrange_domain_id="1" ent="1" icode=" " model="16" num-H-reduce="6" phi="-65.7" psi="-41.9" rama="Favored" resname="GLU" resnum="8" rota="tt0" said="A" seq="8" validate="True"/>
+	<ModelledSubgroup altcode=" " chain="A" cyrange_domain_id="1" ent="1" icode=" " model="16" num-H-reduce="9" phi="-63.7" psi="-29.6" rama="Favored" resname="PHE" resnum="9" rota="m-85" said="A" seq="9" validate="True"/>
+	<ModelledSubgroup altcode=" " chain="A" cyrange_domain_id="1" ent="1" icode=" " model="16" num-H-reduce="13" phi="-67.6" psi="-34.1" rama="Favored" resname="ARG" resnum="10" rota="ttm180" said="A" seq="10" validate="True"/>
+	<ModelledSubgroup altcode=" " chain="A" cyrange_domain_id="1" ent="1" icode=" " model="16" num-H-reduce="13" phi="-68.2" psi="-40.5" rama="Favored" resname="LYS" resnum="11" rota="OUTLIER" said="A" seq="11" validate="True"/>
+	<ModelledSubgroup altcode=" " chain="A" cyrange_domain_id="1" ent="1" icode=" " model="16" num-H-reduce="13" phi="-68.0" psi="-33.7" rama="Favored" resname="LYS" resnum="12" rota="mttt" said="A" seq="12" validate="True"/>
+	<ModelledSubgroup altcode=" " chain="A" cyrange_domain_id="1" ent="1" icode=" " model="16" num-H-reduce="10" phi="-72.6" psi="-30.4" rama="Favored" resname="TRP" resnum="13" rota="t90" said="A" seq="13" validate="True"/>
+	<ModelledSubgroup altcode=" " chain="A" cyrange_domain_id="1" ent="1" icode=" " model="16" num-H-reduce="6" phi="-56.5" psi="-34.1" rama="Favored" resname="ASN" resnum="14" rota="m-20" said="A" seq="14" validate="True"/>
+	<ModelledSubgroup altcode=" " chain="A" cyrange_domain_id="1" ent="1" icode=" " model="16" num-H-reduce="13" phi="-72.4" psi="-30.6" rama="Favored" resname="LYS" resnum="15" rota="mttt" said="A" seq="15" validate="True"/>
+	<ModelledSubgroup altcode=" " chain="A" cyrange_domain_id="1" ent="1" icode=" " model="16" num-H-reduce="10" phi="-69.3" psi="-36.1" rama="Favored" resname="TRP" resnum="16" rota="OUTLIER" said="A" seq="16" validate="True"/>
+	<ModelledSubgroup altcode=" " chain="A" cyrange_domain_id="1" ent="1" icode=" " model="16" num-H-reduce="5" phi="-73.8" psi="-38.9" rama="Favored" resname="ALA" resnum="17" said="A" seq="17" validate="True"/>
+	<ModelledSubgroup altcode=" " chain="A" cyrange_domain_id="1" ent="1" icode=" " model="16" num-H-reduce="11" phi="-76.8" psi="-23.1" rama="Favored" resname="LEU" resnum="18" rota="pp" said="A" seq="18" validate="True">
+		<clash atom="HD12" cid="7" clashmag="0.55" dist="2.22"/>
+		<clash atom="C" cid="7" clashmag="0.55" dist="2.22"/>
+	</ModelledSubgroup>
+	<ModelledSubgroup altcode=" " chain="A" cyrange_domain_id="1" ent="1" icode=" " model="16" num-H-reduce="5" phi="-86.8" psi="-28.3" rama="Favored" resname="SER" resnum="19" rota="m" said="A" seq="19" validate="True"/>
+	<ModelledSubgroup altcode=" " chain="A" cyrange_domain_id="1" ent="1" icode=" " model="16" num-H-reduce="13" phi="-65.8" psi="-38.4" rama="Favored" resname="ARG" resnum="20" rota="mtt-85" said="A" seq="20" validate="True"/>
+	<ModelledSubgroup altcode=" " chain="A" ent="1" icode=" " model="16" resname="NH2" resnum="21" said="A" seq="21" validate="False"/>
+	<Model model="17" nmrclust_cluster_id="3"/>
+	<ModelledSubgroup altcode=" " chain="A" ent="1" icode=" " model="17" num-H-reduce="7" resname="ALA" resnum="1" said="A" seq="1" validate="False">
+		<clash atom="HB3" cid="15" clashmag="0.47" dist="2.40"/>
+	</ModelledSubgroup>
+	<ModelledSubgroup altcode=" " chain="A" ent="1" icode=" " model="17" num-H-reduce="13" phi="-117.9" psi="62.1" rama="Allowed" resname="ARG" resnum="2" rota="OUTLIER" said="A" seq="2" validate="False"/>
+	<ModelledSubgroup altcode=" " chain="A" cyrange_domain_id="1" ent="1" icode=" " model="17" num-H-reduce="11" phi="-75.8" psi="-60.5" rama="Favored" resname="LEU" resnum="3" rota="mm?" said="A" seq="3" validate="True">
+		<clash atom="HD22" cid="16" clashmag="0.45" dist="2.26"/>
+		<clash atom="CD2" cid="15" clashmag="0.47" dist="2.40"/>
+		<clash atom="N" cid="16" clashmag="0.45" dist="2.26"/>
+	</ModelledSubgroup>
+	<ModelledSubgroup altcode=" " chain="A" cyrange_domain_id="1" ent="1" icode=" " model="17" num-H-reduce="4" phi="-55.8" psi="-33.5" rama="Favored" resname="ASP" resnum="4" rota="OUTLIER" said="A" seq="4" validate="True"/>
+	<ModelledSubgroup altcode=" " chain="A" cyrange_domain_id="1" ent="1" icode=" " model="17" num-H-reduce="9" phi="-74.6" psi="-41.8" rama="Favored" resname="VAL" resnum="5" rota="t" said="A" seq="5" validate="True"/>
+	<ModelledSubgroup altcode=" " chain="A" cyrange_domain_id="1" ent="1" icode=" " model="17" num-H-reduce="5" phi="-61.5" psi="-31.5" rama="Favored" resname="ALA" resnum="6" said="A" seq="6" validate="True"/>
+	<ModelledSubgroup altcode=" " chain="A" cyrange_domain_id="1" ent="1" icode=" " model="17" num-H-reduce="5" phi="-80.9" psi="-38.9" rama="Favored" resname="SER" resnum="7" rota="t" said="A" seq="7" validate="True"/>
+	<ModelledSubgroup altcode=" " chain="A" cyrange_domain_id="1" ent="1" icode=" " model="17" num-H-reduce="6" phi="-65.0" psi="-37.6" rama="Favored" resname="GLU" resnum="8" rota="tt0" said="A" seq="8" validate="True"/>
+	<ModelledSubgroup altcode=" " chain="A" cyrange_domain_id="1" ent="1" icode=" " model="17" num-H-reduce="9" phi="-64.5" psi="-30.2" rama="Favored" resname="PHE" resnum="9" rota="m-85" said="A" seq="9" validate="True"/>
+	<ModelledSubgroup altcode=" " chain="A" cyrange_domain_id="1" ent="1" icode=" " model="17" num-H-reduce="13" phi="-69.9" psi="-38.1" rama="Favored" resname="ARG" resnum="10" rota="ttm180" said="A" seq="10" validate="True"/>
+	<ModelledSubgroup altcode=" " chain="A" cyrange_domain_id="1" ent="1" icode=" " model="17" num-H-reduce="13" phi="-65.9" psi="-30.5" rama="Favored" resname="LYS" resnum="11" rota="OUTLIER" said="A" seq="11" validate="True"/>
+	<ModelledSubgroup altcode=" " chain="A" cyrange_domain_id="1" ent="1" icode=" " model="17" num-H-reduce="13" phi="-69.1" psi="-33.7" rama="Favored" resname="LYS" resnum="12" rota="mmmt" said="A" seq="12" validate="True"/>
+	<ModelledSubgroup altcode=" " chain="A" cyrange_domain_id="1" ent="1" icode=" " model="17" num-H-reduce="10" phi="-72.5" psi="-40.8" rama="Favored" resname="TRP" resnum="13" rota="m95" said="A" seq="13" validate="True"/>
+	<ModelledSubgroup altcode=" " chain="A" cyrange_domain_id="1" ent="1" icode=" " model="17" num-H-reduce="6" phi="-58.3" psi="-52.9" rama="Favored" resname="ASN" resnum="14" rota="m-20" said="A" seq="14" validate="True"/>
+	<ModelledSubgroup altcode=" " chain="A" cyrange_domain_id="1" ent="1" icode=" " model="17" num-H-reduce="13" phi="-60.9" psi="-34.2" rama="Favored" resname="LYS" resnum="15" rota="mttt" said="A" seq="15" validate="True"/>
+	<ModelledSubgroup altcode=" " chain="A" cyrange_domain_id="1" ent="1" icode=" " model="17" num-H-reduce="10" phi="-63.9" psi="-39.9" rama="Favored" resname="TRP" resnum="16" rota="OUTLIER" said="A" seq="16" validate="True"/>
+	<ModelledSubgroup altcode=" " chain="A" cyrange_domain_id="1" ent="1" icode=" " model="17" num-H-reduce="5" phi="-63.4" psi="-33.9" rama="Favored" resname="ALA" resnum="17" said="A" seq="17" validate="True"/>
+	<ModelledSubgroup altcode=" " chain="A" cyrange_domain_id="1" ent="1" icode=" " model="17" num-H-reduce="11" phi="-72.5" psi="-45.1" rama="Favored" resname="LEU" resnum="18" rota="OUTLIER" said="A" seq="18" validate="True">
+		<clash atom="HD23" cid="17" clashmag="0.43" dist="2.27"/>
+		<clash atom="N" cid="17" clashmag="0.43" dist="2.27"/>
+	</ModelledSubgroup>
+	<ModelledSubgroup altcode=" " chain="A" cyrange_domain_id="1" ent="1" icode=" " model="17" num-H-reduce="5" phi="-73.4" psi="-25.0" rama="Favored" resname="SER" resnum="19" rota="t" said="A" seq="19" validate="True"/>
+	<ModelledSubgroup altcode=" " chain="A" cyrange_domain_id="1" ent="1" icode=" " model="17" num-H-reduce="13" phi="-58.2" psi="140.9" rama="Favored" resname="ARG" resnum="20" rota="OUTLIER" said="A" seq="20" validate="True"/>
+	<ModelledSubgroup altcode=" " chain="A" ent="1" icode=" " model="17" resname="NH2" resnum="21" said="A" seq="21" validate="False"/>
+	<Model model="18" nmrclust_cluster_id="2"/>
+	<ModelledSubgroup altcode=" " chain="A" ent="1" icode=" " model="18" num-H-reduce="7" resname="ALA" resnum="1" said="A" seq="1" validate="False"/>
+	<ModelledSubgroup altcode=" " chain="A" ent="1" icode=" " model="18" num-H-reduce="13" phi="-118.7" psi="30.2" rama="Favored" resname="ARG" resnum="2" rota="mmp_?" said="A" seq="2" validate="False"/>
+	<ModelledSubgroup altcode=" " chain="A" cyrange_domain_id="1" ent="1" icode=" " model="18" num-H-reduce="11" phi="-98.3" psi="-47.0" rama="Favored" resname="LEU" resnum="3" rota="tt" said="A" seq="3" validate="True"/>
+	<ModelledSubgroup altcode=" " chain="A" cyrange_domain_id="1" ent="1" icode=" " model="18" num-H-reduce="4" phi="-57.9" psi="-34.6" rama="Favored" resname="ASP" resnum="4" rota="m-20" said="A" seq="4" validate="True"/>
+	<ModelledSubgroup altcode=" " chain="A" cyrange_domain_id="1" ent="1" icode=" " model="18" num-H-reduce="9" phi="-79.9" psi="-48.5" rama="Favored" resname="VAL" resnum="5" rota="t" said="A" seq="5" validate="True"/>
+	<ModelledSubgroup altcode=" " chain="A" cyrange_domain_id="1" ent="1" icode=" " model="18" num-H-reduce="5" phi="-63.1" psi="-31.3" rama="Favored" resname="ALA" resnum="6" said="A" seq="6" validate="True"/>
+	<ModelledSubgroup altcode=" " chain="A" cyrange_domain_id="1" ent="1" icode=" " model="18" num-H-reduce="5" phi="-79.4" psi="-35.2" rama="Favored" resname="SER" resnum="7" rota="m" said="A" seq="7" validate="True"/>
+	<ModelledSubgroup altcode=" " chain="A" cyrange_domain_id="1" ent="1" icode=" " model="18" num-H-reduce="6" phi="-68.5" psi="-41.4" rama="Favored" resname="GLU" resnum="8" rota="tt0" said="A" seq="8" validate="True"/>
+	<ModelledSubgroup altcode=" " chain="A" cyrange_domain_id="1" ent="1" icode=" " model="18" num-H-reduce="9" phi="-66.0" psi="-30.1" rama="Favored" resname="PHE" resnum="9" rota="m-85" said="A" seq="9" validate="True"/>
+	<ModelledSubgroup altcode=" " chain="A" cyrange_domain_id="1" ent="1" icode=" " model="18" num-H-reduce="13" phi="-72.5" psi="-38.0" rama="Favored" resname="ARG" resnum="10" rota="mtt-85" said="A" seq="10" validate="True"/>
+	<ModelledSubgroup altcode=" " chain="A" cyrange_domain_id="1" ent="1" icode=" " model="18" num-H-reduce="13" phi="-67.4" psi="-31.7" rama="Favored" resname="LYS" resnum="11" rota="mttt" said="A" seq="11" validate="True"/>
+	<ModelledSubgroup altcode=" " chain="A" cyrange_domain_id="1" ent="1" icode=" " model="18" num-H-reduce="13" phi="-70.0" psi="-42.4" rama="Favored" resname="LYS" resnum="12" rota="mttt" said="A" seq="12" validate="True"/>
+	<ModelledSubgroup altcode=" " chain="A" cyrange_domain_id="1" ent="1" icode=" " model="18" num-H-reduce="10" phi="-73.7" psi="-36.4" rama="Favored" resname="TRP" resnum="13" rota="OUTLIER" said="A" seq="13" validate="True"/>
+	<ModelledSubgroup altcode=" " chain="A" cyrange_domain_id="1" ent="1" icode=" " model="18" num-H-reduce="6" phi="-60.8" psi="-43.4" rama="Favored" resname="ASN" resnum="14" rota="m-80" said="A" seq="14" validate="True"/>
+	<ModelledSubgroup altcode=" " chain="A" cyrange_domain_id="1" ent="1" icode=" " model="18" num-H-reduce="13" phi="-58.4" psi="-36.0" rama="Favored" resname="LYS" resnum="15" rota="OUTLIER" said="A" seq="15" validate="True"/>
+	<ModelledSubgroup altcode=" " chain="A" cyrange_domain_id="1" ent="1" icode=" " model="18" num-H-reduce="10" phi="-62.1" psi="-42.7" rama="Favored" resname="TRP" resnum="16" rota="OUTLIER" said="A" seq="16" validate="True"/>
+	<ModelledSubgroup altcode=" " chain="A" cyrange_domain_id="1" ent="1" icode=" " model="18" num-H-reduce="5" phi="-61.1" psi="-33.3" rama="Favored" resname="ALA" resnum="17" said="A" seq="17" validate="True"/>
+	<ModelledSubgroup altcode=" " chain="A" cyrange_domain_id="1" ent="1" icode=" " model="18" num-H-reduce="11" phi="-68.7" psi="-45.2" rama="Favored" resname="LEU" resnum="18" rota="OUTLIER" said="A" seq="18" validate="True"/>
+	<ModelledSubgroup altcode=" " chain="A" cyrange_domain_id="1" ent="1" icode=" " model="18" num-H-reduce="5" phi="-62.1" psi="-30.2" rama="Favored" resname="SER" resnum="19" rota="m" said="A" seq="19" validate="True"/>
+	<ModelledSubgroup altcode=" " chain="A" cyrange_domain_id="1" ent="1" icode=" " model="18" num-H-reduce="13" phi="-72.0" psi="174.9" rama="Favored" resname="ARG" resnum="20" rota="mtm180" said="A" seq="20" validate="True"/>
+	<ModelledSubgroup altcode=" " chain="A" ent="1" icode=" " model="18" resname="NH2" resnum="21" said="A" seq="21" validate="False"/>
+	<Model model="19" nmrclust_cluster_id="1"/>
+	<ModelledSubgroup altcode=" " chain="A" ent="1" icode=" " model="19" num-H-reduce="7" resname="ALA" resnum="1" said="A" seq="1" validate="False"/>
+	<ModelledSubgroup altcode=" " chain="A" ent="1" icode=" " model="19" num-H-reduce="13" phi="-99.5" psi="30.6" rama="Favored" resname="ARG" resnum="2" rota="mmm-85" said="A" seq="2" validate="False"/>
+	<ModelledSubgroup altcode=" " chain="A" cyrange_domain_id="1" ent="1" icode=" " model="19" num-H-reduce="11" phi="-70.4" psi="-48.3" rama="Favored" resname="LEU" resnum="3" rota="tt" said="A" seq="3" validate="True"/>
+	<ModelledSubgroup altcode=" " chain="A" cyrange_domain_id="1" ent="1" icode=" " model="19" num-H-reduce="4" phi="-58.2" psi="-33.3" rama="Favored" resname="ASP" resnum="4" rota="m-20" said="A" seq="4" validate="True"/>
+	<ModelledSubgroup altcode=" " chain="A" cyrange_domain_id="1" ent="1" icode=" " model="19" num-H-reduce="9" phi="-79.3" psi="-47.9" rama="Favored" resname="VAL" resnum="5" rota="t" said="A" seq="5" validate="True"/>
+	<ModelledSubgroup altcode=" " chain="A" cyrange_domain_id="1" ent="1" icode=" " model="19" num-H-reduce="5" phi="-63.3" psi="-32.1" rama="Favored" resname="ALA" resnum="6" said="A" seq="6" validate="True"/>
+	<ModelledSubgroup altcode=" " chain="A" cyrange_domain_id="1" ent="1" icode=" " model="19" num-H-reduce="5" phi="-82.3" psi="-37.6" rama="Favored" resname="SER" resnum="7" rota="m" said="A" seq="7" validate="True"/>
+	<ModelledSubgroup altcode=" " chain="A" cyrange_domain_id="1" ent="1" icode=" " model="19" num-H-reduce="6" phi="-68.4" psi="-39.5" rama="Favored" resname="GLU" resnum="8" rota="tt0" said="A" seq="8" validate="True"/>
+	<ModelledSubgroup altcode=" " chain="A" cyrange_domain_id="1" ent="1" icode=" " model="19" num-H-reduce="9" phi="-67.7" psi="-27.9" rama="Favored" resname="PHE" resnum="9" rota="m-85" said="A" seq="9" validate="True"/>
+	<ModelledSubgroup altcode=" " chain="A" cyrange_domain_id="1" ent="1" icode=" " model="19" num-H-reduce="13" phi="-73.5" psi="-37.0" rama="Favored" resname="ARG" resnum="10" rota="ttm180" said="A" seq="10" validate="True"/>
+	<ModelledSubgroup altcode=" " chain="A" cyrange_domain_id="1" ent="1" icode=" " model="19" num-H-reduce="13" phi="-70.3" psi="-31.9" rama="Favored" resname="LYS" resnum="11" rota="mtpt" said="A" seq="11" validate="True"/>
+	<ModelledSubgroup altcode=" " chain="A" cyrange_domain_id="1" ent="1" icode=" " model="19" num-H-reduce="13" phi="-72.0" psi="-30.6" rama="Favored" resname="LYS" resnum="12" rota="mmmm" said="A" seq="12" validate="True"/>
+	<ModelledSubgroup altcode=" " chain="A" cyrange_domain_id="1" ent="1" icode=" " model="19" num-H-reduce="10" phi="-73.1" psi="-35.7" rama="Favored" resname="TRP" resnum="13" rota="OUTLIER" said="A" seq="13" validate="True"/>
+	<ModelledSubgroup altcode=" " chain="A" cyrange_domain_id="1" ent="1" icode=" " model="19" num-H-reduce="6" phi="-62.7" psi="-36.5" rama="Favored" resname="ASN" resnum="14" rota="m-20" said="A" seq="14" validate="True"/>
+	<ModelledSubgroup altcode=" " chain="A" cyrange_domain_id="1" ent="1" icode=" " model="19" num-H-reduce="13" phi="-67.6" psi="-32.3" rama="Favored" resname="LYS" resnum="15" rota="mttp" said="A" seq="15" validate="True"/>
+	<ModelledSubgroup altcode=" " chain="A" cyrange_domain_id="1" ent="1" icode=" " model="19" num-H-reduce="10" phi="-67.6" psi="-33.1" rama="Favored" resname="TRP" resnum="16" rota="m0" said="A" seq="16" validate="True"/>
+	<ModelledSubgroup altcode=" " chain="A" cyrange_domain_id="1" ent="1" icode=" " model="19" num-H-reduce="5" phi="-78.0" psi="-32.0" rama="Favored" resname="ALA" resnum="17" said="A" seq="17" validate="True"/>
+	<ModelledSubgroup altcode=" " chain="A" cyrange_domain_id="1" ent="1" icode=" " model="19" num-H-reduce="11" phi="-86.1" psi="-12.3" rama="Favored" resname="LEU" resnum="18" rota="pp" said="A" seq="18" validate="True">
+		<clash atom="C" cid="26" clashmag="0.52" dist="2.24"/>
+		<clash atom="HD12" cid="26" clashmag="0.52" dist="2.24"/>
+		<clash atom="HD12" cid="27" clashmag="0.48" dist="2.09"/>
+		<clash atom="O" cid="27" clashmag="0.48" dist="2.09"/>
+	</ModelledSubgroup>
+	<ModelledSubgroup altcode=" " chain="A" cyrange_domain_id="1" ent="1" icode=" " model="19" num-H-reduce="5" phi="-104.0" psi="-26.4" rama="Favored" resname="SER" resnum="19" rota="t" said="A" seq="19" validate="True"/>
+	<ModelledSubgroup altcode=" " chain="A" cyrange_domain_id="1" ent="1" icode=" " model="19" num-H-reduce="13" phi="-62.4" psi="143.6" rama="Favored" resname="ARG" resnum="20" rota="ptt85" said="A" seq="20" validate="True"/>
+	<ModelledSubgroup altcode=" " chain="A" ent="1" icode=" " model="19" resname="NH2" resnum="21" said="A" seq="21" validate="False"/>
+	<Model model="20" nmrclust_cluster_id="2" nmrclust_representative="True"/>
+	<ModelledSubgroup altcode=" " chain="A" ent="1" icode=" " model="20" num-H-reduce="7" resname="ALA" resnum="1" said="A" seq="1" validate="False"/>
+	<ModelledSubgroup altcode=" " chain="A" ent="1" icode=" " model="20" num-H-reduce="13" phi="-99.6" psi="-30.1" rama="Favored" resname="ARG" resnum="2" rota="OUTLIER" said="A" seq="2" validate="False"/>
+	<ModelledSubgroup altcode=" " chain="A" cyrange_domain_id="1" ent="1" icode=" " model="20" num-H-reduce="11" phi="-59.1" psi="-37.3" rama="Favored" resname="LEU" resnum="3" rota="OUTLIER" said="A" seq="3" validate="True"/>
+	<ModelledSubgroup altcode=" " chain="A" cyrange_domain_id="1" ent="1" icode=" " model="20" num-H-reduce="4" phi="-59.0" psi="-40.7" rama="Favored" resname="ASP" resnum="4" rota="m-20" said="A" seq="4" validate="True"/>
+	<ModelledSubgroup altcode=" " chain="A" cyrange_domain_id="1" ent="1" icode=" " model="20" num-H-reduce="9" phi="-74.5" psi="-46.0" rama="Favored" resname="VAL" resnum="5" rota="t" said="A" seq="5" validate="True"/>
+	<ModelledSubgroup altcode=" " chain="A" cyrange_domain_id="1" ent="1" icode=" " model="20" num-H-reduce="5" phi="-58.7" psi="-31.9" rama="Favored" resname="ALA" resnum="6" said="A" seq="6" validate="True"/>
+	<ModelledSubgroup altcode=" " chain="A" cyrange_domain_id="1" ent="1" icode=" " model="20" num-H-reduce="5" phi="-80.1" psi="-41.2" rama="Favored" resname="SER" resnum="7" rota="OUTLIER" said="A" seq="7" validate="True"/>
+	<ModelledSubgroup altcode=" " chain="A" cyrange_domain_id="1" ent="1" icode=" " model="20" num-H-reduce="6" phi="-64.1" psi="-44.9" rama="Favored" resname="GLU" resnum="8" rota="tp10" said="A" seq="8" validate="True"/>
+	<ModelledSubgroup altcode=" " chain="A" cyrange_domain_id="1" ent="1" icode=" " model="20" num-H-reduce="9" phi="-62.1" psi="-32.2" rama="Favored" resname="PHE" resnum="9" rota="m-85" said="A" seq="9" validate="True"/>
+	<ModelledSubgroup altcode=" " chain="A" cyrange_domain_id="1" ent="1" icode=" " model="20" num-H-reduce="13" phi="-67.0" psi="-39.5" rama="Favored" resname="ARG" resnum="10" rota="OUTLIER" said="A" seq="10" validate="True"/>
+	<ModelledSubgroup altcode=" " chain="A" cyrange_domain_id="1" ent="1" icode=" " model="20" num-H-reduce="13" phi="-62.3" psi="-31.3" rama="Favored" resname="LYS" resnum="11" rota="OUTLIER" said="A" seq="11" validate="True"/>
+	<ModelledSubgroup altcode=" " chain="A" cyrange_domain_id="1" ent="1" icode=" " model="20" num-H-reduce="13" phi="-67.4" psi="-36.3" rama="Favored" resname="LYS" resnum="12" rota="OUTLIER" said="A" seq="12" validate="True"/>
+	<ModelledSubgroup altcode=" " chain="A" cyrange_domain_id="1" ent="1" icode=" " model="20" num-H-reduce="10" phi="-80.0" psi="-34.9" rama="Favored" resname="TRP" resnum="13" rota="m95" said="A" seq="13" validate="True"/>
+	<ModelledSubgroup altcode=" " chain="A" cyrange_domain_id="1" ent="1" icode=" " model="20" num-H-reduce="6" phi="-56.3" psi="-46.5" rama="Favored" resname="ASN" resnum="14" rota="m-20" said="A" seq="14" validate="True"/>
+	<ModelledSubgroup altcode=" " chain="A" cyrange_domain_id="1" ent="1" icode=" " model="20" num-H-reduce="13" phi="-57.4" psi="-35.6" rama="Favored" resname="LYS" resnum="15" rota="OUTLIER" said="A" seq="15" validate="True"/>
+	<ModelledSubgroup altcode=" " chain="A" cyrange_domain_id="1" ent="1" icode=" " model="20" num-H-reduce="10" phi="-64.2" psi="-38.2" rama="Favored" resname="TRP" resnum="16" rota="m0" said="A" seq="16" validate="True"/>
+	<ModelledSubgroup altcode=" " chain="A" cyrange_domain_id="1" ent="1" icode=" " model="20" num-H-reduce="5" phi="-65.4" psi="-31.7" rama="Favored" resname="ALA" resnum="17" said="A" seq="17" validate="True"/>
+	<ModelledSubgroup altcode=" " chain="A" cyrange_domain_id="1" ent="1" icode=" " model="20" num-H-reduce="11" phi="-72.7" psi="-44.7" rama="Favored" resname="LEU" resnum="18" rota="OUTLIER" said="A" seq="18" validate="True"/>
+	<ModelledSubgroup altcode=" " chain="A" cyrange_domain_id="1" ent="1" icode=" " model="20" num-H-reduce="5" phi="-69.6" psi="-28.3" rama="Favored" resname="SER" resnum="19" rota="OUTLIER" said="A" seq="19" validate="True"/>
+	<ModelledSubgroup altcode=" " chain="A" cyrange_domain_id="1" ent="1" icode=" " model="20" num-H-reduce="13" phi="-61.8" psi="122.6" rama="Favored" resname="ARG" resnum="20" rota="OUTLIER" said="A" seq="20" validate="True"/>
+	<ModelledSubgroup altcode=" " chain="A" ent="1" icode=" " model="20" resname="NH2" resnum="21" said="A" seq="21" validate="False"/>
+	<cyrange_domain domain="1" medoid_model="6" medoid_rmsd="0.262" number_of_gaps="0" number_of_residues="18" percentage_of_core="100.000" residue_string="A:3-A:20" rmsd="0.370"/>
+	<ModelledEntityInstance absolute_rama_percentile="100.00" absolute_sidechain_percentile="0.22" angles_rmsz="0.25" bonds_rmsz="0.22" chain="A" ent="1" model="1" num_angles_rmsz="237" num_bonds_rmsz="178" relative_rama_percentile="100.00" relative_sidechain_percentile="0.22" said="A"/>
+	<ModelledEntityInstance absolute_rama_percentile="100.00" absolute_sidechain_percentile="0.10" angles_rmsz="0.25" bonds_rmsz="0.22" chain="A" ent="1" model="2" num_angles_rmsz="237" num_bonds_rmsz="178" relative_rama_percentile="100.00" relative_sidechain_percentile="0.10" said="A"/>
+	<ModelledEntityInstance absolute_rama_percentile="100.00" absolute_sidechain_percentile="0.10" angles_rmsz="0.26" bonds_rmsz="0.23" chain="A" ent="1" model="3" num_angles_rmsz="237" num_bonds_rmsz="178" relative_rama_percentile="100.00" relative_sidechain_percentile="0.10" said="A"/>
+	<ModelledEntityInstance absolute_rama_percentile="1.94" absolute_sidechain_percentile="0.01" angles_rmsz="0.26" bonds_rmsz="0.22" chain="A" ent="1" model="4" num_angles_rmsz="237" num_bonds_rmsz="178" relative_rama_percentile="1.94" relative_sidechain_percentile="0.01" said="A"/>
+	<ModelledEntityInstance absolute_rama_percentile="100.00" absolute_sidechain_percentile="0.01" angles_rmsz="0.26" bonds_rmsz="0.22" chain="A" ent="1" model="5" num_angles_rmsz="237" num_bonds_rmsz="178" relative_rama_percentile="100.00" relative_sidechain_percentile="0.01" said="A"/>
+	<ModelledEntityInstance absolute_rama_percentile="100.00" absolute_sidechain_percentile="1.83" angles_rmsz="0.25" bonds_rmsz="0.22" chain="A" ent="1" model="6" num_angles_rmsz="237" num_bonds_rmsz="178" relative_rama_percentile="100.00" relative_sidechain_percentile="1.83" said="A"/>
+	<ModelledEntityInstance absolute_rama_percentile="100.00" absolute_sidechain_percentile="0.61" angles_rmsz="0.25" bonds_rmsz="0.22" chain="A" ent="1" model="7" num_angles_rmsz="237" num_bonds_rmsz="178" relative_rama_percentile="100.00" relative_sidechain_percentile="0.61" said="A"/>
+	<ModelledEntityInstance absolute_rama_percentile="100.00" absolute_sidechain_percentile="1.83" angles_rmsz="0.25" bonds_rmsz="0.22" chain="A" ent="1" model="8" num_angles_rmsz="237" num_bonds_rmsz="178" relative_rama_percentile="100.00" relative_sidechain_percentile="1.83" said="A"/>
+	<ModelledEntityInstance absolute_rama_percentile="100.00" absolute_sidechain_percentile="0.01" angles_rmsz="0.24" bonds_rmsz="0.22" chain="A" ent="1" model="9" num_angles_rmsz="237" num_bonds_rmsz="178" relative_rama_percentile="100.00" relative_sidechain_percentile="0.01" said="A"/>
+	<ModelledEntityInstance absolute_rama_percentile="100.00" absolute_sidechain_percentile="0.10" angles_rmsz="0.25" bonds_rmsz="0.22" chain="A" ent="1" model="10" num_angles_rmsz="237" num_bonds_rmsz="178" relative_rama_percentile="100.00" relative_sidechain_percentile="0.10" said="A"/>
+	<ModelledEntityInstance absolute_rama_percentile="100.00" absolute_sidechain_percentile="0.10" angles_rmsz="0.26" bonds_rmsz="0.22" chain="A" ent="1" model="11" num_angles_rmsz="237" num_bonds_rmsz="178" relative_rama_percentile="100.00" relative_sidechain_percentile="0.10" said="A"/>
+	<ModelledEntityInstance absolute_rama_percentile="100.00" absolute_sidechain_percentile="0.22" angles_rmsz="0.25" bonds_rmsz="0.22" chain="A" ent="1" model="12" num_angles_rmsz="237" num_bonds_rmsz="178" relative_rama_percentile="100.00" relative_sidechain_percentile="0.22" said="A"/>
+	<ModelledEntityInstance absolute_rama_percentile="100.00" absolute_sidechain_percentile="0.04" angles_rmsz="0.25" bonds_rmsz="0.22" chain="A" ent="1" model="13" num_angles_rmsz="237" num_bonds_rmsz="178" relative_rama_percentile="100.00" relative_sidechain_percentile="0.04" said="A"/>
+	<ModelledEntityInstance absolute_rama_percentile="100.00" absolute_sidechain_percentile="0.22" angles_rmsz="0.25" bonds_rmsz="0.22" chain="A" ent="1" model="14" num_angles_rmsz="237" num_bonds_rmsz="178" relative_rama_percentile="100.00" relative_sidechain_percentile="0.22" said="A"/>
+	<ModelledEntityInstance absolute_rama_percentile="100.00" absolute_sidechain_percentile="0.61" angles_rmsz="0.25" bonds_rmsz="0.22" chain="A" ent="1" model="15" num_angles_rmsz="237" num_bonds_rmsz="178" relative_rama_percentile="100.00" relative_sidechain_percentile="0.61" said="A"/>
+	<ModelledEntityInstance absolute_rama_percentile="100.00" absolute_sidechain_percentile="1.83" angles_rmsz="0.25" bonds_rmsz="0.22" chain="A" ent="1" model="16" num_angles_rmsz="237" num_bonds_rmsz="178" relative_rama_percentile="100.00" relative_sidechain_percentile="1.83" said="A"/>
+	<ModelledEntityInstance absolute_rama_percentile="100.00" absolute_sidechain_percentile="0.10" angles_rmsz="0.25" bonds_rmsz="0.22" chain="A" ent="1" model="17" num_angles_rmsz="237" num_bonds_rmsz="178" relative_rama_percentile="100.00" relative_sidechain_percentile="0.10" said="A"/>
+	<ModelledEntityInstance absolute_rama_percentile="100.00" absolute_sidechain_percentile="0.61" angles_rmsz="0.25" bonds_rmsz="0.22" chain="A" ent="1" model="18" num_angles_rmsz="237" num_bonds_rmsz="178" relative_rama_percentile="100.00" relative_sidechain_percentile="0.61" said="A"/>
+	<ModelledEntityInstance absolute_rama_percentile="100.00" absolute_sidechain_percentile="21.47" angles_rmsz="0.25" bonds_rmsz="0.22" chain="A" ent="1" model="19" num_angles_rmsz="237" num_bonds_rmsz="178" relative_rama_percentile="100.00" relative_sidechain_percentile="21.47" said="A"/>
+	<ModelledEntityInstance absolute_rama_percentile="100.00" absolute_sidechain_percentile="0.00" angles_rmsz="0.26" bonds_rmsz="0.22" chain="A" ent="1" model="20" num_angles_rmsz="237" num_bonds_rmsz="178" relative_rama_percentile="100.00" relative_sidechain_percentile="0.00" said="A"/>
+	<programs>
+		<program name="coreclust" properties="nmrclust_representative_model,nmrclust_number_of_models,residue_string,medoid_model,cyrange_error,rmsd,nmrclust_representative,number_of_residues,cyrange_version,nmrclust_version,medoid_rmsd,cyrange_domain_id,cyrange_number_of_domains,nmrclust_number_of_outliers,percentage_of_core,nmr_models_consistency_flag,validate,nmrclust_error,nmrclust_cluster_id,number_of_gaps,nmrclust_number_of_clusters" version="trunk30686"/>
+		<program name="nmrwriter" properties="clashscore,percent-rota-outliers,percent-rama-outliers" version="trunk30686"/>
+		<program name="validation-pipeline" properties="PDB-revision-date,PDB-resolution,protein-DNA-RNA-entities,PDB-Rfree,PDB-R,percentilebins,PDB-resolution-low,pdbid,PDB-revision-number,attemptedValidationSteps,XMLcreationDate,PDB-deposition-date" version="trunk30686"/>
+		<program name="mogul" properties="no-ligands-for-mogul" version="unknown"/>
+		<program name="chemicalshifts" properties="rci_version,shiftchecker_version,panav_version" version="trunk30686"/>
+		<program name="molprobity" properties="relative_rama_percentile,bond-outlier,phi,psi,RestypesNotcheckedForBondAngleGeometry,clash,angle-outlier,percent-rota-outliers-full-length,percent-rama-outliers-full-length,num_bonds_rmsz,absolute_sidechain_percentile,rama,relative_sidechain_percentile,angles_rmsz,bonds_rmsz,num-H-reduce,rota,num_angles_rmsz,clashscore-full-length,absolute_rama_percentile" version="4.02b-467"/>
+		<program name="percentiles" properties="numPDBids-absolute-percentile-clashscore,absolute-percentile-percent-rota-outliers,relative-percentile-clashscore,numPDBids-absolute-percentile-percent-rota-outliers,numPDBids-absolute-percentile-percent-rama-outliers,numPDBids-relative-percentile-percent-rota-outliers,numPDBids-relative-percentile-percent-rama-outliers,relative-percentile-percent-rota-outliers,numPDBids-relative-percentile-clashscore,no-percentile-property,relative-percentile-percent-rama-outliers,absolute-percentile-percent-rama-outliers,absolute-percentile-clashscore" version="20171227.v01 (using entries in the PDB archive December 27th 2017)"/>
+	</programs>
+</wwPDB-validation-information>

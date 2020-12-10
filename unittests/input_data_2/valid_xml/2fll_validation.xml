@@ -1,0 +1,1173 @@
+<?xml version="1.0" ?>
+<wwPDB-validation-information xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="http://wwpdb.org/validation/schema/wwpdb_validation_v002.xsd">
+	<Entry B_factor_type="PARTIAL" CCP4version="7.0 (Gargrove)" DCC_R="0.22" DCC_Rfree="0.28" DCC_refinement_program="REFMAC" DataAnisotropy="0.108" DataCompleteness="94.20" EDS_R="0.22" EDS_resolution="2.60" EDS_resolution_low="39.72" Fo_Fc_correlation="0.923" IoverSigma="5.29(2.61A)" PDB-R="0.22" PDB-Rfree="0.28" PDB-deposition-date="2006-01-06" PDB-resolution="2.60" PDB-resolution-low="50.00" PDB-revision-date="2011-07-13" PDB-revision-number="3" RefmacVersion="5.8.0158" RestypesNotcheckedForBondAngleGeometry="DOC,MG,TTP" TransNCS="The largest off-origin peak in the Patterson function is 4.94% of the height of the origin peak. No significant pseudotranslation is detected." TwinL="0.489" TwinL2="0.322" WilsonBaniso="[46.690,46.690,41.841,-0.000,0.000,0.000]" WilsonBestimate="44.899" XMLcreationDate="Mar  8, 2018 -- 11:54 pm GMT" absolute-percentile-DCC_Rfree="13.9" absolute-percentile-clashscore="13.4" absolute-percentile-percent-RSRZ-outliers="15.2" absolute-percentile-percent-rama-outliers="3.4" absolute-percentile-percent-rota-outliers="5.3" acentric_outliers="2" angles_rmsz="1.80" attemptedValidationSteps="mogul,molprobity,validation-pack,xtriage,eds,percentiles,writexml" babinet_b="63.102" babinet_k="0.311" bonds_rmsz="2.32" bulk_solvent_b="55.033" bulk_solvent_k="0.314" centric_outliers="0" clashscore="17.15" high-resol-relative-percentile-DCC_Rfree="2.6" high-resol-relative-percentile-clashscore="2.6" high-resol-relative-percentile-percent-RSRZ-outliers="2.6" high-resol-relative-percentile-percent-rama-outliers="2.6" high-resol-relative-percentile-percent-rota-outliers="2.6" low-resol-relative-percentile-DCC_Rfree="2.6" low-resol-relative-percentile-clashscore="2.6" low-resol-relative-percentile-percent-RSRZ-outliers="2.6" low-resol-relative-percentile-percent-rama-outliers="2.6" low-resol-relative-percentile-percent-rota-outliers="2.6" num-H-reduce="3081" num-free-reflections="1450" numMillerIndices="18496" numPDBids-absolute-percentile-DCC_Rfree="111664" numPDBids-absolute-percentile-clashscore="122126" numPDBids-absolute-percentile-percent-RSRZ-outliers="108989" numPDBids-absolute-percentile-percent-rama-outliers="120053" numPDBids-absolute-percentile-percent-rota-outliers="120020" numPDBids-relative-percentile-DCC_Rfree="2767" numPDBids-relative-percentile-clashscore="3110" numPDBids-relative-percentile-percent-RSRZ-outliers="2706" numPDBids-relative-percentile-percent-rama-outliers="3062" numPDBids-relative-percentile-percent-rota-outliers="3062" num_angles_rmsz="4442" num_bonds_rmsz="3243" pdbid="2FLL" percent-RSRZ-outliers="7.22" percent-free-reflections="7.84" percent-rama-outliers="3.81" percent-rota-outliers="12.15" percentilebins="all,2.6,xray" protein-DNA-RNA-entities="1,2,3" relative-percentile-DCC_Rfree="26.5" relative-percentile-clashscore="25.9" relative-percentile-percent-RSRZ-outliers="11.0" relative-percentile-percent-rama-outliers="4.4" relative-percentile-percent-rota-outliers="9.7" xtriage_input_columns="F_meas_au,F_meas_sigma_au"/>
+	<ModelledSubgroup NatomsEDS="18" altcode=" " avgoccu="1.000" chain="P" ent="1" icode=" " model="1" num-H-reduce="10" owab="39.730" resname="DA" resnum="867" rscc="0.901" rsr="0.183" rsrz="0.108" said="A" seq="1">
+		<angle-outlier atom0="P" atom1="O3'" atom2="C3'" link="yes" mean="119.700" obs="128.058" stdev="1.200" z="6.96"/>
+		<angle-outlier atom0="C8" atom1="N9" atom2="C4" mean="105.800" obs="102.098" stdev="0.400" z="-9.25"/>
+		<angle-outlier atom0="N1" atom1="C6" atom2="N6" mean="118.600" obs="114.007" stdev="0.600" z="-7.66"/>
+		<angle-outlier atom0="C1'" atom1="O4'" atom2="C4'" mean="110.100" obs="118.768" stdev="1.000" z="8.67"/>
+		<angle-outlier atom0="N9" atom1="C4" atom2="C5" mean="105.800" obs="108.163" stdev="0.400" z="5.91"/>
+		<angle-outlier atom0="O4'" atom1="C4'" atom2="C3'" mean="106.000" obs="96.820" stdev="0.600" z="-15.30"/>
+		<angle-outlier atom0="O5'" atom1="C5'" atom2="C4'" mean="111.000" obs="131.161" stdev="2.500" z="8.06"/>
+		<angle-outlier atom0="O4'" atom1="C1'" atom2="N9" mean="108.000" obs="116.199" stdev="0.700" z="11.71"/>
+		<angle-outlier atom0="C6" atom1="N1" atom2="C2" mean="118.600" obs="113.931" stdev="0.600" z="-7.78"/>
+		<angle-outlier atom0="O4'" atom1="C1'" atom2="C2'" mean="105.900" obs="100.705" stdev="0.800" z="-6.49"/>
+		<symm-clash atom="O5'" clashmag="0.55" dist="1.65" scid="0" symop="1_555"/>
+		<symm-clash atom="C5'" clashmag="0.18" dist="2.02" scid="1" symop="1_555"/>
+		<bond-outlier atom0="N7" atom1="C5" mean="1.388" obs="1.332" stdev="0.006" z="-9.27"/>
+		<bond-outlier atom0="C4'" atom1="O4'" mean="1.446" obs="1.517" stdev="0.010" z="7.14"/>
+		<bond-outlier atom0="C6" atom1="N6" mean="1.335" obs="1.287" stdev="0.008" z="-5.97"/>
+	</ModelledSubgroup>
+	<ModelledSubgroup NatomsEDS="22" altcode=" " avgoccu="1.000" chain="P" ent="1" icode=" " model="1" num-H-reduce="11" owab="43.950" resname="DG" resnum="868" rscc="0.924" rsr="0.142" rsrz="-0.524" said="A" seq="2">
+		<angle-outlier atom0="N3" atom1="C2" atom2="N2" mean="119.900" obs="116.354" stdev="0.700" z="-5.07"/>
+		<bond-outlier atom0="N3" atom1="C4" mean="1.350" obs="1.415" stdev="0.007" z="9.27"/>
+	</ModelledSubgroup>
+	<ModelledSubgroup NatomsEDS="22" altcode=" " avgoccu="1.000" chain="P" ent="1" icode=" " model="1" num-H-reduce="11" owab="43.690" resname="DG" resnum="869" rscc="0.936" rsr="0.135" rsrz="-0.642" said="A" seq="3">
+		<angle-outlier atom0="P" atom1="O3'" atom2="C3'" link="yes" mean="119.700" obs="109.193" stdev="1.200" z="-8.76"/>
+		<angle-outlier atom0="C8" atom1="N9" atom2="C4" mean="106.400" obs="108.837" stdev="0.400" z="6.09"/>
+		<clash atom="H2''" cid="106" clashmag="0.40" dist="2.03"/>
+		<bond-outlier atom0="O3'" atom1="P" link="yes" mean="1.607" obs="1.668" stdev="0.012" z="5.04"/>
+		<bond-outlier atom0="N7" atom1="C5" mean="1.388" obs="1.484" stdev="0.006" z="15.94"/>
+	</ModelledSubgroup>
+	<ModelledSubgroup NatomsEDS="21" altcode=" " avgoccu="1.000" chain="P" ent="1" icode=" " model="1" num-H-reduce="11" owab="38.420" resname="DA" resnum="870" rscc="0.941" rsr="0.138" rsrz="-0.586" said="A" seq="4">
+		<angle-outlier atom0="OP2" atom1="P" atom2="O3'" link="yes" mean="105.200" obs="118.536" stdev="2.200" z="6.06"/>
+		<angle-outlier atom0="C5" atom1="C6" atom2="N6" mean="123.700" obs="118.809" stdev="0.800" z="-6.11"/>
+		<angle-outlier atom0="C2" atom1="N3" atom2="C4" mean="110.600" obs="106.867" stdev="0.500" z="-7.47"/>
+		<angle-outlier atom0="N7" atom1="C8" atom2="N9" mean="113.800" obs="116.645" stdev="0.500" z="5.69"/>
+		<angle-outlier atom0="N1" atom1="C2" atom2="N3" mean="129.300" obs="133.515" stdev="0.500" z="8.43"/>
+		<angle-outlier atom0="C5" atom1="N7" atom2="C8" mean="103.900" obs="100.168" stdev="0.500" z="-7.46"/>
+		<angle-outlier atom0="N9" atom1="C4" atom2="C5" mean="105.800" obs="103.705" stdev="0.400" z="-5.24"/>
+		<angle-outlier atom0="C1'" atom1="O4'" atom2="C4'" mean="110.100" obs="104.489" stdev="1.000" z="-5.61"/>
+		<angle-outlier atom0="N1" atom1="C6" atom2="N6" mean="118.600" obs="122.929" stdev="0.600" z="7.22"/>
+		<angle-outlier atom0="C4" atom1="C5" atom2="N7" mean="110.700" obs="113.428" stdev="0.500" z="5.46"/>
+		<angle-outlier atom0="O4'" atom1="C4'" atom2="C3'" mean="106.000" obs="112.575" stdev="0.600" z="10.96"/>
+		<angle-outlier atom0="O4'" atom1="C1'" atom2="C2'" mean="105.900" obs="110.725" stdev="0.800" z="6.03"/>
+		<clash atom="H5'" cid="106" clashmag="0.40" dist="2.03"/>
+		<bond-outlier atom0="C4'" atom1="O4'" mean="1.446" obs="1.511" stdev="0.010" z="6.51"/>
+		<bond-outlier atom0="C2'" atom1="C1'" mean="1.519" obs="1.616" stdev="0.010" z="9.74"/>
+	</ModelledSubgroup>
+	<ModelledSubgroup NatomsEDS="19" altcode=" " avgoccu="1.000" chain="P" ent="1" icode=" " model="1" num-H-reduce="11" owab="31.570" resname="DC" resnum="871" rscc="0.974" rsr="0.166" rsrz="-0.236" said="A" seq="5">
+		<plane-outlier planeRMSD="0.08" type="sidechain"/>
+		<clash atom="OP1" cid="1" clashmag="0.93" dist="1.66"/>
+		<clash atom="OP1" cid="27" clashmag="0.59" dist="2.45"/>
+		<angle-outlier atom0="C4'" atom1="C3'" atom2="O3'" mean="109.700" obs="124.799" stdev="2.500" z="6.04"/>
+		<angle-outlier atom0="C2" atom1="N3" atom2="C4" mean="119.900" obs="123.719" stdev="0.500" z="7.64"/>
+		<angle-outlier atom0="N3" atom1="C4" atom2="C5" mean="121.900" obs="118.467" stdev="0.400" z="-8.58"/>
+		<angle-outlier atom0="O4'" atom1="C4'" atom2="C3'" mean="106.000" obs="110.253" stdev="0.600" z="7.09"/>
+		<bond-outlier atom0="O3'" atom1="P" link="yes" mean="1.607" obs="1.699" stdev="0.012" z="7.66"/>
+		<bond-outlier atom0="C3'" atom1="C2'" mean="1.518" obs="1.451" stdev="0.012" z="-5.60"/>
+		<bond-outlier atom0="C3'" atom1="O3'" mean="1.435" obs="1.322" stdev="0.013" z="-8.71"/>
+		<bond-outlier atom0="C1'" atom1="N1" mean="1.488" obs="1.557" stdev="0.013" z="5.32"/>
+		<bond-outlier atom0="N1" atom1="C2" mean="1.397" obs="1.344" stdev="0.010" z="-5.27"/>
+		<bond-outlier atom0="O4'" atom1="C1'" mean="1.418" obs="1.328" stdev="0.012" z="-7.51"/>
+	</ModelledSubgroup>
+	<ModelledSubgroup NatomsEDS="19" altcode=" " avgoccu="1.000" chain="P" ent="1" icode=" " model="1" num-H-reduce="11" owab="24.440" resname="DC" resnum="872" rscc="0.967" rsr="0.201" rsrz="0.293" said="A" seq="6">
+		<plane-outlier planeRMSD="0.06" type="sidechain"/>
+		<angle-outlier atom0="C5" atom1="C6" atom2="N1" mean="121.000" obs="123.643" stdev="0.500" z="5.29"/>
+		<angle-outlier atom0="O4'" atom1="C4'" atom2="C3'" mean="106.000" obs="110.611" stdev="0.600" z="7.68"/>
+		<angle-outlier atom0="C4'" atom1="C3'" atom2="O3'" mean="109.700" obs="126.581" stdev="2.500" z="6.75"/>
+		<bond-outlier atom0="C5" atom1="C6" mean="1.339" obs="1.297" stdev="0.008" z="-5.28"/>
+		<bond-outlier atom0="N3" atom1="C4" mean="1.335" obs="1.413" stdev="0.007" z="11.20"/>
+		<bond-outlier atom0="C2" atom1="N3" mean="1.353" obs="1.304" stdev="0.008" z="-6.08"/>
+		<bond-outlier atom0="C3'" atom1="O3'" mean="1.435" obs="1.323" stdev="0.013" z="-8.59"/>
+		<bond-outlier atom0="O4'" atom1="C1'" mean="1.418" obs="1.288" stdev="0.012" z="-10.83"/>
+		<bond-outlier atom0="C3'" atom1="C2'" mean="1.518" obs="1.445" stdev="0.012" z="-6.06"/>
+		<bond-outlier atom0="P" atom1="O5'" mean="1.593" obs="1.678" stdev="0.010" z="8.51"/>
+		<bond-outlier atom0="P" atom1="OP2" mean="1.485" obs="1.386" stdev="0.017" z="-5.82"/>
+	</ModelledSubgroup>
+	<ModelledSubgroup NatomsEDS="18" altcode=" " avgoccu="1.000" chain="P" ent="1" icode=" " model="1" mogul_angles_rmsz="2.22" mogul_bonds_rmsz="3.28" mogul_rmsz_numangles="12" mogul_rmsz_numbonds="13" num-H-reduce="12" owab="26.390" resname="DOC" resnum="873" rscc="0.969" rsr="0.191" said="A" seq="7">
+		<mog-angle-outlier Zscore="2.52" atoms="C5,C6,N1" mean="120.67" mindiff="0.08" numobs="79" obsval="126.45" stdev="2.29"/>
+		<mog-angle-outlier Zscore="-4.50" atoms="C2',C1',N1" mean="112.48" mindiff="1.37" numobs="41" obsval="104.00" stdev="1.88"/>
+		<mog-angle-outlier Zscore="-3.76" atoms="O4',C1',C2'" mean="106.67" mindiff="1.78" numobs="23" obsval="102.60" stdev="1.08"/>
+		<mog-angle-outlier Zscore="2.37" atoms="O4',C4',C5'" mean="109.59" mindiff="1.06" numobs="28" obsval="113.43" stdev="1.62"/>
+		<clash atom="OP1" cid="77" clashmag="0.44" dist="2.41"/>
+		<mog-bond-outlier Zscore="4.81" atoms="C6,N1" mean="1.35" mindiff="0.02" numobs="43" obsval="1.42" stdev="0.01"/>
+		<mog-bond-outlier Zscore="-5.34" atoms="C6,C5" mean="1.38" mindiff="0.00" numobs="11831" obsval="1.26" stdev="0.02"/>
+		<mog-bond-outlier Zscore="-5.47" atoms="O4',C1'" mean="1.42" mindiff="0.00" numobs="949" obsval="1.30" stdev="0.02"/>
+		<mog-bond-outlier Zscore="-2.55" atoms="C3',C2'" mean="1.54" mindiff="0.00" numobs="7431" obsval="1.46" stdev="0.03"/>
+		<mog-bond-outlier Zscore="-6.60" atoms="O5',C5'" mean="1.44" mindiff="0.07" numobs="22" obsval="1.35" stdev="0.01"/>
+	</ModelledSubgroup>
+	<ModelledSubgroup NatomsEDS="17" altcode=" " avgoccu="1.000" chain="T" ent="2" icode=" " model="1" num-H-reduce="13" owab="90.210" resname="DT" resnum="839" rscc="0.500" rsr="0.379" rsrz="2.843" said="B" seq="3">
+		<angle-outlier atom0="OP1" atom1="P" atom2="O3'" link="yes" mean="105.200" obs="120.446" stdev="2.200" z="6.93"/>
+		<angle-outlier atom0="P" atom1="O3'" atom2="C3'" link="yes" mean="119.700" obs="131.706" stdev="1.200" z="10.01"/>
+		<angle-outlier atom0="OP2" atom1="P" atom2="O3'" link="yes" mean="105.200" obs="118.252" stdev="2.200" z="5.93"/>
+		<angle-outlier atom0="O4'" atom1="C1'" atom2="C2'" mean="105.900" obs="110.772" stdev="0.800" z="6.09"/>
+		<angle-outlier atom0="C5" atom1="C4" atom2="O4" mean="124.900" obs="120.558" stdev="0.700" z="-6.20"/>
+		<angle-outlier atom0="N3" atom1="C4" atom2="C5" mean="115.200" obs="119.159" stdev="0.600" z="6.60"/>
+		<angle-outlier atom0="O4'" atom1="C1'" atom2="N1" mean="108.000" obs="114.098" stdev="0.700" z="8.71"/>
+		<bond-outlier atom0="O3'" atom1="P" link="yes" mean="1.607" obs="1.711" stdev="0.012" z="8.64"/>
+		<bond-outlier atom0="N1" atom1="C2" mean="1.376" obs="1.418" stdev="0.008" z="5.29"/>
+		<bond-outlier atom0="O4'" atom1="C1'" mean="1.418" obs="1.482" stdev="0.012" z="5.32"/>
+		<bond-outlier atom0="C3'" atom1="O3'" mean="1.435" obs="1.525" stdev="0.013" z="6.89"/>
+		<bond-outlier atom0="N3" atom1="C4" mean="1.382" obs="1.426" stdev="0.008" z="5.51"/>
+		<bond-outlier atom0="O5'" atom1="C5'" mean="1.418" obs="1.565" stdev="0.025" z="5.86"/>
+		<bond-outlier atom0="C4'" atom1="C3'" mean="1.529" obs="1.590" stdev="0.010" z="6.06"/>
+		<bond-outlier atom0="N1" atom1="C6" mean="1.378" obs="1.474" stdev="0.007" z="13.71"/>
+		<bond-outlier atom0="C2" atom1="N3" mean="1.373" obs="1.419" stdev="0.008" z="5.78"/>
+		<bond-outlier atom0="C5'" atom1="C4'" mean="1.509" obs="1.574" stdev="0.011" z="5.90"/>
+	</ModelledSubgroup>
+	<ModelledSubgroup NatomsEDS="21" altcode=" " avgoccu="1.000" chain="T" ent="2" icode=" " model="1" num-H-reduce="11" owab="51.140" resname="DA" resnum="840" rscc="0.948" rsr="0.152" rsrz="-0.370" said="B" seq="4">
+		<angle-outlier atom0="N9" atom1="C4" atom2="C5" mean="105.800" obs="108.588" stdev="0.400" z="6.97"/>
+		<angle-outlier atom0="C8" atom1="N9" atom2="C4" mean="105.800" obs="100.413" stdev="0.400" z="-13.47"/>
+		<angle-outlier atom0="N1" atom1="C2" atom2="N3" mean="129.300" obs="126.494" stdev="0.500" z="-5.61"/>
+		<angle-outlier atom0="N7" atom1="C8" atom2="N9" mean="113.800" obs="118.673" stdev="0.500" z="9.75"/>
+		<angle-outlier atom0="OP1" atom1="P" atom2="OP2" mean="119.600" obs="103.347" stdev="1.500" z="-10.84"/>
+		<clash atom="OP1" cid="36" clashmag="0.53" dist="2.08"/>
+		<clash atom="N3" cid="92" clashmag="0.42" dist="2.35"/>
+		<clash atom="H1'" cid="51" clashmag="0.48" dist="2.13"/>
+		<clash atom="H2'" cid="92" clashmag="0.42" dist="2.35"/>
+		<bond-outlier atom0="N9" atom1="C8" mean="1.373" obs="1.313" stdev="0.008" z="-7.54"/>
+		<bond-outlier atom0="N9" atom1="C4" mean="1.374" obs="1.339" stdev="0.006" z="-5.86"/>
+		<bond-outlier atom0="N3" atom1="C4" mean="1.344" obs="1.378" stdev="0.006" z="5.69"/>
+		<bond-outlier atom0="C6" atom1="N1" mean="1.351" obs="1.425" stdev="0.007" z="10.63"/>
+		<bond-outlier atom0="N7" atom1="C5" mean="1.388" obs="1.295" stdev="0.006" z="-15.46"/>
+		<bond-outlier atom0="P" atom1="O5'" mean="1.593" obs="1.656" stdev="0.010" z="6.25"/>
+	</ModelledSubgroup>
+	<ModelledSubgroup NatomsEDS="22" altcode=" " avgoccu="1.000" chain="T" ent="2" icode=" " model="1" num-H-reduce="11" owab="32.130" resname="DG" resnum="841" rscc="0.962" rsr="0.160" rsrz="-0.222" said="B" seq="5">
+		<angle-outlier atom0="N7" atom1="C8" atom2="N9" mean="113.100" obs="110.599" stdev="0.500" z="-5.00"/>
+		<clash atom="H2''" cid="2" clashmag="0.91" dist="1.52"/>
+		<clash atom="C2'" cid="37" clashmag="0.53" dist="2.32"/>
+		<bond-outlier atom0="C5'" atom1="C4'" mean="1.509" obs="1.436" stdev="0.011" z="-6.59"/>
+		<bond-outlier atom0="C5" atom1="C4" mean="1.379" obs="1.327" stdev="0.007" z="-7.45"/>
+	</ModelledSubgroup>
+	<ModelledSubgroup NatomsEDS="22" altcode=" " avgoccu="1.000" chain="T" ent="2" icode=" " model="1" num-H-reduce="11" owab="33.090" resname="DG" resnum="842" rscc="0.965" rsr="0.193" rsrz="0.333" said="B" seq="6">
+		<plane-outlier planeRMSD="0.07" type="sidechain"/>
+		<clash atom="H5''" cid="2" clashmag="0.91" dist="1.52"/>
+		<clash atom="H5''" cid="37" clashmag="0.53" dist="2.32"/>
+		<angle-outlier atom0="O4'" atom1="C1'" atom2="C2'" mean="105.900" obs="98.908" stdev="0.800" z="-8.74"/>
+		<angle-outlier atom0="C4'" atom1="C3'" atom2="O3'" mean="109.700" obs="123.369" stdev="2.500" z="5.47"/>
+		<angle-outlier atom0="C4'" atom1="C3'" atom2="C2'" mean="103.100" obs="96.178" stdev="0.900" z="-7.69"/>
+		<angle-outlier atom0="O4'" atom1="C4'" atom2="C3'" mean="106.000" obs="110.466" stdev="0.600" z="7.44"/>
+		<angle-outlier atom0="C3'" atom1="C2'" atom2="C1'" mean="102.500" obs="115.235" stdev="1.200" z="10.61"/>
+		<bond-outlier atom0="O3'" atom1="P" link="yes" mean="1.607" obs="1.541" stdev="0.012" z="-5.51"/>
+		<bond-outlier atom0="C2" atom1="N3" mean="1.323" obs="1.283" stdev="0.008" z="-5.00"/>
+		<bond-outlier atom0="C4'" atom1="C3'" mean="1.521" obs="1.463" stdev="0.010" z="-5.84"/>
+		<bond-outlier atom0="C4'" atom1="O4'" mean="1.446" obs="1.508" stdev="0.010" z="6.22"/>
+	</ModelledSubgroup>
+	<ModelledSubgroup NatomsEDS="22" altcode=" " avgoccu="1.000" chain="T" ent="2" icode=" " model="1" num-H-reduce="11" owab="29.410" resname="DG" resnum="843" rscc="0.964" rsr="0.188" rsrz="0.249" said="B" seq="7">
+		<plane-outlier planeRMSD="0.07" type="sidechain"/>
+		<angle-outlier atom0="O4'" atom1="C1'" atom2="C2'" mean="105.900" obs="99.666" stdev="0.800" z="-7.79"/>
+		<angle-outlier atom0="C4'" atom1="C3'" atom2="C2'" mean="103.100" obs="93.538" stdev="0.900" z="-10.62"/>
+		<angle-outlier atom0="O4'" atom1="C4'" atom2="C3'" mean="106.000" obs="109.747" stdev="0.600" z="6.25"/>
+		<bond-outlier atom0="P" atom1="O5'" mean="1.593" obs="1.653" stdev="0.010" z="5.99"/>
+		<bond-outlier atom0="O4'" atom1="C1'" mean="1.418" obs="1.237" stdev="0.012" z="-15.05"/>
+		<bond-outlier atom0="C2'" atom1="C1'" mean="1.519" obs="1.586" stdev="0.010" z="6.75"/>
+		<bond-outlier atom0="C4'" atom1="O4'" mean="1.446" obs="1.520" stdev="0.010" z="7.42"/>
+	</ModelledSubgroup>
+	<ModelledSubgroup NatomsEDS="20" altcode=" " avgoccu="1.000" chain="T" ent="2" icode=" " model="1" num-H-reduce="11" owab="32.990" resname="DT" resnum="844" rscc="0.937" rsr="0.216" rsrz="0.501" said="B" seq="8">
+		<angle-outlier atom0="C5" atom1="C6" atom2="N1" mean="123.700" obs="128.142" stdev="0.600" z="7.40"/>
+		<angle-outlier atom0="C5'" atom1="C4'" atom2="C3'" mean="114.100" obs="101.820" stdev="1.800" z="-6.82"/>
+		<angle-outlier atom0="C4" atom1="C5" atom2="C6" mean="118.000" obs="110.787" stdev="0.600" z="-12.02"/>
+		<angle-outlier atom0="C4" atom1="C5" atom2="C7" mean="119.000" obs="126.363" stdev="0.600" z="12.27"/>
+		<clash atom="H2'" cid="84" clashmag="0.43" dist="2.18"/>
+		<clash atom="O5'" cid="84" clashmag="0.43" dist="2.18"/>
+		<clash atom="OP2" cid="63" clashmag="0.46" dist="2.33"/>
+		<bond-outlier atom0="O3'" atom1="P" link="yes" mean="1.607" obs="1.692" stdev="0.012" z="7.05"/>
+		<bond-outlier atom0="C5" atom1="C7" mean="1.496" obs="1.599" stdev="0.006" z="17.14"/>
+		<bond-outlier atom0="N1" atom1="C2" mean="1.376" obs="1.331" stdev="0.008" z="-5.65"/>
+		<bond-outlier atom0="C5" atom1="C6" mean="1.339" obs="1.376" stdev="0.007" z="5.27"/>
+		<bond-outlier atom0="C3'" atom1="O3'" mean="1.435" obs="1.358" stdev="0.013" z="-5.93"/>
+		<bond-outlier atom0="P" atom1="OP1" mean="1.485" obs="1.384" stdev="0.017" z="-5.92"/>
+		<bond-outlier atom0="N3" atom1="C4" mean="1.382" obs="1.302" stdev="0.008" z="-9.97"/>
+	</ModelledSubgroup>
+	<ModelledSubgroup NatomsEDS="19" altcode=" " avgoccu="1.000" chain="T" ent="2" icode=" " model="1" num-H-reduce="11" owab="37.260" resname="DC" resnum="845" rscc="0.932" rsr="0.157" rsrz="-0.372" said="B" seq="9">
+		<angle-outlier atom0="OP1" atom1="P" atom2="O3'" link="yes" mean="105.200" obs="92.390" stdev="2.200" z="-5.82"/>
+		<bond-outlier atom0="C4" atom1="C5" mean="1.425" obs="1.470" stdev="0.008" z="5.66"/>
+		<bond-outlier atom0="C3'" atom1="O3'" mean="1.435" obs="1.512" stdev="0.013" z="5.96"/>
+		<bond-outlier atom0="O4'" atom1="C1'" mean="1.418" obs="1.317" stdev="0.012" z="-8.38"/>
+	</ModelledSubgroup>
+	<ModelledSubgroup NatomsEDS="19" altcode=" " avgoccu="1.000" chain="T" ent="2" icode=" " model="1" num-H-reduce="11" owab="39.590" resname="DC" resnum="846" rscc="0.941" rsr="0.155" rsrz="-0.402" said="B" seq="10">
+		<angle-outlier atom0="OP1" atom1="P" atom2="OP2" mean="119.600" obs="128.054" stdev="1.500" z="5.64"/>
+		<angle-outlier atom0="O4'" atom1="C1'" atom2="N1" mean="108.000" obs="102.797" stdev="0.700" z="-7.43"/>
+		<bond-outlier atom0="P" atom1="OP1" mean="1.485" obs="1.393" stdev="0.017" z="-5.43"/>
+		<bond-outlier atom0="C3'" atom1="C2'" mean="1.518" obs="1.583" stdev="0.012" z="5.40"/>
+		<bond-outlier atom0="N3" atom1="C4" mean="1.335" obs="1.386" stdev="0.007" z="7.23"/>
+		<bond-outlier atom0="C5" atom1="C6" mean="1.339" obs="1.392" stdev="0.008" z="6.59"/>
+		<bond-outlier atom0="C2'" atom1="C1'" mean="1.519" obs="1.605" stdev="0.010" z="8.65"/>
+	</ModelledSubgroup>
+	<ModelledSubgroup NatomsEDS="20" altcode=" " avgoccu="1.000" chain="T" ent="2" icode=" " model="1" num-H-reduce="13" owab="31.360" resname="DT" resnum="847" rscc="0.907" rsr="0.177" rsrz="-0.059" said="B" seq="11">
+		<angle-outlier atom0="C4" atom1="C5" atom2="C6" mean="118.000" obs="114.431" stdev="0.600" z="-5.95"/>
+		<angle-outlier atom0="C4'" atom1="C3'" atom2="O3'" mean="109.700" obs="127.316" stdev="2.500" z="7.05"/>
+		<angle-outlier atom0="O4'" atom1="C1'" atom2="C2'" mean="105.900" obs="110.072" stdev="0.800" z="5.22"/>
+		<angle-outlier atom0="O4'" atom1="C4'" atom2="C3'" mean="106.000" obs="112.467" stdev="0.600" z="10.78"/>
+		<angle-outlier atom0="C4'" atom1="C3'" atom2="C2'" mean="103.100" obs="96.439" stdev="0.900" z="-7.40"/>
+		<angle-outlier atom0="C4" atom1="C5" atom2="C7" mean="119.000" obs="122.397" stdev="0.600" z="5.66"/>
+		<symm-clash atom="O3'" clashmag="0.55" dist="1.65" scid="0" symop="10_665"/>
+		<symm-clash atom="O3'" clashmag="0.18" dist="2.02" scid="1" symop="10_665"/>
+		<bond-outlier atom0="C5" atom1="C7" mean="1.496" obs="1.577" stdev="0.006" z="13.50"/>
+		<bond-outlier atom0="C3'" atom1="O3'" mean="1.435" obs="1.502" stdev="0.013" z="5.18"/>
+		<bond-outlier atom0="O4'" atom1="C1'" mean="1.418" obs="1.312" stdev="0.012" z="-8.82"/>
+	</ModelledSubgroup>
+	<ModelledSubgroup NatomsEDS="1" altcode=" " avgoccu="1.000" chain="T" ent="6" icode=" " model="1" owab="58.560" resname="HOH" resnum="945" rscc="0.971" rsr="0.367" said="G" seq="."/>
+	<ModelledSubgroup NatomsEDS="1" altcode=" " avgoccu="1.000" chain="T" ent="6" icode=" " model="1" owab="53.420" resname="HOH" resnum="968" rscc="0.785" rsr="0.388" said="G" seq="."/>
+	<ModelledSubgroup NatomsEDS="1" altcode=" " avgoccu="1.000" chain="T" ent="6" icode=" " model="1" owab="67.820" resname="HOH" resnum="970" rscc="0.808" rsr="1.116" said="G" seq="."/>
+	<ModelledSubgroup NatomsEDS="1" altcode=" " avgoccu="1.000" chain="T" ent="6" icode=" " model="1" owab="74.560" resname="HOH" resnum="974" rscc="0.839" rsr="0.465" said="G" seq="."/>
+	<ModelledSubgroup NatomsEDS="1" altcode=" " avgoccu="1.000" chain="T" ent="6" icode=" " model="1" owab="68.840" resname="HOH" resnum="993" rscc="0.924" rsr="0.429" said="G" seq="."/>
+	<ModelledSubgroup NatomsEDS="5" altcode=" " avgoccu="1.000" chain="A" ent="3" icode=" " model="1" num-H-reduce="4" owab="94.440" resname="ALA" resnum="25" rscc="0.389" rsr="0.897" rsrz="10.564" said="C" seq="25">
+		<bond-outlier atom0="CA" atom1="CB" mean="1.520" obs="1.671" stdev="0.021" z="7.21"/>
+	</ModelledSubgroup>
+	<ModelledSubgroup NatomsEDS="6" altcode=" " avgoccu="1.000" chain="A" ent="3" icode=" " model="1" num-H-reduce="5" owab="65.710" phi="-113.0" psi="-80.5" rama="Allowed" resname="SER" resnum="26" rota="OUTLIER" rscc="0.825" rsr="0.353" rsrz="2.609" said="C" seq="26"/>
+	<ModelledSubgroup NatomsEDS="6" altcode=" " avgoccu="1.000" chain="A" ent="3" icode=" " model="1" num-H-reduce="5" owab="49.110" phi="-76.6" psi="137.1" rama="Favored" resname="SER" resnum="27" rota="OUTLIER" rscc="0.871" rsr="0.104" rsrz="-0.859" said="C" seq="27">
+		<bond-outlier atom0="C" atom1="O" mean="1.229" obs="1.115" stdev="0.019" z="-6.02"/>
+	</ModelledSubgroup>
+	<ModelledSubgroup NatomsEDS="11" altcode=" " avgoccu="1.000" chain="A" ent="3" icode=" " model="1" num-H-reduce="13" owab="30.240" phi="-118.7" psi="155.7" rama="Favored" resname="ARG" resnum="28" rota="mtm180" rscc="0.968" rsr="0.099" rsrz="-1.313" said="C" seq="28"/>
+	<ModelledSubgroup NatomsEDS="7" altcode=" " avgoccu="1.000" chain="A" ent="3" icode=" " model="1" num-H-reduce="9" owab="22.270" phi="-121.7" psi="107.2" rama="Favored" resname="VAL" resnum="29" rota="t" rscc="0.963" rsr="0.123" rsrz="-0.858" said="C" seq="29"/>
+	<ModelledSubgroup NatomsEDS="8" altcode=" " avgoccu="1.000" chain="A" ent="3" icode=" " model="1" num-H-reduce="11" owab="19.850" phi="-115.7" psi="144.2" rama="Favored" resname="ILE" resnum="30" rota="mm" rscc="0.971" rsr="0.140" rsrz="-0.726" said="C" seq="30"/>
+	<ModelledSubgroup NatomsEDS="7" altcode=" " avgoccu="1.000" chain="A" ent="3" icode=" " model="1" num-H-reduce="9" owab="19.120" phi="-119.8" psi="137.4" rama="Favored" resname="VAL" resnum="31" rota="p" rscc="0.987" rsr="0.136" rsrz="-0.667" said="C" seq="31">
+		<clash atom="HG12" cid="85" clashmag="0.43" dist="1.99"/>
+	</ModelledSubgroup>
+	<ModelledSubgroup NatomsEDS="10" altcode=" " avgoccu="1.000" chain="A" ent="3" icode=" " model="1" num-H-reduce="7" owab="20.750" phi="-115.1" psi="120.0" rama="Favored" resname="HIS" resnum="32" rota="t-80" rscc="0.980" rsr="0.158" rsrz="-0.229" said="C" seq="32"/>
+	<ModelledSubgroup NatomsEDS="7" altcode=" " avgoccu="1.000" chain="A" ent="3" icode=" " model="1" num-H-reduce="9" owab="16.100" phi="-108.7" psi="128.8" rama="Favored" resname="VAL" resnum="33" rota="t" rscc="0.978" rsr="0.164" rsrz="-0.257" said="C" seq="33">
+		<bond-outlier atom0="CB" atom1="CG2" mean="1.524" obs="1.413" stdev="0.021" z="-5.28"/>
+	</ModelledSubgroup>
+	<ModelledSubgroup NatomsEDS="8" altcode=" " avgoccu="1.000" chain="A" ent="3" icode=" " model="1" num-H-reduce="4" owab="20.630" phi="-137.4" psi="115.2" rama="Favored" resname="ASP" resnum="34" rota="t0" rscc="0.967" rsr="0.143" rsrz="-0.473" said="C" seq="34"/>
+	<ModelledSubgroup NatomsEDS="8" altcode=" " avgoccu="1.000" chain="A" ent="3" icode=" " model="1" num-H-reduce="11" owab="21.870" phi="-72.7" psi="152.5" rama="Favored" resname="LEU" resnum="35" rota="OUTLIER" rscc="0.953" rsr="0.172" rsrz="-0.279" said="C" seq="35"/>
+	<ModelledSubgroup NatomsEDS="8" altcode=" " avgoccu="1.000" chain="A" ent="3" icode=" " model="1" num-H-reduce="4" owab="19.140" phi="-73.2" psi="132.9" rama="Favored" resname="ASP" resnum="36" rota="m-20" rscc="0.975" rsr="0.136" rsrz="-0.566" said="C" seq="36">
+		<clash atom="O" cid="103" clashmag="0.41" dist="2.60"/>
+	</ModelledSubgroup>
+	<ModelledSubgroup NatomsEDS="6" altcode=" " avgoccu="1.000" chain="A" ent="3" icode=" " model="1" num-H-reduce="5" owab="19.000" phi="15.7" psi="58.1" rama="OUTLIER" resname="CYS" resnum="37" rota="p" rscc="0.967" rsr="0.119" rsrz="-0.464" said="C" seq="37">
+		<clash atom="C" cid="103" clashmag="0.41" dist="2.60"/>
+	</ModelledSubgroup>
+	<ModelledSubgroup NatomsEDS="11" altcode=" " avgoccu="1.000" chain="A" ent="3" icode=" " model="1" num-H-reduce="9" owab="20.290" phi="-33.5" psi="-64.6" rama="Allowed" resname="PHE" resnum="38" rota="t80" rscc="0.955" rsr="0.136" rsrz="-0.673" said="C" seq="38"/>
+	<ModelledSubgroup NatomsEDS="12" altcode=" " avgoccu="1.000" chain="A" ent="3" icode=" " model="1" num-H-reduce="9" owab="22.100" phi="-53.5" psi="-43.0" rama="Favored" resname="TYR" resnum="39" rota="m-30" rscc="0.974" rsr="0.157" rsrz="-0.290" said="C" seq="39">
+		<bond-outlier atom0="CD2" atom1="CE2" mean="1.389" obs="1.281" stdev="0.015" z="-7.21"/>
+		<bond-outlier atom0="CB" atom1="CG" mean="1.512" obs="1.629" stdev="0.015" z="7.79"/>
+	</ModelledSubgroup>
+	<ModelledSubgroup NatomsEDS="5" altcode=" " avgoccu="1.000" chain="A" ent="3" icode=" " model="1" num-H-reduce="5" owab="24.330" phi="-66.7" psi="-36.5" rama="Favored" resname="ALA" resnum="40" rscc="0.953" rsr="0.143" rsrz="-0.347" said="C" seq="40">
+		<bond-outlier atom0="CA" atom1="CB" mean="1.520" obs="1.404" stdev="0.021" z="-5.54"/>
+	</ModelledSubgroup>
+	<ModelledSubgroup NatomsEDS="9" altcode=" " avgoccu="1.000" chain="A" ent="3" icode=" " model="1" num-H-reduce="8" owab="26.680" phi="-57.7" psi="-49.6" rama="Favored" resname="GLN" resnum="41" rota="mt-30" rscc="0.972" rsr="0.151" rsrz="-0.551" said="C" seq="41"/>
+	<ModelledSubgroup NatomsEDS="7" altcode=" " avgoccu="1.000" chain="A" ent="3" icode=" " model="1" num-H-reduce="9" owab="27.660" phi="-60.5" psi="-37.5" rama="Favored" resname="VAL" resnum="42" rota="t" rscc="0.950" rsr="0.166" rsrz="-0.227" said="C" seq="42"/>
+	<ModelledSubgroup NatomsEDS="9" altcode=" " avgoccu="1.000" chain="A" ent="3" icode=" " model="1" num-H-reduce="6" owab="33.700" phi="-69.4" psi="-43.3" rama="Favored" resname="GLU" resnum="43" rota="mm-40" rscc="0.926" rsr="0.201" rsrz="-0.066" said="C" seq="43">
+		<clash atom="OE1" cid="69" clashmag="0.44" dist="2.51"/>
+	</ModelledSubgroup>
+	<ModelledSubgroup NatomsEDS="8" altcode=" " avgoccu="1.000" chain="A" ent="3" icode=" " model="1" num-H-reduce="9" owab="39.690" phi="-65.1" psi="-23.1" rama="Favored" resname="MET" resnum="44" rota="mtp" rscc="0.966" rsr="0.178" rsrz="0.081" said="C" seq="44">
+		<bond-outlier atom0="SD" atom1="CE" mean="1.774" obs="1.460" stdev="0.056" z="-5.60"/>
+	</ModelledSubgroup>
+	<ModelledSubgroup NatomsEDS="8" altcode=" " avgoccu="1.000" chain="A" ent="3" icode=" " model="1" num-H-reduce="11" owab="38.700" phi="-82.1" psi="-36.3" rama="Favored" resname="ILE" resnum="45" rota="mt" rscc="0.955" rsr="0.154" rsrz="-0.519" said="C" seq="45"/>
+	<ModelledSubgroup NatomsEDS="6" altcode=" " avgoccu="1.000" chain="A" ent="3" icode=" " model="1" num-H-reduce="5" owab="46.760" phi="-74.1" psi="-29.4" rama="Favored" resname="SER" resnum="46" rota="m" rscc="0.942" rsr="0.158" rsrz="-0.107" said="C" seq="46">
+		<bond-outlier atom0="CB" atom1="OG" mean="1.418" obs="1.349" stdev="0.013" z="-5.29"/>
+	</ModelledSubgroup>
+	<ModelledSubgroup NatomsEDS="8" altcode=" " avgoccu="1.000" chain="A" ent="3" flippable-sidechain="1" icode=" " model="1" num-H-reduce="6" owab="54.460" phi="-134.7" psi="85.2" rama="Favored" resname="ASN" resnum="47" rota="t-20" rscc="0.915" rsr="0.148" rsrz="-0.391" said="C" seq="47"/>
+	<ModelledSubgroup NatomsEDS="7" altcode=" " avgoccu="1.000" chain="A" ent="3" icode=" " model="1" num-H-reduce="7" owab="58.320" phi="-48.4" psi="-31.7" rama="Favored" resname="PRO" resnum="48" rota="OUTLIER" rscc="0.905" rsr="0.158" rsrz="-0.128" said="C" seq="48"/>
+	<ModelledSubgroup NatomsEDS="9" altcode=" " avgoccu="1.000" chain="A" ent="3" icode=" " model="1" num-H-reduce="6" owab="66.730" phi="-62.4" psi="-6.3" rama="Favored" resname="GLU" resnum="49" rota="mt-10" rscc="0.907" rsr="0.304" rsrz="1.173" said="C" seq="49"/>
+	<ModelledSubgroup NatomsEDS="8" altcode=" " avgoccu="1.000" chain="A" ent="3" icode=" " model="1" num-H-reduce="11" owab="59.580" phi="-92.7" psi="-20.4" rama="Favored" resname="LEU" resnum="50" rota="mt" rscc="0.937" rsr="0.199" rsrz="0.104" said="C" seq="50"/>
+	<ModelledSubgroup NatomsEDS="9" altcode=" " avgoccu="1.000" chain="A" ent="3" icode=" " model="1" num-H-reduce="13" owab="63.840" phi="-54.4" psi="156.7" rama="Favored" resname="LYS" resnum="51" rota="mtmt" rscc="0.895" rsr="0.214" rsrz="-0.074" said="C" seq="51">
+		<clash atom="C" cid="70" clashmag="0.44" dist="2.20"/>
+	</ModelledSubgroup>
+	<ModelledSubgroup NatomsEDS="8" altcode=" " avgoccu="1.000" chain="A" ent="3" icode=" " model="1" num-H-reduce="4" owab="66.090" phi="54.9" psi="-10.2" rama="OUTLIER" resname="ASP" resnum="52" rota="p-10" rscc="0.912" rsr="0.240" rsrz="0.822" said="C" seq="52"/>
+	<ModelledSubgroup NatomsEDS="9" altcode=" " avgoccu="1.000" chain="A" ent="3" icode=" " model="1" num-H-reduce="13" owab="60.440" phi="-93.7" psi="143.9" rama="Favored" resname="LYS" resnum="53" rota="mttt" rscc="0.952" rsr="0.204" rsrz="-0.188" said="C" seq="53">
+		<clash atom="H" cid="70" clashmag="0.44" dist="2.20"/>
+	</ModelledSubgroup>
+	<ModelledSubgroup NatomsEDS="7" altcode=" " avgoccu="1.000" chain="A" ent="3" icode=" " model="1" num-H-reduce="7" owab="52.080" phi="-66.2" psi="125.7" rama="Favored" resname="PRO" resnum="54" rota="Cg_endo" rscc="0.944" rsr="0.127" rsrz="-0.574" said="C" seq="54"/>
+	<ModelledSubgroup NatomsEDS="8" altcode=" " avgoccu="1.000" chain="A" ent="3" icode=" " model="1" num-H-reduce="11" owab="44.170" phi="-126.9" psi="135.2" rama="Favored" resname="LEU" resnum="55" rota="tp" rscc="0.943" rsr="0.161" rsrz="-0.435" said="C" seq="55">
+		<clash atom="HD12" cid="73" clashmag="0.44" dist="2.17"/>
+	</ModelledSubgroup>
+	<ModelledSubgroup NatomsEDS="4" altcode=" " avgoccu="1.000" chain="A" ent="3" icode=" " model="1" num-H-reduce="3" owab="36.170" phi="-120.1" psi="158.8" rama="Favored" resname="GLY" resnum="56" rscc="0.970" rsr="0.104" rsrz="-0.752" said="C" seq="56"/>
+	<ModelledSubgroup NatomsEDS="7" altcode=" " avgoccu="1.000" chain="A" ent="3" icode=" " model="1" num-H-reduce="9" owab="33.970" phi="-116.7" psi="118.9" rama="Favored" resname="VAL" resnum="57" rota="t" rscc="0.969" rsr="0.141" rsrz="-0.594" said="C" seq="57"/>
+	<ModelledSubgroup NatomsEDS="9" altcode=" " avgoccu="1.000" chain="A" ent="3" icode=" " model="1" num-H-reduce="8" owab="37.940" phi="-98.5" psi="142.2" rama="Favored" resname="GLN" resnum="58" rota="tt0" rscc="0.944" rsr="0.161" rsrz="-0.425" said="C" seq="58"/>
+	<ModelledSubgroup NatomsEDS="9" altcode=" " avgoccu="1.000" chain="A" ent="3" icode=" " model="1" num-H-reduce="8" owab="30.320" phi="-134.5" psi="104.9" rama="Favored" resname="GLN" resnum="59" rota="mt-30" rscc="0.962" rsr="0.151" rsrz="-0.551" said="C" seq="59">
+		<clash atom="OE1" cid="51" clashmag="0.48" dist="2.13"/>
+	</ModelledSubgroup>
+	<ModelledSubgroup NatomsEDS="9" altcode=" " avgoccu="1.000" chain="A" ent="3" icode=" " model="1" num-H-reduce="13" owab="39.420" phi="59.4" psi="-120.5" rama="Allowed" resname="LYS" resnum="60" rota="mmtm" rscc="0.928" rsr="0.163" rsrz="-0.656" said="C" seq="60">
+		<clash atom="HZ2" cid="53" clashmag="0.48" dist="2.18"/>
+	</ModelledSubgroup>
+	<ModelledSubgroup NatomsEDS="5" altcode=" " avgoccu="1.000" chain="A" ent="3" icode=" " model="1" num-H-reduce="2" owab="43.880" phi="-105.9" psi="31.7" rama="Favored" resname="TYR" resnum="61" rscc="0.951" rsr="0.143" rsrz="-0.503" said="C" seq="61"/>
+	<ModelledSubgroup NatomsEDS="8" altcode=" " avgoccu="1.000" chain="A" ent="3" icode=" " model="1" num-H-reduce="11" owab="40.890" phi="-131.6" psi="125.6" rama="Favored" resname="LEU" resnum="62" rota="tp" rscc="0.973" rsr="0.155" rsrz="-0.521" said="C" seq="62"/>
+	<ModelledSubgroup NatomsEDS="7" altcode=" " avgoccu="1.000" chain="A" ent="3" icode=" " model="1" num-H-reduce="9" owab="35.680" phi="-84.5" psi="91.2" rama="Favored" resname="VAL" resnum="63" rota="t" rscc="0.951" rsr="0.124" rsrz="-0.843" said="C" seq="63"/>
+	<ModelledSubgroup NatomsEDS="7" altcode=" " avgoccu="1.000" chain="A" ent="3" icode=" " model="1" num-H-reduce="9" owab="31.640" phi="-62.0" psi="-33.1" rama="Favored" resname="VAL" resnum="64" rota="p" rscc="0.936" rsr="0.160" rsrz="-0.315" said="C" seq="64">
+		<bond-outlier atom0="CB" atom1="CG1" mean="1.524" obs="1.669" stdev="0.021" z="6.89"/>
+	</ModelledSubgroup>
+	<ModelledSubgroup NatomsEDS="7" altcode=" " avgoccu="1.000" chain="A" ent="3" icode=" " model="1" num-H-reduce="7" owab="28.690" phi="-162.3" psi="163.6" rama="Favored" resname="THR" resnum="65" rota="t" rscc="0.933" rsr="0.106" rsrz="-0.921" said="C" seq="65"/>
+	<ModelledSubgroup NatomsEDS="6" altcode=" " avgoccu="1.000" chain="A" ent="3" icode=" " model="1" num-H-reduce="5" owab="29.980" phi="-146.0" psi="158.3" rama="Favored" resname="CYS" resnum="66" rota="p" rscc="0.973" rsr="0.108" rsrz="-0.647" said="C" seq="66"/>
+	<ModelledSubgroup NatomsEDS="8" altcode=" " avgoccu="1.000" chain="A" ent="3" icode=" " model="1" num-H-reduce="6" owab="29.730" phi="-75.1" psi="174.1" rama="Favored" resname="ASN" resnum="67" rota="p30" rscc="0.962" rsr="0.190" rsrz="0.185" said="C" seq="67"/>
+	<ModelledSubgroup NatomsEDS="12" altcode=" " avgoccu="1.000" chain="A" ent="3" icode=" " model="1" num-H-reduce="9" owab="32.160" phi="-60.0" psi="-28.1" rama="Favored" resname="TYR" resnum="68" rota="m-85" rscc="0.938" rsr="0.160" rsrz="-0.244" said="C" seq="68">
+		<plane-outlier planeRMSD="0.07" type="sidechain"/>
+	</ModelledSubgroup>
+	<ModelledSubgroup NatomsEDS="9" altcode=" " avgoccu="1.000" chain="A" ent="3" icode=" " model="1" num-H-reduce="6" owab="49.900" phi="-65.1" psi="-44.3" rama="Favored" resname="GLU" resnum="69" rota="OUTLIER" rscc="0.864" rsr="0.176" rsrz="-0.367" said="C" seq="69">
+		<angle-outlier atom0="OE1" atom1="CD" atom2="OE2" mean="123.300" obs="115.250" stdev="1.200" z="-6.71"/>
+		<clash atom="O" cid="60" clashmag="0.47" dist="2.62"/>
+		<bond-outlier atom0="CG" atom1="CD" mean="1.515" obs="1.593" stdev="0.015" z="5.17"/>
+	</ModelledSubgroup>
+	<ModelledSubgroup NatomsEDS="5" altcode=" " avgoccu="1.000" chain="A" ent="3" icode=" " model="1" num-H-reduce="5" owab="42.640" phi="-63.9" psi="-35.6" rama="Favored" resname="ALA" resnum="70" rscc="0.943" rsr="0.108" rsrz="-0.854" said="C" seq="70"/>
+	<ModelledSubgroup NatomsEDS="11" altcode=" " avgoccu="1.000" chain="A" ent="3" icode=" " model="1" num-H-reduce="13" owab="42.800" phi="-68.1" psi="-25.8" rama="Favored" resname="ARG" resnum="71" rota="mtt180" rscc="0.933" rsr="0.149" rsrz="-0.690" said="C" seq="71">
+		<angle-outlier atom0="NE" atom1="CZ" atom2="NH2" mean="120.300" obs="116.450" stdev="0.500" z="-7.70"/>
+		<angle-outlier atom0="NE" atom1="CZ" atom2="NH1" mean="120.300" obs="124.364" stdev="0.500" z="8.13"/>
+	</ModelledSubgroup>
+	<ModelledSubgroup NatomsEDS="9" altcode=" " avgoccu="1.000" chain="A" ent="3" icode=" " model="1" num-H-reduce="13" owab="53.280" phi="-61.2" psi="-33.8" rama="Favored" resname="LYS" resnum="72" rota="mttt" rscc="0.888" rsr="0.162" rsrz="-0.667" said="C" seq="72"/>
+	<ModelledSubgroup NatomsEDS="8" altcode=" " avgoccu="1.000" chain="A" ent="3" icode=" " model="1" num-H-reduce="11" owab="55.330" phi="-87.4" psi="14.1" rama="Favored" resname="LEU" resnum="73" rota="mp" rscc="0.948" rsr="0.260" rsrz="0.969" said="C" seq="73">
+		<clash atom="H" cid="33" clashmag="0.56" dist="1.70"/>
+		<clash atom="H" cid="74" clashmag="0.44" dist="2.31"/>
+		<clash atom="HD12" cid="15" clashmag="0.67" dist="2.09"/>
+		<clash atom="HD12" cid="33" clashmag="0.56" dist="1.70"/>
+		<clash atom="CD1" cid="58" clashmag="0.47" dist="2.77"/>
+		<clash atom="CD1" cid="60" clashmag="0.47" dist="2.62"/>
+		<clash atom="CD1" cid="74" clashmag="0.44" dist="2.31"/>
+		<clash atom="N" cid="15" clashmag="0.67" dist="2.09"/>
+		<clash atom="N" cid="58" clashmag="0.47" dist="2.77"/>
+	</ModelledSubgroup>
+	<ModelledSubgroup NatomsEDS="4" altcode=" " avgoccu="1.000" chain="A" ent="3" icode=" " model="1" num-H-reduce="3" owab="52.720" phi="91.6" psi="-5.5" rama="Favored" resname="GLY" resnum="74" rscc="0.953" rsr="0.200" rsrz="0.523" said="C" seq="74"/>
+	<ModelledSubgroup NatomsEDS="7" altcode=" " avgoccu="1.000" chain="A" ent="3" icode=" " model="1" num-H-reduce="9" owab="49.160" phi="-74.3" psi="129.6" rama="Favored" resname="VAL" resnum="75" rota="t" rscc="0.960" rsr="0.160" rsrz="-0.315" said="C" seq="75"/>
+	<ModelledSubgroup NatomsEDS="9" altcode=" " avgoccu="1.000" chain="A" ent="3" icode=" " model="1" num-H-reduce="13" owab="51.910" phi="-110.5" psi="157.8" rama="Favored" resname="LYS" resnum="76" rota="mmtp" rscc="0.888" rsr="0.146" rsrz="-0.849" said="C" seq="76"/>
+	<ModelledSubgroup NatomsEDS="9" altcode=" " avgoccu="1.000" chain="A" ent="3" icode=" " model="1" num-H-reduce="13" owab="55.040" phi="-66.8" psi="153.3" rama="Favored" resname="LYS" resnum="77" rota="mtmm" rscc="0.906" rsr="0.197" rsrz="-0.268" said="C" seq="77"/>
+	<ModelledSubgroup NatomsEDS="8" altcode=" " avgoccu="1.000" chain="A" ent="3" icode=" " model="1" num-H-reduce="11" owab="52.260" phi="54.3" psi="48.0" rama="Favored" resname="LEU" resnum="78" rota="mt" rscc="0.915" rsr="0.161" rsrz="-0.435" said="C" seq="78"/>
+	<ModelledSubgroup NatomsEDS="8" altcode=" " avgoccu="1.000" chain="A" ent="3" icode=" " model="1" num-H-reduce="9" owab="55.910" phi="-111.0" psi="145.4" rama="Favored" resname="MET" resnum="79" rota="ttm" rscc="0.962" rsr="0.160" rsrz="-0.185" said="C" seq="79"/>
+	<ModelledSubgroup NatomsEDS="8" altcode=" " avgoccu="1.000" chain="A" ent="3" flippable-sidechain="1" icode=" " model="1" num-H-reduce="6" owab="60.320" phi="-72.4" psi="147.7" rama="Favored" resname="ASN" resnum="80" rota="OUTLIER" rscc="0.924" rsr="0.173" rsrz="-0.048" said="C" seq="80"/>
+	<ModelledSubgroup NatomsEDS="7" altcode=" " avgoccu="1.000" chain="A" ent="3" icode=" " model="1" num-H-reduce="9" owab="59.940" phi="-49.1" psi="-29.9" rama="Favored" resname="VAL" resnum="81" rota="t" rscc="0.963" rsr="0.157" rsrz="-0.359" said="C" seq="81"/>
+	<ModelledSubgroup NatomsEDS="5" altcode=" " avgoccu="1.000" chain="A" ent="3" icode=" " model="1" num-H-reduce="2" owab="61.670" phi="-67.6" psi="-52.0" rama="Favored" resname="ARG" resnum="82" rscc="0.896" rsr="0.213" rsrz="0.108" said="C" seq="82">
+		<bond-outlier atom0="CA" atom1="CB" mean="1.535" obs="1.668" stdev="0.022" z="6.04"/>
+	</ModelledSubgroup>
+	<ModelledSubgroup NatomsEDS="8" altcode=" " avgoccu="1.000" chain="A" ent="3" icode=" " model="1" num-H-reduce="4" owab="64.530" phi="-65.8" psi="-25.5" rama="Favored" resname="ASP" resnum="83" rota="OUTLIER" rscc="0.908" rsr="0.128" rsrz="-0.673" said="C" seq="83">
+		<clash atom="O" cid="50" clashmag="0.48" dist="2.14"/>
+	</ModelledSubgroup>
+	<ModelledSubgroup NatomsEDS="5" altcode=" " avgoccu="1.000" chain="A" ent="3" icode=" " model="1" num-H-reduce="5" owab="66.600" phi="-77.7" psi="-28.5" rama="Favored" resname="ALA" resnum="84" rscc="0.965" rsr="0.132" rsrz="-0.507" said="C" seq="84"/>
+	<ModelledSubgroup NatomsEDS="9" altcode=" " avgoccu="1.000" chain="A" ent="3" icode=" " model="1" num-H-reduce="13" owab="71.170" phi="-90.4" psi="-26.0" rama="Favored" resname="LYS" resnum="85" rota="mttt" rscc="0.893" rsr="0.158" rsrz="-0.713" said="C" seq="85"/>
+	<ModelledSubgroup NatomsEDS="9" altcode=" " avgoccu="1.000" chain="A" ent="3" icode=" " model="1" num-H-reduce="6" owab="75.850" phi="-91.1" psi="10.7" rama="Favored" resname="GLU" resnum="86" rota="pt-20" rscc="0.799" rsr="0.228" rsrz="0.259" said="C" seq="86"/>
+	<ModelledSubgroup NatomsEDS="9" altcode=" " avgoccu="1.000" chain="A" ent="3" icode=" " model="1" num-H-reduce="13" owab="68.700" phi="-123.8" psi="-7.2" rama="Favored" resname="LYS" resnum="87" rota="OUTLIER" rscc="0.902" rsr="0.195" rsrz="-0.291" said="C" seq="87">
+		<clash atom="HB2" cid="50" clashmag="0.48" dist="2.14"/>
+	</ModelledSubgroup>
+	<ModelledSubgroup NatomsEDS="6" altcode=" " avgoccu="1.000" chain="A" ent="3" icode=" " model="1" num-H-reduce="5" owab="60.740" phi="-173.8" psi="83.5" rama="Allowed" resname="CYS" resnum="88" rota="t" rscc="0.937" rsr="0.095" rsrz="-0.862" said="C" seq="88">
+		<clash atom="O" cid="78" clashmag="0.43" dist="2.17"/>
+		<clash atom="SG" cid="25" clashmag="0.60" dist="2.59"/>
+	</ModelledSubgroup>
+	<ModelledSubgroup NatomsEDS="7" altcode=" " avgoccu="1.000" chain="A" ent="3" icode=" " model="1" num-H-reduce="7" owab="63.950" phi="-59.7" psi="-43.6" rama="Favored" resname="PRO" resnum="89" rota="Cg_exo" rscc="0.947" rsr="0.147" rsrz="-0.286" said="C" seq="89"/>
+	<ModelledSubgroup NatomsEDS="9" altcode=" " avgoccu="1.000" chain="A" ent="3" icode=" " model="1" num-H-reduce="8" owab="65.190" phi="-65.5" psi="86.6" rama="Allowed" resname="GLN" resnum="90" rota="tt0" rscc="0.833" rsr="0.236" rsrz="0.516" said="C" seq="90">
+		<clash atom="O" cid="25" clashmag="0.60" dist="2.59"/>
+	</ModelledSubgroup>
+	<ModelledSubgroup NatomsEDS="8" altcode=" " avgoccu="1.000" chain="A" ent="3" icode=" " model="1" num-H-reduce="11" owab="53.730" phi="-156.7" psi="117.2" rama="Favored" resname="LEU" resnum="91" rota="OUTLIER" rscc="0.948" rsr="0.126" rsrz="-0.932" said="C" seq="91">
+		<clash atom="HB2" cid="78" clashmag="0.43" dist="2.17"/>
+	</ModelledSubgroup>
+	<ModelledSubgroup NatomsEDS="7" altcode=" " avgoccu="1.000" chain="A" ent="3" icode=" " model="1" num-H-reduce="9" owab="42.170" phi="-86.9" psi="130.9" rama="Favored" resname="VAL" resnum="92" rota="t" rscc="0.962" rsr="0.161" rsrz="-0.301" said="C" seq="92">
+		<clash atom="O" cid="73" clashmag="0.44" dist="2.17"/>
+	</ModelledSubgroup>
+	<ModelledSubgroup NatomsEDS="8" altcode=" " avgoccu="1.000" chain="A" ent="3" icode=" " model="1" num-H-reduce="11" owab="41.840" phi="-127.1" psi="129.1" rama="Favored" resname="LEU" resnum="93" rota="mt" rscc="0.955" rsr="0.130" rsrz="-0.875" said="C" seq="93"/>
+	<ModelledSubgroup NatomsEDS="7" altcode=" " avgoccu="1.000" chain="A" ent="3" icode=" " model="1" num-H-reduce="9" owab="35.360" phi="-123.6" psi="156.8" rama="Favored" resname="VAL" resnum="94" rota="m" rscc="0.951" rsr="0.140" rsrz="-0.609" said="C" seq="94">
+		<bond-outlier atom0="CB" atom1="CG2" mean="1.524" obs="1.357" stdev="0.021" z="-7.94"/>
+	</ModelledSubgroup>
+	<ModelledSubgroup NatomsEDS="8" altcode=" " avgoccu="1.000" chain="A" ent="3" icode=" " model="1" num-H-reduce="6" owab="37.420" phi="-93.5" psi="125.8" rama="Favored" resname="ASN" resnum="95" rota="t-20" rscc="0.973" rsr="0.118" rsrz="-0.804" said="C" seq="95"/>
+	<ModelledSubgroup NatomsEDS="4" altcode=" " avgoccu="1.000" chain="A" ent="3" icode=" " model="1" num-H-reduce="3" owab="31.020" phi="-110.5" psi="32.1" rama="Favored" resname="GLY" resnum="96" rscc="0.986" rsr="0.130" rsrz="-0.406" said="C" seq="96"/>
+	<ModelledSubgroup NatomsEDS="9" altcode=" " avgoccu="1.000" chain="A" ent="3" icode=" " model="1" num-H-reduce="6" owab="35.480" phi="-70.1" psi="-32.5" rama="Favored" resname="GLU" resnum="97" rota="mt-10" rscc="0.963" rsr="0.144" rsrz="-0.752" said="C" seq="97">
+		<clash atom="CD" cid="53" clashmag="0.48" dist="2.18"/>
+	</ModelledSubgroup>
+	<ModelledSubgroup NatomsEDS="8" altcode=" " avgoccu="1.000" chain="A" ent="3" icode=" " model="1" num-H-reduce="4" owab="31.380" phi="-94.4" psi="109.7" rama="Favored" resname="ASP" resnum="98" rota="t0" rscc="0.979" rsr="0.131" rsrz="-0.633" said="C" seq="98"/>
+	<ModelledSubgroup NatomsEDS="8" altcode=" " avgoccu="1.000" chain="A" ent="3" icode=" " model="1" num-H-reduce="11" owab="23.750" phi="-86.9" psi="5.6" rama="Favored" resname="LEU" resnum="99" rota="mt" rscc="0.951" rsr="0.172" rsrz="-0.279" said="C" seq="99"/>
+	<ModelledSubgroup NatomsEDS="7" altcode=" " avgoccu="1.000" chain="A" ent="3" icode=" " model="1" num-H-reduce="7" owab="24.600" phi="-46.3" psi="-62.2" rama="Allowed" resname="THR" resnum="100" rota="m" rscc="0.968" rsr="0.100" rsrz="-1.009" said="C" seq="100"/>
+	<ModelledSubgroup NatomsEDS="11" altcode=" " avgoccu="1.000" chain="A" ent="3" icode=" " model="1" num-H-reduce="13" owab="44.400" phi="-61.3" psi="-35.4" rama="Favored" resname="ARG" resnum="101" rota="mtm180" rscc="0.879" rsr="0.238" rsrz="0.420" said="C" seq="101">
+		<clash atom="NH2" cid="69" clashmag="0.44" dist="2.51"/>
+		<bond-outlier atom0="CG" atom1="CD" mean="1.515" obs="1.642" stdev="0.025" z="5.08"/>
+	</ModelledSubgroup>
+	<ModelledSubgroup NatomsEDS="12" altcode=" " avgoccu="1.000" chain="A" ent="3" icode=" " model="1" num-H-reduce="9" owab="22.480" phi="-66.6" psi="-38.0" rama="Favored" resname="TYR" resnum="102" rota="m-85" rscc="0.959" rsr="0.145" rsrz="-0.473" said="C" seq="102">
+		<bond-outlier atom0="CG" atom1="CD2" mean="1.387" obs="1.465" stdev="0.013" z="6.03"/>
+	</ModelledSubgroup>
+	<ModelledSubgroup NatomsEDS="11" altcode=" " avgoccu="1.000" chain="A" ent="3" icode=" " model="1" num-H-reduce="13" owab="30.820" phi="-65.8" psi="-37.8" rama="Favored" resname="ARG" resnum="103" rota="ttm105" rscc="0.928" rsr="0.227" rsrz="0.283" said="C" seq="103">
+		<bond-outlier atom0="CZ" atom1="NH2" mean="1.326" obs="1.441" stdev="0.013" z="8.88"/>
+		<bond-outlier atom0="CG" atom1="CD" mean="1.515" obs="1.643" stdev="0.025" z="5.12"/>
+	</ModelledSubgroup>
+	<ModelledSubgroup NatomsEDS="9" altcode=" " avgoccu="1.000" chain="A" ent="3" icode=" " model="1" num-H-reduce="6" owab="30.510" phi="-71.6" psi="-42.1" rama="Favored" resname="GLU" resnum="104" rota="mt-10" rscc="0.951" rsr="0.139" rsrz="-0.812" said="C" seq="104">
+		<bond-outlier atom0="CG" atom1="CD" mean="1.515" obs="1.595" stdev="0.015" z="5.35"/>
+		<bond-outlier atom0="CD" atom1="OE2" mean="1.252" obs="1.324" stdev="0.011" z="6.54"/>
+	</ModelledSubgroup>
+	<ModelledSubgroup NatomsEDS="8" altcode=" " avgoccu="1.000" chain="A" ent="3" icode=" " model="1" num-H-reduce="9" owab="28.330" phi="-67.1" psi="-40.4" rama="Favored" resname="MET" resnum="105" rota="tpp" rscc="0.975" rsr="0.134" rsrz="-0.570" said="C" seq="105">
+		<bond-outlier atom0="CG" atom1="SD" mean="1.807" obs="1.948" stdev="0.026" z="5.41"/>
+	</ModelledSubgroup>
+	<ModelledSubgroup NatomsEDS="6" altcode=" " avgoccu="1.000" chain="A" ent="3" icode=" " model="1" num-H-reduce="5" owab="17.450" phi="-49.1" psi="-48.4" rama="Favored" resname="SER" resnum="106" rota="t" rscc="0.957" rsr="0.136" rsrz="-0.414" said="C" seq="106">
+		<clash atom="OG" cid="64" clashmag="0.46" dist="2.48"/>
+	</ModelledSubgroup>
+	<ModelledSubgroup NatomsEDS="12" altcode=" " avgoccu="1.000" chain="A" ent="3" icode=" " model="1" num-H-reduce="9" owab="15.790" phi="-71.2" psi="-32.5" rama="Favored" resname="TYR" resnum="107" rota="m-85" rscc="0.975" rsr="0.154" rsrz="-0.335" said="C" seq="107">
+		<clash atom="OH" cid="107" clashmag="0.40" dist="2.22"/>
+		<bond-outlier atom0="CD2" atom1="CE2" mean="1.389" obs="1.292" stdev="0.015" z="-6.50"/>
+	</ModelledSubgroup>
+	<ModelledSubgroup NatomsEDS="9" altcode=" " avgoccu="1.000" chain="A" ent="3" icode=" " model="1" num-H-reduce="13" owab="18.000" phi="-65.2" psi="-37.6" rama="Favored" resname="LYS" resnum="108" rota="mttt" rscc="0.985" rsr="0.132" rsrz="-1.009" said="C" seq="108">
+		<bond-outlier atom0="CE" atom1="NZ" mean="1.486" obs="1.641" stdev="0.025" z="6.20"/>
+	</ModelledSubgroup>
+	<ModelledSubgroup NatomsEDS="7" altcode=" " avgoccu="1.000" chain="A" ent="3" icode=" " model="1" num-H-reduce="9" owab="14.650" phi="-60.8" psi="-50.2" rama="Favored" resname="VAL" resnum="109" rota="t" rscc="0.982" rsr="0.153" rsrz="-0.418" said="C" seq="109">
+		<bond-outlier atom0="CA" atom1="CB" mean="1.543" obs="1.427" stdev="0.021" z="-5.54"/>
+	</ModelledSubgroup>
+	<ModelledSubgroup NatomsEDS="7" altcode=" " avgoccu="1.000" chain="A" ent="3" icode=" " model="1" num-H-reduce="7" owab="19.320" phi="-64.7" psi="-43.9" rama="Favored" resname="THR" resnum="110" rota="m" rscc="0.971" rsr="0.127" rsrz="-0.615" said="C" seq="110"/>
+	<ModelledSubgroup NatomsEDS="9" altcode=" " avgoccu="1.000" chain="A" ent="3" icode=" " model="1" num-H-reduce="6" owab="22.460" phi="-60.9" psi="-37.8" rama="Favored" resname="GLU" resnum="111" rota="mt-10" rscc="0.940" rsr="0.182" rsrz="-0.295" said="C" seq="111"/>
+	<ModelledSubgroup NatomsEDS="8" altcode=" " avgoccu="1.000" chain="A" ent="3" icode=" " model="1" num-H-reduce="11" owab="21.160" phi="-65.0" psi="-47.1" rama="Favored" resname="LEU" resnum="112" rota="tt" rscc="0.963" rsr="0.168" rsrz="-0.336" said="C" seq="112">
+		<clash atom="HD23" cid="61" clashmag="0.46" dist="2.36"/>
+		<clash atom="C" cid="61" clashmag="0.46" dist="2.36"/>
+	</ModelledSubgroup>
+	<ModelledSubgroup NatomsEDS="8" altcode=" " avgoccu="1.000" chain="A" ent="3" icode=" " model="1" num-H-reduce="11" owab="20.580" phi="-64.1" psi="-28.8" rama="Favored" resname="LEU" resnum="113" rota="mt" rscc="0.978" rsr="0.137" rsrz="-0.776" said="C" seq="113"/>
+	<ModelledSubgroup NatomsEDS="9" altcode=" " avgoccu="1.000" chain="A" ent="3" icode=" " model="1" num-H-reduce="6" owab="29.110" phi="-62.0" psi="-25.6" rama="Favored" resname="GLU" resnum="114" rota="mt-10" rscc="0.970" rsr="0.161" rsrz="-0.548" said="C" seq="114"/>
+	<ModelledSubgroup NatomsEDS="9" altcode=" " avgoccu="1.000" chain="A" ent="3" icode=" " model="1" num-H-reduce="6" owab="37.870" phi="-73.9" psi="-32.1" rama="Favored" resname="GLU" resnum="115" rota="tt0" rscc="0.953" rsr="0.168" rsrz="-0.463" said="C" seq="115"/>
+	<ModelledSubgroup NatomsEDS="11" altcode=" " avgoccu="1.000" chain="A" ent="3" icode=" " model="1" num-H-reduce="9" owab="28.590" phi="-70.2" psi="-48.9" rama="Favored" resname="PHE" resnum="116" rota="m-85" rscc="0.959" rsr="0.159" rsrz="-0.341" said="C" seq="116">
+		<bond-outlier atom0="C" atom1="O" mean="1.229" obs="1.107" stdev="0.019" z="-6.43"/>
+	</ModelledSubgroup>
+	<ModelledSubgroup NatomsEDS="6" altcode=" " avgoccu="1.000" chain="A" ent="3" icode=" " model="1" num-H-reduce="5" owab="30.050" phi="-153.1" psi="123.7" rama="Favored" resname="SER" resnum="117" rota="t" rscc="0.969" rsr="0.112" rsrz="-0.748" said="C" seq="117">
+		<bond-outlier atom0="CB" atom1="OG" mean="1.418" obs="1.500" stdev="0.013" z="6.34"/>
+	</ModelledSubgroup>
+	<ModelledSubgroup NatomsEDS="7" altcode=" " avgoccu="1.000" chain="A" ent="3" icode=" " model="1" num-H-reduce="7" owab="27.840" phi="-56.8" psi="-27.7" rama="Favored" resname="PRO" resnum="118" rota="Cg_endo" rscc="0.975" rsr="0.130" rsrz="-0.531" said="C" seq="118"/>
+	<ModelledSubgroup NatomsEDS="7" altcode=" " avgoccu="1.000" chain="A" ent="3" icode=" " model="1" num-H-reduce="9" owab="31.740" phi="-88.8" psi="95.8" rama="Favored" resname="VAL" resnum="119" rota="t" rscc="0.985" rsr="0.141" rsrz="-0.594" said="C" seq="119">
+		<clash atom="HB" cid="16" clashmag="0.67" dist="1.94"/>
+	</ModelledSubgroup>
+	<ModelledSubgroup NatomsEDS="7" altcode=" " avgoccu="1.000" chain="A" ent="3" icode=" " model="1" num-H-reduce="9" owab="25.910" phi="-121.7" psi="136.4" rama="Favored" resname="VAL" resnum="120" rota="t" rscc="0.968" rsr="0.168" rsrz="-0.198" said="C" seq="120"/>
+	<ModelledSubgroup NatomsEDS="9" altcode=" " avgoccu="1.000" chain="A" ent="3" icode=" " model="1" num-H-reduce="6" owab="26.880" phi="-116.9" psi="128.2" rama="Favored" resname="GLU" resnum="121" rota="tt0" rscc="0.974" rsr="0.156" rsrz="-0.608" said="C" seq="121"/>
+	<ModelledSubgroup NatomsEDS="11" altcode=" " avgoccu="1.000" chain="A" ent="3" icode=" " model="1" num-H-reduce="13" owab="19.920" phi="-91.1" psi="155.6" rama="Favored" resname="ARG" resnum="122" rota="mtp180" rscc="0.978" rsr="0.207" rsrz="0.034" said="C" seq="122">
+		<angle-outlier atom0="NE" atom1="CZ" atom2="NH2" mean="120.300" obs="116.432" stdev="0.500" z="-7.74"/>
+		<angle-outlier atom0="NE" atom1="CZ" atom2="NH1" mean="120.300" obs="123.749" stdev="0.500" z="6.90"/>
+		<clash atom="NH2" cid="64" clashmag="0.46" dist="2.48"/>
+		<bond-outlier atom0="CZ" atom1="NH1" mean="1.326" obs="1.250" stdev="0.013" z="-5.83"/>
+		<bond-outlier atom0="CD" atom1="NE" mean="1.460" obs="1.372" stdev="0.017" z="-5.20"/>
+	</ModelledSubgroup>
+	<ModelledSubgroup NatomsEDS="8" altcode=" " avgoccu="1.000" chain="A" ent="3" icode=" " model="1" num-H-reduce="11" owab="19.770" phi="-139.6" psi="105.2" rama="Favored" resname="LEU" resnum="123" rota="OUTLIER" rscc="0.980" rsr="0.192" rsrz="0.004" said="C" seq="123">
+		<clash atom="O" cid="96" clashmag="0.41" dist="2.20"/>
+	</ModelledSubgroup>
+	<ModelledSubgroup NatomsEDS="4" altcode=" " avgoccu="1.000" chain="A" ent="3" icode=" " model="1" num-H-reduce="3" owab="19.870" phi="76.5" psi="-174.8" rama="Favored" resname="GLY" resnum="124" rscc="0.984" rsr="0.163" rsrz="0.032" said="C" seq="124"/>
+	<ModelledSubgroup NatomsEDS="11" altcode=" " avgoccu="1.000" chain="A" ent="3" icode=" " model="1" num-H-reduce="9" owab="22.000" phi="-83.2" psi="-12.1" rama="Favored" resname="PHE" resnum="125" rota="m-30" rscc="0.973" rsr="0.161" rsrz="-0.313" said="C" seq="125">
+		<bond-outlier atom0="CG" atom1="CD2" mean="1.383" obs="1.302" stdev="0.015" z="-5.40"/>
+		<bond-outlier atom0="CE1" atom1="CZ" mean="1.369" obs="1.467" stdev="0.019" z="5.14"/>
+		<bond-outlier atom0="CE2" atom1="CZ" mean="1.369" obs="1.270" stdev="0.019" z="-5.21"/>
+	</ModelledSubgroup>
+	<ModelledSubgroup NatomsEDS="8" altcode=" " avgoccu="1.000" chain="A" ent="3" icode=" " model="1" num-H-reduce="4" owab="26.840" phi="-131.4" psi="17.8" rama="Favored" resname="ASP" resnum="126" rota="p-10" rscc="0.977" rsr="0.158" rsrz="-0.272" said="C" seq="126"/>
+	<ModelledSubgroup NatomsEDS="9" altcode=" " avgoccu="1.000" chain="A" ent="3" icode=" " model="1" num-H-reduce="6" owab="24.270" phi="-127.2" psi="139.0" rama="Favored" resname="GLU" resnum="127" rota="mt-10" rscc="0.973" rsr="0.156" rsrz="-0.608" said="C" seq="127">
+		<clash atom="HB2" cid="96" clashmag="0.41" dist="2.20"/>
+	</ModelledSubgroup>
+	<ModelledSubgroup NatomsEDS="8" altcode=" " avgoccu="1.000" chain="A" ent="3" icode=" " model="1" num-H-reduce="6" owab="16.470" phi="-141.8" psi="138.6" rama="Favored" resname="ASN" resnum="128" rota="m-80" rscc="0.987" rsr="0.127" rsrz="-0.680" said="C" seq="128"/>
+	<ModelledSubgroup NatomsEDS="11" altcode=" " avgoccu="1.000" chain="A" ent="3" icode=" " model="1" num-H-reduce="9" owab="16.080" phi="-110.0" psi="144.1" rama="Favored" resname="PHE" resnum="129" rota="m-85" rscc="0.974" rsr="0.151" rsrz="-0.457" said="C" seq="129">
+		<bond-outlier atom0="CD1" atom1="CE1" mean="1.388" obs="1.516" stdev="0.020" z="6.39"/>
+	</ModelledSubgroup>
+	<ModelledSubgroup NatomsEDS="7" altcode=" " avgoccu="1.000" chain="A" ent="3" icode=" " model="1" num-H-reduce="9" owab="21.090" phi="-142.1" psi="135.8" rama="Favored" resname="VAL" resnum="130" rota="t" rscc="0.975" rsr="0.104" rsrz="-1.136" said="C" seq="130">
+		<clash atom="HB" cid="85" clashmag="0.43" dist="1.99"/>
+		<bond-outlier atom0="CB" atom1="CG2" mean="1.524" obs="1.411" stdev="0.021" z="-5.37"/>
+	</ModelledSubgroup>
+	<ModelledSubgroup NatomsEDS="8" altcode=" " avgoccu="1.000" chain="A" ent="3" icode=" " model="1" num-H-reduce="4" owab="28.530" phi="-95.7" psi="112.0" rama="Favored" resname="ASP" resnum="131" rota="t0" rscc="0.965" rsr="0.113" rsrz="-0.873" said="C" seq="131"/>
+	<ModelledSubgroup NatomsEDS="8" altcode=" " avgoccu="1.000" chain="A" ent="3" icode=" " model="1" num-H-reduce="11" owab="23.540" phi="-93.5" psi="2.6" rama="Favored" resname="LEU" resnum="132" rota="mt" rscc="0.944" rsr="0.138" rsrz="-0.762" said="C" seq="132"/>
+	<ModelledSubgroup NatomsEDS="7" altcode=" " avgoccu="1.000" chain="A" ent="3" icode=" " model="1" num-H-reduce="7" owab="28.130" phi="-52.3" psi="-48.9" rama="Favored" resname="THR" resnum="133" rota="m" rscc="0.977" rsr="0.150" rsrz="-0.280" said="C" seq="133"/>
+	<ModelledSubgroup NatomsEDS="9" altcode=" " avgoccu="1.000" chain="A" ent="3" icode=" " model="1" num-H-reduce="6" owab="41.890" phi="-68.5" psi="-42.7" rama="Favored" resname="GLU" resnum="134" rota="mt-10" rscc="0.928" rsr="0.241" rsrz="0.415" said="C" seq="134">
+		<bond-outlier atom0="CD" atom1="OE1" mean="1.252" obs="1.325" stdev="0.011" z="6.64"/>
+	</ModelledSubgroup>
+	<ModelledSubgroup NatomsEDS="8" altcode=" " avgoccu="1.000" chain="A" ent="3" icode=" " model="1" num-H-reduce="9" owab="33.050" phi="-57.7" psi="-45.0" rama="Favored" resname="MET" resnum="135" rota="ttt" rscc="0.984" rsr="0.128" rsrz="-0.659" said="C" seq="135">
+		<clash atom="HE2" cid="87" clashmag="0.43" dist="2.01"/>
+	</ModelledSubgroup>
+	<ModelledSubgroup NatomsEDS="7" altcode=" " avgoccu="1.000" chain="A" ent="3" icode=" " model="1" num-H-reduce="9" owab="31.490" phi="-56.3" psi="-50.8" rama="Favored" resname="VAL" resnum="136" rota="t" rscc="0.972" rsr="0.146" rsrz="-0.521" said="C" seq="136"/>
+	<ModelledSubgroup NatomsEDS="9" altcode=" " avgoccu="1.000" chain="A" ent="3" icode=" " model="1" num-H-reduce="6" owab="45.060" phi="-62.6" psi="-36.7" rama="Favored" resname="GLU" resnum="137" rota="mm-40" rscc="0.891" rsr="0.256" rsrz="0.596" said="C" seq="137">
+		<clash atom="HG2" cid="13" clashmag="0.68" dist="1.58"/>
+		<clash atom="HG2" cid="22" clashmag="0.62" dist="2.15"/>
+		<clash atom="CG" cid="44" clashmag="0.50" dist="2.25"/>
+	</ModelledSubgroup>
+	<ModelledSubgroup NatomsEDS="9" altcode=" " avgoccu="1.000" chain="A" ent="3" icode=" " model="1" num-H-reduce="13" owab="44.660" phi="-62.0" psi="-38.9" rama="Favored" resname="LYS" resnum="138" rota="tttt" rscc="0.923" rsr="0.240" rsrz="0.222" said="C" seq="138"/>
+	<ModelledSubgroup NatomsEDS="11" altcode=" " avgoccu="1.000" chain="A" ent="3" icode=" " model="1" num-H-reduce="13" owab="35.900" phi="-71.5" psi="-32.7" rama="Favored" resname="ARG" resnum="139" rota="mtt180" rscc="0.958" rsr="0.147" rsrz="-0.714" said="C" seq="139"/>
+	<ModelledSubgroup NatomsEDS="8" altcode=" " avgoccu="1.000" chain="A" ent="3" icode=" " model="1" num-H-reduce="11" owab="46.700" phi="-69.2" psi="-35.3" rama="Favored" resname="LEU" resnum="140" rota="mt" rscc="0.973" rsr="0.148" rsrz="-0.620" said="C" seq="140"/>
+	<ModelledSubgroup NatomsEDS="9" altcode=" " avgoccu="1.000" chain="A" ent="3" icode=" " model="1" num-H-reduce="8" owab="61.950" phi="-70.6" psi="-27.3" rama="Favored" resname="GLN" resnum="141" rota="mt-30" rscc="0.868" rsr="0.275" rsrz="1.005" said="C" seq="141"/>
+	<ModelledSubgroup NatomsEDS="9" altcode=" " avgoccu="1.000" chain="A" ent="3" icode=" " model="1" num-H-reduce="8" owab="69.690" phi="-71.5" psi="-26.1" rama="Favored" resname="GLN" resnum="142" rota="OUTLIER" rscc="0.947" rsr="0.254" rsrz="0.742" said="C" seq="142"/>
+	<ModelledSubgroup NatomsEDS="8" altcode=" " avgoccu="1.000" chain="A" ent="3" icode=" " model="1" num-H-reduce="11" owab="71.990" phi="-80.7" psi="116.6" rama="Favored" resname="LEU" resnum="143" rota="mt" rscc="0.904" rsr="0.211" rsrz="0.274" said="C" seq="143"/>
+	<ModelledSubgroup NatomsEDS="9" altcode=" " avgoccu="1.000" chain="A" ent="3" icode=" " model="1" num-H-reduce="8" owab="83.880" phi="-50.8" psi="161.1" rama="Allowed" resname="GLN" resnum="144" rota="pt20" rscc="0.887" rsr="0.364" rsrz="2.122" said="C" seq="144"/>
+	<ModelledSubgroup NatomsEDS="6" altcode=" " avgoccu="1.000" chain="A" ent="3" icode=" " model="1" num-H-reduce="5" owab="80.390" phi="-73.1" psi="58.5" rama="Allowed" resname="SER" resnum="145" rota="OUTLIER" rscc="0.703" rsr="0.348" rsrz="2.539" said="C" seq="145"/>
+	<ModelledSubgroup NatomsEDS="5" altcode=" " avgoccu="1.000" chain="A" ent="3" icode=" " model="1" num-H-reduce="2" owab="75.720" phi="-168.2" psi="-53.1" rama="OUTLIER" resname="ASP" resnum="146" rscc="0.921" rsr="0.111" rsrz="-0.900" said="C" seq="146"/>
+	<ModelledSubgroup NatomsEDS="9" altcode=" " avgoccu="1.000" chain="A" ent="3" icode=" " model="1" num-H-reduce="6" owab="74.560" phi="-75.8" psi="-16.2" rama="Favored" resname="GLU" resnum="147" rota="pt-20" rscc="0.836" rsr="0.184" rsrz="-0.271" said="C" seq="147">
+		<angle-outlier atom0="OE1" atom1="CD" atom2="OE2" mean="123.300" obs="115.319" stdev="1.200" z="-6.65"/>
+		<bond-outlier atom0="CG" atom1="CD" mean="1.515" obs="1.605" stdev="0.015" z="6.02"/>
+	</ModelledSubgroup>
+	<ModelledSubgroup NatomsEDS="8" altcode=" " avgoccu="1.000" chain="A" ent="3" icode=" " model="1" num-H-reduce="11" owab="67.770" phi="-65.8" psi="-18.9" rama="Favored" resname="LEU" resnum="148" rota="tt" rscc="0.943" rsr="0.259" rsrz="0.955" said="C" seq="148"/>
+	<ModelledSubgroup NatomsEDS="6" altcode=" " avgoccu="1.000" chain="A" ent="3" icode=" " model="1" num-H-reduce="5" owab="55.790" phi="-79.9" psi="-7.8" rama="Favored" resname="SER" resnum="149" rota="OUTLIER" rscc="0.872" rsr="0.141" rsrz="-0.344" said="C" seq="149"/>
+	<ModelledSubgroup NatomsEDS="5" altcode=" " avgoccu="1.000" chain="A" ent="3" icode=" " model="1" num-H-reduce="5" owab="43.710" phi="-108.6" psi="5.7" rama="Favored" resname="ALA" resnum="150" rscc="0.953" rsr="0.102" rsrz="-0.941" said="C" seq="150"/>
+	<ModelledSubgroup NatomsEDS="7" altcode=" " avgoccu="1.000" chain="A" ent="3" icode=" " model="1" num-H-reduce="9" owab="35.760" phi="-58.9" psi="120.7" rama="Favored" resname="VAL" resnum="151" rota="t" rscc="0.964" rsr="0.148" rsrz="-0.491" said="C" seq="151"/>
+	<ModelledSubgroup NatomsEDS="7" altcode=" " avgoccu="1.000" chain="A" ent="3" icode=" " model="1" num-H-reduce="7" owab="30.610" phi="-122.4" psi="165.8" rama="Favored" resname="THR" resnum="152" rota="p" rscc="0.978" rsr="0.132" rsrz="-0.542" said="C" seq="152"/>
+	<ModelledSubgroup NatomsEDS="7" altcode=" " avgoccu="1.000" chain="A" ent="3" icode=" " model="1" num-H-reduce="9" owab="25.100" phi="-85.3" psi="152.8" rama="Favored" resname="VAL" resnum="153" rota="p" rscc="0.983" rsr="0.129" rsrz="-0.770" said="C" seq="153"/>
+	<ModelledSubgroup NatomsEDS="6" altcode=" " avgoccu="1.000" chain="A" ent="3" icode=" " model="1" num-H-reduce="5" owab="24.760" phi="-117.9" psi="115.2" rama="Favored" resname="SER" resnum="154" rota="t" rscc="0.958" rsr="0.157" rsrz="-0.121" said="C" seq="154"/>
+	<ModelledSubgroup NatomsEDS="4" altcode=" " avgoccu="1.000" chain="A" ent="3" icode=" " model="1" num-H-reduce="3" owab="23.870" phi="96.5" psi="-166.2" rama="Favored" resname="GLY" resnum="155" rscc="0.981" rsr="0.124" rsrz="-0.486" said="C" seq="155">
+		<bond-outlier atom0="CA" atom1="C" mean="1.514" obs="1.615" stdev="0.016" z="6.30"/>
+	</ModelledSubgroup>
+	<ModelledSubgroup NatomsEDS="10" altcode=" " avgoccu="1.000" chain="A" ent="3" icode=" " model="1" num-H-reduce="7" owab="23.830" phi="-73.9" psi="156.3" rama="Favored" resname="HIS" resnum="156" rota="m-70" rscc="0.964" rsr="0.131" rsrz="-0.615" said="C" seq="156"/>
+	<ModelledSubgroup NatomsEDS="7" altcode=" " avgoccu="1.000" chain="A" ent="3" icode=" " model="1" num-H-reduce="9" owab="22.460" phi="-118.0" psi="117.2" rama="Favored" resname="VAL" resnum="157" rota="t" rscc="0.967" rsr="0.155" rsrz="-0.389" said="C" seq="157"/>
+	<ModelledSubgroup NatomsEDS="12" altcode=" " avgoccu="1.000" chain="A" ent="3" icode=" " model="1" num-H-reduce="9" owab="21.790" phi="-49.8" psi="133.4" rama="Favored" resname="TYR" resnum="158" rota="t80" rscc="0.960" rsr="0.138" rsrz="-0.579" said="C" seq="158"/>
+	<ModelledSubgroup NatomsEDS="8" altcode=" " avgoccu="1.000" chain="A" ent="3" icode=" " model="1" num-H-reduce="6" owab="25.030" phi="63.5" psi="17.4" rama="Favored" resname="ASN" resnum="159" rota="t30" rscc="0.962" rsr="0.140" rsrz="-0.501" said="C" seq="159"/>
+	<ModelledSubgroup NatomsEDS="8" altcode=" " avgoccu="1.000" chain="A" ent="3" icode=" " model="1" num-H-reduce="6" owab="30.640" phi="58.6" psi="22.9" rama="Favored" resname="ASN" resnum="160" rota="t30" rscc="0.894" rsr="0.180" rsrz="0.048" said="C" seq="160"/>
+	<ModelledSubgroup NatomsEDS="9" altcode=" " avgoccu="1.000" chain="A" ent="3" icode=" " model="1" num-H-reduce="8" owab="28.740" phi="-62.2" psi="149.3" rama="Favored" resname="GLN" resnum="161" rota="tt0" rscc="0.964" rsr="0.116" rsrz="-0.990" said="C" seq="161">
+		<clash atom="NE2" cid="40" clashmag="0.51" dist="2.25"/>
+	</ModelledSubgroup>
+	<ModelledSubgroup NatomsEDS="6" altcode=" " avgoccu="1.000" chain="A" ent="3" icode=" " model="1" num-H-reduce="5" owab="30.350" phi="-81.1" psi="149.5" rama="Favored" resname="SER" resnum="162" rota="m" rscc="0.964" rsr="0.120" rsrz="-0.636" said="C" seq="162"/>
+	<ModelledSubgroup NatomsEDS="8" altcode=" " avgoccu="1.000" chain="A" ent="3" icode=" " model="1" num-H-reduce="11" owab="24.000" phi="-97.4" psi="143.5" rama="Favored" resname="ILE" resnum="163" rota="mt" rscc="0.973" rsr="0.121" rsrz="-1.007" said="C" seq="163"/>
+	<ModelledSubgroup NatomsEDS="8" altcode=" " avgoccu="1.000" chain="A" ent="3" icode=" " model="1" num-H-reduce="6" owab="24.550" phi="-122.1" psi="102.9" rama="Favored" resname="ASN" resnum="164" rota="t-20" rscc="0.983" rsr="0.126" rsrz="-0.694" said="C" seq="164">
+		<clash atom="H" cid="56" clashmag="0.47" dist="1.61"/>
+	</ModelledSubgroup>
+	<ModelledSubgroup NatomsEDS="8" altcode=" " avgoccu="1.000" chain="A" ent="3" icode=" " model="1" num-H-reduce="11" owab="27.760" phi="-63.1" psi="-12.7" rama="Favored" resname="LEU" resnum="165" rota="mt" rscc="0.947" rsr="0.151" rsrz="-0.577" said="C" seq="165"/>
+	<ModelledSubgroup NatomsEDS="8" altcode=" " avgoccu="1.000" chain="A" ent="3" icode=" " model="1" num-H-reduce="11" owab="33.920" phi="-92.7" psi="-13.8" rama="Favored" resname="LEU" resnum="166" rota="mt" rscc="0.965" rsr="0.176" rsrz="-0.223" said="C" seq="166"/>
+	<ModelledSubgroup NatomsEDS="8" altcode=" " avgoccu="1.000" chain="A" ent="3" icode=" " model="1" num-H-reduce="4" owab="32.130" phi="-79.5" psi="108.7" rama="Favored" resname="ASP" resnum="167" rota="t0" rscc="0.965" rsr="0.172" rsrz="-0.085" said="C" seq="167"/>
+	<ModelledSubgroup NatomsEDS="7" altcode=" " avgoccu="1.000" chain="A" ent="3" icode=" " model="1" num-H-reduce="9" owab="30.650" phi="-50.0" psi="-33.9" rama="Favored" resname="VAL" resnum="168" rota="p" rscc="0.981" rsr="0.219" rsrz="0.550" said="C" seq="168"/>
+	<ModelledSubgroup NatomsEDS="8" altcode=" " avgoccu="1.000" chain="A" ent="3" icode=" " model="1" num-H-reduce="11" owab="28.060" phi="-71.1" psi="-40.4" rama="Favored" resname="LEU" resnum="169" rota="mt" rscc="0.977" rsr="0.173" rsrz="-0.265" said="C" seq="169"/>
+	<ModelledSubgroup NatomsEDS="10" altcode=" " avgoccu="1.000" chain="A" ent="3" flippable-sidechain="1" icode=" " model="1" num-H-reduce="7" owab="23.740" phi="-58.1" psi="-41.3" rama="Favored" resname="HIS" resnum="170" rota="OUTLIER" rscc="0.976" rsr="0.138" rsrz="-0.515" said="C" seq="170">
+		<clash atom="HD2" cid="56" clashmag="0.47" dist="1.61"/>
+		<clash atom="CE1" cid="71" clashmag="0.44" dist="2.71"/>
+		<clash atom="HE1" cid="55" clashmag="0.47" dist="1.97"/>
+	</ModelledSubgroup>
+	<ModelledSubgroup NatomsEDS="8" altcode=" " avgoccu="1.000" chain="A" ent="3" icode=" " model="1" num-H-reduce="11" owab="23.660" phi="-63.7" psi="-49.2" rama="Favored" resname="ILE" resnum="171" rota="mm" rscc="0.990" rsr="0.186" rsrz="-0.044" said="C" seq="171"/>
+	<ModelledSubgroup NatomsEDS="11" altcode=" " avgoccu="1.000" chain="A" ent="3" icode=" " model="1" num-H-reduce="13" owab="32.350" phi="-60.5" psi="-46.9" rama="Favored" resname="ARG" resnum="172" rota="mtt-85" rscc="0.946" rsr="0.205" rsrz="0.009" said="C" seq="172">
+		<angle-outlier atom0="CG" atom1="CD" atom2="NE" mean="111.800" obs="100.616" stdev="2.100" z="-5.33"/>
+		<clash atom="NH1" cid="22" clashmag="0.62" dist="2.15"/>
+		<clash atom="HH12" cid="13" clashmag="0.68" dist="1.58"/>
+		<clash atom="HH12" cid="44" clashmag="0.50" dist="2.25"/>
+		<clash atom="HD3" cid="9" clashmag="0.72" dist="1.89"/>
+		<bond-outlier atom0="CD" atom1="NE" mean="1.460" obs="1.366" stdev="0.017" z="-5.52"/>
+		<bond-outlier atom0="CZ" atom1="NH2" mean="1.326" obs="1.399" stdev="0.013" z="5.61"/>
+	</ModelledSubgroup>
+	<ModelledSubgroup NatomsEDS="8" altcode=" " avgoccu="1.000" chain="A" ent="3" icode=" " model="1" num-H-reduce="11" owab="21.500" phi="-63.8" psi="-35.9" rama="Favored" resname="LEU" resnum="173" rota="mt" rscc="0.980" rsr="0.108" rsrz="-1.187" said="C" seq="173"/>
+	<ModelledSubgroup NatomsEDS="8" altcode=" " avgoccu="1.000" chain="A" ent="3" icode=" " model="1" num-H-reduce="11" owab="27.660" phi="-68.2" psi="-41.4" rama="Favored" resname="LEU" resnum="174" rota="mt" rscc="0.983" rsr="0.134" rsrz="-0.818" said="C" seq="174"/>
+	<ModelledSubgroup NatomsEDS="7" altcode=" " avgoccu="1.000" chain="A" ent="3" icode=" " model="1" num-H-reduce="9" owab="20.550" phi="-60.6" psi="-36.3" rama="Favored" resname="VAL" resnum="175" rota="t" rscc="0.967" rsr="0.112" rsrz="-1.019" said="C" seq="175"/>
+	<ModelledSubgroup NatomsEDS="4" altcode=" " avgoccu="1.000" chain="A" ent="3" icode=" " model="1" num-H-reduce="3" owab="24.390" phi="-61.3" psi="-35.9" rama="Favored" resname="GLY" resnum="176" rscc="0.963" rsr="0.130" rsrz="-0.406" said="C" seq="176"/>
+	<ModelledSubgroup NatomsEDS="6" altcode=" " avgoccu="1.000" chain="A" ent="3" icode=" " model="1" num-H-reduce="5" owab="23.720" phi="-75.0" psi="-27.3" rama="Favored" resname="SER" resnum="177" rota="p" rscc="0.974" rsr="0.146" rsrz="-0.274" said="C" seq="177"/>
+	<ModelledSubgroup NatomsEDS="9" altcode=" " avgoccu="1.000" chain="A" ent="3" icode=" " model="1" num-H-reduce="8" owab="29.640" phi="-68.8" psi="-39.4" rama="Favored" resname="GLN" resnum="178" rota="mt-30" rscc="0.929" rsr="0.164" rsrz="-0.388" said="C" seq="178"/>
+	<ModelledSubgroup NatomsEDS="8" altcode=" " avgoccu="1.000" chain="A" ent="3" icode=" " model="1" num-H-reduce="11" owab="25.030" phi="-62.4" psi="-38.7" rama="Favored" resname="ILE" resnum="179" rota="mm" rscc="0.973" rsr="0.173" rsrz="-0.237" said="C" seq="179">
+		<clash atom="HD12" cid="87" clashmag="0.43" dist="2.01"/>
+	</ModelledSubgroup>
+	<ModelledSubgroup NatomsEDS="5" altcode=" " avgoccu="1.000" chain="A" ent="3" icode=" " model="1" num-H-reduce="5" owab="19.800" phi="-60.9" psi="-44.0" rama="Favored" resname="ALA" resnum="180" rscc="0.980" rsr="0.122" rsrz="-0.651" said="C" seq="180"/>
+	<ModelledSubgroup NatomsEDS="5" altcode=" " avgoccu="1.000" chain="A" ent="3" icode=" " model="1" num-H-reduce="5" owab="20.350" phi="-64.1" psi="-38.8" rama="Favored" resname="ALA" resnum="181" rscc="0.985" rsr="0.121" rsrz="-0.666" said="C" seq="181"/>
+	<ModelledSubgroup NatomsEDS="9" altcode=" " avgoccu="1.000" chain="A" ent="3" icode=" " model="1" num-H-reduce="6" owab="24.310" phi="-66.5" psi="-40.4" rama="Favored" resname="GLU" resnum="182" rota="mt-10" rscc="0.972" rsr="0.124" rsrz="-0.993" said="C" seq="182"/>
+	<ModelledSubgroup NatomsEDS="8" altcode=" " avgoccu="1.000" chain="A" ent="3" icode=" " model="1" num-H-reduce="9" owab="19.650" phi="-55.2" psi="-57.1" rama="Favored" resname="MET" resnum="183" rota="mtt" rscc="0.984" rsr="0.149" rsrz="-0.348" said="C" seq="183"/>
+	<ModelledSubgroup NatomsEDS="11" altcode=" " avgoccu="1.000" chain="A" ent="3" icode=" " model="1" num-H-reduce="13" owab="22.270" phi="-55.8" psi="-38.2" rama="Favored" resname="ARG" resnum="184" rota="mtm105" rscc="0.968" rsr="0.156" rsrz="-0.602" said="C" seq="184">
+		<angle-outlier atom0="NE" atom1="CZ" atom2="NH1" mean="120.300" obs="124.937" stdev="0.500" z="9.27"/>
+		<angle-outlier atom0="NE" atom1="CZ" atom2="NH2" mean="120.300" obs="115.888" stdev="0.500" z="-8.82"/>
+		<clash atom="HD2" cid="67" clashmag="0.45" dist="2.17"/>
+		<bond-outlier atom0="CD" atom1="NE" mean="1.460" obs="1.340" stdev="0.017" z="-7.06"/>
+	</ModelledSubgroup>
+	<ModelledSubgroup NatomsEDS="9" altcode=" " avgoccu="1.000" chain="A" ent="3" icode=" " model="1" num-H-reduce="6" owab="37.420" phi="-65.8" psi="-46.7" rama="Favored" resname="GLU" resnum="185" rota="OUTLIER" rscc="0.908" rsr="0.176" rsrz="-0.367" said="C" seq="185">
+		<bond-outlier atom0="CD" atom1="OE2" mean="1.252" obs="1.336" stdev="0.011" z="7.61"/>
+	</ModelledSubgroup>
+	<ModelledSubgroup NatomsEDS="5" altcode=" " avgoccu="1.000" chain="A" ent="3" icode=" " model="1" num-H-reduce="5" owab="24.790" phi="-61.0" psi="-51.7" rama="Favored" resname="ALA" resnum="186" rscc="0.964" rsr="0.134" rsrz="-0.478" said="C" seq="186">
+		<bond-outlier atom0="CA" atom1="CB" mean="1.520" obs="1.347" stdev="0.021" z="-8.23"/>
+	</ModelledSubgroup>
+	<ModelledSubgroup NatomsEDS="8" altcode=" " avgoccu="1.000" chain="A" ent="3" icode=" " model="1" num-H-reduce="9" owab="32.760" phi="-48.4" psi="-40.3" rama="Favored" resname="MET" resnum="187" rota="mtm" rscc="0.977" rsr="0.166" rsrz="-0.096" said="C" seq="187"/>
+	<ModelledSubgroup NatomsEDS="12" altcode=" " avgoccu="1.000" chain="A" ent="3" icode=" " model="1" num-H-reduce="9" owab="26.810" phi="-77.1" psi="-50.1" rama="Favored" resname="TYR" resnum="188" rota="t80" rscc="0.960" rsr="0.157" rsrz="-0.290" said="C" seq="188">
+		<bond-outlier atom0="CD2" atom1="CE2" mean="1.389" obs="1.309" stdev="0.015" z="-5.36"/>
+		<bond-outlier atom0="CE2" atom1="CZ" mean="1.381" obs="1.313" stdev="0.013" z="-5.25"/>
+	</ModelledSubgroup>
+	<ModelledSubgroup NatomsEDS="8" altcode=" " avgoccu="1.000" chain="A" ent="3" icode=" " model="1" num-H-reduce="6" owab="26.740" phi="-61.3" psi="-36.4" rama="Favored" resname="ASN" resnum="189" rota="m-20" rscc="0.897" rsr="0.190" rsrz="0.185" said="C" seq="189">
+		<clash atom="HB3" cid="41" clashmag="0.51" dist="2.11"/>
+		<bond-outlier atom0="CB" atom1="CG" mean="1.506" obs="1.677" stdev="0.023" z="7.42"/>
+	</ModelledSubgroup>
+	<ModelledSubgroup NatomsEDS="9" altcode=" " avgoccu="1.000" chain="A" ent="3" icode=" " model="1" num-H-reduce="8" owab="22.160" phi="-94.2" psi="-33.9" rama="Favored" resname="GLN" resnum="190" rota="mt-30" rscc="0.967" rsr="0.144" rsrz="-0.639" said="C" seq="190"/>
+	<ModelledSubgroup NatomsEDS="8" altcode=" " avgoccu="1.000" chain="A" ent="3" icode=" " model="1" num-H-reduce="11" owab="20.810" phi="-126.3" psi="-4.3" rama="Favored" resname="LEU" resnum="191" rota="mt" rscc="0.951" rsr="0.175" rsrz="-0.237" said="C" seq="191"/>
+	<ModelledSubgroup NatomsEDS="4" altcode=" " avgoccu="1.000" chain="A" ent="3" icode=" " model="1" num-H-reduce="3" owab="23.830" phi="74.9" psi="20.2" rama="Favored" resname="GLY" resnum="192" rscc="0.983" rsr="0.122" rsrz="-0.513" said="C" seq="192"/>
+	<ModelledSubgroup NatomsEDS="8" altcode=" " avgoccu="1.000" chain="A" ent="3" icode=" " model="1" num-H-reduce="11" owab="22.570" phi="-117.1" psi="141.7" rama="Favored" resname="LEU" resnum="193" rota="mt" rscc="0.990" rsr="0.191" rsrz="-0.010" said="C" seq="193"/>
+	<ModelledSubgroup NatomsEDS="7" altcode=" " avgoccu="1.000" chain="A" ent="3" icode=" " model="1" num-H-reduce="7" owab="24.000" phi="-106.3" psi="154.9" rama="Favored" resname="THR" resnum="194" rota="p" rscc="0.967" rsr="0.127" rsrz="-0.615" said="C" seq="194"/>
+	<ModelledSubgroup NatomsEDS="4" altcode=" " avgoccu="1.000" chain="A" ent="3" icode=" " model="1" num-H-reduce="3" owab="22.060" phi="-173.1" psi="173.3" rama="Favored" resname="GLY" resnum="195" rscc="0.990" rsr="0.133" rsrz="-0.367" said="C" seq="195">
+		<clash atom="O" cid="67" clashmag="0.45" dist="2.17"/>
+	</ModelledSubgroup>
+	<ModelledSubgroup NatomsEDS="6" altcode=" " avgoccu="1.000" chain="A" ent="3" icode=" " model="1" num-H-reduce="5" owab="19.680" phi="-103.0" psi="160.6" rama="Favored" resname="CYS" resnum="196" rota="m" rscc="0.990" rsr="0.114" rsrz="-0.547" said="C" seq="196">
+		<clash atom="SG" cid="46" clashmag="0.49" dist="2.71"/>
+		<clash atom="HA" cid="81" clashmag="0.43" dist="2.18"/>
+	</ModelledSubgroup>
+	<ModelledSubgroup NatomsEDS="5" altcode=" " avgoccu="1.000" chain="A" ent="3" icode=" " model="1" num-H-reduce="5" owab="16.980" phi="-143.9" psi="153.8" rama="Favored" resname="ALA" resnum="197" rscc="0.984" rsr="0.109" rsrz="-0.839" said="C" seq="197"/>
+	<ModelledSubgroup NatomsEDS="4" altcode=" " avgoccu="1.000" chain="A" ent="3" icode=" " model="1" num-H-reduce="3" owab="19.490" phi="-138.3" psi="135.2" rama="Favored" resname="GLY" resnum="198" rscc="0.980" rsr="0.116" rsrz="-0.592" said="C" seq="198"/>
+	<ModelledSubgroup NatomsEDS="7" altcode=" " avgoccu="1.000" chain="A" ent="3" icode=" " model="1" num-H-reduce="9" owab="17.590" phi="-116.8" psi="128.7" rama="Favored" resname="VAL" resnum="199" rota="t" rscc="0.989" rsr="0.138" rsrz="-0.638" said="C" seq="199">
+		<bond-outlier atom0="CA" atom1="CB" mean="1.543" obs="1.423" stdev="0.021" z="-5.70"/>
+	</ModelledSubgroup>
+	<ModelledSubgroup NatomsEDS="5" altcode=" " avgoccu="1.000" chain="A" ent="3" icode=" " model="1" num-H-reduce="5" owab="17.560" phi="-152.9" psi="-176.0" rama="Favored" resname="ALA" resnum="200" rscc="0.986" rsr="0.121" rsrz="-0.666" said="C" seq="200"/>
+	<ModelledSubgroup NatomsEDS="6" altcode=" " avgoccu="1.000" chain="A" ent="3" icode=" " model="1" num-H-reduce="5" owab="19.330" phi="-94.8" psi="-6.3" rama="Favored" resname="SER" resnum="201" rota="p" rscc="0.967" rsr="0.175" rsrz="0.130" said="C" seq="201"/>
+	<ModelledSubgroup NatomsEDS="8" altcode=" " avgoccu="1.000" chain="A" ent="3" flippable-sidechain="1" icode=" " model="1" num-H-reduce="6" owab="15.910" phi="-149.2" psi="171.5" rama="Favored" resname="ASN" resnum="202" rota="OUTLIER" rscc="0.989" rsr="0.153" rsrz="-0.323" said="C" seq="202">
+		<clash atom="C" cid="12" clashmag="0.70" dist="1.94"/>
+		<clash atom="C" cid="54" clashmag="0.47" dist="2.62"/>
+		<clash atom="HD21" cid="23" clashmag="0.61" dist="1.49"/>
+		<clash atom="ND2" cid="26" clashmag="0.60" dist="2.00"/>
+		<clash atom="ND2" cid="54" clashmag="0.47" dist="2.62"/>
+		<clash atom="HD22" cid="12" clashmag="0.70" dist="1.94"/>
+		<bond-outlier atom0="CA" atom1="CB" mean="1.527" obs="1.396" stdev="0.026" z="-5.06"/>
+	</ModelledSubgroup>
+	<ModelledSubgroup NatomsEDS="9" altcode=" " avgoccu="1.000" chain="A" ent="3" icode=" " model="1" num-H-reduce="13" owab="22.840" phi="-59.0" psi="-45.5" rama="Favored" resname="LYS" resnum="203" rota="mtmt" rscc="0.967" rsr="0.162" rsrz="-0.667" said="C" seq="203"/>
+	<ModelledSubgroup NatomsEDS="8" altcode=" " avgoccu="1.000" chain="A" ent="3" icode=" " model="1" num-H-reduce="11" owab="18.490" phi="-58.4" psi="-57.0" rama="Favored" resname="LEU" resnum="204" rota="OUTLIER" rscc="0.966" rsr="0.191" rsrz="-0.010" said="C" seq="204">
+		<angle-outlier atom0="CB" atom1="CG" atom2="CD2" mean="111.000" obs="119.636" stdev="1.700" z="5.08"/>
+		<angle-outlier atom0="CA" atom1="CB" atom2="CG" mean="115.300" obs="130.014" stdev="2.300" z="6.40"/>
+		<clash atom="HD13" cid="79" clashmag="0.43" dist="2.00"/>
+	</ModelledSubgroup>
+	<ModelledSubgroup NatomsEDS="8" altcode=" " avgoccu="1.000" chain="A" ent="3" icode=" " model="1" num-H-reduce="11" owab="21.580" phi="-56.8" psi="-47.1" rama="Favored" resname="LEU" resnum="205" rota="OUTLIER" rscc="0.960" rsr="0.158" rsrz="-0.478" said="C" seq="205">
+		<clash atom="H" cid="23" clashmag="0.61" dist="1.49"/>
+		<clash atom="H" cid="26" clashmag="0.60" dist="2.00"/>
+		<clash atom="HD13" cid="79" clashmag="0.43" dist="2.00"/>
+	</ModelledSubgroup>
+	<ModelledSubgroup NatomsEDS="5" altcode=" " avgoccu="1.000" chain="A" ent="3" icode=" " model="1" num-H-reduce="5" owab="20.090" phi="-56.9" psi="-38.6" rama="Favored" resname="ALA" resnum="206" rscc="0.946" rsr="0.159" rsrz="-0.116" said="C" seq="206"/>
+	<ModelledSubgroup NatomsEDS="9" altcode=" " avgoccu="1.000" chain="A" ent="3" icode=" " model="1" num-H-reduce="13" owab="24.990" phi="-77.0" psi="-39.1" rama="Favored" resname="LYS" resnum="207" rota="tttt" rscc="0.951" rsr="0.203" rsrz="-0.200" said="C" seq="207">
+		<clash atom="NZ" cid="77" clashmag="0.44" dist="2.41"/>
+	</ModelledSubgroup>
+	<ModelledSubgroup NatomsEDS="8" altcode=" " avgoccu="1.000" chain="A" ent="3" icode=" " model="1" num-H-reduce="11" owab="15.370" phi="-64.8" psi="-43.3" rama="Favored" resname="LEU" resnum="208" rota="mt" rscc="0.982" rsr="0.145" rsrz="-0.662" said="C" seq="208"/>
+	<ModelledSubgroup NatomsEDS="7" altcode=" " avgoccu="1.000" chain="A" ent="3" icode=" " model="1" num-H-reduce="9" owab="17.520" phi="-81.7" psi="-12.1" rama="Favored" resname="VAL" resnum="209" rota="p" rscc="0.979" rsr="0.159" rsrz="-0.330" said="C" seq="209"/>
+	<ModelledSubgroup NatomsEDS="6" altcode=" " avgoccu="1.000" chain="A" ent="3" icode=" " model="1" num-H-reduce="5" owab="20.120" phi="-69.0" psi="-21.2" rama="Favored" resname="SER" resnum="210" rota="p" rscc="0.966" rsr="0.147" rsrz="-0.260" said="C" seq="210"/>
+	<ModelledSubgroup NatomsEDS="4" altcode=" " avgoccu="1.000" chain="A" ent="3" icode=" " model="1" num-H-reduce="3" owab="21.460" phi="-90.5" psi="-8.6" rama="Favored" resname="GLY" resnum="211" rscc="0.944" rsr="0.166" rsrz="0.072" said="C" seq="211"/>
+	<ModelledSubgroup NatomsEDS="7" altcode=" " avgoccu="1.000" chain="A" ent="3" icode=" " model="1" num-H-reduce="9" owab="23.470" phi="-60.7" psi="-36.6" rama="Favored" resname="VAL" resnum="212" rota="t" rscc="0.978" rsr="0.152" rsrz="-0.433" said="C" seq="212"/>
+	<ModelledSubgroup NatomsEDS="11" altcode=" " avgoccu="1.000" chain="A" ent="3" icode=" " model="1" num-H-reduce="9" owab="27.940" phi="-118.8" psi="97.0" rama="Favored" resname="PHE" resnum="213" rota="m-85" rscc="0.955" rsr="0.183" rsrz="0.004" said="C" seq="213">
+		<bond-outlier atom0="CG" atom1="CD2" mean="1.383" obs="1.471" stdev="0.015" z="5.85"/>
+		<bond-outlier atom0="C" atom1="O" mean="1.229" obs="1.133" stdev="0.019" z="-5.04"/>
+		<plane-outlier omega="-146.01" type="peptide"/>
+	</ModelledSubgroup>
+	<ModelledSubgroup NatomsEDS="9" altcode=" " avgoccu="1.000" chain="A" ent="3" icode=" " model="1" num-H-reduce="13" owab="40.750" phi="-75.8" psi="-53.6" rama="Favored" resname="LYS" resnum="214" rota="OUTLIER" rscc="0.792" rsr="0.362" rsrz="1.613" said="C" seq="214">
+		<clash atom="O" cid="46" clashmag="0.49" dist="2.71"/>
+		<bond-outlier atom0="CA" atom1="C" mean="1.525" obs="1.331" stdev="0.026" z="-7.46"/>
+	</ModelledSubgroup>
+	<ModelledSubgroup NatomsEDS="7" altcode=" " avgoccu="1.000" chain="A" ent="3" icode=" " model="1" num-H-reduce="7" owab="35.380" phi="-66.2" psi="-85.2" rama="OUTLIER" resname="PRO" resnum="215" rota="Cg_exo" rscc="0.818" rsr="0.239" rsrz="1.037" said="C" seq="215">
+		<angle-outlier atom0="CA" atom1="C" atom2="N" link="yes" mean="117.200" obs="128.292" stdev="2.200" z="5.04"/>
+		<angle-outlier atom0="N" atom1="CD" atom2="CG" mean="103.200" obs="94.536" stdev="1.500" z="-5.78"/>
+		<bond-outlier atom0="N" atom1="CA" mean="1.468" obs="1.556" stdev="0.017" z="5.20"/>
+	</ModelledSubgroup>
+	<ModelledSubgroup NatomsEDS="8" altcode=" " avgoccu="1.000" chain="A" ent="3" icode=" " model="1" num-H-reduce="6" owab="26.080" phi="-130.9" psi="76.2" rama="Allowed" resname="ASN" resnum="216" rota="t30" rscc="0.946" rsr="0.156" rsrz="-0.282" said="C" seq="216">
+		<bond-outlier atom0="N" atom1="CA" mean="1.459" obs="1.596" stdev="0.020" z="6.87"/>
+	</ModelledSubgroup>
+	<ModelledSubgroup NatomsEDS="9" altcode=" " avgoccu="1.000" chain="A" ent="3" icode=" " model="1" num-H-reduce="8" owab="24.620" phi="-147.8" psi="167.6" rama="Favored" resname="GLN" resnum="217" rota="mt-30" rscc="0.981" rsr="0.151" rsrz="-0.551" said="C" seq="217">
+		<clash atom="O" cid="81" clashmag="0.43" dist="2.18"/>
+	</ModelledSubgroup>
+	<ModelledSubgroup NatomsEDS="9" altcode=" " avgoccu="1.000" chain="A" ent="3" icode=" " model="1" num-H-reduce="8" owab="21.680" phi="-140.2" psi="146.3" rama="Favored" resname="GLN" resnum="218" rota="pt20" rscc="0.984" rsr="0.152" rsrz="-0.538" said="C" seq="218"/>
+	<ModelledSubgroup NatomsEDS="7" altcode=" " avgoccu="1.000" chain="A" ent="3" icode=" " model="1" num-H-reduce="7" owab="16.110" phi="-131.4" psi="144.5" rama="Favored" resname="THR" resnum="219" rota="m" rscc="0.972" rsr="0.139" rsrz="-0.440" said="C" seq="219"/>
+	<ModelledSubgroup NatomsEDS="7" altcode=" " avgoccu="1.000" chain="A" ent="3" icode=" " model="1" num-H-reduce="9" owab="16.250" phi="-124.9" psi="138.6" rama="Favored" resname="VAL" resnum="220" rota="p" rscc="0.975" rsr="0.133" rsrz="-0.711" said="C" seq="220"/>
+	<ModelledSubgroup NatomsEDS="8" altcode=" " avgoccu="1.000" chain="A" ent="3" icode=" " model="1" num-H-reduce="11" owab="16.120" phi="-104.9" psi="116.8" rama="Favored" resname="LEU" resnum="221" rota="tp" rscc="0.972" rsr="0.128" rsrz="-0.904" said="C" seq="221"/>
+	<ModelledSubgroup NatomsEDS="8" altcode=" " avgoccu="1.000" chain="A" ent="3" icode=" " model="1" num-H-reduce="11" owab="17.780" phi="-83.7" psi="147.9" rama="Favored" resname="LEU" resnum="222" rota="mt" rscc="0.964" rsr="0.130" rsrz="-0.875" said="C" seq="222"/>
+	<ModelledSubgroup NatomsEDS="7" altcode=" " avgoccu="1.000" chain="A" ent="3" icode=" " model="1" num-H-reduce="7" owab="18.270" phi="-48.5" psi="-38.5" rama="Favored" resname="PRO" resnum="223" rota="Cg_exo" rscc="0.979" rsr="0.140" rsrz="-0.387" said="C" seq="223"/>
+	<ModelledSubgroup NatomsEDS="9" altcode=" " avgoccu="1.000" chain="A" ent="3" icode=" " model="1" num-H-reduce="6" owab="26.340" phi="-62.0" psi="-10.5" rama="Favored" resname="GLU" resnum="224" rota="mp0" rscc="0.965" rsr="0.114" rsrz="-1.113" said="C" seq="224">
+		<clash atom="OE2" cid="55" clashmag="0.47" dist="1.97"/>
+		<clash atom="OE2" cid="71" clashmag="0.44" dist="2.71"/>
+		<clash atom="HB2" cid="40" clashmag="0.51" dist="2.25"/>
+	</ModelledSubgroup>
+	<ModelledSubgroup NatomsEDS="6" altcode=" " avgoccu="1.000" chain="A" ent="3" icode=" " model="1" num-H-reduce="5" owab="22.280" phi="-116.0" psi="14.5" rama="Favored" resname="SER" resnum="225" rota="m" rscc="0.977" rsr="0.120" rsrz="-0.636" said="C" seq="225">
+		<bond-outlier atom0="CB" atom1="OG" mean="1.418" obs="1.494" stdev="0.013" z="5.82"/>
+	</ModelledSubgroup>
+	<ModelledSubgroup NatomsEDS="6" altcode=" " avgoccu="1.000" chain="A" ent="3" icode=" " model="1" num-H-reduce="5" owab="24.680" phi="-57.2" psi="-53.4" rama="Favored" resname="CYS" resnum="226" rota="t" rscc="0.953" rsr="0.118" rsrz="-0.481" said="C" seq="226"/>
+	<ModelledSubgroup NatomsEDS="9" altcode=" " avgoccu="1.000" chain="A" ent="3" icode=" " model="1" num-H-reduce="8" owab="29.080" phi="-60.3" psi="-38.8" rama="Favored" resname="GLN" resnum="227" rota="mm-40" rscc="0.957" rsr="0.138" rsrz="-0.714" said="C" seq="227"/>
+	<ModelledSubgroup NatomsEDS="10" altcode=" " avgoccu="1.000" chain="A" ent="3" icode=" " model="1" num-H-reduce="7" owab="20.080" phi="-58.2" psi="-49.0" rama="Favored" resname="HIS" resnum="228" rota="t-80" rscc="0.975" rsr="0.127" rsrz="-0.672" said="C" seq="228"/>
+	<ModelledSubgroup NatomsEDS="8" altcode=" " avgoccu="1.000" chain="A" ent="3" icode=" " model="1" num-H-reduce="11" owab="20.540" phi="-58.7" psi="-53.2" rama="Favored" resname="LEU" resnum="229" rota="OUTLIER" rscc="0.974" rsr="0.138" rsrz="-0.762" said="C" seq="229"/>
+	<ModelledSubgroup NatomsEDS="8" altcode=" " avgoccu="1.000" chain="A" ent="3" icode=" " model="1" num-H-reduce="11" owab="25.520" phi="-62.3" psi="-39.1" rama="Favored" resname="ILE" resnum="230" rota="tp" rscc="0.974" rsr="0.143" rsrz="-0.681" said="C" seq="230"/>
+	<ModelledSubgroup NatomsEDS="10" altcode=" " avgoccu="1.000" chain="A" ent="3" icode=" " model="1" num-H-reduce="7" owab="24.520" phi="-81.8" psi="-9.2" rama="Favored" resname="HIS" resnum="231" rota="m-70" rscc="0.976" rsr="0.133" rsrz="-0.587" said="C" seq="231"/>
+	<ModelledSubgroup NatomsEDS="6" altcode=" " avgoccu="1.000" chain="A" ent="3" icode=" " model="1" num-H-reduce="5" owab="23.990" phi="-74.5" psi="-17.6" rama="Favored" resname="SER" resnum="232" rota="p" rscc="0.949" rsr="0.171" rsrz="0.074" said="C" seq="232"/>
+	<ModelledSubgroup NatomsEDS="8" altcode=" " avgoccu="1.000" chain="A" ent="3" icode=" " model="1" num-H-reduce="11" owab="27.240" phi="-62.6" psi="145.6" rama="Favored" resname="LEU" resnum="233" rota="mt" rscc="0.968" rsr="0.183" rsrz="-0.123" said="C" seq="233"/>
+	<ModelledSubgroup NatomsEDS="8" altcode=" " avgoccu="1.000" chain="A" ent="3" icode=" " model="1" num-H-reduce="6" owab="34.490" phi="-101.5" psi="-23.4" rama="Favored" resname="ASN" resnum="234" rota="m-20" rscc="0.970" rsr="0.164" rsrz="-0.172" said="C" seq="234"/>
+	<ModelledSubgroup NatomsEDS="10" altcode=" " avgoccu="1.000" chain="A" ent="3" flippable-sidechain="1" icode=" " model="1" num-H-reduce="7" owab="46.620" phi="-138.6" psi="141.9" rama="Favored" resname="HIS" resnum="235" rota="OUTLIER" rscc="0.860" rsr="0.229" rsrz="0.787" said="C" seq="235">
+		<clash atom="HD2" cid="66" clashmag="0.45" dist="1.99"/>
+	</ModelledSubgroup>
+	<ModelledSubgroup NatomsEDS="8" altcode=" " avgoccu="1.000" chain="A" ent="3" icode=" " model="1" num-H-reduce="11" owab="44.420" phi="-65.4" psi="-19.3" rama="Favored" resname="ILE" resnum="236" rota="OUTLIER" rscc="0.947" rsr="0.168" rsrz="-0.311" said="C" seq="236">
+		<clash atom="H" cid="98" clashmag="0.41" dist="1.60"/>
+		<clash atom="HG12" cid="98" clashmag="0.41" dist="1.60"/>
+	</ModelledSubgroup>
+	<ModelledSubgroup NatomsEDS="9" altcode=" " avgoccu="1.000" chain="A" ent="3" icode=" " model="1" num-H-reduce="13" owab="42.340" phi="-56.5" psi="-11.2" rama="Allowed" resname="LYS" resnum="237" rota="tmtt?" rscc="0.947" rsr="0.186" rsrz="-0.393" said="C" seq="237"/>
+	<ModelledSubgroup NatomsEDS="9" altcode=" " avgoccu="1.000" chain="A" ent="3" icode=" " model="1" num-H-reduce="6" owab="40.290" phi="-88.1" psi="-13.2" rama="Favored" resname="GLU" resnum="238" rota="mt-10" rscc="0.968" rsr="0.164" rsrz="-0.511" said="C" seq="238">
+		<clash atom="OE2" cid="66" clashmag="0.45" dist="1.99"/>
+		<clash atom="O" cid="31" clashmag="0.56" dist="2.05"/>
+		<bond-outlier atom0="CG" atom1="CD" mean="1.515" obs="1.595" stdev="0.015" z="5.32"/>
+	</ModelledSubgroup>
+	<ModelledSubgroup NatomsEDS="8" altcode=" " avgoccu="1.000" chain="A" ent="3" icode=" " model="1" num-H-reduce="11" owab="30.390" phi="-75.1" psi="116.5" rama="Favored" resname="ILE" resnum="239" rota="mt" rscc="0.965" rsr="0.155" rsrz="-0.504" said="C" seq="239"/>
+	<ModelledSubgroup NatomsEDS="7" altcode=" " avgoccu="1.000" chain="A" ent="3" icode=" " model="1" num-H-reduce="7" owab="35.560" phi="-49.1" psi="119.3" rama="Favored" resname="PRO" resnum="240" rota="Cg_exo" rscc="0.946" rsr="0.185" rsrz="0.260" said="C" seq="240">
+		<clash atom="HD3" cid="31" clashmag="0.56" dist="2.05"/>
+	</ModelledSubgroup>
+	<ModelledSubgroup NatomsEDS="4" altcode=" " avgoccu="1.000" chain="A" ent="3" icode=" " model="1" num-H-reduce="3" owab="40.260" phi="116.5" psi="-31.4" rama="Favored" resname="GLY" resnum="241" rscc="0.972" rsr="0.175" rsrz="0.191" said="C" seq="241"/>
+	<ModelledSubgroup NatomsEDS="8" altcode=" " avgoccu="1.000" chain="A" ent="3" icode=" " model="1" num-H-reduce="11" owab="42.210" phi="-97.7" psi="112.8" rama="Favored" resname="ILE" resnum="242" rota="mt" rscc="0.962" rsr="0.174" rsrz="-0.222" said="C" seq="242"/>
+	<ModelledSubgroup NatomsEDS="4" altcode=" " avgoccu="1.000" chain="A" ent="3" icode=" " model="1" num-H-reduce="3" owab="48.750" phi="-112.2" psi="-171.0" rama="Favored" resname="GLY" resnum="243" rscc="0.946" rsr="0.166" rsrz="0.072" said="C" seq="243"/>
+	<ModelledSubgroup NatomsEDS="12" altcode=" " avgoccu="1.000" chain="A" ent="3" icode=" " model="1" num-H-reduce="9" owab="60.480" phi="-35.8" psi="-41.2" rama="Allowed" resname="TYR" resnum="244" rota="t80" rscc="0.806" rsr="0.284" rsrz="1.646" said="C" seq="244">
+		<bond-outlier atom0="CG" atom1="CD2" mean="1.387" obs="1.456" stdev="0.013" z="5.31"/>
+	</ModelledSubgroup>
+	<ModelledSubgroup NatomsEDS="5" altcode=" " avgoccu="1.000" chain="A" ent="3" icode=" " model="1" num-H-reduce="2" owab="49.760" phi="-86.0" psi="-61.3" rama="Allowed" resname="LYS" resnum="245" rscc="0.957" rsr="0.153" rsrz="-0.770" said="C" seq="245"/>
+	<ModelledSubgroup NatomsEDS="7" altcode=" " avgoccu="1.000" chain="A" ent="3" icode=" " model="1" num-H-reduce="7" owab="46.630" phi="-50.4" psi="-38.5" rama="Favored" resname="THR" resnum="246" rota="OUTLIER" rscc="0.910" rsr="0.183" rsrz="0.201" said="C" seq="246">
+		<clash atom="CG2" cid="27" clashmag="0.59" dist="2.45"/>
+		<clash atom="HG22" cid="1" clashmag="0.93" dist="1.66"/>
+	</ModelledSubgroup>
+	<ModelledSubgroup NatomsEDS="5" altcode=" " avgoccu="1.000" chain="A" ent="3" icode=" " model="1" num-H-reduce="5" owab="49.660" phi="-53.1" psi="-54.0" rama="Favored" resname="ALA" resnum="247" rscc="0.957" rsr="0.090" rsrz="-1.114" said="C" seq="247">
+		<clash atom="O" cid="93" clashmag="0.42" dist="2.20"/>
+	</ModelledSubgroup>
+	<ModelledSubgroup NatomsEDS="9" altcode=" " avgoccu="1.000" chain="A" ent="3" icode=" " model="1" num-H-reduce="13" owab="57.510" phi="-55.8" psi="-42.4" rama="Favored" resname="LYS" resnum="248" rota="mmtt" rscc="0.926" rsr="0.302" rsrz="0.929" said="C" seq="248">
+		<bond-outlier atom0="CD" atom1="CE" mean="1.508" obs="1.670" stdev="0.025" z="6.47"/>
+	</ModelledSubgroup>
+	<ModelledSubgroup NatomsEDS="6" altcode=" " avgoccu="1.000" chain="A" ent="3" icode=" " model="1" num-H-reduce="5" owab="55.510" phi="-66.3" psi="-40.9" rama="Favored" resname="CYS" resnum="249" rota="m" rscc="0.918" rsr="0.242" rsrz="1.575" said="C" seq="249">
+		<clash atom="O" cid="14" clashmag="0.68" dist="1.92"/>
+	</ModelledSubgroup>
+	<ModelledSubgroup NatomsEDS="8" altcode=" " avgoccu="1.000" chain="A" ent="3" icode=" " model="1" num-H-reduce="11" owab="46.090" phi="-59.1" psi="-38.1" rama="Favored" resname="LEU" resnum="250" rota="mt" rscc="0.888" rsr="0.184" rsrz="-0.109" said="C" seq="250"/>
+	<ModelledSubgroup NatomsEDS="9" altcode=" " avgoccu="1.000" chain="A" ent="3" icode=" " model="1" num-H-reduce="6" owab="54.820" phi="-64.4" psi="-48.7" rama="Favored" resname="GLU" resnum="251" rota="mt-10" rscc="0.885" rsr="0.197" rsrz="-0.114" said="C" seq="251">
+		<clash atom="HG3" cid="93" clashmag="0.42" dist="2.20"/>
+		<bond-outlier atom0="CD" atom1="OE2" mean="1.252" obs="1.312" stdev="0.011" z="5.42"/>
+	</ModelledSubgroup>
+	<ModelledSubgroup NatomsEDS="5" altcode=" " avgoccu="1.000" chain="A" ent="3" icode=" " model="1" num-H-reduce="5" owab="47.750" phi="-52.8" psi="-25.4" rama="Favored" resname="ALA" resnum="252" rscc="0.972" rsr="0.137" rsrz="-0.434" said="C" seq="252"/>
+	<ModelledSubgroup NatomsEDS="8" altcode=" " avgoccu="1.000" chain="A" ent="3" icode=" " model="1" num-H-reduce="11" owab="44.040" phi="-92.3" psi="14.4" rama="Favored" resname="LEU" resnum="253" rota="mp" rscc="0.960" rsr="0.167" rsrz="-0.350" said="C" seq="253">
+		<clash atom="HD12" cid="14" clashmag="0.68" dist="1.92"/>
+	</ModelledSubgroup>
+	<ModelledSubgroup NatomsEDS="4" altcode=" " avgoccu="1.000" chain="A" ent="3" icode=" " model="1" num-H-reduce="3" owab="37.650" phi="76.6" psi="0.4" rama="Favored" resname="GLY" resnum="254" rscc="0.942" rsr="0.142" rsrz="-0.247" said="C" seq="254">
+		<bond-outlier atom0="C" atom1="O" mean="1.232" obs="1.151" stdev="0.016" z="-5.08"/>
+	</ModelledSubgroup>
+	<ModelledSubgroup NatomsEDS="8" altcode=" " avgoccu="1.000" chain="A" ent="3" icode=" " model="1" num-H-reduce="11" owab="34.790" phi="-86.5" psi="103.0" rama="Favored" resname="ILE" resnum="255" rota="mt" rscc="0.959" rsr="0.188" rsrz="-0.015" said="C" seq="255">
+		<bond-outlier atom0="CA" atom1="CB" mean="1.544" obs="1.419" stdev="0.023" z="-5.45"/>
+	</ModelledSubgroup>
+	<ModelledSubgroup NatomsEDS="8" altcode=" " avgoccu="1.000" chain="A" ent="3" icode=" " model="1" num-H-reduce="6" owab="37.280" phi="-113.6" psi="-43.2" rama="Favored" resname="ASN" resnum="256" rota="m-80" rscc="0.958" rsr="0.195" rsrz="0.254" said="C" seq="256">
+		<bond-outlier atom0="CB" atom1="CG" mean="1.506" obs="1.627" stdev="0.023" z="5.26"/>
+	</ModelledSubgroup>
+	<ModelledSubgroup NatomsEDS="6" altcode=" " avgoccu="1.000" chain="A" ent="3" icode=" " model="1" num-H-reduce="5" owab="25.890" phi="-92.9" psi="162.5" rama="Favored" resname="SER" resnum="257" rota="p" rscc="0.986" rsr="0.124" rsrz="-0.581" said="C" seq="257">
+		<bond-outlier atom0="CB" atom1="OG" mean="1.418" obs="1.346" stdev="0.013" z="-5.51"/>
+	</ModelledSubgroup>
+	<ModelledSubgroup NatomsEDS="7" altcode=" " avgoccu="1.000" chain="A" ent="3" icode=" " model="1" num-H-reduce="9" owab="24.030" phi="-56.5" psi="-32.6" rama="Favored" resname="VAL" resnum="258" rota="t" rscc="0.974" rsr="0.141" rsrz="-0.594" said="C" seq="258">
+		<bond-outlier atom0="CB" atom1="CG2" mean="1.524" obs="1.400" stdev="0.021" z="-5.89"/>
+	</ModelledSubgroup>
+	<ModelledSubgroup NatomsEDS="11" altcode=" " avgoccu="1.000" chain="A" ent="3" icode=" " model="1" num-H-reduce="13" owab="22.080" phi="-70.0" psi="-36.9" rama="Favored" resname="ARG" resnum="259" rota="ttm-85" rscc="0.971" rsr="0.159" rsrz="-0.565" said="C" seq="259"/>
+	<ModelledSubgroup NatomsEDS="8" altcode=" " avgoccu="1.000" chain="A" ent="3" icode=" " model="1" num-H-reduce="4" owab="29.330" phi="-58.2" psi="-49.4" rama="Favored" resname="ASP" resnum="260" rota="m-20" rscc="0.972" rsr="0.160" rsrz="-0.246" said="C" seq="260">
+		<angle-outlier atom0="CB" atom1="CG" atom2="OD1" mean="118.300" obs="123.446" stdev="0.900" z="5.72"/>
+	</ModelledSubgroup>
+	<ModelledSubgroup NatomsEDS="8" altcode=" " avgoccu="1.000" chain="A" ent="3" icode=" " model="1" num-H-reduce="11" owab="29.530" phi="-64.6" psi="-41.5" rama="Favored" resname="LEU" resnum="261" rota="tp" rscc="0.983" rsr="0.129" rsrz="-0.889" said="C" seq="261"/>
+	<ModelledSubgroup NatomsEDS="9" altcode=" " avgoccu="1.000" chain="A" ent="3" flippable-sidechain="1" icode=" " model="1" num-H-reduce="8" owab="34.400" phi="-46.8" psi="-56.3" rama="Favored" resname="GLN" resnum="262" rota="mt-30" rscc="0.953" rsr="0.134" rsrz="-0.764" said="C" seq="262"/>
+	<ModelledSubgroup NatomsEDS="7" altcode=" " avgoccu="1.000" chain="A" ent="3" icode=" " model="1" num-H-reduce="7" owab="32.340" phi="-87.9" psi="-7.6" rama="Favored" resname="THR" resnum="263" rota="p" rscc="0.946" rsr="0.144" rsrz="-0.367" said="C" seq="263">
+		<bond-outlier atom0="C" atom1="O" mean="1.229" obs="1.118" stdev="0.019" z="-5.83"/>
+	</ModelledSubgroup>
+	<ModelledSubgroup NatomsEDS="11" altcode=" " avgoccu="1.000" chain="A" ent="3" icode=" " model="1" num-H-reduce="9" owab="38.550" phi="-68.1" psi="149.9" rama="Favored" resname="PHE" resnum="264" rota="t80" rscc="0.963" rsr="0.164" rsrz="-0.269" said="C" seq="264"/>
+	<ModelledSubgroup NatomsEDS="6" altcode=" " avgoccu="1.000" chain="A" ent="3" icode=" " model="1" num-H-reduce="5" owab="42.770" phi="-58.4" psi="122.5" rama="Favored" resname="SER" resnum="265" rota="t" rscc="0.851" rsr="0.156" rsrz="-0.135" said="C" seq="265"/>
+	<ModelledSubgroup NatomsEDS="7" altcode=" " avgoccu="1.000" chain="A" ent="3" icode=" " model="1" num-H-reduce="7" owab="45.290" phi="-59.6" psi="-45.0" rama="Favored" resname="PRO" resnum="266" rota="Cg_exo" rscc="0.962" rsr="0.117" rsrz="-0.718" said="C" seq="266">
+		<clash atom="O" cid="47" clashmag="0.49" dist="2.13"/>
+	</ModelledSubgroup>
+	<ModelledSubgroup NatomsEDS="9" altcode=" " avgoccu="1.000" chain="A" ent="3" icode=" " model="1" num-H-reduce="13" owab="59.110" phi="-61.0" psi="-42.0" rama="Favored" resname="LYS" resnum="267" rota="mmtp" rscc="0.874" rsr="0.247" rsrz="0.302" said="C" seq="267"/>
+	<ModelledSubgroup NatomsEDS="8" altcode=" " avgoccu="1.000" chain="A" ent="3" icode=" " model="1" num-H-reduce="11" owab="53.450" phi="-70.0" psi="-36.7" rama="Favored" resname="ILE" resnum="268" rota="mt" rscc="0.962" rsr="0.179" rsrz="-0.148" said="C" seq="268"/>
+	<ModelledSubgroup NatomsEDS="8" altcode=" " avgoccu="1.000" chain="A" ent="3" icode=" " model="1" num-H-reduce="11" owab="52.050" phi="-72.4" psi="-42.9" rama="Favored" resname="LEU" resnum="269" rota="tp" rscc="0.925" rsr="0.203" rsrz="0.160" said="C" seq="269"/>
+	<ModelledSubgroup NatomsEDS="9" altcode=" " avgoccu="1.000" chain="A" ent="3" icode=" " model="1" num-H-reduce="6" owab="59.450" phi="-50.2" psi="-48.8" rama="Favored" resname="GLU" resnum="270" rota="tt0" rscc="0.860" rsr="0.150" rsrz="-0.680" said="C" seq="270">
+		<angle-outlier atom0="OE1" atom1="CD" atom2="OE2" mean="123.300" obs="117.109" stdev="1.200" z="-5.16"/>
+		<clash atom="HB2" cid="47" clashmag="0.49" dist="2.13"/>
+		<clash atom="HG2" cid="102" clashmag="0.41" dist="2.03"/>
+		<bond-outlier atom0="CG" atom1="CD" mean="1.515" obs="1.593" stdev="0.015" z="5.20"/>
+	</ModelledSubgroup>
+	<ModelledSubgroup NatomsEDS="5" altcode=" " avgoccu="1.000" chain="A" ent="3" icode=" " model="1" num-H-reduce="2" owab="61.890" phi="-89.6" psi="32.4" rama="Allowed" resname="LYS" resnum="271" rscc="0.924" rsr="0.163" rsrz="-0.656" said="C" seq="271"/>
+	<ModelledSubgroup NatomsEDS="9" altcode=" " avgoccu="1.000" chain="A" ent="3" icode=" " model="1" num-H-reduce="6" owab="62.030" phi="-159.9" psi="-8.4" rama="Allowed" resname="GLU" resnum="272" rota="tp10" rscc="0.896" rsr="0.163" rsrz="-0.523" said="C" seq="272"/>
+	<ModelledSubgroup NatomsEDS="8" altcode=" " avgoccu="1.000" chain="A" ent="3" icode=" " model="1" num-H-reduce="11" owab="58.090" phi="-131.5" psi="-15.2" rama="Favored" resname="LEU" resnum="273" rota="mt" rscc="0.937" rsr="0.150" rsrz="-0.591" said="C" seq="273"/>
+	<ModelledSubgroup NatomsEDS="4" altcode=" " avgoccu="1.000" chain="A" ent="3" icode=" " model="1" num-H-reduce="3" owab="54.200" phi="100.1" psi="147.0" rama="Favored" resname="GLY" resnum="274" rscc="0.969" rsr="0.114" rsrz="-0.619" said="C" seq="274"/>
+	<ModelledSubgroup NatomsEDS="8" altcode=" " avgoccu="1.000" chain="A" ent="3" icode=" " model="1" num-H-reduce="11" owab="54.240" phi="-49.3" psi="-29.6" rama="Favored" resname="ILE" resnum="275" rota="tt" rscc="0.929" rsr="0.182" rsrz="-0.104" said="C" seq="275">
+		<clash atom="HG13" cid="102" clashmag="0.41" dist="2.03"/>
+		<clash atom="HG12" cid="48" clashmag="0.48" dist="2.27"/>
+		<clash atom="HG12" cid="86" clashmag="0.43" dist="1.83"/>
+	</ModelledSubgroup>
+	<ModelledSubgroup NatomsEDS="6" altcode=" " avgoccu="1.000" chain="A" ent="3" icode=" " model="1" num-H-reduce="5" owab="50.270" phi="-75.4" psi="-63.3" rama="Allowed" resname="SER" resnum="276" rota="t" rscc="0.933" rsr="0.142" rsrz="-0.330" said="C" seq="276"/>
+	<ModelledSubgroup NatomsEDS="7" altcode=" " avgoccu="1.000" chain="A" ent="3" icode=" " model="1" num-H-reduce="9" owab="51.330" phi="-51.2" psi="-37.6" rama="Favored" resname="VAL" resnum="277" rota="t" rscc="0.946" rsr="0.128" rsrz="-0.784" said="C" seq="277"/>
+	<ModelledSubgroup NatomsEDS="5" altcode=" " avgoccu="1.000" chain="A" ent="3" icode=" " model="1" num-H-reduce="5" owab="46.900" phi="-88.6" psi="-34.5" rama="Favored" resname="ALA" resnum="278" rscc="0.964" rsr="0.143" rsrz="-0.347" said="C" seq="278"/>
+	<ModelledSubgroup NatomsEDS="9" altcode=" " avgoccu="1.000" chain="A" ent="3" flippable-sidechain="1" icode=" " model="1" num-H-reduce="8" owab="50.780" phi="-79.9" psi="-20.9" rama="Favored" resname="GLN" resnum="279" rota="tt0" rscc="0.909" rsr="0.192" rsrz="-0.036" said="C" seq="279">
+		<clash atom="NE2" cid="48" clashmag="0.48" dist="2.27"/>
+		<clash atom="HE21" cid="86" clashmag="0.43" dist="1.83"/>
+		<bond-outlier atom0="CG" atom1="CD" mean="1.506" obs="1.634" stdev="0.023" z="5.55"/>
+	</ModelledSubgroup>
+	<ModelledSubgroup NatomsEDS="11" altcode=" " avgoccu="1.000" chain="A" ent="3" icode=" " model="1" num-H-reduce="13" owab="49.270" phi="-76.3" psi="-49.9" rama="Favored" resname="ARG" resnum="280" rota="ttp85" rscc="0.909" rsr="0.174" rsrz="-0.378" said="C" seq="280">
+		<bond-outlier atom0="CZ" atom1="NH2" mean="1.326" obs="1.395" stdev="0.013" z="5.31"/>
+	</ModelledSubgroup>
+	<ModelledSubgroup NatomsEDS="8" altcode=" " avgoccu="1.000" chain="A" ent="3" icode=" " model="1" num-H-reduce="11" owab="34.300" phi="-70.0" psi="-24.4" rama="Favored" resname="ILE" resnum="281" rota="pt" rscc="0.987" rsr="0.153" rsrz="-0.533" said="C" seq="281"/>
+	<ModelledSubgroup NatomsEDS="9" altcode=" " avgoccu="1.000" chain="A" ent="3" icode=" " model="1" num-H-reduce="8" owab="37.510" phi="-66.8" psi="-40.4" rama="Favored" resname="GLN" resnum="282" rota="tt0" rscc="0.930" rsr="0.172" rsrz="-0.287" said="C" seq="282"/>
+	<ModelledSubgroup NatomsEDS="9" altcode=" " avgoccu="1.000" chain="A" ent="3" icode=" " model="1" num-H-reduce="13" owab="38.130" phi="-59.2" psi="-46.4" rama="Favored" resname="LYS" resnum="283" rota="mmmm" rscc="0.924" rsr="0.196" rsrz="-0.279" said="C" seq="283">
+		<clash atom="HE3" cid="3" clashmag="0.88" dist="1.73"/>
+		<clash atom="HA" cid="104" clashmag="0.40" dist="1.88"/>
+		<clash atom="HE2" cid="28" clashmag="0.57" dist="1.86"/>
+		<clash atom="HE2" cid="82" clashmag="0.43" dist="2.47"/>
+		<clash atom="CE" cid="18" clashmag="0.66" dist="2.43"/>
+		<clash atom="HD2" cid="104" clashmag="0.40" dist="1.88"/>
+		<bond-outlier atom0="CE" atom1="NZ" mean="1.486" obs="1.656" stdev="0.025" z="6.78"/>
+		<bond-outlier atom0="CD" atom1="CE" mean="1.508" obs="1.645" stdev="0.025" z="5.50"/>
+	</ModelledSubgroup>
+	<ModelledSubgroup NatomsEDS="8" altcode=" " avgoccu="1.000" chain="A" ent="3" icode=" " model="1" num-H-reduce="11" owab="25.680" phi="-54.3" psi="-37.8" rama="Favored" resname="LEU" resnum="284" rota="mt" rscc="0.978" rsr="0.183" rsrz="-0.123" said="C" seq="284"/>
+	<ModelledSubgroup NatomsEDS="6" altcode=" " avgoccu="1.000" chain="A" ent="3" icode=" " model="1" num-H-reduce="5" owab="30.720" phi="-65.7" psi="-16.4" rama="Favored" resname="SER" resnum="285" rota="p" rscc="0.955" rsr="0.155" rsrz="-0.149" said="C" seq="285"/>
+	<ModelledSubgroup NatomsEDS="11" altcode=" " avgoccu="1.000" chain="A" ent="3" icode=" " model="1" num-H-reduce="9" owab="28.580" phi="-103.0" psi="-4.1" rama="Favored" resname="PHE" resnum="286" rota="m-85" rscc="0.961" rsr="0.141" rsrz="-0.601" said="C" seq="286">
+		<bond-outlier atom0="CE2" atom1="CZ" mean="1.369" obs="1.486" stdev="0.019" z="6.16"/>
+		<bond-outlier atom0="CD1" atom1="CE1" mean="1.388" obs="1.531" stdev="0.020" z="7.13"/>
+	</ModelledSubgroup>
+	<ModelledSubgroup NatomsEDS="4" altcode=" " avgoccu="1.000" chain="A" ent="3" icode=" " model="1" num-H-reduce="3" owab="30.390" phi="91.8" psi="7.0" rama="Favored" resname="GLY" resnum="287" rscc="0.981" rsr="0.162" rsrz="0.019" said="C" seq="287"/>
+	<ModelledSubgroup NatomsEDS="9" altcode=" " avgoccu="1.000" chain="A" ent="3" icode=" " model="1" num-H-reduce="6" owab="65.870" phi="-97.1" psi="130.4" rama="Favored" resname="GLU" resnum="288" rota="mt-10" rscc="0.926" rsr="0.157" rsrz="-0.596" said="C" seq="288">
+		<clash atom="CB" cid="82" clashmag="0.43" dist="2.47"/>
+		<clash atom="HB3" cid="28" clashmag="0.57" dist="1.86"/>
+		<clash atom="OE1" cid="3" clashmag="0.88" dist="1.73"/>
+		<clash atom="OE1" cid="18" clashmag="0.66" dist="2.43"/>
+		<bond-outlier atom0="CD" atom1="OE2" mean="1.252" obs="1.343" stdev="0.011" z="8.27"/>
+		<bond-outlier atom0="CD" atom1="OE1" mean="1.252" obs="1.312" stdev="0.011" z="5.46"/>
+	</ModelledSubgroup>
+	<ModelledSubgroup NatomsEDS="8" altcode=" " avgoccu="1.000" chain="A" ent="3" icode=" " model="1" num-H-reduce="4" owab="57.930" phi="-161.0" psi="114.4" rama="Favored" resname="ASP" resnum="289" rota="t0" rscc="0.956" rsr="0.121" rsrz="-0.766" said="C" seq="289"/>
+	<ModelledSubgroup NatomsEDS="8" altcode=" " avgoccu="1.000" chain="A" ent="3" icode=" " model="1" num-H-reduce="6" owab="60.800" phi="-99.2" psi="0.3" rama="Favored" resname="ASN" resnum="290" rota="p30" rscc="0.904" rsr="0.162" rsrz="-0.199" said="C" seq="290">
+		<bond-outlier atom0="CB" atom1="CG" mean="1.506" obs="1.648" stdev="0.023" z="6.17"/>
+	</ModelledSubgroup>
+	<ModelledSubgroup NatomsEDS="6" altcode=" " avgoccu="1.000" chain="A" ent="3" icode=" " model="1" num-H-reduce="5" owab="53.140" phi="-63.9" psi="133.2" rama="Favored" resname="SER" resnum="291" rota="p" rscc="0.976" rsr="0.104" rsrz="-0.859" said="C" seq="291"/>
+	<ModelledSubgroup NatomsEDS="7" altcode=" " avgoccu="1.000" chain="A" ent="3" icode=" " model="1" num-H-reduce="7" owab="52.690" phi="-83.6" psi="161.8" rama="Favored" resname="PRO" resnum="292" rota="Cg_endo" rscc="0.970" rsr="0.103" rsrz="-0.919" said="C" seq="292"/>
+	<ModelledSubgroup NatomsEDS="7" altcode=" " avgoccu="1.000" chain="A" ent="3" icode=" " model="1" num-H-reduce="9" owab="52.290" phi="-75.2" psi="119.2" rama="Favored" resname="VAL" resnum="293" rota="t" rscc="0.968" rsr="0.137" rsrz="-0.652" said="C" seq="293">
+		<bond-outlier atom0="CB" atom1="CG1" mean="1.524" obs="1.396" stdev="0.021" z="-6.12"/>
+	</ModelledSubgroup>
+	<ModelledSubgroup NatomsEDS="8" altcode=" " avgoccu="1.000" chain="A" ent="3" icode=" " model="1" num-H-reduce="11" owab="60.600" phi="-99.8" psi="141.6" rama="Favored" resname="ILE" resnum="294" rota="mm" rscc="0.972" rsr="0.171" rsrz="-0.267" said="C" seq="294"/>
+	<ModelledSubgroup NatomsEDS="8" altcode=" " avgoccu="1.000" chain="A" ent="3" icode=" " model="1" num-H-reduce="11" owab="59.750" phi="-64.1" psi="109.8" rama="Allowed" resname="LEU" resnum="295" rota="OUTLIER" rscc="0.969" rsr="0.176" rsrz="-0.223" said="C" seq="295"/>
+	<ModelledSubgroup NatomsEDS="6" altcode=" " avgoccu="1.000" chain="A" ent="3" icode=" " model="1" num-H-reduce="5" owab="54.620" phi="-70.3" psi="-38.8" rama="Favored" resname="SER" resnum="296" rota="m" rscc="0.961" rsr="0.146" rsrz="-0.274" said="C" seq="296"/>
+	<ModelledSubgroup NatomsEDS="4" altcode=" " avgoccu="1.000" chain="A" ent="3" icode=" " model="1" num-H-reduce="3" owab="49.850" phi="57.5" psi="-152.7" rama="Favored" resname="GLY" resnum="297" rscc="0.968" rsr="0.136" rsrz="-0.327" said="C" seq="297">
+		<bond-outlier atom0="N" atom1="CA" mean="1.456" obs="1.360" stdev="0.015" z="-6.40"/>
+	</ModelledSubgroup>
+	<ModelledSubgroup NatomsEDS="7" altcode=" " avgoccu="1.000" chain="A" ent="3" icode=" " model="1" num-H-reduce="7" owab="31.700" phi="-71.5" psi="155.8" rama="Favored" resname="PRO" resnum="298" rota="Cg_exo" rscc="0.977" rsr="0.126" rsrz="-0.588" said="C" seq="298">
+		<clash atom="HA" cid="90" clashmag="0.42" dist="1.84"/>
+	</ModelledSubgroup>
+	<ModelledSubgroup NatomsEDS="7" altcode=" " avgoccu="1.000" chain="A" ent="3" icode=" " model="1" num-H-reduce="7" owab="33.170" phi="-60.8" psi="154.6" rama="Favored" resname="PRO" resnum="299" rota="Cg_exo" rscc="0.966" rsr="0.133" rsrz="-0.488" said="C" seq="299">
+		<clash atom="O" cid="49" clashmag="0.48" dist="2.47"/>
+		<clash atom="HG3" cid="107" clashmag="0.40" dist="2.22"/>
+		<clash atom="HD3" cid="90" clashmag="0.42" dist="1.84"/>
+	</ModelledSubgroup>
+	<ModelledSubgroup NatomsEDS="9" altcode=" " avgoccu="1.000" chain="A" ent="3" icode=" " model="1" num-H-reduce="8" owab="51.180" phi="-103.3" psi="3.2" rama="Favored" resname="GLN" resnum="300" rota="mm-40" rscc="0.911" rsr="0.172" rsrz="-0.287" said="C" seq="300"/>
+	<ModelledSubgroup NatomsEDS="6" altcode=" " avgoccu="1.000" chain="A" ent="3" icode=" " model="1" num-H-reduce="5" owab="48.320" phi="-171.0" psi="157.7" rama="Favored" resname="SER" resnum="301" rota="p" rscc="0.941" rsr="0.124" rsrz="-0.581" said="C" seq="301">
+		<clash atom="OG" cid="63" clashmag="0.46" dist="2.33"/>
+	</ModelledSubgroup>
+	<ModelledSubgroup NatomsEDS="11" altcode=" " avgoccu="1.000" chain="A" ent="3" icode=" " model="1" num-H-reduce="9" owab="56.740" phi="-136.8" psi="121.5" rama="Favored" resname="PHE" resnum="302" rota="m-85" rscc="0.928" rsr="0.249" rsrz="0.955" said="C" seq="302">
+		<bond-outlier atom0="CD1" atom1="CE1" mean="1.388" obs="1.519" stdev="0.020" z="6.56"/>
+	</ModelledSubgroup>
+	<ModelledSubgroup NatomsEDS="6" altcode=" " avgoccu="1.000" chain="A" ent="3" icode=" " model="1" num-H-reduce="5" owab="43.970" phi="-138.0" psi="159.7" rama="Favored" resname="SER" resnum="303" rota="p" rscc="0.944" rsr="0.152" rsrz="-0.191" said="C" seq="303"/>
+	<ModelledSubgroup NatomsEDS="9" altcode=" " avgoccu="1.000" chain="A" ent="3" icode=" " model="1" num-H-reduce="6" owab="53.810" phi="-128.0" psi="163.1" rama="Favored" resname="GLU" resnum="304" rota="mm-40" rscc="0.944" rsr="0.200" rsrz="-0.078" said="C" seq="304">
+		<clash atom="HG3" cid="45" clashmag="0.49" dist="1.94"/>
+		<bond-outlier atom0="CD" atom1="OE1" mean="1.252" obs="1.333" stdev="0.011" z="7.39"/>
+		<bond-outlier atom0="CD" atom1="OE2" mean="1.252" obs="1.310" stdev="0.011" z="5.30"/>
+	</ModelledSubgroup>
+	<ModelledSubgroup NatomsEDS="9" altcode=" " avgoccu="1.000" chain="A" ent="3" icode=" " model="1" num-H-reduce="6" owab="44.960" phi="-153.0" psi="169.5" rama="Favored" resname="GLU" resnum="305" rota="tt0" rscc="0.945" rsr="0.142" rsrz="-0.776" said="C" seq="305"/>
+	<ModelledSubgroup NatomsEDS="8" altcode=" " avgoccu="1.000" chain="A" ent="3" icode=" " model="1" num-H-reduce="4" owab="54.970" phi="-166.7" psi="133.5" rama="Favored" resname="ASP" resnum="306" rota="t0" rscc="0.853" rsr="0.198" rsrz="0.262" said="C" seq="306">
+		<angle-outlier atom0="CB" atom1="CG" atom2="OD1" mean="118.300" obs="122.809" stdev="0.900" z="5.01"/>
+	</ModelledSubgroup>
+	<ModelledSubgroup NatomsEDS="6" altcode=" " avgoccu="1.000" chain="A" ent="3" icode=" " model="1" num-H-reduce="5" owab="56.670" phi="-105.0" psi="166.5" rama="Favored" resname="SER" resnum="307" rota="OUTLIER" rscc="0.915" rsr="0.128" rsrz="-0.525" said="C" seq="307"/>
+	<ModelledSubgroup NatomsEDS="11" altcode=" " avgoccu="1.000" chain="A" ent="3" icode=" " model="1" num-H-reduce="9" owab="63.480" phi="170.5" psi="128.0" rama="OUTLIER" resname="PHE" resnum="308" rota="p90" rscc="0.911" rsr="0.181" rsrz="-0.024" said="C" seq="308">
+		<clash atom="CD1" cid="72" clashmag="0.44" dist="2.69"/>
+		<clash atom="CE1" cid="94" clashmag="0.42" dist="2.55"/>
+		<clash atom="O" cid="72" clashmag="0.44" dist="2.69"/>
+		<clash atom="CZ" cid="68" clashmag="0.45" dist="2.52"/>
+		<clash atom="HB2" cid="6" clashmag="0.75" dist="1.69"/>
+		<clash atom="HB2" cid="57" clashmag="0.47" dist="2.42"/>
+	</ModelledSubgroup>
+	<ModelledSubgroup NatomsEDS="9" altcode=" " avgoccu="1.000" chain="A" ent="3" icode=" " model="1" num-H-reduce="13" owab="69.120" phi="-101.9" psi="117.0" rama="Favored" resname="LYS" resnum="309" rota="mmtp" rscc="0.874" rsr="0.288" rsrz="0.770" said="C" seq="309">
+		<clash atom="HE3" cid="36" clashmag="0.53" dist="2.08"/>
+	</ModelledSubgroup>
+	<ModelledSubgroup NatomsEDS="5" altcode=" " avgoccu="1.000" chain="A" ent="3" icode=" " model="1" num-H-reduce="2" owab="72.390" phi="27.7" psi="30.3" rama="OUTLIER" resname="LYS" resnum="310" rscc="0.634" rsr="0.367" rsrz="1.670" said="C" seq="310">
+		<bond-outlier atom0="CA" atom1="CB" mean="1.535" obs="1.694" stdev="0.022" z="7.24"/>
+	</ModelledSubgroup>
+	<ModelledSubgroup NatomsEDS="6" altcode=" " avgoccu="1.000" chain="A" ent="3" icode=" " model="1" num-H-reduce="5" owab="74.970" phi="-63.2" psi="-9.8" rama="Favored" resname="CYS" resnum="311" rota="m" rscc="0.738" rsr="0.318" rsrz="2.836" said="C" seq="311">
+		<clash atom="CB" cid="57" clashmag="0.47" dist="2.42"/>
+		<clash atom="HB2" cid="6" clashmag="0.75" dist="1.69"/>
+	</ModelledSubgroup>
+	<ModelledSubgroup NatomsEDS="6" altcode=" " avgoccu="1.000" chain="A" ent="3" icode=" " model="1" num-H-reduce="5" owab="76.490" phi="-89.8" psi="89.2" rama="Favored" resname="SER" resnum="312" rota="OUTLIER" rscc="0.470" rsr="0.327" rsrz="2.247" said="C" seq="312"/>
+	<ModelledSubgroup NatomsEDS="6" altcode=" " avgoccu="1.000" chain="A" ent="3" icode=" " model="1" num-H-reduce="5" owab="80.850" phi="-25.9" psi="-86.4" rama="OUTLIER" resname="SER" resnum="313" rota="OUTLIER" rscc="0.466" rsr="0.304" rsrz="1.926" said="C" seq="313"/>
+	<ModelledSubgroup NatomsEDS="9" altcode=" " avgoccu="1.000" chain="A" ent="3" icode=" " model="1" num-H-reduce="6" owab="83.780" phi="174.6" psi="41.7" rama="OUTLIER" resname="GLU" resnum="314" rota="OUTLIER" rscc="0.584" rsr="0.290" rsrz="1.005" said="C" seq="314">
+		<bond-outlier atom0="CB" atom1="CG" mean="1.517" obs="1.614" stdev="0.019" z="5.12"/>
+	</ModelledSubgroup>
+	<ModelledSubgroup NatomsEDS="5" altcode=" " avgoccu="1.000" chain="A" ent="3" icode=" " model="1" num-H-reduce="2" owab="81.590" phi="151.3" psi="-4.8" rama="OUTLIER" resname="VAL" resnum="315" rscc="0.903" rsr="0.142" rsrz="-0.579" said="C" seq="315"/>
+	<ModelledSubgroup NatomsEDS="5" altcode=" " avgoccu="1.000" chain="A" ent="3" icode=" " model="1" num-H-reduce="2" owab="82.660" phi="-68.1" psi="-8.1" rama="Favored" resname="GLU" resnum="316" rscc="0.874" rsr="0.255" rsrz="0.584" said="C" seq="316"/>
+	<ModelledSubgroup NatomsEDS="5" altcode=" " avgoccu="1.000" chain="A" ent="3" icode=" " model="1" num-H-reduce="5" owab="79.410" phi="-120.8" psi="46.3" rama="Favored" resname="ALA" resnum="317" rscc="0.855" rsr="0.210" rsrz="0.622" said="C" seq="317"/>
+	<ModelledSubgroup NatomsEDS="9" altcode=" " avgoccu="1.000" chain="A" ent="3" icode=" " model="1" num-H-reduce="13" owab="73.490" phi="-93.8" psi="-19.4" rama="Favored" resname="LYS" resnum="318" rota="tttt" rscc="0.892" rsr="0.206" rsrz="-0.165" said="C" seq="318">
+		<clash atom="HB2" cid="105" clashmag="0.40" dist="2.51"/>
+	</ModelledSubgroup>
+	<ModelledSubgroup NatomsEDS="8" altcode=" " avgoccu="1.000" chain="A" ent="3" icode=" " model="1" num-H-reduce="6" owab="74.810" phi="-69.1" psi="-33.4" rama="Favored" resname="ASN" resnum="319" rota="m120" rscc="0.842" rsr="0.235" rsrz="0.804" said="C" seq="319"/>
+	<ModelledSubgroup NatomsEDS="9" altcode=" " avgoccu="1.000" chain="A" ent="3" icode=" " model="1" num-H-reduce="13" owab="68.190" phi="-60.4" psi="-36.6" rama="Favored" resname="LYS" resnum="320" rota="mmtp" rscc="0.893" rsr="0.189" rsrz="-0.359" said="C" seq="320"/>
+	<ModelledSubgroup NatomsEDS="8" altcode=" " avgoccu="1.000" chain="A" ent="3" icode=" " model="1" num-H-reduce="11" owab="66.580" phi="-75.2" psi="-36.8" rama="Favored" resname="ILE" resnum="321" rota="mt" rscc="0.963" rsr="0.148" rsrz="-0.607" said="C" seq="321"/>
+	<ModelledSubgroup NatomsEDS="9" altcode=" " avgoccu="1.000" chain="A" ent="3" icode=" " model="1" num-H-reduce="6" owab="71.430" phi="-64.9" psi="-34.8" rama="Favored" resname="GLU" resnum="322" rota="mt-10" rscc="0.891" rsr="0.255" rsrz="0.584" said="C" seq="322"/>
+	<ModelledSubgroup NatomsEDS="9" altcode=" " avgoccu="1.000" chain="A" ent="3" icode=" " model="1" num-H-reduce="6" owab="70.930" phi="-56.2" psi="-60.5" rama="Favored" resname="GLU" resnum="323" rota="mm-40" rscc="0.895" rsr="0.164" rsrz="-0.511" said="C" seq="323"/>
+	<ModelledSubgroup NatomsEDS="8" altcode=" " avgoccu="1.000" chain="A" ent="3" icode=" " model="1" num-H-reduce="11" owab="63.120" phi="-49.0" psi="-39.6" rama="Favored" resname="LEU" resnum="324" rota="mt" rscc="0.950" rsr="0.203" rsrz="0.160" said="C" seq="324"/>
+	<ModelledSubgroup NatomsEDS="8" altcode=" " avgoccu="1.000" chain="A" ent="3" icode=" " model="1" num-H-reduce="11" owab="68.030" phi="-65.8" psi="-55.7" rama="Favored" resname="LEU" resnum="325" rota="mp" rscc="0.967" rsr="0.219" rsrz="0.387" said="C" seq="325">
+		<clash atom="O" cid="43" clashmag="0.50" dist="2.46"/>
+		<clash atom="HD11" cid="10" clashmag="0.72" dist="1.72"/>
+		<clash atom="HD11" cid="21" clashmag="0.62" dist="2.28"/>
+	</ModelledSubgroup>
+	<ModelledSubgroup NatomsEDS="5" altcode=" " avgoccu="1.000" chain="A" ent="3" icode=" " model="1" num-H-reduce="5" owab="70.460" phi="-35.9" psi="-59.8" rama="Allowed" resname="ALA" resnum="326" rscc="0.961" rsr="0.174" rsrz="0.101" said="C" seq="326">
+		<clash atom="C" cid="43" clashmag="0.50" dist="2.46"/>
+	</ModelledSubgroup>
+	<ModelledSubgroup NatomsEDS="6" altcode=" " avgoccu="1.000" chain="A" ent="3" icode=" " model="1" num-H-reduce="5" owab="71.720" phi="-57.8" psi="-58.3" rama="Favored" resname="SER" resnum="327" rota="m" rscc="0.869" rsr="0.181" rsrz="0.213" said="C" seq="327"/>
+	<ModelledSubgroup NatomsEDS="8" altcode=" " avgoccu="1.000" chain="A" ent="3" icode=" " model="1" num-H-reduce="11" owab="71.450" phi="-54.8" psi="-47.5" rama="Favored" resname="LEU" resnum="328" rota="mt" rscc="0.938" rsr="0.307" rsrz="1.635" said="C" seq="328">
+		<clash atom="HG" cid="45" clashmag="0.49" dist="1.94"/>
+	</ModelledSubgroup>
+	<ModelledSubgroup NatomsEDS="8" altcode=" " avgoccu="1.000" chain="A" ent="3" icode=" " model="1" num-H-reduce="11" owab="75.820" phi="-47.3" psi="-54.4" rama="Favored" resname="LEU" resnum="329" rota="mp" rscc="0.919" rsr="0.354" rsrz="2.302" said="C" seq="329"/>
+	<ModelledSubgroup NatomsEDS="8" altcode=" " avgoccu="1.000" chain="A" ent="3" icode=" " model="1" num-H-reduce="6" owab="78.560" phi="-51.9" psi="-59.4" rama="Favored" resname="ASN" resnum="330" rota="t-20" rscc="0.875" rsr="0.153" rsrz="-0.323" said="C" seq="330">
+		<clash atom="O" cid="75" clashmag="0.44" dist="2.18"/>
+	</ModelledSubgroup>
+	<ModelledSubgroup NatomsEDS="11" altcode=" " avgoccu="1.000" chain="A" ent="3" icode=" " model="1" num-H-reduce="13" owab="75.690" phi="-40.1" psi="-69.7" rama="Allowed" resname="ARG" resnum="331" rota="mtm180" rscc="0.882" rsr="0.222" rsrz="0.221" said="C" seq="331"/>
+	<ModelledSubgroup NatomsEDS="7" altcode=" " avgoccu="1.000" chain="A" ent="3" icode=" " model="1" num-H-reduce="9" owab="90.670" phi="-50.4" psi="-26.4" rama="Favored" resname="VAL" resnum="332" rota="t" rscc="0.863" rsr="0.566" rsrz="5.638" said="C" seq="332">
+		<clash atom="CG1" cid="39" clashmag="0.52" dist="2.40"/>
+	</ModelledSubgroup>
+	<ModelledSubgroup NatomsEDS="6" altcode=" " avgoccu="1.000" chain="A" ent="3" icode=" " model="1" num-H-reduce="5" owab="94.870" phi="-63.6" psi="-67.5" rama="Allowed" resname="CYS" resnum="333" rota="t" rscc="0.811" rsr="0.310" rsrz="2.703" said="C" seq="333">
+		<clash atom="HB3" cid="75" clashmag="0.44" dist="2.18"/>
+	</ModelledSubgroup>
+	<ModelledSubgroup NatomsEDS="9" altcode=" " avgoccu="1.000" chain="A" ent="3" flippable-sidechain="1" icode=" " model="1" num-H-reduce="8" owab="94.850" phi="-24.7" psi="-52.1" rama="OUTLIER" resname="GLN" resnum="334" rota="mm100" rscc="0.723" rsr="0.276" rsrz="1.018" said="C" seq="334">
+		<clash atom="HB3" cid="99" clashmag="0.41" dist="1.51"/>
+		<clash atom="HE21" cid="99" clashmag="0.41" dist="1.51"/>
+	</ModelledSubgroup>
+	<ModelledSubgroup NatomsEDS="8" altcode=" " avgoccu="1.000" chain="A" ent="3" icode=" " model="1" num-H-reduce="4" owab="94.980" phi="-57.6" psi="-43.0" rama="Favored" resname="ASP" resnum="335" rota="t70" rscc="0.667" rsr="0.444" rsrz="3.546" said="C" seq="335">
+		<clash atom="OD2" cid="7" clashmag="0.73" dist="2.21"/>
+	</ModelledSubgroup>
+	<ModelledSubgroup NatomsEDS="4" altcode=" " avgoccu="1.000" chain="A" ent="3" icode=" " model="1" num-H-reduce="3" owab="90.210" phi="115.3" psi="-69.0" rama="Allowed" resname="GLY" resnum="336" rscc="0.770" rsr="0.336" rsrz="2.329" said="C" seq="336"/>
+	<ModelledSubgroup NatomsEDS="11" altcode=" " avgoccu="1.000" chain="A" ent="3" icode=" " model="1" num-H-reduce="13" owab="86.380" phi="-42.8" psi="141.8" rama="Allowed" resname="ARG" resnum="337" rota="mtp180" rscc="0.734" rsr="0.272" rsrz="0.844" said="C" seq="337">
+		<angle-outlier atom0="NE" atom1="CZ" atom2="NH1" mean="120.300" obs="123.232" stdev="0.500" z="5.86"/>
+		<clash atom="HG2" cid="32" clashmag="0.56" dist="2.26"/>
+		<clash atom="NH1" cid="7" clashmag="0.73" dist="2.21"/>
+		<clash atom="NH2" cid="49" clashmag="0.48" dist="2.47"/>
+	</ModelledSubgroup>
+	<ModelledSubgroup NatomsEDS="5" altcode=" " avgoccu="1.000" chain="A" ent="3" icode=" " model="1" num-H-reduce="2" owab="81.810" phi="-112.7" psi="143.4" rama="Favored" resname="LYS" resnum="338" rscc="0.890" rsr="0.229" rsrz="0.097" said="C" seq="338"/>
+	<ModelledSubgroup NatomsEDS="7" altcode=" " avgoccu="1.000" chain="A" ent="3" icode=" " model="1" num-H-reduce="7" owab="74.520" phi="-74.7" psi="147.1" rama="Favored" resname="PRO" resnum="339" rota="Cg_endo" rscc="0.955" rsr="0.141" rsrz="-0.373" said="C" seq="339">
+		<clash atom="HD3" cid="39" clashmag="0.52" dist="2.40"/>
+	</ModelledSubgroup>
+	<ModelledSubgroup NatomsEDS="10" altcode=" " avgoccu="1.000" chain="A" ent="3" icode=" " model="1" num-H-reduce="7" owab="74.270" phi="-110.7" psi="7.5" rama="Favored" resname="HIS" resnum="340" rota="m170" rscc="0.871" rsr="0.231" rsrz="0.815" said="C" seq="340"/>
+	<ModelledSubgroup NatomsEDS="7" altcode=" " avgoccu="1.000" chain="A" ent="3" icode=" " model="1" num-H-reduce="7" owab="60.300" phi="-150.6" psi="144.1" rama="Favored" resname="THR" resnum="341" rota="m" rscc="0.965" rsr="0.141" rsrz="-0.411" said="C" seq="341"/>
+	<ModelledSubgroup NatomsEDS="7" altcode=" " avgoccu="1.000" chain="A" ent="3" icode=" " model="1" num-H-reduce="9" owab="57.070" phi="-119.1" psi="160.4" rama="Favored" resname="VAL" resnum="342" rota="p" rscc="0.915" rsr="0.242" rsrz="0.887" said="C" seq="342">
+		<clash atom="CG2" cid="100" clashmag="0.41" dist="2.49"/>
+		<clash atom="HG21" cid="19" clashmag="0.66" dist="1.78"/>
+	</ModelledSubgroup>
+	<ModelledSubgroup NatomsEDS="11" altcode=" " avgoccu="1.000" chain="A" ent="3" icode=" " model="1" num-H-reduce="13" owab="65.260" phi="-151.7" psi="137.8" rama="Favored" resname="ARG" resnum="343" rota="ttm180" rscc="0.913" rsr="0.245" rsrz="0.507" said="C" seq="343">
+		<angle-outlier atom0="NE" atom1="CZ" atom2="NH2" mean="120.300" obs="115.631" stdev="0.500" z="-9.34"/>
+		<angle-outlier atom0="NE" atom1="CZ" atom2="NH1" mean="120.300" obs="125.482" stdev="0.500" z="10.36"/>
+		<clash atom="HD2" cid="101" clashmag="0.41" dist="2.02"/>
+	</ModelledSubgroup>
+	<ModelledSubgroup NatomsEDS="8" altcode=" " avgoccu="1.000" chain="A" ent="3" icode=" " model="1" num-H-reduce="11" owab="65.810" phi="-115.6" psi="147.8" rama="Favored" resname="LEU" resnum="344" rota="mp" rscc="0.924" rsr="0.413" rsrz="3.139" said="C" seq="344">
+		<clash atom="HD11" cid="20" clashmag="0.65" dist="2.26"/>
+		<clash atom="HD11" cid="29" clashmag="0.57" dist="1.86"/>
+		<clash atom="HD11" cid="59" clashmag="0.47" dist="1.97"/>
+	</ModelledSubgroup>
+	<ModelledSubgroup NatomsEDS="8" altcode=" " avgoccu="1.000" chain="A" ent="3" icode=" " model="1" num-H-reduce="11" owab="61.290" phi="-120.5" psi="160.4" rama="Favored" resname="ILE" resnum="345" rota="mt" rscc="0.910" rsr="0.217" rsrz="0.415" said="C" seq="345">
+		<clash atom="HD11" cid="101" clashmag="0.41" dist="2.02"/>
+	</ModelledSubgroup>
+	<ModelledSubgroup NatomsEDS="8" altcode=" " avgoccu="1.000" chain="A" ent="3" icode=" " model="1" num-H-reduce="11" owab="64.480" phi="-151.9" psi="170.7" rama="Allowed" resname="ILE" resnum="346" rota="pt" rscc="0.943" rsr="0.214" rsrz="0.370" said="C" seq="346"/>
+	<ModelledSubgroup NatomsEDS="11" altcode=" " avgoccu="1.000" chain="A" ent="3" icode=" " model="1" num-H-reduce="13" owab="74.570" phi="-153.1" psi="160.7" rama="Favored" resname="ARG" resnum="347" rota="OUTLIER" rscc="0.867" rsr="0.295" rsrz="1.131" said="C" seq="347">
+		<angle-outlier atom0="CB" atom1="CA" atom2="C" mean="110.400" obs="123.103" stdev="2.000" z="6.35"/>
+		<angle-outlier atom0="NE" atom1="CZ" atom2="NH1" mean="120.300" obs="123.043" stdev="0.500" z="5.49"/>
+		<angle-outlier atom0="NE" atom1="CZ" atom2="NH2" mean="120.300" obs="117.358" stdev="0.500" z="-5.88"/>
+		<clash atom="HD3" cid="24" clashmag="0.60" dist="1.83"/>
+		<clash atom="HG2" cid="38" clashmag="0.52" dist="1.92"/>
+	</ModelledSubgroup>
+	<ModelledSubgroup NatomsEDS="11" altcode=" " avgoccu="1.000" chain="A" ent="3" icode=" " model="1" num-H-reduce="13" owab="82.390" phi="-128.9" psi="159.3" rama="Favored" resname="ARG" resnum="348" rota="OUTLIER" rscc="0.730" rsr="0.451" rsrz="3.076" said="C" seq="348"/>
+	<ModelledSubgroup NatomsEDS="5" altcode=" " avgoccu="1.000" chain="A" ent="3" icode=" " model="1" num-H-reduce="2" owab="93.480" phi="-90.8" psi="106.7" rama="Favored" resname="TYR" resnum="349" rscc="0.180" rsr="0.498" rsrz="4.909" said="C" seq="349"/>
+	<ModelledSubgroup NatomsEDS="6" altcode=" " avgoccu="1.000" chain="A" ent="3" icode=" " model="1" num-H-reduce="5" owab="99.700" phi="-156.7" psi="-145.4" rama="Allowed" resname="SER" resnum="350" rota="t" rscc="0.705" rsr="0.488" rsrz="4.489" said="C" seq="350">
+		<clash atom="OG" cid="62" clashmag="0.46" dist="2.47"/>
+	</ModelledSubgroup>
+	<ModelledSubgroup NatomsEDS="6" altcode=" " avgoccu="1.000" chain="A" ent="3" icode=" " model="1" num-H-reduce="5" owab="102.240" phi="-97.2" psi="37.9" rama="Allowed" resname="SER" resnum="351" rota="p" rscc="0.663" rsr="0.516" rsrz="4.879" said="C" seq="351">
+		<clash atom="N" cid="62" clashmag="0.46" dist="2.47"/>
+	</ModelledSubgroup>
+	<ModelledSubgroup NatomsEDS="5" altcode=" " avgoccu="1.000" chain="A" ent="3" icode=" " model="1" num-H-reduce="2" owab="101.610" phi="81.1" psi="34.1" rama="Allowed" resname="GLU" resnum="352" rscc="0.461" rsr="0.464" rsrz="3.099" said="C" seq="352"/>
+	<ModelledSubgroup NatomsEDS="5" altcode=" " avgoccu="1.000" chain="A" ent="3" icode=" " model="1" num-H-reduce="2" owab="101.610" phi="-77.3" psi="-3.1" rama="Favored" resname="LYS" resnum="353" rscc="-0.004" rsr="0.679" rsrz="5.228" said="C" seq="353">
+		<clash atom="O" cid="80" clashmag="0.43" dist="2.52"/>
+	</ModelledSubgroup>
+	<ModelledSubgroup NatomsEDS="5" altcode=" " avgoccu="1.000" chain="A" ent="3" icode=" " model="1" num-H-reduce="2" owab="100.750" phi="15.8" psi="-71.2" rama="OUTLIER" resname="HIS" resnum="354" rscc="0.723" rsr="0.577" rsrz="5.765" said="C" seq="354"/>
+	<ModelledSubgroup NatomsEDS="5" altcode=" " avgoccu="1.000" chain="A" ent="3" icode=" " model="1" num-H-reduce="2" owab="96.990" phi="-14.2" psi="-39.7" rama="OUTLIER" resname="TYR" resnum="355" rscc="0.345" rsr="0.540" rsrz="5.549" said="C" seq="355">
+		<clash atom="N" cid="80" clashmag="0.43" dist="2.52"/>
+		<bond-outlier atom0="CA" atom1="CB" mean="1.535" obs="1.663" stdev="0.022" z="5.82"/>
+	</ModelledSubgroup>
+	<ModelledSubgroup NatomsEDS="4" altcode=" " avgoccu="1.000" chain="A" ent="3" icode=" " model="1" num-H-reduce="3" owab="90.520" phi="-80.6" psi="103.5" rama="Favored" resname="GLY" resnum="356" rscc="0.281" rsr="0.810" rsrz="8.624" said="C" seq="356"/>
+	<ModelledSubgroup NatomsEDS="11" altcode=" " avgoccu="1.000" chain="A" ent="3" icode=" " model="1" num-H-reduce="13" owab="74.690" phi="-109.7" psi="152.1" rama="Favored" resname="ARG" resnum="357" rota="OUTLIER" rscc="0.771" rsr="0.251" rsrz="0.582" said="C" seq="357">
+		<angle-outlier atom0="NE" atom1="CZ" atom2="NH2" mean="120.300" obs="116.592" stdev="0.500" z="-7.42"/>
+		<angle-outlier atom0="NE" atom1="CZ" atom2="NH1" mean="120.300" obs="125.785" stdev="0.500" z="10.97"/>
+	</ModelledSubgroup>
+	<ModelledSubgroup NatomsEDS="9" altcode=" " avgoccu="1.000" chain="A" ent="3" icode=" " model="1" num-H-reduce="6" owab="68.470" phi="-128.0" psi="151.7" rama="Favored" resname="GLU" resnum="358" rota="mt-10" rscc="0.872" rsr="0.245" rsrz="0.463" said="C" seq="358"/>
+	<ModelledSubgroup NatomsEDS="6" altcode=" " avgoccu="1.000" chain="A" ent="3" icode=" " model="1" num-H-reduce="5" owab="59.130" phi="-149.2" psi="158.1" rama="Favored" resname="SER" resnum="359" rota="p" rscc="0.927" rsr="0.123" rsrz="-0.595" said="C" seq="359"/>
+	<ModelledSubgroup NatomsEDS="11" altcode=" " avgoccu="1.000" chain="A" ent="3" icode=" " model="1" num-H-reduce="13" owab="62.800" phi="-128.7" psi="112.2" rama="Favored" resname="ARG" resnum="360" rota="mmt180" rscc="0.871" rsr="0.201" rsrz="-0.041" said="C" seq="360">
+		<angle-outlier atom0="NE" atom1="CZ" atom2="NH2" mean="120.300" obs="117.282" stdev="0.500" z="-6.04"/>
+	</ModelledSubgroup>
+	<ModelledSubgroup NatomsEDS="9" altcode=" " avgoccu="1.000" chain="A" ent="3" icode=" " model="1" num-H-reduce="8" owab="66.250" phi="-89.5" psi="159.5" rama="Favored" resname="GLN" resnum="361" rota="tt0" rscc="0.859" rsr="0.185" rsrz="-0.124" said="C" seq="361"/>
+	<ModelledSubgroup NatomsEDS="6" altcode=" " avgoccu="1.000" chain="A" ent="3" icode=" " model="1" num-H-reduce="5" owab="66.010" phi="-161.4" psi="138.8" rama="Favored" resname="CYS" resnum="362" rota="OUTLIER" rscc="0.949" rsr="0.159" rsrz="0.199" said="C" seq="362">
+		<bond-outlier atom0="CB" atom1="SG" mean="1.818" obs="1.716" stdev="0.017" z="-6.02"/>
+	</ModelledSubgroup>
+	<ModelledSubgroup NatomsEDS="7" altcode=" " avgoccu="1.000" chain="A" ent="3" icode=" " model="1" num-H-reduce="7" owab="68.200" phi="-73.2" psi="150.2" rama="Favored" resname="PRO" resnum="363" rota="Cg_exo" rscc="0.967" rsr="0.150" rsrz="-0.243" said="C" seq="363"/>
+	<ModelledSubgroup NatomsEDS="8" altcode=" " avgoccu="1.000" chain="A" ent="3" icode=" " model="1" num-H-reduce="11" owab="73.640" phi="-88.4" psi="108.7" rama="Favored" resname="ILE" resnum="364" rota="mt" rscc="0.959" rsr="0.267" rsrz="1.156" said="C" seq="364">
+		<clash atom="HG22" cid="89" clashmag="0.42" dist="2.18"/>
+		<clash atom="O" cid="89" clashmag="0.42" dist="2.18"/>
+	</ModelledSubgroup>
+	<ModelledSubgroup NatomsEDS="7" altcode=" " avgoccu="1.000" chain="A" ent="3" icode=" " model="1" num-H-reduce="7" owab="79.970" phi="-46.3" psi="129.8" rama="Favored" resname="PRO" resnum="365" rota="Cg_exo" rscc="0.970" rsr="0.284" rsrz="1.685" said="C" seq="365"/>
+	<ModelledSubgroup NatomsEDS="6" altcode=" " avgoccu="1.000" chain="A" ent="3" icode=" " model="1" num-H-reduce="5" owab="86.000" phi="-47.8" psi="-15.8" rama="Allowed" resname="SER" resnum="366" rota="OUTLIER" rscc="0.858" rsr="0.340" rsrz="2.428" said="C" seq="366"/>
+	<ModelledSubgroup NatomsEDS="10" altcode=" " avgoccu="1.000" chain="A" ent="3" icode=" " model="1" num-H-reduce="7" owab="93.150" phi="-83.3" psi="-53.8" rama="Favored" resname="HIS" resnum="367" rota="OUTLIER" rscc="0.826" rsr="0.340" rsrz="2.375" said="C" seq="367">
+		<clash atom="ND1" cid="4" clashmag="0.78" dist="2.32"/>
+		<clash atom="N" cid="4" clashmag="0.78" dist="2.32"/>
+	</ModelledSubgroup>
+	<ModelledSubgroup NatomsEDS="7" altcode=" " avgoccu="1.000" chain="A" ent="3" icode=" " model="1" num-H-reduce="9" owab="87.850" phi="-67.8" psi="-18.0" rama="Favored" resname="VAL" resnum="368" rota="m" rscc="0.885" rsr="0.554" rsrz="5.462" said="C" seq="368">
+		<clash atom="HG21" cid="34" clashmag="0.55" dist="2.36"/>
+	</ModelledSubgroup>
+	<ModelledSubgroup NatomsEDS="8" altcode=" " avgoccu="1.000" chain="A" ent="3" icode=" " model="1" num-H-reduce="11" owab="86.430" phi="-59.6" psi="5.7" rama="OUTLIER" resname="ILE" resnum="369" rota="mt" rscc="0.801" rsr="0.342" rsrz="2.267" said="C" seq="369">
+		<clash atom="HG22" cid="35" clashmag="0.55" dist="2.06"/>
+		<clash atom="C" cid="83" clashmag="0.43" dist="2.86"/>
+		<clash atom="CG2" cid="97" clashmag="0.41" dist="2.67"/>
+		<clash atom="O" cid="35" clashmag="0.55" dist="2.06"/>
+		<clash atom="O" cid="97" clashmag="0.41" dist="2.67"/>
+	</ModelledSubgroup>
+	<ModelledSubgroup NatomsEDS="9" altcode=" " avgoccu="1.000" chain="A" ent="3" icode=" " model="1" num-H-reduce="8" owab="83.990" resname="GLN" resnum="370" rota="mt-30" rscc="0.511" rsr="0.253" rsrz="0.729" said="C" seq="370">
+		<clash atom="CG" cid="83" clashmag="0.43" dist="2.86"/>
+	</ModelledSubgroup>
+	<ModelledSubgroup NatomsEDS="5" altcode=" " avgoccu="1.000" chain="A" ent="3" icode=" " model="1" num-H-reduce="1" owab="66.300" resname="VAL" resnum="379" rscc="0.894" rsr="0.147" rsrz="-0.506" said="C" seq="379"/>
+	<ModelledSubgroup NatomsEDS="8" altcode=" " avgoccu="1.000" chain="A" ent="3" icode=" " model="1" num-H-reduce="9" owab="67.540" phi="-70.4" psi="-64.6" rama="Allowed" resname="MET" resnum="380" rota="OUTLIER" rscc="0.940" rsr="0.185" rsrz="0.185" said="C" seq="380">
+		<clash atom="CE" cid="52" clashmag="0.48" dist="2.43"/>
+		<bond-outlier atom0="CG" atom1="SD" mean="1.807" obs="1.978" stdev="0.026" z="6.57"/>
+	</ModelledSubgroup>
+	<ModelledSubgroup NatomsEDS="7" altcode=" " avgoccu="1.000" chain="A" ent="3" icode=" " model="1" num-H-reduce="7" owab="65.880" phi="-33.5" psi="-53.4" rama="Allowed" resname="THR" resnum="381" rota="p" rscc="0.811" rsr="0.148" rsrz="-0.309" said="C" seq="381"/>
+	<ModelledSubgroup NatomsEDS="7" altcode=" " avgoccu="1.000" chain="A" ent="3" icode=" " model="1" num-H-reduce="7" owab="63.190" phi="-71.1" psi="-38.9" rama="Favored" resname="PRO" resnum="382" rota="Cg_endo" rscc="0.924" rsr="0.183" rsrz="0.232" said="C" seq="382"/>
+	<ModelledSubgroup NatomsEDS="8" altcode=" " avgoccu="1.000" chain="A" ent="3" icode=" " model="1" num-H-reduce="9" owab="68.070" phi="-45.7" psi="-52.9" rama="Favored" resname="MET" resnum="383" rota="mmt" rscc="0.924" rsr="0.258" rsrz="1.267" said="C" seq="383">
+		<clash atom="CE" cid="34" clashmag="0.55" dist="2.36"/>
+	</ModelledSubgroup>
+	<ModelledSubgroup NatomsEDS="7" altcode=" " avgoccu="1.000" chain="A" ent="3" icode=" " model="1" num-H-reduce="9" owab="65.470" phi="-46.5" psi="-58.3" rama="Allowed" resname="VAL" resnum="384" rota="t" rscc="0.918" rsr="0.113" rsrz="-1.004" said="C" seq="384">
+		<clash atom="O" cid="88" clashmag="0.43" dist="2.19"/>
+		<clash atom="HG22" cid="52" clashmag="0.48" dist="2.43"/>
+	</ModelledSubgroup>
+	<ModelledSubgroup NatomsEDS="5" altcode=" " avgoccu="1.000" chain="A" ent="3" icode=" " model="1" num-H-reduce="2" owab="64.300" phi="-59.7" psi="-31.4" rama="Favored" resname="ASP" resnum="385" rscc="0.887" rsr="0.176" rsrz="-0.032" said="C" seq="385"/>
+	<ModelledSubgroup NatomsEDS="8" altcode=" " avgoccu="1.000" chain="A" ent="3" icode=" " model="1" num-H-reduce="11" owab="62.990" phi="-63.4" psi="-57.0" rama="Favored" resname="ILE" resnum="386" rota="mt" rscc="0.953" rsr="0.330" rsrz="2.089" said="C" seq="386"/>
+	<ModelledSubgroup NatomsEDS="8" altcode=" " avgoccu="1.000" chain="A" ent="3" icode=" " model="1" num-H-reduce="11" owab="61.680" phi="-49.4" psi="-38.8" rama="Favored" resname="LEU" resnum="387" rota="mt" rscc="0.934" rsr="0.207" rsrz="0.217" said="C" seq="387">
+		<clash atom="HD22" cid="29" clashmag="0.57" dist="1.86"/>
+		<clash atom="HD21" cid="19" clashmag="0.66" dist="1.78"/>
+		<clash atom="HD21" cid="100" clashmag="0.41" dist="2.49"/>
+		<clash atom="CD1" cid="21" clashmag="0.62" dist="2.28"/>
+		<clash atom="CD2" cid="20" clashmag="0.65" dist="2.26"/>
+		<clash atom="HD11" cid="10" clashmag="0.72" dist="1.72"/>
+		<clash atom="HD23" cid="59" clashmag="0.47" dist="1.97"/>
+	</ModelledSubgroup>
+	<ModelledSubgroup NatomsEDS="8" altcode=" " avgoccu="1.000" chain="A" ent="3" icode=" " model="1" num-H-reduce="9" owab="65.030" phi="-66.3" psi="-40.5" rama="Favored" resname="MET" resnum="388" rota="mmm" rscc="0.918" rsr="0.195" rsrz="0.333" said="C" seq="388">
+		<clash atom="HG2" cid="88" clashmag="0.43" dist="2.19"/>
+		<clash atom="CE" cid="105" clashmag="0.40" dist="2.51"/>
+		<clash atom="O" cid="76" clashmag="0.44" dist="2.18"/>
+	</ModelledSubgroup>
+	<ModelledSubgroup NatomsEDS="5" altcode=" " avgoccu="1.000" chain="A" ent="3" icode=" " model="1" num-H-reduce="2" owab="61.930" phi="-65.7" psi="-41.9" rama="Favored" resname="LYS" resnum="389" rscc="0.916" rsr="0.177" rsrz="-0.496" said="C" seq="389">
+		<bond-outlier atom0="CA" atom1="CB" mean="1.535" obs="1.693" stdev="0.022" z="7.19"/>
+	</ModelledSubgroup>
+	<ModelledSubgroup NatomsEDS="8" altcode=" " avgoccu="1.000" chain="A" ent="3" icode=" " model="1" num-H-reduce="11" owab="63.470" phi="-56.3" psi="-41.2" rama="Favored" resname="LEU" resnum="390" rota="mt" rscc="0.889" rsr="0.201" rsrz="0.132" said="C" seq="390"/>
+	<ModelledSubgroup NatomsEDS="11" altcode=" " avgoccu="1.000" chain="A" ent="3" icode=" " model="1" num-H-reduce="9" owab="71.690" phi="-54.7" psi="-44.1" rama="Favored" resname="PHE" resnum="391" rota="t80" rscc="0.921" rsr="0.274" rsrz="1.316" said="C" seq="391">
+		<clash atom="O" cid="0" clashmag="0.97" dist="1.62"/>
+		<clash atom="HB3" cid="76" clashmag="0.44" dist="2.18"/>
+	</ModelledSubgroup>
+	<ModelledSubgroup NatomsEDS="11" altcode=" " avgoccu="1.000" chain="A" ent="3" icode=" " model="1" num-H-reduce="13" owab="71.060" phi="-74.0" psi="-38.8" rama="Favored" resname="ARG" resnum="392" rota="mtt180" rscc="0.842" rsr="0.213" rsrz="0.108" said="C" seq="392">
+		<clash atom="C" cid="42" clashmag="0.50" dist="2.15"/>
+		<clash atom="C" cid="95" clashmag="0.42" dist="2.73"/>
+	</ModelledSubgroup>
+	<ModelledSubgroup NatomsEDS="8" altcode=" " avgoccu="1.000" chain="A" ent="3" icode=" " model="1" num-H-reduce="6" owab="76.490" phi="-51.7" psi="-4.4" rama="OUTLIER" resname="ASN" resnum="393" rota="t-20" rscc="0.821" rsr="0.183" rsrz="0.089" said="C" seq="393"/>
+	<ModelledSubgroup NatomsEDS="8" altcode=" " avgoccu="1.000" chain="A" ent="3" icode=" " model="1" num-H-reduce="9" owab="80.970" resname="MET" resnum="394" rota="mmt" rscc="0.654" rsr="0.271" rsrz="1.459" said="C" seq="394">
+		<angle-outlier atom0="CB" atom1="CA" atom2="C" mean="110.400" obs="96.733" stdev="2.000" z="-6.83"/>
+		<clash atom="HB2" cid="0" clashmag="0.97" dist="1.62"/>
+		<clash atom="N" cid="95" clashmag="0.42" dist="2.73"/>
+		<clash atom="H" cid="42" clashmag="0.50" dist="2.15"/>
+	</ModelledSubgroup>
+	<ModelledSubgroup NatomsEDS="7" altcode=" " avgoccu="1.000" chain="A" ent="3" icode=" " model="1" num-H-reduce="6" owab="70.230" resname="THR" resnum="404" rota="OUTLIER" rscc="0.726" rsr="0.278" rsrz="1.586" said="C" seq="404">
+		<clash atom="O" cid="65" clashmag="0.46" dist="2.60"/>
+		<clash atom="HG23" cid="24" clashmag="0.60" dist="1.83"/>
+		<clash atom="HG23" cid="38" clashmag="0.52" dist="1.92"/>
+		<bond-outlier atom0="CA" atom1="CB" mean="1.529" obs="1.665" stdev="0.026" z="5.22"/>
+	</ModelledSubgroup>
+	<ModelledSubgroup NatomsEDS="5" altcode=" " avgoccu="1.000" chain="A" ent="3" icode=" " model="1" num-H-reduce="2" owab="64.780" phi="174.8" psi="148.9" rama="Allowed" resname="LEU" resnum="405" rscc="0.841" rsr="0.133" rsrz="-0.833" said="C" seq="405">
+		<clash atom="O" cid="91" clashmag="0.42" dist="2.19"/>
+		<clash atom="C" cid="5" clashmag="0.78" dist="2.04"/>
+		<clash atom="CB" cid="65" clashmag="0.46" dist="2.60"/>
+		<clash atom="HA" cid="68" clashmag="0.45" dist="2.52"/>
+		<clash atom="HA" cid="94" clashmag="0.42" dist="2.55"/>
+		<bond-outlier atom0="CA" atom1="CB" mean="1.533" obs="1.374" stdev="0.023" z="-6.92"/>
+	</ModelledSubgroup>
+	<ModelledSubgroup NatomsEDS="8" altcode=" " avgoccu="1.000" chain="A" ent="3" icode=" " model="1" num-H-reduce="11" owab="58.540" phi="-119.8" psi="145.0" rama="Favored" resname="LEU" resnum="406" rota="OUTLIER" rscc="0.938" rsr="0.307" rsrz="1.635" said="C" seq="406">
+		<angle-outlier atom0="CB" atom1="CG" atom2="CD1" mean="111.000" obs="119.536" stdev="1.700" z="5.02"/>
+		<clash atom="N" cid="17" clashmag="0.66" dist="2.11"/>
+		<clash atom="HD23" cid="5" clashmag="0.78" dist="2.04"/>
+		<clash atom="HD23" cid="17" clashmag="0.66" dist="2.11"/>
+		<clash atom="HD23" cid="91" clashmag="0.42" dist="2.19"/>
+	</ModelledSubgroup>
+	<ModelledSubgroup NatomsEDS="6" altcode=" " avgoccu="1.000" chain="A" ent="3" icode=" " model="1" num-H-reduce="5" owab="52.180" phi="-165.1" psi="153.4" rama="Favored" resname="SER" resnum="407" rota="p" rscc="0.964" rsr="0.176" rsrz="0.143" said="C" seq="407"/>
+	<ModelledSubgroup NatomsEDS="7" altcode=" " avgoccu="1.000" chain="A" ent="3" icode=" " model="1" num-H-reduce="9" owab="47.490" phi="-127.8" psi="121.9" rama="Favored" resname="VAL" resnum="408" rota="t" rscc="0.977" rsr="0.201" rsrz="0.286" said="C" seq="408"/>
+	<ModelledSubgroup NatomsEDS="6" altcode=" " avgoccu="1.000" chain="A" ent="3" icode=" " model="1" num-H-reduce="5" owab="51.920" phi="-106.2" psi="142.1" rama="Favored" resname="CYS" resnum="409" rota="t" rscc="0.954" rsr="0.121" rsrz="-0.431" said="C" seq="409">
+		<bond-outlier atom0="CB" atom1="SG" mean="1.812" obs="1.730" stdev="0.016" z="-5.14"/>
+	</ModelledSubgroup>
+	<ModelledSubgroup NatomsEDS="11" altcode=" " avgoccu="1.000" chain="A" ent="3" icode=" " model="1" num-H-reduce="9" owab="60.450" phi="-110.9" psi="109.6" rama="Favored" resname="PHE" resnum="410" rota="m-85" rscc="0.925" rsr="0.178" rsrz="-0.068" said="C" seq="410">
+		<bond-outlier atom0="CE1" atom1="CZ" mean="1.369" obs="1.271" stdev="0.019" z="-5.16"/>
+	</ModelledSubgroup>
+	<ModelledSubgroup NatomsEDS="6" altcode=" " avgoccu="1.000" chain="A" ent="3" icode=" " model="1" num-H-reduce="5" owab="66.980" phi="-117.2" psi="-170.4" rama="Allowed" resname="CYS" resnum="411" rota="OUTLIER" rscc="0.890" rsr="0.157" rsrz="0.166" said="C" seq="411"/>
+	<ModelledSubgroup NatomsEDS="8" altcode=" " avgoccu="1.000" chain="A" ent="3" icode=" " model="1" num-H-reduce="6" owab="75.780" phi="50.8" psi="59.4" rama="Favored" resname="ASN" resnum="412" rota="t-20" rscc="0.784" rsr="0.370" rsrz="2.658" said="C" seq="412"/>
+	<ModelledSubgroup NatomsEDS="8" altcode=" " avgoccu="1.000" chain="A" ent="3" icode=" " model="1" num-H-reduce="11" owab="76.950" phi="-76.9" psi="147.1" rama="Favored" resname="LEU" resnum="413" rota="OUTLIER" rscc="0.801" rsr="0.199" rsrz="0.104" said="C" seq="413">
+		<clash atom="HD23" cid="11" clashmag="0.71" dist="2.06"/>
+		<clash atom="HD23" cid="30" clashmag="0.57" dist="1.65"/>
+		<clash atom="CD2" cid="8" clashmag="0.73" dist="2.52"/>
+		<clash atom="N" cid="8" clashmag="0.73" dist="2.52"/>
+		<clash atom="N" cid="11" clashmag="0.71" dist="2.06"/>
+		<clash atom="H" cid="30" clashmag="0.57" dist="1.65"/>
+	</ModelledSubgroup>
+	<ModelledSubgroup NatomsEDS="9" altcode=" " avgoccu="1.000" chain="A" ent="3" icode=" " model="1" num-H-reduce="13" owab="83.060" resname="LYS" resnum="414" rota="mttt" rscc="0.820" rsr="0.295" rsrz="0.849" said="C" seq="414">
+		<clash atom="C" cid="32" clashmag="0.56" dist="2.26"/>
+	</ModelledSubgroup>
+	<ModelledSubgroup NatomsEDS="1" altcode=" " avgoccu="1.000" chain="A" ent="4" icode=" " model="1" mogul-ignore="yes" owab="3.320" resname="MG" resnum="871" rscc="0.985" rsr="0.164" said="D" seq="."/>
+	<ModelledSubgroup NatomsEDS="1" altcode=" " avgoccu="1.000" chain="A" ent="4" icode=" " model="1" mogul-ignore="yes" owab="102.890" resname="MG" resnum="872" rscc="0.754" rsr="0.558" said="E" seq="."/>
+	<ModelledSubgroup NatomsEDS="29" altcode=" " avgoccu="1.000" chain="A" ent="5" icode=" " model="1" mogul_angles_rmsz="2.25" mogul_bonds_rmsz="2.48" mogul_rmsz_numangles="27" mogul_rmsz_numbonds="22" num-H-reduce="13" owab="21.680" resname="TTP" resnum="875" rscc="0.988" rsr="0.158" said="F" seq=".">
+		<mog-angle-outlier Zscore="-2.68" atoms="PB,O3A,PA" mean="132.63" mindiff="4.02" numobs="24" obsval="123.61" stdev="3.36"/>
+		<mog-angle-outlier Zscore="3.53" atoms="O5',C5',C4'" mean="109.00" mindiff="0.91" numobs="456" obsval="121.29" stdev="3.48"/>
+		<mog-angle-outlier Zscore="2.02" atoms="O4',C4',C5'" mean="109.39" mindiff="0.00" numobs="906" obsval="116.13" stdev="3.33"/>
+		<mog-angle-outlier Zscore="-2.37" atoms="C2',C1',N1" mean="114.27" mindiff="0.12" numobs="57" obsval="108.75" stdev="2.33"/>
+		<mog-angle-outlier Zscore="9.01" atoms="C4,N3,C2" mean="115.14" mindiff="5.19" numobs="62" obsval="122.82" stdev="0.85"/>
+		<mog-angle-outlier Zscore="2.54" atoms="C5,C6,N1" mean="122.15" mindiff="0.03" numobs="22" obsval="124.91" stdev="1.08"/>
+		<mog-bond-outlier Zscore="-2.49" atoms="PA,O1A" mean="1.50" mindiff="0.00" numobs="511" obsval="1.41" stdev="0.04"/>
+		<mog-bond-outlier Zscore="4.27" atoms="PG,O3B" mean="1.60" mindiff="0.02" numobs="24" obsval="1.66" stdev="0.02"/>
+		<mog-bond-outlier Zscore="2.14" atoms="O5',C5'" mean="1.44" mindiff="0.00" numobs="567" obsval="1.53" stdev="0.04"/>
+		<mog-bond-outlier Zscore="-2.87" atoms="C5',C4'" mean="1.51" mindiff="0.00" numobs="4424" obsval="1.42" stdev="0.03"/>
+		<mog-bond-outlier Zscore="-2.19" atoms="C3',C4'" mean="1.53" mindiff="0.00" numobs="526" obsval="1.47" stdev="0.03"/>
+		<mog-bond-outlier Zscore="-8.81" atoms="C5M,C5" mean="1.51" mindiff="0.02" numobs="1478" obsval="1.34" stdev="0.02"/>
+	</ModelledSubgroup>
+	<ModelledSubgroup NatomsEDS="1" altcode=" " avgoccu="1.000" chain="A" ent="6" icode=" " model="1" owab="68.460" resname="HOH" resnum="902" rscc="0.917" rsr="0.230" said="H" seq="."/>
+	<ModelledSubgroup NatomsEDS="1" altcode=" " avgoccu="1.000" chain="A" ent="6" icode=" " model="1" owab="51.800" resname="HOH" resnum="903" rscc="0.926" rsr="0.269" said="H" seq="."/>
+	<ModelledSubgroup NatomsEDS="1" altcode=" " avgoccu="1.000" chain="A" ent="6" icode=" " model="1" owab="48.850" resname="HOH" resnum="905" rscc="0.921" rsr="0.167" said="H" seq="."/>
+	<ModelledSubgroup NatomsEDS="1" altcode=" " avgoccu="1.000" chain="A" ent="6" icode=" " model="1" owab="56.410" resname="HOH" resnum="906" rscc="0.984" rsr="0.252" said="H" seq="."/>
+	<ModelledSubgroup NatomsEDS="1" altcode=" " avgoccu="1.000" chain="A" ent="6" icode=" " model="1" owab="63.410" resname="HOH" resnum="907" rscc="0.968" rsr="0.294" said="H" seq="."/>
+	<ModelledSubgroup NatomsEDS="1" altcode=" " avgoccu="1.000" chain="A" ent="6" icode=" " model="1" owab="58.040" resname="HOH" resnum="908" rscc="0.948" rsr="0.252" said="H" seq="."/>
+	<ModelledSubgroup NatomsEDS="1" altcode=" " avgoccu="1.000" chain="A" ent="6" icode=" " model="1" owab="76.320" resname="HOH" resnum="909" rscc="0.763" rsr="0.315" said="H" seq="."/>
+	<ModelledSubgroup NatomsEDS="1" altcode=" " avgoccu="1.000" chain="A" ent="6" icode=" " model="1" owab="53.380" resname="HOH" resnum="910" rscc="0.982" rsr="0.210" said="H" seq="."/>
+	<ModelledSubgroup NatomsEDS="1" altcode=" " avgoccu="1.000" chain="A" ent="6" icode=" " model="1" owab="76.020" resname="HOH" resnum="911" rscc="0.655" rsr="0.415" said="H" seq="."/>
+	<ModelledSubgroup NatomsEDS="1" altcode=" " avgoccu="1.000" chain="A" ent="6" icode=" " model="1" owab="85.200" resname="HOH" resnum="912" rscc="0.509" rsr="0.267" said="H" seq=".">
+		<clash atom="O" cid="9" clashmag="0.72" dist="1.89"/>
+	</ModelledSubgroup>
+	<ModelledSubgroup NatomsEDS="1" altcode=" " avgoccu="1.000" chain="A" ent="6" icode=" " model="1" owab="58.370" resname="HOH" resnum="913" rscc="0.967" rsr="0.165" said="H" seq="."/>
+	<ModelledSubgroup NatomsEDS="1" altcode=" " avgoccu="1.000" chain="A" ent="6" icode=" " model="1" owab="46.460" resname="HOH" resnum="914" rscc="0.842" rsr="0.269" said="H" seq="."/>
+	<ModelledSubgroup NatomsEDS="1" altcode=" " avgoccu="1.000" chain="A" ent="6" icode=" " model="1" owab="51.780" resname="HOH" resnum="915" rscc="0.985" rsr="0.170" said="H" seq="."/>
+	<ModelledSubgroup NatomsEDS="1" altcode=" " avgoccu="1.000" chain="A" ent="6" icode=" " model="1" owab="47.040" resname="HOH" resnum="916" rscc="0.836" rsr="0.241" said="H" seq="."/>
+	<ModelledSubgroup NatomsEDS="1" altcode=" " avgoccu="1.000" chain="A" ent="6" icode=" " model="1" owab="72.830" resname="HOH" resnum="917" rscc="0.734" rsr="0.282" said="H" seq="."/>
+	<ModelledSubgroup NatomsEDS="1" altcode=" " avgoccu="1.000" chain="A" ent="6" icode=" " model="1" owab="50.770" resname="HOH" resnum="919" rscc="0.810" rsr="0.468" said="H" seq="."/>
+	<ModelledSubgroup NatomsEDS="1" altcode=" " avgoccu="1.000" chain="A" ent="6" icode=" " model="1" owab="48.650" resname="HOH" resnum="920" rscc="0.983" rsr="0.287" said="H" seq="."/>
+	<ModelledSubgroup NatomsEDS="1" altcode=" " avgoccu="1.000" chain="A" ent="6" icode=" " model="1" owab="62.770" resname="HOH" resnum="921" rscc="0.870" rsr="0.287" said="H" seq="."/>
+	<ModelledSubgroup NatomsEDS="1" altcode=" " avgoccu="1.000" chain="A" ent="6" icode=" " model="1" owab="71.360" resname="HOH" resnum="922" rscc="0.756" rsr="0.492" said="H" seq="."/>
+	<ModelledSubgroup NatomsEDS="1" altcode=" " avgoccu="1.000" chain="A" ent="6" icode=" " model="1" owab="64.720" resname="HOH" resnum="923" rscc="0.828" rsr="0.357" said="H" seq="."/>
+	<ModelledSubgroup NatomsEDS="1" altcode=" " avgoccu="1.000" chain="A" ent="6" icode=" " model="1" owab="51.470" resname="HOH" resnum="924" rscc="0.955" rsr="0.277" said="H" seq="."/>
+	<ModelledSubgroup NatomsEDS="1" altcode=" " avgoccu="1.000" chain="A" ent="6" icode=" " model="1" owab="59.690" resname="HOH" resnum="925" rscc="0.660" rsr="0.924" said="H" seq="."/>
+	<ModelledSubgroup NatomsEDS="1" altcode=" " avgoccu="1.000" chain="A" ent="6" icode=" " model="1" owab="56.350" resname="HOH" resnum="926" rscc="0.757" rsr="0.265" said="H" seq="."/>
+	<ModelledSubgroup NatomsEDS="1" altcode=" " avgoccu="1.000" chain="A" ent="6" icode=" " model="1" owab="63.730" resname="HOH" resnum="928" rscc="0.973" rsr="0.255" said="H" seq="."/>
+	<ModelledSubgroup NatomsEDS="1" altcode=" " avgoccu="1.000" chain="A" ent="6" icode=" " model="1" owab="46.590" resname="HOH" resnum="929" rscc="0.915" rsr="0.204" said="H" seq="."/>
+	<ModelledSubgroup NatomsEDS="1" altcode=" " avgoccu="1.000" chain="A" ent="6" icode=" " model="1" owab="75.720" resname="HOH" resnum="930" rscc="0.651" rsr="0.460" said="H" seq="."/>
+	<ModelledSubgroup NatomsEDS="1" altcode=" " avgoccu="1.000" chain="A" ent="6" icode=" " model="1" owab="62.260" resname="HOH" resnum="933" rscc="0.776" rsr="0.194" said="H" seq="."/>
+	<ModelledSubgroup NatomsEDS="1" altcode=" " avgoccu="1.000" chain="A" ent="6" icode=" " model="1" owab="49.430" resname="HOH" resnum="935" rscc="0.898" rsr="0.325" said="H" seq="."/>
+	<ModelledSubgroup NatomsEDS="1" altcode=" " avgoccu="1.000" chain="A" ent="6" icode=" " model="1" owab="64.170" resname="HOH" resnum="937" rscc="0.971" rsr="0.257" said="H" seq="."/>
+	<ModelledSubgroup NatomsEDS="1" altcode=" " avgoccu="1.000" chain="A" ent="6" icode=" " model="1" owab="63.790" resname="HOH" resnum="938" rscc="0.792" rsr="0.176" said="H" seq="."/>
+	<ModelledSubgroup NatomsEDS="1" altcode=" " avgoccu="1.000" chain="A" ent="6" icode=" " model="1" owab="52.620" resname="HOH" resnum="939" rscc="0.855" rsr="0.257" said="H" seq="."/>
+	<ModelledSubgroup NatomsEDS="1" altcode=" " avgoccu="1.000" chain="A" ent="6" icode=" " model="1" owab="72.780" resname="HOH" resnum="940" rscc="0.650" rsr="0.389" said="H" seq="."/>
+	<ModelledSubgroup NatomsEDS="1" altcode=" " avgoccu="1.000" chain="A" ent="6" icode=" " model="1" owab="54.120" resname="HOH" resnum="943" rscc="0.952" rsr="0.331" said="H" seq="."/>
+	<ModelledSubgroup NatomsEDS="1" altcode=" " avgoccu="1.000" chain="A" ent="6" icode=" " model="1" owab="58.930" resname="HOH" resnum="944" rscc="0.901" rsr="0.120" said="H" seq="."/>
+	<ModelledSubgroup NatomsEDS="1" altcode=" " avgoccu="1.000" chain="A" ent="6" icode=" " model="1" owab="47.410" resname="HOH" resnum="946" rscc="0.917" rsr="0.175" said="H" seq="."/>
+	<ModelledSubgroup NatomsEDS="1" altcode=" " avgoccu="1.000" chain="A" ent="6" icode=" " model="1" owab="59.870" resname="HOH" resnum="949" rscc="0.955" rsr="0.332" said="H" seq="."/>
+	<ModelledSubgroup NatomsEDS="1" altcode=" " avgoccu="1.000" chain="A" ent="6" icode=" " model="1" owab="42.450" resname="HOH" resnum="954" rscc="0.960" rsr="0.192" said="H" seq="."/>
+	<ModelledSubgroup NatomsEDS="1" altcode=" " avgoccu="1.000" chain="A" ent="6" icode=" " model="1" owab="61.450" resname="HOH" resnum="956" rscc="0.959" rsr="0.653" said="H" seq="."/>
+	<ModelledSubgroup NatomsEDS="1" altcode=" " avgoccu="1.000" chain="A" ent="6" icode=" " model="1" owab="64.690" resname="HOH" resnum="959" rscc="0.908" rsr="0.482" said="H" seq="."/>
+	<ModelledSubgroup NatomsEDS="1" altcode=" " avgoccu="1.000" chain="A" ent="6" icode=" " model="1" owab="75.410" resname="HOH" resnum="961" rscc="0.875" rsr="0.267" said="H" seq="."/>
+	<ModelledSubgroup NatomsEDS="1" altcode=" " avgoccu="1.000" chain="A" ent="6" icode=" " model="1" owab="48.160" resname="HOH" resnum="962" rscc="0.908" rsr="0.206" said="H" seq="."/>
+	<ModelledSubgroup NatomsEDS="1" altcode=" " avgoccu="1.000" chain="A" ent="6" icode=" " model="1" owab="64.030" resname="HOH" resnum="967" rscc="0.751" rsr="0.573" said="H" seq="."/>
+	<ModelledSubgroup NatomsEDS="1" altcode=" " avgoccu="1.000" chain="A" ent="6" icode=" " model="1" owab="62.180" resname="HOH" resnum="972" rscc="0.872" rsr="0.327" said="H" seq="."/>
+	<ModelledSubgroup NatomsEDS="1" altcode=" " avgoccu="1.000" chain="A" ent="6" icode=" " model="1" owab="69.740" resname="HOH" resnum="973" rscc="0.859" rsr="0.257" said="H" seq="."/>
+	<ModelledSubgroup NatomsEDS="1" altcode=" " avgoccu="1.000" chain="A" ent="6" icode=" " model="1" owab="51.240" resname="HOH" resnum="975" rscc="0.928" rsr="0.392" said="H" seq="."/>
+	<ModelledSubgroup NatomsEDS="1" altcode=" " avgoccu="1.000" chain="A" ent="6" icode=" " model="1" owab="51.070" resname="HOH" resnum="976" rscc="0.736" rsr="0.301" said="H" seq="."/>
+	<ModelledSubgroup NatomsEDS="1" altcode=" " avgoccu="1.000" chain="A" ent="6" icode=" " model="1" owab="55.680" resname="HOH" resnum="979" rscc="0.761" rsr="0.407" said="H" seq="."/>
+	<ModelledSubgroup NatomsEDS="1" altcode=" " avgoccu="1.000" chain="A" ent="6" icode=" " model="1" owab="59.440" resname="HOH" resnum="981" rscc="0.914" rsr="0.273" said="H" seq="."/>
+	<ModelledSubgroup NatomsEDS="1" altcode=" " avgoccu="1.000" chain="A" ent="6" icode=" " model="1" owab="72.830" resname="HOH" resnum="982" rscc="0.879" rsr="0.157" said="H" seq="."/>
+	<ModelledSubgroup NatomsEDS="1" altcode=" " avgoccu="1.000" chain="A" ent="6" icode=" " model="1" owab="83.910" resname="HOH" resnum="983" rscc="0.254" rsr="0.166" said="H" seq="."/>
+	<ModelledSubgroup NatomsEDS="1" altcode=" " avgoccu="1.000" chain="A" ent="6" icode=" " model="1" owab="46.560" resname="HOH" resnum="986" rscc="0.978" rsr="0.279" said="H" seq="."/>
+	<ModelledSubgroup NatomsEDS="1" altcode=" " avgoccu="1.000" chain="A" ent="6" icode=" " model="1" owab="58.640" resname="HOH" resnum="988" rscc="0.867" rsr="0.325" said="H" seq="."/>
+	<ModelledSubgroup NatomsEDS="1" altcode=" " avgoccu="1.000" chain="A" ent="6" icode=" " model="1" owab="80.590" resname="HOH" resnum="989" rscc="0.743" rsr="0.345" said="H" seq="."/>
+	<ModelledSubgroup NatomsEDS="1" altcode=" " avgoccu="1.000" chain="A" ent="6" icode=" " model="1" owab="71.890" resname="HOH" resnum="995" rscc="0.932" rsr="0.295" said="H" seq="."/>
+	<ModelledSubgroup NatomsEDS="1" altcode=" " avgoccu="1.000" chain="A" ent="6" icode=" " model="1" owab="50.350" resname="HOH" resnum="1001" rscc="0.929" rsr="0.369" said="H" seq="."/>
+	<ModelledSubgroup NatomsEDS="1" altcode=" " avgoccu="1.000" chain="A" ent="6" icode=" " model="1" owab="77.440" resname="HOH" resnum="1004" rscc="0.878" rsr="0.192" said="H" seq="."/>
+	<ModelledSubgroup NatomsEDS="1" altcode=" " avgoccu="1.000" chain="A" ent="6" icode=" " model="1" owab="66.910" resname="HOH" resnum="1006" rscc="0.835" rsr="0.301" said="H" seq="."/>
+	<ModelledSubgroup NatomsEDS="1" altcode=" " avgoccu="1.000" chain="A" ent="6" icode=" " model="1" owab="81.840" resname="HOH" resnum="1007" rscc="0.522" rsr="0.422" said="H" seq="."/>
+	<ModelledSubgroup NatomsEDS="1" altcode=" " avgoccu="1.000" chain="A" ent="6" icode=" " model="1" owab="67.500" resname="HOH" resnum="1013" rscc="0.846" rsr="0.537" said="H" seq="."/>
+	<ModelledSubgroup NatomsEDS="1" altcode=" " avgoccu="1.000" chain="A" ent="6" icode=" " model="1" owab="64.660" resname="HOH" resnum="1015" rscc="0.782" rsr="0.382" said="H" seq="."/>
+	<ModelledSubgroup NatomsEDS="1" altcode=" " avgoccu="1.000" chain="A" ent="6" icode=" " model="1" owab="77.690" resname="HOH" resnum="1016" rscc="0.724" rsr="0.446" said="H" seq="."/>
+	<ModelledSubgroup NatomsEDS="1" altcode=" " avgoccu="1.000" chain="A" ent="6" icode=" " model="1" owab="73.440" resname="HOH" resnum="1018" rscc="0.871" rsr="0.626" said="H" seq="."/>
+	<ModelledSubgroup NatomsEDS="1" altcode=" " avgoccu="1.000" chain="A" ent="6" icode=" " model="1" owab="78.380" resname="HOH" resnum="1023" rscc="0.554" rsr="0.273" said="H" seq="."/>
+	<ModelledSubgroup NatomsEDS="1" altcode=" " avgoccu="1.000" chain="A" ent="6" icode=" " model="1" owab="77.280" resname="HOH" resnum="1024" rscc="0.735" rsr="0.493" said="H" seq="."/>
+	<ModelledSubgroup NatomsEDS="1" altcode=" " avgoccu="1.000" chain="A" ent="6" icode=" " model="1" owab="72.390" resname="HOH" resnum="1025" rscc="0.841" rsr="0.494" said="H" seq="."/>
+	<ModelledSubgroup NatomsEDS="1" altcode=" " avgoccu="1.000" chain="A" ent="6" icode=" " model="1" owab="56.020" resname="HOH" resnum="1026" rscc="0.944" rsr="0.344" said="H" seq="."/>
+	<ModelledSubgroup NatomsEDS="1" altcode=" " avgoccu="1.000" chain="A" ent="6" icode=" " model="1" owab="86.200" resname="HOH" resnum="1027" rscc="0.708" rsr="0.496" said="H" seq="."/>
+	<ModelledSubgroup NatomsEDS="1" altcode=" " avgoccu="1.000" chain="A" ent="6" icode=" " model="1" owab="55.630" resname="HOH" resnum="1028" rscc="0.904" rsr="0.312" said="H" seq=".">
+		<clash atom="O" cid="41" clashmag="0.51" dist="2.11"/>
+	</ModelledSubgroup>
+	<ModelledSubgroup NatomsEDS="1" altcode=" " avgoccu="1.000" chain="A" ent="6" icode=" " model="1" owab="51.600" resname="HOH" resnum="1030" rscc="0.982" rsr="0.193" said="H" seq="."/>
+	<ModelledSubgroup NatomsEDS="1" altcode=" " avgoccu="1.000" chain="A" ent="6" icode=" " model="1" owab="53.010" resname="HOH" resnum="1032" rscc="0.929" rsr="0.231" said="H" seq="."/>
+	<ModelledSubgroup NatomsEDS="1" altcode=" " avgoccu="1.000" chain="A" ent="6" icode=" " model="1" owab="53.770" resname="HOH" resnum="1033" rscc="0.804" rsr="0.310" said="H" seq="."/>
+	<ModelledSubgroup NatomsEDS="1" altcode=" " avgoccu="1.000" chain="A" ent="6" icode=" " model="1" owab="75.220" resname="HOH" resnum="1034" rscc="0.864" rsr="0.324" said="H" seq="."/>
+	<ModelledSubgroup NatomsEDS="1" altcode=" " avgoccu="1.000" chain="A" ent="6" icode=" " model="1" owab="78.760" resname="HOH" resnum="1037" rscc="0.778" rsr="0.206" said="H" seq="."/>
+	<ModelledSubgroup NatomsEDS="1" altcode=" " avgoccu="1.000" chain="A" ent="6" icode=" " model="1" owab="57.050" resname="HOH" resnum="1039" rscc="0.698" rsr="0.302" said="H" seq="."/>
+	<ModelledSubgroup NatomsEDS="1" altcode=" " avgoccu="1.000" chain="A" ent="6" icode=" " model="1" owab="67.140" resname="HOH" resnum="1040" rscc="0.557" rsr="0.546" said="H" seq="."/>
+	<ModelledSubgroup NatomsEDS="1" altcode=" " avgoccu="1.000" chain="A" ent="6" icode=" " model="1" owab="66.980" resname="HOH" resnum="1045" rscc="0.941" rsr="0.387" said="H" seq="."/>
+	<ModelledSubgroup NatomsEDS="1" altcode=" " avgoccu="1.000" chain="A" ent="6" icode=" " model="1" owab="60.730" resname="HOH" resnum="1047" rscc="0.917" rsr="0.226" said="H" seq="."/>
+	<ModelledSubgroup NatomsEDS="1" altcode=" " avgoccu="1.000" chain="A" ent="6" icode=" " model="1" owab="57.880" resname="HOH" resnum="1049" rscc="0.902" rsr="0.232" said="H" seq="."/>
+	<ModelledSubgroup NatomsEDS="1" altcode=" " avgoccu="1.000" chain="A" ent="6" icode=" " model="1" owab="82.490" resname="HOH" resnum="1051" rscc="0.731" rsr="0.568" said="H" seq="."/>
+	<ModelledSubgroup NatomsEDS="1" altcode=" " avgoccu="1.000" chain="A" ent="6" icode=" " model="1" owab="54.690" resname="HOH" resnum="1053" rscc="0.852" rsr="0.189" said="H" seq="."/>
+	<ModelledSubgroup NatomsEDS="1" altcode=" " avgoccu="1.000" chain="A" ent="6" icode=" " model="1" owab="87.340" resname="HOH" resnum="1054" rscc="0.925" rsr="0.445" said="H" seq=".">
+		<clash atom="O" cid="16" clashmag="0.67" dist="1.94"/>
+	</ModelledSubgroup>
+	<ModelledSubgroup NatomsEDS="1" altcode=" " avgoccu="1.000" chain="A" ent="6" icode=" " model="1" owab="58.430" resname="HOH" resnum="1055" rscc="0.547" rsr="0.459" said="H" seq="."/>
+	<ModelledSubgroup NatomsEDS="1" altcode=" " avgoccu="1.000" chain="A" ent="6" icode=" " model="1" owab="65.760" resname="HOH" resnum="1063" rscc="0.733" rsr="0.505" said="H" seq="."/>
+	<ModelledSubgroup NatomsEDS="1" altcode=" " avgoccu="1.000" chain="A" ent="6" icode=" " model="1" owab="58.680" resname="HOH" resnum="1066" rscc="0.937" rsr="0.353" said="H" seq="."/>
+	<ModelledSubgroup NatomsEDS="1" altcode=" " avgoccu="1.000" chain="A" ent="6" icode=" " model="1" owab="62.280" resname="HOH" resnum="1068" rscc="0.926" rsr="0.424" said="H" seq="."/>
+	<ModelledSubgroup NatomsEDS="1" altcode=" " avgoccu="1.000" chain="A" ent="6" icode=" " model="1" owab="55.390" resname="HOH" resnum="1079" rscc="0.659" rsr="0.712" said="H" seq="."/>
+	<ModelledEntityInstance absolute_RSRZ_percentile="100.00" angles_rmsz="3.71" bonds_rmsz="3.94" chain="P" ent="1" model="1" num_angles_rmsz="208" num_bonds_rmsz="136" relative_RSRZ_percentile="100.00" said="A"/>
+	<ModelledEntityInstance absolute_RSRZ_percentile="5.09" angles_rmsz="3.39" bonds_rmsz="4.48" chain="T" ent="2" model="1" num_angles_rmsz="312" num_bonds_rmsz="203" relative_RSRZ_percentile="2.99" said="B"/>
+	<ModelledEntityInstance absolute_RSRZ_percentile="15.23" absolute_rama_percentile="3.37" absolute_sidechain_percentile="5.27" angles_rmsz="1.42" bonds_rmsz="1.97" chain="A" ent="3" model="1" num_angles_rmsz="3922" num_bonds_rmsz="2904" relative_RSRZ_percentile="10.98" relative_rama_percentile="4.44" relative_sidechain_percentile="9.73" said="C"/>
+	<programs>
+		<program name="validation-pipeline" properties="PDB-revision-date,PDB-resolution,protein-DNA-RNA-entities,PDB-Rfree,PDB-R,percentilebins,PDB-resolution-low,pdbid,PDB-revision-number,attemptedValidationSteps,XMLcreationDate,PDB-deposition-date" version="trunk30967"/>
+		<program name="mogul" properties="mogul_rmsz_numangles,mogul_angles_rmsz,mogul-torsion-outlier,mogul-angle-outlier,mogul-bond-outlier,mogul_bonds_rmsz,mogul-ignore,mogul-ring-outlier,mogul_rmsz_numbonds" version="1.7.3 (157068), CSD as539be (2018)"/>
+		<program name="dcc" properties="DCC_R,DCC_refinement_program,B_factor_type,DCC_Rfree" version="2.23  (2018-02-06)"/>
+		<program name="eds" properties="rscc,owab,EDS_R,avgoccu,babinet_k,CCP4version,babinet_b,num-free-reflections,relative_RSRZ_percentile,rsrz,DataCompleteness,percent-RSRZ-outliers,bulk_solvent_b,RefmacVersion,bulk_solvent_k,percent-free-reflections,EDS_resolution,Fo_Fc_correlation,rsr,NatomsEDS,EDS_resolution_low,absolute_RSRZ_percentile" version="trunk30967"/>
+		<program name="xtriage" properties="xtriage_input_columns,numMillerIndices,DataAnisotropy,TransNCS,centric_outliers,TwinL,acentric_outliers,WilsonBestimate,TwinL2,IoverSigma,WilsonBaniso" version="1.13"/>
+		<program name="validation-pack" properties="symm-clash,plane-outlier" version="unknown"/>
+		<program name="molprobity" properties="bond-outlier,relative_rama_percentile,phi,psi,RestypesNotcheckedForBondAngleGeometry,clash,angle-outlier,percent-rota-outliers,num_bonds_rmsz,absolute_sidechain_percentile,relative_sidechain_percentile,clashscore,bonds_rmsz,percent-rama-outliers,num-H-reduce,rota,num_angles_rmsz,angles_rmsz,absolute_rama_percentile,rama,flippable-sidechain" version="4.02b-467"/>
+		<program name="percentiles" properties="numPDBids-absolute-percentile-percent-rota-outliers,high-resol-relative-percentile-percent-rota-outliers,absolute-percentile-percent-RSRZ-outliers,relative-percentile-percent-rama-outliers,absolute-percentile-percent-rama-outliers,absolute-percentile-clashscore,absolute-percentile-percent-rota-outliers,relative-percentile-clashscore,high-resol-relative-percentile-percent-rama-outliers,numPDBids-relative-percentile-percent-RSRZ-outliers,numPDBids-relative-percentile-DCC_Rfree,absolute-percentile-DCC_Rfree,relative-percentile-DCC_Rfree,relative-percentile-percent-RSRZ-outliers,low-resol-relative-percentile-percent-RSRZ-outliers,numPDBids-relative-percentile-percent-rama-outliers,numPDBids-relative-percentile-clashscore,high-resol-relative-percentile-clashscore,numPDBids-absolute-percentile-percent-RSRZ-outliers,low-resol-relative-percentile-clashscore,numPDBids-relative-percentile-percent-rota-outliers,low-resol-relative-percentile-percent-rama-outliers,low-resol-relative-percentile-percent-rota-outliers,numPDBids-absolute-percentile-clashscore,numPDBids-absolute-percentile-percent-rama-outliers,low-resol-relative-percentile-DCC_Rfree,high-resol-relative-percentile-percent-RSRZ-outliers,numPDBids-absolute-percentile-DCC_Rfree,relative-percentile-percent-rota-outliers,high-resol-relative-percentile-DCC_Rfree" version="20171227.v01 (using entries in the PDB archive December 27th 2017)"/>
+	</programs>
+</wwPDB-validation-information>

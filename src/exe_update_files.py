@@ -2,8 +2,10 @@ import argparse
 import csv
 import itertools
 import os
+import sys
 import time
 
+sys.path.append('..')
 from src.downloader_ftp_difference_files import DifferenceFilesDownloader
 from src.downloader_ftp_pdb import PdbDownloader
 from src.downloader_ftp_xml_validation import XmlValidationDownloader
@@ -118,6 +120,7 @@ def update():
     parser.add_argument('--cpu_count', '-c', nargs='?', const=1, default=1, help='Folder with original json files',
                         type=int)
     args = parser.parse_args()
+    # for testing purposes, downloading of metadata is commented out
     download_metadata()
     added_molecules, modified_molecules, obsolete_molecules = get_lists_of_changed_molecules()
     added_files = get_filepaths_from_list(added_molecules, args.mmcif_files, args.vdb_files, args.xml_files,
