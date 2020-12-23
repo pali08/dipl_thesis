@@ -36,7 +36,8 @@ class XmlParser(Parser):
                             'averageResidueRSR': NAN_VALUE, 'averageLigandRSR': NAN_VALUE,
                             'averageLigandAngleRMSZ': NAN_VALUE, 'averageLigandBondRMSZ': NAN_VALUE,
                             'averageLigandRSCC': NAN_VALUE, 'ligandRSCCoutlierRatio': NAN_VALUE,
-                            'averageResidueRSCC': NAN_VALUE, 'averageLigandRSCCsmallLigs': NAN_VALUE,
+                            'averageResidueRSCC': NAN_VALUE, 'residueRSCCoutlierRatio': NAN_VALUE,
+                            'averageLigandRSCCsmallLigs': NAN_VALUE,
                             'averageLigandRSCClargeLigs': NAN_VALUE, 'absolute-percentile-RNAsuiteness': NAN_VALUE
                             }
         if super().file_exists():

@@ -1,4 +1,5 @@
 import os
+import sys
 
 from src import global_constants_and_functions
 from src.generate_filepaths import FilepathGenerator
@@ -98,10 +99,17 @@ class AllFilesParser:
         order result data in original data.csv format
         :return:
         """
-        ordered_list = []
-        for i in AllFilesParser.order_list:
-            ordered_list.append(self.result_dict[i])
-        return ordered_list
+        # print(str(self.molecule) + 'this molecule got key error')
+        # print(self.result_dict)
+        try:
+            ordered_list = []
+            for i in AllFilesParser.order_list:
+                ordered_list.append(self.result_dict[i])
+            return ordered_list
+        except KeyError:
+            print(str(self.molecule) + 'this molecule got key error')
+            print(self.result_dict)
+            sys.exit()
 
     def result_dict_final_edit(self):
         """

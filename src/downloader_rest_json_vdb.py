@@ -1,7 +1,10 @@
 import json
+import os
 import sys
 
 import requests
+
+from src.global_constants_and_functions import VDB_JSON_UNIVERSAL_NAME
 
 sys.path.append('..')
 from src.downloader import FileDownloader
@@ -16,6 +19,9 @@ class RestJsonDownloaderVdb(RestJsonDownloader):
         """
         self.molecule = molecule
         self.set_url()
+        self.save_filepath = os.path.join(os.path.dirname(save_filepath), VDB_JSON_UNIVERSAL_NAME)
+        if not os.path.exists(os.path.dirname(self.save_filepath)):
+            os.mkdir(os.path.join(os.path.dirname(self.save_filepath)))
         super().__init__(self.url, save_filepath)
 
     def set_url(self):

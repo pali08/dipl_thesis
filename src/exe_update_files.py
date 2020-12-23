@@ -52,29 +52,38 @@ def remove_files(list_of_files_to_remove):
     :param list_of_files_to_remove: FLAT list of files
     :return
     """
+    print('list of files to remove' + str(list_of_files_to_remove))
     # flatten list:
     list_of_files_to_remove = list(itertools.chain(*list_of_files_to_remove))
     for path_to_remove in list_of_files_to_remove:
         if os.path.basename(path_to_remove).lower() == VDB_JSON_UNIVERSAL_NAME:
             path_to_remove = os.path.dirname(path_to_remove)
+        print('aaand path to remove is...' + path_to_remove)
         try:
             remove_custom(path_to_remove)
+            print('fuck - it was removed')
         except DirOrFileNotFoundError:
             print('File or directory {} not exists so not removed.'.format(path_to_remove))
 
 
 def download_files(molecules, list_of_files_to_download):
+    print('molecules + list of files to download')
+    print(molecules)
+    print(list_of_files_to_download)
     for molecule, filepath in zip(molecules, list_of_files_to_download):
         PdbDownloader(molecule, filepath[0]).get_file()
         RestJsonDownloaderVdb(molecule, filepath[1]).get_file()
         XmlValidationDownloader(molecule, filepath[2]).get_file()
         RestJsonDownloaderRest(molecule, ASSEMBLY_FOLDER, filepath[3]).get_file()
-        RestJsonDownloaderRest(molecule, MOLECULES_FOLDER, filepath[3]).get_file()
-        RestJsonDownloaderRest(molecule, SUMMARY_FOLDER, filepath[3]).get_file()
+        RestJsonDownloaderRest(molecule, MOLECULES_FOLDER, filepath[4]).get_file()
+        RestJsonDownloaderRest(molecule, SUMMARY_FOLDER, filepath[5]).get_file()
 
 
 def update_input_files(molecules_added, molecules_modified, files_added, files_modified,
                        files_obsolete):
+    print('files modified and obsolete are...:')
+    print(files_modified)
+    print(files_obsolete)
     remove_files(files_modified + files_obsolete)
     download_files(molecules_added + molecules_modified, files_added + files_modified)
 
@@ -90,15 +99,15 @@ def update_csv(path_to_csv, molecule_records_update, molecules_added, molecules_
     """
     with open(path_to_csv, mode='r', encoding='utf-8') as f:
         molecule_records = list(csv.reader(f, delimiter=';', lineterminator='\n'))
-        molecules_added_modified = set.union(molecules_added, molecules_modified)
+        molecules_added_modified = set.union(set(molecules_added), set(molecules_modified))
         # TODO: check if this is necessary - in molecule_records_update, there should be only added+modified molecules
         molecule_records_added_modified = [i for i in molecule_records_update if
                                            i[0].strip().lower() in molecules_added_modified]
         # remove obsolete and modified
         molecule_records = [i for i in molecule_records if
                             # keep files that are either not in updated files at all - unchanged:
-                            (i[0].strip().lower() not in set.union(molecules_added, molecules_modified,
-                                                                   molecules_obsolete)) or
+                            (i[0].strip().lower() not in set.union(set(molecules_added), set(molecules_modified),
+                                                                   set(molecules_obsolete))) or
                             # or in added molecules
                             i[0].strip().lower() in molecules_added]
         # add added and modified
@@ -121,7 +130,7 @@ def update():
                         type=int)
     args = parser.parse_args()
     # for testing purposes, downloading of metadata is commented out
-    download_metadata()
+    # download_metadata()
     added_molecules, modified_molecules, obsolete_molecules = get_lists_of_changed_molecules()
     added_files = get_filepaths_from_list(added_molecules, args.mmcif_files, args.vdb_files, args.xml_files,
                                           args.rest_files)

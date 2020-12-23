@@ -31,3 +31,6 @@ class RestJsonDownloader(FileDownloader):
                 json.dump(json_dict, file, indent=4)
         except json.decoder.JSONDecodeError:
             print('WARNING: Connection is OK, but system was not able to get file. Skipping.')
+        except FileNotFoundError:
+            print(self.save_filepath + ' problem - with open not working')
+            print('WARNING: Connection is OK, but system was not able to get file. Skipping.')

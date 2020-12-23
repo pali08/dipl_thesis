@@ -29,7 +29,7 @@ class FtpFileDownloader(FileDownloader):
                 with open(self.save_filepath, 'wb') as f:
                     shutil.copyfileobj(r, f)
                     return
-        print('WARNING: Connection is OK, but system was not able to get file. Skipping.')
+        # print('WARNING: Connection is OK, but system was not able to get file. Skipping.')
 
     def is_connection_working(self):
         try:
@@ -41,12 +41,27 @@ class FtpFileDownloader(FileDownloader):
             return False
         except ftplib.error_temp as et:
             print(str(et))
-            print('error_temp - this probably means, that too many users are connected to server.'
+            print('error_temp - this probably means, that too many users are connected to server.\n'
                   'Or we are downloading files too fast one after another')
-        except Exception as e:
+            return False
+        except ConnectionRefusedError as cre:
             print(
-                'Program encountered problem when getting FTP file although connection with server is working:\n' + str(
-                    e) + '\nPlease contact author of this program (p.mikulaj@mail.muni.cz)')
+                'ConnectionRefusedError: connection to main page ftp.ebi.ac.uk does not working, \n'
+                'but download of file to {} might be OK. Program will continue and tries to get file'.format(
+                    str(self.save_filepath)))
+            return True
+        except TimeoutError:
+            print(
+                'TimeoutError: connection to main page ftp.ebi.ac.uk does not working, \n'
+                'but download of file to {} might be OK. Program will continue and tries to get file'.format(
+                    str(self.save_filepath)))
+            return True
+        except Exception as e:
+            print(str(self.save_filepath) +
+                  'Program encountered exception when testing connection:\n' + str(
+                e) + '. This exception was not encountered during testing and program do not know how to handle it.\n' +
+                  '\nPlease contact author (p.mikulaj@mail.muni.cz). Program will be exited. '
+                  'Try execute it again in few minutes')
             sys.exit()
 
     def file_exists_on_ftp(self):
