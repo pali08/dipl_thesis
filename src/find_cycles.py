@@ -58,8 +58,55 @@ def is_new(path, cycles):
 def visited(node, path):
     return node in path
 
-
-graph_test = (
-    ('a', 'b'), ('a', 'c'), ('a', 'e'), ('b', 'c'), ('c', 'e'), ('b', 'g'), ('e', 'g'), ('i', 'h'), ('i', 'j'),
-    ('j', 'h'))
-find_all_cycles(graph_test)
+# def get_bonds_in_cycles(g, source=None):
+#     """forked from networkx dfs_edges function. Assumes nodes are integers, or at least
+#     types which work with min() and > ."""
+#     if source is None:
+#         # produce edges for all components
+#         nodes = [list(i)[0] for i in nx.connected_components(g)]
+#     else:
+#         # produce edges for components with source
+#         nodes = [source]
+#     # extra variables for cycle detection:
+#     cycle_stack = []
+#     output_cycles = set()
+#
+#     def get_hashable_cycle(cycle):
+#         """cycle as a tuple in a deterministic order."""
+#         m = min(cycle)
+#         mi = cycle.index(m)
+#         mi_plus_1 = mi + 1 if mi < len(cycle) - 1 else 0
+#         if cycle[mi - 1] > cycle[mi_plus_1]:
+#             result = cycle[mi:] + cycle[:mi]
+#         else:
+#             result = list(reversed(cycle[:mi_plus_1])) + list(reversed(cycle[mi_plus_1:]))
+#         return tuple(result)
+#
+#     for start in nodes:
+#         if start in cycle_stack:
+#             continue
+#         cycle_stack.append(start)
+#
+#         stack = [(start, iter(g[start]))]
+#         while stack:
+#             parent, children = stack[-1]
+#             try:
+#                 child = next(children)
+#
+#                 if child not in cycle_stack:
+#                     cycle_stack.append(child)
+#                     stack.append((child, iter(g[child])))
+#                 else:
+#                     i = cycle_stack.index(child)
+#                     if i < len(cycle_stack) - 2:
+#                         output_cycles.add(get_hashable_cycle(cycle_stack[i:]))
+#
+#             except StopIteration:
+#                 stack.pop()
+#                 cycle_stack.pop()
+#
+#     list_of_circles = [list(i) for i in output_cycles]
+#     return set([item for sublist in [[((circle[0].upper()), circle[-1].upper())] + \
+#                                      [(circle[i].upper(), circle[i + 1].upper()) for i in range(0, len(circle) - 1)] for
+#                                      circle in
+#                                      list_of_circles] for item in sublist])

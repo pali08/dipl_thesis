@@ -10,7 +10,8 @@ from Bio.File import as_handle
 from Bio.PDB.MMCIF2Dict import MMCIF2Dict
 
 from src.parser_pdb import get_mmcif_dictionary
-from src.find_cycles import *
+
+# from src.find_cycles import *
 
 bond_grades = {'sing': 1, 'delo': 2, 'doub': 2, 'trip': 3, 'quad': 4}
 
@@ -37,8 +38,8 @@ def split_file(filename):
 
 def get_bonds(mmcif_dict):
     try:
-        return list(zip(mmcif_dict['_chem_comp_bond.atom_id_1'],
-                        mmcif_dict['_chem_comp_bond.atom_id_2'],
+        return list(zip([i.upper() for i in mmcif_dict['_chem_comp_bond.atom_id_1']],
+                        [i.upper() for i in mmcif_dict['_chem_comp_bond.atom_id_2']],
                         [i.lower() for i in mmcif_dict['_chem_comp_bond.value_order']],
                         [bond_grades[i.lower()] for i in mmcif_dict['_chem_comp_bond.value_order']]))
     except KeyError:
@@ -46,7 +47,8 @@ def get_bonds(mmcif_dict):
 
 
 def get_atoms(mmcif_dict):
-    return list(zip(mmcif_dict['_chem_comp_atom.atom_id'], mmcif_dict['_chem_comp_atom.type_symbol']))
+    return list(zip([i.upper() for i in mmcif_dict['_chem_comp_atom.atom_id']],
+                    [i.upper() for i in mmcif_dict['_chem_comp_atom.type_symbol']]))
 
 
 def get_hydrogen_atoms(atoms):
@@ -55,7 +57,7 @@ def get_hydrogen_atoms(atoms):
 
 def get_hydrogen_bonds(hydrogen_atoms, bonds):
     # print(bonds)
-    return set([tuple(i) for i in bonds if (i[0] in hydrogen_atoms) or (i[1] in hydrogen_atoms)])
+    return set([tuple(i[:2]) for i in bonds if (i[0] in hydrogen_atoms) or (i[1] in hydrogen_atoms)])
 
 
 def get_non_single_bonds(bonds):
@@ -64,75 +66,37 @@ def get_non_single_bonds(bonds):
 
 def get_graph(bonds):
     bonds_atom_ids_only = [i[:2] for i in bonds]
-    atoms_from_bonds = set([item for sublist in bonds_atom_ids_only for item in sublist])
+    atoms_from_bonds = set([item.upper() for sublist in bonds_atom_ids_only for item in sublist])
     g = nx.Graph()
     g.add_nodes_from(atoms_from_bonds)
     g.add_edges_from(bonds_atom_ids_only)
     return g
 
 
-def get_bonds_in_cycles(bonds):
+def get_bonds_in_cycles(graph):
     # print(bonds)
-    return find_all_cycles([i[:2] for i in bonds])
+    atoms_in_cycles = set([item.upper() for sublist in nx.cycle_basis(graph) for item in sublist])
+    return set(
+        [tuple(i[:2]) for i in graph.edges if i[0].upper() in atoms_in_cycles or i[1].upper() in atoms_in_cycles])
 
 
-# def get_bonds_in_cycles(g, source=None):
-#     """forked from networkx dfs_edges function. Assumes nodes are integers, or at least
-#     types which work with min() and > ."""
-#     if source is None:
-#         # produce edges for all components
-#         nodes = [list(i)[0] for i in nx.connected_components(g)]
-#     else:
-#         # produce edges for components with source
-#         nodes = [source]
-#     # extra variables for cycle detection:
-#     cycle_stack = []
-#     output_cycles = set()
-#
-#     def get_hashable_cycle(cycle):
-#         """cycle as a tuple in a deterministic order."""
-#         m = min(cycle)
-#         mi = cycle.index(m)
-#         mi_plus_1 = mi + 1 if mi < len(cycle) - 1 else 0
-#         if cycle[mi - 1] > cycle[mi_plus_1]:
-#             result = cycle[mi:] + cycle[:mi]
-#         else:
-#             result = list(reversed(cycle[:mi_plus_1])) + list(reversed(cycle[mi_plus_1:]))
-#         return tuple(result)
-#
-#     for start in nodes:
-#         if start in cycle_stack:
-#             continue
-#         cycle_stack.append(start)
-#
-#         stack = [(start, iter(g[start]))]
-#         while stack:
-#             parent, children = stack[-1]
-#             try:
-#                 child = next(children)
-#
-#                 if child not in cycle_stack:
-#                     cycle_stack.append(child)
-#                     stack.append((child, iter(g[child])))
-#                 else:
-#                     i = cycle_stack.index(child)
-#                     if i < len(cycle_stack) - 2:
-#                         output_cycles.add(get_hashable_cycle(cycle_stack[i:]))
-#
-#             except StopIteration:
-#                 stack.pop()
-#                 cycle_stack.pop()
-#
-#     list_of_circles = [list(i) for i in output_cycles]
-#     return set([item for sublist in [[((circle[0].upper()), circle[-1].upper())] + \
-#                                      [(circle[i].upper(), circle[i + 1].upper()) for i in range(0, len(circle) - 1)] for
-#                                      circle in
-#                                      list_of_circles] for item in sublist])
+def get_terminal_atoms_bonds(graph):
+    terminal_atoms = set([i for i in graph.nodes if len(graph.edges(i)) <= 1])
+    return set([tuple([j.upper() for j in i]) for i in graph.edges if set(i).intersection(terminal_atoms)])
 
 
-def get_terminal_atoms_bonds(g):
-    terminal_atoms = set([i for i in g.nodes if len(g.edges(i)) <= 1])
-    return set([tuple([j.upper() for j in i]) for i in g.edges if set(i).intersection(terminal_atoms)])
+def remove_tuples_with_order_differences(non_rotateable_bonds):
+    """
+    looks like networkx removes does not keep order of added notes and 'duplicated'
+    bonds are made like this ('A','B') -> ('B','A')
+    we need to remove those
+    :param non_rotateable_bonds:
+    :return:
+    """
+    non_rotateable_bonds_revert_order_removed = set()
+    for bond in non_rotateable_bonds:
+        non_rotateable_bonds_revert_order_removed.add(tuple(sorted(bond)))
+    return non_rotateable_bonds_revert_order_removed
 
 
 def get_flexibility_and_size(filename):
@@ -150,14 +114,24 @@ def get_flexibility_and_size(filename):
             atoms = get_atoms(mmcif_dict)
             hydrogen_atoms = get_hydrogen_atoms(atoms)
             graph = get_graph(bonds)
-            non_rotateable_bonds = set.union(get_hydrogen_bonds(hydrogen_atoms, bonds), get_non_single_bonds(bonds),
-                                             get_bonds_in_cycles(bonds), get_terminal_atoms_bonds(graph))
+            non_rotateable_bonds = remove_tuples_with_order_differences(
+                set.union(get_hydrogen_bonds(hydrogen_atoms, bonds), get_non_single_bonds(bonds),
+                          get_bonds_in_cycles(graph), get_terminal_atoms_bonds(graph)))
+            # print(get_hydrogen_bonds(hydrogen_atoms, bonds))
+            # print([tuple(i[:2]) for i in bonds])
+            # print(len(bonds) - len(get_terminal_atoms_bonds(graph)))
+            # print(non_rotateable_bonds)
+            print(len(non_rotateable_bonds))
+            print(non_rotateable_bonds)
+            print(set([i[:2] for i in bonds]) - non_rotateable_bonds)
+            print(len(bonds))
 
             def get_flexibility():
                 if len(bonds) != 0:
-                    return len(non_rotateable_bonds) / len(list(bonds))
+                    return (len(list(bonds)) - len(non_rotateable_bonds)) / len(list(bonds))
                 else:
                     return 1
+
             # print('bonds: ' + str(bonds))
             ligand_stats_list.append([ligand_name,
                                       len(atoms) - len(hydrogen_atoms),
