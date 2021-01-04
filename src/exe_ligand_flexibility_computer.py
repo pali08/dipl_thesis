@@ -1,17 +1,10 @@
 import argparse
 import csv
 import io
-import os
 import re
-import sys
 
 import networkx as nx
-from Bio.File import as_handle
 from Bio.PDB.MMCIF2Dict import MMCIF2Dict
-
-from src.parser_pdb import get_mmcif_dictionary
-
-# from src.find_cycles import *
 
 bond_grades = {'sing': 1, 'delo': 2, 'doub': 2, 'trip': 3, 'quad': 4}
 
@@ -65,7 +58,7 @@ def get_non_single_bonds(bonds):
 
 
 def get_graph(bonds):
-    bonds_atom_ids_only = [i[:2] for i in bonds]
+    bonds_atom_ids_only = [[j.upper() for j in i[:2]] for i in bonds]
     atoms_from_bonds = set([item.upper() for sublist in bonds_atom_ids_only for item in sublist])
     g = nx.Graph()
     g.add_nodes_from(atoms_from_bonds)
@@ -74,15 +67,27 @@ def get_graph(bonds):
 
 
 def get_bonds_in_cycles(graph):
-    # print(bonds)
-    atoms_in_cycles = set([item.upper() for sublist in nx.cycle_basis(graph) for item in sublist])
-    return set(
-        [tuple(i[:2]) for i in graph.edges if i[0].upper() in atoms_in_cycles or i[1].upper() in atoms_in_cycles])
+    edges_sets = [set(i) for i in graph.edges]
+    cycles_sets = [set(i) for i in nx.cycle_basis(graph)]
+    bonds_in_cycles = []
+    for edge in edges_sets:
+        for cycle in cycles_sets:
+            if edge.issubset(cycle):
+                bonds_in_cycles.append(tuple(edge))
+    return bonds_in_cycles
 
 
-def get_terminal_atoms_bonds(graph):
-    terminal_atoms = set([i for i in graph.nodes if len(graph.edges(i)) <= 1])
-    return set([tuple([j.upper() for j in i]) for i in graph.edges if set(i).intersection(terminal_atoms)])
+def get_terminal_atoms_bonds(graph, hydrogen_atoms):
+    terminal_atoms_with_one_bond = set([i for i in graph.nodes if len(graph.edges(i)) <= 1])
+
+    def count_of_hydrogen_bonds(node):
+        return len([i for i in graph.edges(node) if i[0] in hydrogen_atoms or i[1] in hydrogen_atoms])
+
+    terminal_atoms_with_hydrogens_only = set(
+        [i for i in graph.nodes if
+         (len(list(graph.edges(i))) > 1 and len(list(graph.edges(i))) - count_of_hydrogen_bonds(i) == 1)])
+    all_terminal_atoms = set.union(terminal_atoms_with_one_bond, terminal_atoms_with_hydrogens_only)
+    return set([tuple([j.upper() for j in i]) for i in graph.edges if set(i).intersection(all_terminal_atoms)])
 
 
 def remove_tuples_with_order_differences(non_rotateable_bonds):
@@ -102,29 +107,21 @@ def remove_tuples_with_order_differences(non_rotateable_bonds):
 def get_flexibility_and_size(filename):
     ligands_mmcifs = split_file(filename)
     ligand_stats_list = []
-    j = 0
+    j = 1
     for mmcif_dict in ligands_mmcifs:
         ligand_name = mmcif_dict['_chem_comp.id'][0]
         print('{} file of {} - name {}'.format(j, len(ligands_mmcifs), ligand_name))
+        j += 1
         if ligand_name.upper() == 'UNL':
             ligand_stats_list.append([ligand_name, '0', '1'])
         else:
-            j += 1
             bonds = get_bonds(mmcif_dict)
             atoms = get_atoms(mmcif_dict)
             hydrogen_atoms = get_hydrogen_atoms(atoms)
             graph = get_graph(bonds)
             non_rotateable_bonds = remove_tuples_with_order_differences(
                 set.union(get_hydrogen_bonds(hydrogen_atoms, bonds), get_non_single_bonds(bonds),
-                          get_bonds_in_cycles(graph), get_terminal_atoms_bonds(graph)))
-            # print(get_hydrogen_bonds(hydrogen_atoms, bonds))
-            # print([tuple(i[:2]) for i in bonds])
-            # print(len(bonds) - len(get_terminal_atoms_bonds(graph)))
-            # print(non_rotateable_bonds)
-            print(len(non_rotateable_bonds))
-            print(non_rotateable_bonds)
-            print(set([i[:2] for i in bonds]) - non_rotateable_bonds)
-            print(len(bonds))
+                          get_bonds_in_cycles(graph), get_terminal_atoms_bonds(graph, hydrogen_atoms)))
 
             def get_flexibility():
                 if len(bonds) != 0:
@@ -132,7 +129,6 @@ def get_flexibility_and_size(filename):
                 else:
                     return 1
 
-            # print('bonds: ' + str(bonds))
             ligand_stats_list.append([ligand_name,
                                       len(atoms) - len(hydrogen_atoms),
                                       round(get_flexibility(), 6)])
@@ -156,4 +152,6 @@ if __name__ == '__main__':
                         type=str)
     args = parser.parse_args()
     ligand_stats_lst = get_flexibility_and_size(args.mmcif_file)
+    print('Ligand flexibility has been computed.')
     create_csv(args.ligand_stats_csv, ligand_stats_lst)
+    print('Data were written to {}'.format(args.ligand_stats_csv))
