@@ -8,6 +8,7 @@ class FileDownloader:
     HTTP_SERVER_WEBCHEM = 'http://webchem.ncbr.muni.cz'
     HTTP_WEBCHEM_PATH_TO_VDB_FILES = '/Platform/ValidatorDb/Data/'
     HTTP_WEBCHEM_SOURCE_BY_STRUCTURES = '?source=ByStructure'
+    HTTP_PATH_TO_PDB_UPDATED = '/pdbe/entry-files/download/'
 
     def __init__(self, url, save_filepath):
         self.url = url

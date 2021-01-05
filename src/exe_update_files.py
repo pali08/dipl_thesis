@@ -7,7 +7,7 @@ import time
 
 sys.path.append('..')
 from src.downloader_ftp_difference_files import DifferenceFilesDownloader
-from src.downloader_ftp_pdb import PdbDownloader
+from src.downloader_pdb import PdbDownloader
 from src.downloader_ftp_xml_validation import XmlValidationDownloader
 from src.downloader_rest_json_rest import RestJsonDownloaderRest
 from src.downloader_rest_json_vdb import RestJsonDownloaderVdb

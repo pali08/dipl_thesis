@@ -3,7 +3,7 @@ import time
 import unittest
 
 from src import global_constants_and_functions
-from src.downloader_ftp_pdb import PdbDownloader
+from src.downloader_pdb import PdbDownloader
 from src.global_constants_and_functions import MMCIF_UPDATED_SUFFIX
 from src.parser_pdb import PdbParser
 
