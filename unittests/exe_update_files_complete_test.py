@@ -5,10 +5,9 @@ import unittest
 import sys
 from shutil import copy2
 
+sys.path.append('..')
 from src.global_constants_and_functions import ADDED, LATEST_SUFFIX, METADATA_FILES_PATH, MODIFIED, OBSOLETE, \
     remove_custom, DirOrFileNotFoundError
-
-sys.path.append('..')
 from src.exe_update_files import get_lists_of_changed_molecules, get_filepaths_from_list, remove_files
 
 INPUT_DATA_PATH = os.path.join('.', 'input_data_2')

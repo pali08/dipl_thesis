@@ -52,24 +52,22 @@ def remove_files(list_of_files_to_remove):
     :param list_of_files_to_remove: FLAT list of files
     :return
     """
-    print('list of files to remove' + str(list_of_files_to_remove))
+    # print('list of files to remove' + str(list_of_files_to_remove))
     # flatten list:
     list_of_files_to_remove = list(itertools.chain(*list_of_files_to_remove))
     for path_to_remove in list_of_files_to_remove:
         if os.path.basename(path_to_remove).lower() == VDB_JSON_UNIVERSAL_NAME:
             path_to_remove = os.path.dirname(path_to_remove)
-        print('aaand path to remove is...' + path_to_remove)
         try:
             remove_custom(path_to_remove)
-            print('fuck - it was removed')
         except DirOrFileNotFoundError:
             print('File or directory {} not exists so not removed.'.format(path_to_remove))
 
 
 def download_files(molecules, list_of_files_to_download):
-    print('molecules + list of files to download')
-    print(molecules)
-    print(list_of_files_to_download)
+    # print('molecules + list of files to download')
+    # print(molecules)
+    # print(list_of_files_to_download)
     for molecule, filepath in zip(molecules, list_of_files_to_download):
         PdbDownloader(molecule, filepath[0]).get_file()
         RestJsonDownloaderVdb(molecule, filepath[1]).get_file()
@@ -81,9 +79,9 @@ def download_files(molecules, list_of_files_to_download):
 
 def update_input_files(molecules_added, molecules_modified, files_added, files_modified,
                        files_obsolete):
-    print('files modified and obsolete are...:')
-    print(files_modified)
-    print(files_obsolete)
+    # print('files modified and obsolete are...:')
+    # print(files_modified)
+    # print(files_obsolete)
     remove_files(files_modified + files_obsolete)
     download_files(molecules_added + molecules_modified, files_added + files_modified)
 
@@ -130,7 +128,7 @@ def update():
                         type=int)
     args = parser.parse_args()
     # for testing purposes, downloading of metadata is commented out
-    # download_metadata()
+    download_metadata()
     added_molecules, modified_molecules, obsolete_molecules = get_lists_of_changed_molecules()
     added_files = get_filepaths_from_list(added_molecules, args.mmcif_files, args.vdb_files, args.xml_files,
                                           args.rest_files)

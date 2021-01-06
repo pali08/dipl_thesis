@@ -5,10 +5,9 @@ import unittest
 import sys
 from shutil import copy2
 
+sys.path.append('..')
 from src.global_constants_and_functions import ADDED, LATEST_SUFFIX, METADATA_FILES_PATH, MODIFIED, OBSOLETE, \
     remove_custom, DirOrFileNotFoundError
-
-sys.path.append('..')
 from src.exe_update_files import get_lists_of_changed_molecules, get_filepaths_from_list, remove_files
 
 INPUT_DATA_PATH = os.path.join('.', 'input_data')
@@ -17,29 +16,41 @@ pdb_filepath = os.path.join('.', 'input_data', 'pdb')
 vdb_filepath = os.path.join('.', 'input_data', 'vdb')
 xml_filepath = os.path.join('.', 'input_data', 'valid_xml')
 rest_filepath = os.path.join('.', 'input_data', 'rest')
-non_existing_files = 'File or directory ./input_data/pdb/1omg_updated.cif not exists so not removed.' + \
+non_existing_files = 'File or directory ' + os.path.join('.', 'input_data', 'pdb',
+                                                         '1omg_updated.cif') + ' not exists so not removed.' + \
                      os.linesep + \
-                     'File or directory ./input_data/vdb/1omg not exists so not removed.' + \
+                     'File or directory ' + os.path.join('.', 'input_data', 'vdb',
+                                                         '1omg') + ' not exists so not removed.' + \
                      os.linesep + \
-                     'File or directory ./input_data/valid_xml/1omg_validation.xml not exists so not removed.' + \
+                     'File or directory ' + os.path.join('.', 'input_data', 'valid_xml',
+                                                         '1omg_validation.xml') + ' not exists so not removed.' + \
                      os.linesep + \
-                     'File or directory ./input_data/rest/assembly/1omg.json not exists so not removed.' + \
+                     'File or directory ' + os.path.join('.', 'input_data', 'rest', 'assembly',
+                                                         '1omg.json') + ' not exists so not removed.' + \
                      os.linesep + \
-                     'File or directory ./input_data/rest/molecules/1omg.json not exists so not removed.' + \
+                     'File or directory ' + os.path.join('.', 'input_data', 'rest', 'molecules',
+                                                         '1omg.json') + ' not exists so not removed.' + \
                      os.linesep + \
-                     'File or directory ./input_data/rest/summary/1omg.json not exists so not removed.' + \
+                     'File or directory ' + os.path.join('.', 'input_data', 'rest', 'summary',
+                                                         '1omg.json') + ' not exists so not removed.' + \
                      os.linesep + \
-                     'File or directory ./input_data/pdb/1img_updated.cif not exists so not removed.' + \
+                     'File or directory ' + os.path.join('.', 'input_data', 'pdb',
+                                                         '1img_updated.cif') + ' not exists so not removed.' + \
                      os.linesep + \
-                     'File or directory ./input_data/vdb/1img not exists so not removed.' + \
+                     'File or directory ' + os.path.join('.', 'input_data', 'vdb',
+                                                         '1img') + ' not exists so not removed.' + \
                      os.linesep + \
-                     'File or directory ./input_data/valid_xml/1img_validation.xml not exists so not removed.' + \
+                     'File or directory ' + os.path.join('.', 'input_data', 'valid_xml',
+                                                         '1img_validation.xml') + ' not exists so not removed.' + \
                      os.linesep + \
-                     'File or directory ./input_data/rest/assembly/1img.json not exists so not removed.' + \
+                     'File or directory ' + os.path.join('.', 'input_data', 'rest', 'assembly',
+                                                         '1img.json') + ' not exists so not removed.' + \
                      os.linesep + \
-                     'File or directory ./input_data/rest/molecules/1img.json not exists so not removed.' + \
+                     'File or directory ' + os.path.join('.', 'input_data', 'rest', 'molecules',
+                                                         '1img.json') + ' not exists so not removed.' + \
                      os.linesep + \
-                     'File or directory ./input_data/rest/summary/1img.json not exists so not removed.' \
+                     'File or directory ' + os.path.join('.', 'input_data', 'rest', 'summary',
+                                                         '1img.json') + ' not exists so not removed.' \
                      + os.linesep
 
 

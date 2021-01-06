@@ -11,7 +11,7 @@ class TestFtpXmlValidationDownloader(unittest.TestCase):
         XmlValidationDownloader('1cjv', os.path.join('.', '1cjv' + XML_VALIDATION_SUFFIX)).get_file()
         clashscore = \
             XmlParser(os.path.join('.', '1cjv' + XML_VALIDATION_SUFFIX),
-                      '/home/pali/diplomka_python/ligandStats.csv').result_dict[
+                      os.path.join('.', 'input_data_2', 'ligandStats.csv')).result_dict[
                 'clashscore']
         self.assertEqual(is_float(clashscore), True)
         self.addCleanup(os.remove, '1cjv' + XML_VALIDATION_SUFFIX)

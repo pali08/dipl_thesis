@@ -13,7 +13,7 @@ class TestRestJsonDownloaderRest(unittest.TestCase):
         RestJsonDownloaderRest('3wgt', ASSEMBLY_FOLDER, os.path.join(ASSEMBLY_FOLDER, '3wgt.json')).get_file()
         try:
             tst = RestParser(os.path.join(ASSEMBLY_FOLDER, '3wgt.json'),
-                             '/home/pali/diplomka_python/ligandStats.csv').json_dict['3wgt']
+                             os.path.join('.', 'input_data_2', 'ligandStats.csv')).json_dict['3wgt']
             test_assembly = True
         except Exception as e:
             test_assembly = False
@@ -27,7 +27,7 @@ class TestRestJsonDownloaderRest(unittest.TestCase):
                                os.path.join(MOLECULES_FOLDER, '3wgt.json')).get_file()
         try:
             tst = RestParser(os.path.join(MOLECULES_FOLDER, '3wgt.json'),
-                             '/home/pali/diplomka_python/ligandStats.csv').json_dict['3wgt']
+                             os.path.join('.', 'input_data_2', 'ligandStats.csv')).json_dict['3wgt']
             test_molecules = True
         except Exception as e:
             test_molecules = False
@@ -40,7 +40,7 @@ class TestRestJsonDownloaderRest(unittest.TestCase):
         RestJsonDownloaderRest('3wgt', SUMMARY_FOLDER, os.path.join(SUMMARY_FOLDER, '3wgt.json')).get_file()
         try:
             tst = RestParser(os.path.join(SUMMARY_FOLDER, '3wgt.json'),
-                             '/home/pali/diplomka_python/ligandStats.csv').json_dict['3wgt']
+                             os.path.join('.', 'input_data_2', 'ligandStats.csv')).json_dict['3wgt']
             test_summary = True
         except Exception as e:
             test_summary = False
