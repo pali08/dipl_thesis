@@ -51,7 +51,7 @@ class DifferenceFilesDownloader(FtpFileDownloader):
 
     def set_savepath(self):
         self.save_filepath = os.path.join(METADATA_FILES_PATH, self.a_m_o + LATEST_SUFFIX)
-        self.save_filepath = os.path.join('..', 'metadata_files', self.a_m_o + LATEST_SUFFIX)
+        # self.save_filepath = os.path.join('..', 'metadata_files', self.a_m_o + LATEST_SUFFIX)
 
     def sync_timestamp(self):
         """

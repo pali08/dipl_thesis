@@ -1,5 +1,6 @@
 import argparse
 import csv
+import ftplib
 import itertools
 import os
 import sys
@@ -14,13 +15,22 @@ from src.downloader_rest_json_vdb import RestJsonDownloaderVdb
 from src.exe_compute_data_all import get_dicts, write_csv_file
 from src.generate_filepaths import FilepathGenerator
 from src.global_constants_and_functions import OBSOLETE, MODIFIED, ADDED, LATEST_SUFFIX, METADATA_FILES_PATH, \
-    VDB_JSON_UNIVERSAL_NAME, remove_custom, DirOrFileNotFoundError, SUMMARY_FOLDER, MOLECULES_FOLDER, ASSEMBLY_FOLDER
+    VDB_JSON_UNIVERSAL_NAME, remove_custom, DirOrFileNotFoundError, SUMMARY_FOLDER, MOLECULES_FOLDER, ASSEMBLY_FOLDER, \
+    A_M_O_FILENAME
 
 
 def download_metadata():
-    for i in [ADDED, MODIFIED, OBSOLETE]:
-        DifferenceFilesDownloader(i).get_file()
-    print('Metadata downloaded.')
+    try:
+        for i in [ADDED, MODIFIED, OBSOLETE]:
+            DifferenceFilesDownloader(i).get_file()
+        print('Metadata downloaded.')
+    except Exception:
+        for i in [ADDED, MODIFIED, OBSOLETE]:
+            if os.path.exists(os.path.join(METADATA_FILES_PATH, i + LATEST_SUFFIX)):
+                os.remove(os.path.join(METADATA_FILES_PATH, i + LATEST_SUFFIX))
+        if os.path.exists(os.path.join(METADATA_FILES_PATH, A_M_O_FILENAME)):
+            os.remove(os.path.join(METADATA_FILES_PATH, A_M_O_FILENAME))
+        sys.exit('Unable to download metadata (added.latest, modified.latest, obsolete.latest). Please try again later')
 
 
 def get_lists_of_changed_molecules():
@@ -64,17 +74,47 @@ def remove_files(list_of_files_to_remove):
             print('File or directory {} not exists so not removed.'.format(path_to_remove))
 
 
+def download_with_retry(downloader, downloader_inputs):
+    i = 0
+    while True:
+        if i >= 3:
+            print('Unable to download data for {}'.format(downloader_inputs[0]))
+            return False
+        try:
+            downloader(*downloader_inputs).get_file()
+            return True
+        except Exception:
+            print('Failed to Download Xml validatation file. Waiting 1 minute and attempting again')
+            time.sleep(60)
+            i += 1
+            continue
+
+
 def download_files(molecules, list_of_files_to_download):
     # print('molecules + list of files to download')
     # print(molecules)
     # print(list_of_files_to_download)
     for molecule, filepath in zip(molecules, list_of_files_to_download):
-        PdbDownloader(molecule, filepath[0]).get_file()
-        RestJsonDownloaderVdb(molecule, filepath[1]).get_file()
-        XmlValidationDownloader(molecule, filepath[2]).get_file()
-        RestJsonDownloaderRest(molecule, ASSEMBLY_FOLDER, filepath[3]).get_file()
-        RestJsonDownloaderRest(molecule, MOLECULES_FOLDER, filepath[4]).get_file()
-        RestJsonDownloaderRest(molecule, SUMMARY_FOLDER, filepath[5]).get_file()
+        print('Downloading: {}'.format(molecule))
+        pdb_bool = download_with_retry(PdbDownloader, [molecule, filepath[0]])
+        # PdbDownloader(molecule, filepath[0]).get_file()
+        vdb_bool = download_with_retry(RestJsonDownloaderVdb, [molecule, filepath[1]])
+        # RestJsonDownloaderVdb(molecule, filepath[1]).get_file()
+        xml_bool = download_with_retry(XmlValidationDownloader, [molecule, filepath[2]])
+        # XmlValidationDownloader(molecule, filepath[2]).get_file()
+        rest_a_bool = download_with_retry(RestJsonDownloaderRest, [molecule, ASSEMBLY_FOLDER, filepath[3]])
+        rest_m_bool = download_with_retry(RestJsonDownloaderRest, [molecule, MOLECULES_FOLDER, filepath[4]])
+        rest_s_bool = download_with_retry(RestJsonDownloaderRest, [molecule, SUMMARY_FOLDER, filepath[5]])
+        # RestJsonDownloaderRest(molecule, ASSEMBLY_FOLDER, filepath[3]).get_file()
+        # RestJsonDownloaderRest(molecule, MOLECULES_FOLDER, filepath[4]).get_file()
+        # RestJsonDownloaderRest(molecule, SUMMARY_FOLDER, filepath[5]).get_file()
+        if not (pdb_bool and vdb_bool and xml_bool and rest_a_bool and rest_m_bool and rest_s_bool):
+            for i in filepath:
+                if os.path.exists(i):
+                    os.remove(i)
+            print('Unable to download data for {}. Please update manually')
+        else:
+            print('Download succeeded')
 
 
 def update_input_files(molecules_added, molecules_modified, files_added, files_modified,
