@@ -1,0 +1,221 @@
+{
+    "1o7a": [
+        {
+            "entity_id": 1,
+            "mutation_flag": null,
+            "synonym": "BETA-HEXOSAMINIDASE BETA CHAIN",
+            "weight": 58925.711,
+            "sequence": "AARAPSVSAKPGPALWPLPLSVKMTPNLLHLAPENFYISHSPNSTAGPSCTLLEEAFRRYHGYIFGFYKWHHEPAEFQAKTQVQQLLVSITLQSECDAFPNISSDESYTLLVKEPVAVLKANRVWGALRGLETFSQLVYQDSYGTFTINESTIIDSPRFSHRGILIDTSRHYLPVKIILKTLDAMAFNKFNVLHWHIVDDQSFPYQSITFPELSNKGSYSLSHVYTPNDVRMVIEYARLRGIRVLPEFDTPGHTLSWGKGQKDLLTPCYSRQNKLDSFGPINPTLNTTYSFLTTFFKEISEVFPDQFIHLGGDEVEFKCWESNPKIQDFMRQKGFGTDFKKLESFYIQKVLDIIATINKGSIVWQEVFDDKAKLAPGTIVEVWKDSAYPEELSRVTASGFPVILSAPWYLDLISYGQDWRKYYKVEPLDFGGTQKQKQLFIGGEACLWGEYVDATNLTPRLWPRASAVGERLWSSKDVRDMDDAYDRLTRHRCRMVERGIAAQPLYAGYCNHENM",
+            "molecule_name": [
+                "Beta-hexosaminidase subunit beta"
+            ],
+            "pdb_sequence": "AARAPSVSAKPGPALWPLPLSVKMTPNLLHLAPENFYISHSPNSTAGPSCTLLEEAFRRYHGYIFGFYKWHHEPAEFQAKTQVQQLLVSITLQSECDAFPNISSDESYTLLVKEPVAVLKANRVWGALRGLETFSQLVYQDSYGTFTINESTIIDSPRFSHRGILIDTSRHYLPVKIILKTLDAMAFNKFNVLHWHIVDDQSFPYQSITFPELSNKGSYSLSHVYTPNDVRMVIEYARLRGIRVLPEFDTPGHTLSWGKGQKDLLTPCYSRQNKLDSFGPINPTLNTTYSFLTTFFKEISEVFPDQFIHLGGDEVEFKCWESNPKIQDFMRQKGFGTDFKKLESFYIQKVLDIIATINKGSIVWQEVFDDKAKLAPGTIVEVWKDSAYPEELSRVTASGFPVILSAPWYLDLISYGQDWRKYYKVEPLDFGGTQKQKQLFIGGEACLWGEYVDATNLTPRLWPRASAVGERLWSSKDVRDMDDAYDRLTRHRCRMVERGIAAQPLYAGYCNHENM",
+            "ca_p_only": false,
+            "source": [
+                {
+                    "expression_host_scientific_name": "Spodoptera frugiperda",
+                    "tax_id": 9606,
+                    "mappings": [
+                        {
+                            "start": {
+                                "residue_number": 1
+                            },
+                            "end": {
+                                "residue_number": 515
+                            }
+                        }
+                    ],
+                    "organism_scientific_name": "Homo sapiens",
+                    "expression_host_tax_id": 7108
+                }
+            ],
+            "length": 515,
+            "in_chains": [
+                "A",
+                "B",
+                "C",
+                "D",
+                "E",
+                "F"
+            ],
+            "pdb_sequence_indices_with_multiple_residues": {},
+            "molecule_type": "polypeptide(L)",
+            "in_struct_asyms": [
+                "A",
+                "B",
+                "C",
+                "D",
+                "E",
+                "F"
+            ],
+            "sample_preparation": "Genetically manipulated",
+            "gene_name": [
+                "HCC7",
+                "HEXB"
+            ],
+            "number_of_copies": 6
+        },
+        {
+            "entity_id": 2,
+            "mutation_flag": null,
+            "in_struct_asyms": [
+                "G",
+                "H",
+                "I",
+                "J",
+                "K",
+                "L"
+            ],
+            "weight": 424.401,
+            "molecule_name": [
+                "2-acetamido-2-deoxy-beta-D-glucopyranose-(1-4)-2-acetamido-2-deoxy-beta-D-glucopyranose"
+            ],
+            "chem_comp_ids": [
+                "NAG"
+            ],
+            "ca_p_only": false,
+            "in_chains": [
+                "G",
+                "H",
+                "I",
+                "J",
+                "K",
+                "L"
+            ],
+            "molecule_type": "carbohydrate polymer",
+            "sample_preparation": "Genetically manipulated",
+            "number_of_copies": 12
+        },
+        {
+            "entity_id": 3,
+            "mutation_flag": null,
+            "in_struct_asyms": [
+                "BA",
+                "CA",
+                "HA",
+                "M",
+                "R",
+                "W"
+            ],
+            "weight": 219.192,
+            "molecule_name": [
+                "2-(acetylamido)-2-deoxy-D-glucono-1,5-lactone"
+            ],
+            "chem_comp_ids": [
+                "GDL"
+            ],
+            "ca_p_only": false,
+            "in_chains": [
+                "A",
+                "B",
+                "C",
+                "D",
+                "E",
+                "F"
+            ],
+            "molecule_type": "bound",
+            "sample_preparation": "Synthetically obtained",
+            "number_of_copies": 6
+        },
+        {
+            "entity_id": 4,
+            "mutation_flag": null,
+            "in_struct_asyms": [
+                "DA",
+                "IA",
+                "JA",
+                "N",
+                "S",
+                "X"
+            ],
+            "weight": 221.208,
+            "molecule_name": [
+                "2-acetamido-2-deoxy-beta-D-glucopyranose"
+            ],
+            "chem_comp_ids": [
+                "NAG"
+            ],
+            "ca_p_only": false,
+            "in_chains": [
+                "A",
+                "B",
+                "C",
+                "E",
+                "F"
+            ],
+            "molecule_type": "bound",
+            "sample_preparation": "Genetically manipulated",
+            "number_of_copies": 6
+        },
+        {
+            "entity_id": 5,
+            "mutation_flag": null,
+            "in_struct_asyms": [
+                "AA",
+                "EA",
+                "FA",
+                "GA",
+                "KA",
+                "LA",
+                "MA",
+                "O",
+                "P",
+                "Q",
+                "T",
+                "U",
+                "V",
+                "Y",
+                "Z"
+            ],
+            "weight": 62.068,
+            "molecule_name": [
+                "1,2-ETHANEDIOL"
+            ],
+            "chem_comp_ids": [
+                "EDO"
+            ],
+            "ca_p_only": false,
+            "in_chains": [
+                "A",
+                "B",
+                "C",
+                "E",
+                "F"
+            ],
+            "molecule_type": "bound",
+            "sample_preparation": "Synthetically obtained",
+            "number_of_copies": 15
+        },
+        {
+            "entity_id": 6,
+            "mutation_flag": null,
+            "in_struct_asyms": [
+                "NA",
+                "OA",
+                "PA",
+                "QA",
+                "RA",
+                "SA"
+            ],
+            "weight": 18.015,
+            "molecule_name": [
+                "water"
+            ],
+            "chem_comp_ids": [
+                "HOH"
+            ],
+            "ca_p_only": false,
+            "in_chains": [
+                "A",
+                "B",
+                "C",
+                "D",
+                "E",
+                "F"
+            ],
+            "molecule_type": "water",
+            "sample_preparation": "Natural source",
+            "number_of_copies": 2326
+        }
+    ]
+}

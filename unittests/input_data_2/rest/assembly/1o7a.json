@@ -1,0 +1,342 @@
+{
+    "1o7a": [
+        {
+            "polymeric_count": 2,
+            "assembly_composition": "protein structure",
+            "molecular_weight": 119.989,
+            "entities": [
+                {
+                    "entity_id": 1,
+                    "molecule_name": [
+                        "Beta-hexosaminidase subunit beta"
+                    ],
+                    "in_chains": [
+                        "A",
+                        "B"
+                    ],
+                    "molecule_type": "polypeptide(L)",
+                    "number_of_copies": 2
+                },
+                {
+                    "entity_id": 2,
+                    "molecule_name": [
+                        "2-acetamido-2-deoxy-beta-D-glucopyranose-(1-4)-2-acetamido-2-deoxy-beta-D-glucopyranose"
+                    ],
+                    "in_chains": [
+                        "G",
+                        "H"
+                    ],
+                    "molecule_type": "carbohydrate polymer",
+                    "number_of_copies": 2
+                },
+                {
+                    "entity_id": 3,
+                    "molecule_name": [
+                        "2-(acetylamido)-2-deoxy-D-glucono-1,5-lactone"
+                    ],
+                    "in_chains": [
+                        "M",
+                        "R"
+                    ],
+                    "molecule_type": "bound",
+                    "number_of_copies": 2
+                },
+                {
+                    "entity_id": 4,
+                    "molecule_name": [
+                        "2-acetamido-2-deoxy-beta-D-glucopyranose"
+                    ],
+                    "in_chains": [
+                        "N",
+                        "S"
+                    ],
+                    "molecule_type": "bound",
+                    "number_of_copies": 2
+                },
+                {
+                    "entity_id": 5,
+                    "molecule_name": [
+                        "1,2-ETHANEDIOL"
+                    ],
+                    "in_chains": [
+                        "O",
+                        "P",
+                        "Q",
+                        "T",
+                        "U",
+                        "V"
+                    ],
+                    "molecule_type": "bound",
+                    "number_of_copies": 6
+                },
+                {
+                    "entity_id": 6,
+                    "molecule_name": [
+                        "WATER"
+                    ],
+                    "in_chains": [
+                        "NA",
+                        "OA"
+                    ],
+                    "molecule_type": "water",
+                    "number_of_copies": 2
+                }
+            ],
+            "details": "software_defined_assembly",
+            "assembly_id": "1"
+        },
+        {
+            "polymeric_count": 2,
+            "assembly_composition": "protein structure",
+            "molecular_weight": 119.989,
+            "entities": [
+                {
+                    "entity_id": 1,
+                    "molecule_name": [
+                        "Beta-hexosaminidase subunit beta"
+                    ],
+                    "in_chains": [
+                        "E",
+                        "EB"
+                    ],
+                    "molecule_type": "polypeptide(L)",
+                    "number_of_copies": 2
+                },
+                {
+                    "entity_id": 2,
+                    "molecule_name": [
+                        "2-acetamido-2-deoxy-beta-D-glucopyranose-(1-4)-2-acetamido-2-deoxy-beta-D-glucopyranose"
+                    ],
+                    "in_chains": [
+                        "K",
+                        "KA"
+                    ],
+                    "molecule_type": "carbohydrate polymer",
+                    "number_of_copies": 2
+                },
+                {
+                    "entity_id": 3,
+                    "molecule_name": [
+                        "2-(acetylamido)-2-deoxy-D-glucono-1,5-lactone"
+                    ],
+                    "in_chains": [
+                        "C",
+                        "CA"
+                    ],
+                    "molecule_type": "bound",
+                    "number_of_copies": 2
+                },
+                {
+                    "entity_id": 4,
+                    "molecule_name": [
+                        "2-acetamido-2-deoxy-beta-D-glucopyranose"
+                    ],
+                    "in_chains": [
+                        "D",
+                        "DA"
+                    ],
+                    "molecule_type": "bound",
+                    "number_of_copies": 2
+                },
+                {
+                    "entity_id": 5,
+                    "molecule_name": [
+                        "1,2-ETHANEDIOL"
+                    ],
+                    "in_chains": [
+                        "EA",
+                        "EC",
+                        "F",
+                        "FA",
+                        "G",
+                        "GA"
+                    ],
+                    "molecule_type": "bound",
+                    "number_of_copies": 6
+                },
+                {
+                    "entity_id": 6,
+                    "molecule_name": [
+                        "WATER"
+                    ],
+                    "in_chains": [
+                        "R",
+                        "RA"
+                    ],
+                    "molecule_type": "water",
+                    "number_of_copies": 2
+                }
+            ],
+            "details": "software_defined_assembly",
+            "assembly_id": "3"
+        },
+        {
+            "polymeric_count": 2,
+            "assembly_composition": "protein structure",
+            "molecular_weight": 119.582,
+            "entities": [
+                {
+                    "entity_id": 1,
+                    "molecule_name": [
+                        "Beta-hexosaminidase subunit beta"
+                    ],
+                    "in_chains": [
+                        "C",
+                        "D"
+                    ],
+                    "molecule_type": "polypeptide(L)",
+                    "number_of_copies": 2
+                },
+                {
+                    "entity_id": 2,
+                    "molecule_name": [
+                        "2-acetamido-2-deoxy-beta-D-glucopyranose-(1-4)-2-acetamido-2-deoxy-beta-D-glucopyranose"
+                    ],
+                    "in_chains": [
+                        "I",
+                        "J"
+                    ],
+                    "molecule_type": "carbohydrate polymer",
+                    "number_of_copies": 2
+                },
+                {
+                    "entity_id": 3,
+                    "molecule_name": [
+                        "2-(acetylamido)-2-deoxy-D-glucono-1,5-lactone"
+                    ],
+                    "in_chains": [
+                        "BA",
+                        "W"
+                    ],
+                    "molecule_type": "bound",
+                    "number_of_copies": 2
+                },
+                {
+                    "entity_id": 4,
+                    "molecule_name": [
+                        "2-acetamido-2-deoxy-beta-D-glucopyranose"
+                    ],
+                    "in_chains": [
+                        "X"
+                    ],
+                    "molecule_type": "bound",
+                    "number_of_copies": 1
+                },
+                {
+                    "entity_id": 5,
+                    "molecule_name": [
+                        "1,2-ETHANEDIOL"
+                    ],
+                    "in_chains": [
+                        "AA",
+                        "Y",
+                        "Z"
+                    ],
+                    "molecule_type": "bound",
+                    "number_of_copies": 3
+                },
+                {
+                    "entity_id": 6,
+                    "molecule_name": [
+                        "WATER"
+                    ],
+                    "in_chains": [
+                        "PA",
+                        "QA"
+                    ],
+                    "molecule_type": "water",
+                    "number_of_copies": 2
+                }
+            ],
+            "details": "software_defined_assembly",
+            "assembly_id": "2"
+        },
+        {
+            "polymeric_count": 2,
+            "assembly_composition": "protein structure",
+            "molecular_weight": 120.432,
+            "entities": [
+                {
+                    "entity_id": 1,
+                    "molecule_name": [
+                        "Beta-hexosaminidase subunit beta"
+                    ],
+                    "in_chains": [
+                        "F",
+                        "FA"
+                    ],
+                    "molecule_type": "polypeptide(L)",
+                    "number_of_copies": 2
+                },
+                {
+                    "entity_id": 2,
+                    "molecule_name": [
+                        "2-acetamido-2-deoxy-beta-D-glucopyranose-(1-4)-2-acetamido-2-deoxy-beta-D-glucopyranose"
+                    ],
+                    "in_chains": [
+                        "L",
+                        "LB"
+                    ],
+                    "molecule_type": "carbohydrate polymer",
+                    "number_of_copies": 2
+                },
+                {
+                    "entity_id": 3,
+                    "molecule_name": [
+                        "2-(acetylamido)-2-deoxy-D-glucono-1,5-lactone"
+                    ],
+                    "in_chains": [
+                        "H",
+                        "HA"
+                    ],
+                    "molecule_type": "bound",
+                    "number_of_copies": 2
+                },
+                {
+                    "entity_id": 4,
+                    "molecule_name": [
+                        "2-acetamido-2-deoxy-beta-D-glucopyranose"
+                    ],
+                    "in_chains": [
+                        "I",
+                        "IA",
+                        "J",
+                        "JA"
+                    ],
+                    "molecule_type": "bound",
+                    "number_of_copies": 4
+                },
+                {
+                    "entity_id": 5,
+                    "molecule_name": [
+                        "1,2-ETHANEDIOL"
+                    ],
+                    "in_chains": [
+                        "K",
+                        "KA",
+                        "LA",
+                        "LC",
+                        "M",
+                        "MA"
+                    ],
+                    "molecule_type": "bound",
+                    "number_of_copies": 6
+                },
+                {
+                    "entity_id": 6,
+                    "molecule_name": [
+                        "WATER"
+                    ],
+                    "in_chains": [
+                        "S",
+                        "SA"
+                    ],
+                    "molecule_type": "water",
+                    "number_of_copies": 2
+                }
+            ],
+            "details": "software_defined_assembly",
+            "assembly_id": "4"
+        }
+    ]
+}

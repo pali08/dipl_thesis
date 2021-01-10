@@ -1,0 +1,252 @@
+{
+    "2fln": [
+        {
+            "entity_id": 1,
+            "mutation_flag": null,
+            "synonym": "DNA template strand",
+            "weight": 3340.183,
+            "sequence": "TCTAGGGTCCT",
+            "molecule_name": [
+                "DNA template strand"
+            ],
+            "pdb_sequence": "(DT)(DC)(DT)(DA)(DG)(DG)(DG)(DT)(DC)(DC)(DT)",
+            "ca_p_only": false,
+            "source": [
+                {
+                    "expression_host_scientific_name": null,
+                    "tax_id": 9606,
+                    "mappings": [
+                        {
+                            "start": {
+                                "residue_number": 1
+                            },
+                            "end": {
+                                "residue_number": 420
+                            }
+                        }
+                    ],
+                    "organism_scientific_name": "Homo sapiens",
+                    "expression_host_tax_id": null
+                }
+            ],
+            "length": 11,
+            "in_chains": [
+                "T"
+            ],
+            "pdb_sequence_indices_with_multiple_residues": {
+                "1": {
+                    "three_letter_code": "DT",
+                    "parent_chem_comp_ids": [],
+                    "one_letter_code": "T"
+                },
+                "2": {
+                    "three_letter_code": "DC",
+                    "parent_chem_comp_ids": [],
+                    "one_letter_code": "C"
+                },
+                "3": {
+                    "three_letter_code": "DT",
+                    "parent_chem_comp_ids": [],
+                    "one_letter_code": "T"
+                },
+                "4": {
+                    "three_letter_code": "DA",
+                    "parent_chem_comp_ids": [],
+                    "one_letter_code": "A"
+                },
+                "5": {
+                    "three_letter_code": "DG",
+                    "parent_chem_comp_ids": [],
+                    "one_letter_code": "G"
+                },
+                "6": {
+                    "three_letter_code": "DG",
+                    "parent_chem_comp_ids": [],
+                    "one_letter_code": "G"
+                },
+                "7": {
+                    "three_letter_code": "DG",
+                    "parent_chem_comp_ids": [],
+                    "one_letter_code": "G"
+                },
+                "8": {
+                    "three_letter_code": "DT",
+                    "parent_chem_comp_ids": [],
+                    "one_letter_code": "T"
+                },
+                "9": {
+                    "three_letter_code": "DC",
+                    "parent_chem_comp_ids": [],
+                    "one_letter_code": "C"
+                },
+                "10": {
+                    "three_letter_code": "DC",
+                    "parent_chem_comp_ids": [],
+                    "one_letter_code": "C"
+                },
+                "11": {
+                    "three_letter_code": "DT",
+                    "parent_chem_comp_ids": [],
+                    "one_letter_code": "T"
+                }
+            },
+            "molecule_type": "polydeoxyribonucleotide",
+            "in_struct_asyms": [
+                "A"
+            ],
+            "sample_preparation": "Synthetically obtained",
+            "gene_name": null,
+            "number_of_copies": 1
+        },
+        {
+            "entity_id": 2,
+            "mutation_flag": null,
+            "synonym": "DNA primer strand",
+            "weight": 2091.414,
+            "sequence": "AGGACCC",
+            "molecule_name": [
+                "DNA primer strand"
+            ],
+            "pdb_sequence": "(DA)(DG)(DG)(DA)(DC)(DC)(DOC)",
+            "ca_p_only": false,
+            "source": [
+                {
+                    "expression_host_scientific_name": null,
+                    "tax_id": 9606,
+                    "mappings": [
+                        {
+                            "start": {
+                                "residue_number": 1
+                            },
+                            "end": {
+                                "residue_number": 420
+                            }
+                        }
+                    ],
+                    "organism_scientific_name": "Homo sapiens",
+                    "expression_host_tax_id": null
+                }
+            ],
+            "length": 7,
+            "in_chains": [
+                "P"
+            ],
+            "pdb_sequence_indices_with_multiple_residues": {
+                "1": {
+                    "three_letter_code": "DA",
+                    "parent_chem_comp_ids": [],
+                    "one_letter_code": "A"
+                },
+                "2": {
+                    "three_letter_code": "DG",
+                    "parent_chem_comp_ids": [],
+                    "one_letter_code": "G"
+                },
+                "3": {
+                    "three_letter_code": "DG",
+                    "parent_chem_comp_ids": [],
+                    "one_letter_code": "G"
+                },
+                "4": {
+                    "three_letter_code": "DA",
+                    "parent_chem_comp_ids": [],
+                    "one_letter_code": "A"
+                },
+                "5": {
+                    "three_letter_code": "DC",
+                    "parent_chem_comp_ids": [],
+                    "one_letter_code": "C"
+                },
+                "6": {
+                    "three_letter_code": "DC",
+                    "parent_chem_comp_ids": [],
+                    "one_letter_code": "C"
+                },
+                "7": {
+                    "three_letter_code": "DOC",
+                    "parent_chem_comp_ids": [
+                        "DC"
+                    ],
+                    "one_letter_code": "C"
+                }
+            },
+            "molecule_type": "polydeoxyribonucleotide",
+            "in_struct_asyms": [
+                "B"
+            ],
+            "sample_preparation": "Synthetically obtained",
+            "gene_name": null,
+            "number_of_copies": 1
+        },
+        {
+            "entity_id": 3,
+            "mutation_flag": null,
+            "synonym": "DNA polymerase iota",
+            "weight": 47027.344,
+            "sequence": "MELADVGAAASSQGVHDQVLPTPNASSRVIVHVDLDCFYAQVEMISNPELKDKPLGVQQKYLVVTCNYEARKLGVKKLMNVRDAKEKCPQLVLVNGEDLTRYREMSYKVTELLEEFSPVVERLGFDENFVDLTEMVEKRLQQLQSDELSAVTVSGHVYNNQSINLLDVLHIRLLVGSQIAAEMREAMYNQLGLTGCAGVASNKLLAKLVSGVFKPNQQTVLLPESCQHLIHSLNHIKEIPGIGYKTAKCLEALGINSVRDLQTFSPKILEKELGISVAQRIQKLSFGEDNSPVILSGPPQSFSEEDSFKKCSSEVEAKNKIEELLASLLNRVCQDGRKPHTVRLIIRRYSSEKHYGRESRQCPIPSHVIQKLGTGNYDVMTPMVDILMKLFRNMVNVKMPFHLTLLSVCFCNLKALNTAK",
+            "molecule_name": [
+                "DNA polymerase iota"
+            ],
+            "pdb_sequence": "MELADVGAAASSQGVHDQVLPTPNASSRVIVHVDLDCFYAQVEMISNPELKDKPLGVQQKYLVVTCNYEARKLGVKKLMNVRDAKEKCPQLVLVNGEDLTRYREMSYKVTELLEEFSPVVERLGFDENFVDLTEMVEKRLQQLQSDELSAVTVSGHVYNNQSINLLDVLHIRLLVGSQIAAEMREAMYNQLGLTGCAGVASNKLLAKLVSGVFKPNQQTVLLPESCQHLIHSLNHIKEIPGIGYKTAKCLEALGINSVRDLQTFSPKILEKELGISVAQRIQKLSFGEDNSPVILSGPPQSFSEEDSFKKCSSEVEAKNKIEELLASLLNRVCQDGRKPHTVRLIIRRYSSEKHYGRESRQCPIPSHVIQKLGTGNYDVMTPMVDILMKLFRNMVNVKMPFHLTLLSVCFCNLKALNTAK",
+            "ca_p_only": false,
+            "source": [
+                {
+                    "expression_host_scientific_name": "Saccharomyces cerevisiae",
+                    "tax_id": 9606,
+                    "mappings": [
+                        {
+                            "start": {
+                                "residue_number": 1
+                            },
+                            "end": {
+                                "residue_number": 420
+                            }
+                        }
+                    ],
+                    "organism_scientific_name": "Homo sapiens",
+                    "expression_host_tax_id": 4932
+                }
+            ],
+            "length": 420,
+            "in_chains": [
+                "A"
+            ],
+            "pdb_sequence_indices_with_multiple_residues": {},
+            "molecule_type": "polypeptide(L)",
+            "in_struct_asyms": [
+                "C"
+            ],
+            "sample_preparation": "Genetically manipulated",
+            "gene_name": [
+                "POLI",
+                "RAD30B"
+            ],
+            "number_of_copies": 1
+        },
+        {
+            "entity_id": 4,
+            "mutation_flag": null,
+            "in_struct_asyms": [
+                "D",
+                "E",
+                "F"
+            ],
+            "weight": 18.015,
+            "molecule_name": [
+                "water"
+            ],
+            "chem_comp_ids": [
+                "HOH"
+            ],
+            "ca_p_only": false,
+            "in_chains": [
+                "A",
+                "P",
+                "T"
+            ],
+            "molecule_type": "water",
+            "sample_preparation": "Natural source",
+            "number_of_copies": 101
+        }
+    ]
+}
