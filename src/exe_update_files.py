@@ -82,9 +82,11 @@ def download_with_retry(downloader, downloader_inputs):
             return False
         try:
             downloader(*downloader_inputs).get_file()
+            if i > 0:
+                print('Download succeeded on attempt {}'.format(i + 1))
             return True
         except Exception:
-            print('Failed to Download Xml validatation file. Waiting 1 minute and attempting again')
+            print('Failed to Download {}. Waiting 1 minute and attempting again'.format(downloader_inputs[-1]))
             time.sleep(60)
             i += 1
             continue
@@ -95,7 +97,7 @@ def download_files(molecules, list_of_files_to_download):
     # print(molecules)
     # print(list_of_files_to_download)
     for molecule, filepath in zip(molecules, list_of_files_to_download):
-        print('Downloading: {}'.format(molecule))
+        # print('Downloading: {}'.format(molecule))
         pdb_bool = download_with_retry(PdbDownloader, [molecule, filepath[0]])
         # PdbDownloader(molecule, filepath[0]).get_file()
         vdb_bool = download_with_retry(RestJsonDownloaderVdb, [molecule, filepath[1]])
@@ -112,9 +114,7 @@ def download_files(molecules, list_of_files_to_download):
             for i in filepath:
                 if os.path.exists(i):
                     os.remove(i)
-            print('Unable to download data for {}. Please update manually')
-        else:
-            print('Download succeeded')
+            print('Unable to download data for {}. Please download and update manually')
 
 
 def update_input_files(molecules_added, molecules_modified, files_added, files_modified,
@@ -176,17 +176,17 @@ def update():
                                              args.rest_files)
     obsolete_files = get_filepaths_from_list(obsolete_molecules, args.mmcif_files, args.vdb_files, args.xml_files,
                                              args.rest_files)
+    print('Updating input files...')
     update_input_files(added_molecules, modified_molecules, added_files, modified_files, obsolete_files)
-
-    start = time.time()
+    print('Update input files finished')
+    print('Computing data for data.csv...')
     list_of_rec_lists = get_dicts(args.cpu_count, added_molecules + modified_molecules, args.ligand_stats_csv,
                                   args.mmcif_files, args.vdb_files,
                                   args.xml_files, args.rest_files)
-    end = time.time()
-    print("Loading files lasted {:.3f} seconds".format(end - start))
+    print('Computing data for data.csv finished')
+    print('Updating data.csv file...')
     update_csv(args.data_csv, list_of_rec_lists, added_molecules, modified_molecules, obsolete_molecules)
-    print(os.linesep + "Data were successfully written to data.csv.")
-    pass
+    print('Updating data.csv finished. \n Program finished')
 
 
 if __name__ == '__main__':

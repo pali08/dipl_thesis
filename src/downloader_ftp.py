@@ -33,11 +33,15 @@ class FtpFileDownloader(FileDownloader):
                 with closing(request.urlopen(self.url, )) as r:
                     with open(self.save_filepath, 'wb') as f:
                         shutil.copyfileobj(r, f)
+                        if i > 0:
+                            print('Download succeeded on attempt {}'.format(i+1))
                         return
             else:
-                print('According to requests.urlopen file {} "not exists" on FTP, but this might not be true. '
-                      'Sleeping 1 minute and retrying download. Retry will be done {} more times'.format(self.url,
-                                                                                                         3 - (i + 1)))
+                print(
+                    'requests.urlopen error. This sometimes means that file {} "not exists" on FTP '
+                    'but sometimes it is just "erruption on the Sun" and file is downloaded on second attempt. '
+                    'Sleeping 1 minute and retrying download. Retry will be done {} more times'.format(self.url,
+                                                                                                       3 - (i + 1)))
                 time.sleep(60)
                 i += 1
                 continue
@@ -83,8 +87,8 @@ class FtpFileDownloader(FileDownloader):
             time.sleep(300)
         try:
             urllib.request.urlopen(self.url)
-            print('True - file exists')
+            # print('True - file exists')
             return True
         except urllib.error.URLError:
-            print('False - file not exists')
+            # print('False - file not exists')
             return False
