@@ -1,0 +1,1205 @@
+{
+    "Bins": [
+        {
+            "Xfrom": "0",
+            "XisInterval": false,
+            "Xto": "0",
+            "YstructureCount": "2734"
+        },
+        {
+            "Xfrom": "0.01",
+            "XisInterval": true,
+            "Xto": "0.31",
+            "YstructureCount": "1189"
+        },
+        {
+            "Xfrom": "0.32",
+            "XisInterval": true,
+            "Xto": "0.47",
+            "YstructureCount": "887"
+        },
+        {
+            "Xfrom": "0.48",
+            "XisInterval": true,
+            "Xto": "0.62",
+            "YstructureCount": "1075"
+        },
+        {
+            "Xfrom": "0.63",
+            "XisInterval": true,
+            "Xto": "0.84",
+            "YstructureCount": "1874"
+        },
+        {
+            "Xfrom": "0.85",
+            "XisInterval": true,
+            "Xto": "0.94",
+            "YstructureCount": "1030"
+        },
+        {
+            "Xfrom": "0.95",
+            "XisInterval": true,
+            "Xto": "1.09",
+            "YstructureCount": "1729"
+        },
+        {
+            "Xfrom": "1.10",
+            "XisInterval": true,
+            "Xto": "1.21",
+            "YstructureCount": "1485"
+        },
+        {
+            "Xfrom": "1.22",
+            "XisInterval": true,
+            "Xto": "1.33",
+            "YstructureCount": "1629"
+        },
+        {
+            "Xfrom": "1.34",
+            "XisInterval": true,
+            "Xto": "1.49",
+            "YstructureCount": "2346"
+        },
+        {
+            "Xfrom": "1.50",
+            "XisInterval": true,
+            "Xto": "1.59",
+            "YstructureCount": "1539"
+        },
+        {
+            "Xfrom": "1.60",
+            "XisInterval": true,
+            "Xto": "1.69",
+            "YstructureCount": "1540"
+        },
+        {
+            "Xfrom": "1.70",
+            "XisInterval": true,
+            "Xto": "1.78",
+            "YstructureCount": "1478"
+        },
+        {
+            "Xfrom": "1.79",
+            "XisInterval": true,
+            "Xto": "1.89",
+            "YstructureCount": "1879"
+        },
+        {
+            "Xfrom": "1.90",
+            "XisInterval": true,
+            "Xto": "2",
+            "YstructureCount": "1904"
+        },
+        {
+            "Xfrom": "2.01",
+            "XisInterval": true,
+            "Xto": "2.08",
+            "YstructureCount": "1461"
+        },
+        {
+            "Xfrom": "2.09",
+            "XisInterval": true,
+            "Xto": "2.21",
+            "YstructureCount": "2331"
+        },
+        {
+            "Xfrom": "2.22",
+            "XisInterval": true,
+            "Xto": "2.33",
+            "YstructureCount": "2158"
+        },
+        {
+            "Xfrom": "2.34",
+            "XisInterval": true,
+            "Xto": "2.45",
+            "YstructureCount": "2262"
+        },
+        {
+            "Xfrom": "2.46",
+            "XisInterval": true,
+            "Xto": "2.57",
+            "YstructureCount": "2220"
+        },
+        {
+            "Xfrom": "2.58",
+            "XisInterval": true,
+            "Xto": "2.66",
+            "YstructureCount": "1646"
+        },
+        {
+            "Xfrom": "2.67",
+            "XisInterval": true,
+            "Xto": "2.79",
+            "YstructureCount": "2507"
+        },
+        {
+            "Xfrom": "2.80",
+            "XisInterval": true,
+            "Xto": "2.89",
+            "YstructureCount": "1877"
+        },
+        {
+            "Xfrom": "2.90",
+            "XisInterval": true,
+            "Xto": "2.99",
+            "YstructureCount": "1929"
+        },
+        {
+            "Xfrom": "3",
+            "XisInterval": true,
+            "Xto": "3.07",
+            "YstructureCount": "1426"
+        },
+        {
+            "Xfrom": "3.08",
+            "XisInterval": true,
+            "Xto": "3.18",
+            "YstructureCount": "2010"
+        },
+        {
+            "Xfrom": "3.19",
+            "XisInterval": true,
+            "Xto": "3.33",
+            "YstructureCount": "2725"
+        },
+        {
+            "Xfrom": "3.34",
+            "XisInterval": true,
+            "Xto": "3.44",
+            "YstructureCount": "1955"
+        },
+        {
+            "Xfrom": "3.45",
+            "XisInterval": true,
+            "Xto": "3.56",
+            "YstructureCount": "2179"
+        },
+        {
+            "Xfrom": "3.57",
+            "XisInterval": true,
+            "Xto": "3.70",
+            "YstructureCount": "2541"
+        },
+        {
+            "Xfrom": "3.71",
+            "XisInterval": true,
+            "Xto": "3.85",
+            "YstructureCount": "2570"
+        },
+        {
+            "Xfrom": "3.86",
+            "XisInterval": true,
+            "Xto": "3.93",
+            "YstructureCount": "1379"
+        },
+        {
+            "Xfrom": "3.94",
+            "XisInterval": true,
+            "Xto": "4.08",
+            "YstructureCount": "2619"
+        },
+        {
+            "Xfrom": "4.09",
+            "XisInterval": true,
+            "Xto": "4.19",
+            "YstructureCount": "1794"
+        },
+        {
+            "Xfrom": "4.20",
+            "XisInterval": true,
+            "Xto": "4.35",
+            "YstructureCount": "2490"
+        },
+        {
+            "Xfrom": "4.36",
+            "XisInterval": true,
+            "Xto": "4.42",
+            "YstructureCount": "1093"
+        },
+        {
+            "Xfrom": "4.43",
+            "XisInterval": true,
+            "Xto": "4.56",
+            "YstructureCount": "2273"
+        },
+        {
+            "Xfrom": "4.57",
+            "XisInterval": true,
+            "Xto": "4.74",
+            "YstructureCount": "2688"
+        },
+        {
+            "Xfrom": "4.75",
+            "XisInterval": true,
+            "Xto": "4.85",
+            "YstructureCount": "1617"
+        },
+        {
+            "Xfrom": "4.86",
+            "XisInterval": true,
+            "Xto": "4.95",
+            "YstructureCount": "1439"
+        },
+        {
+            "Xfrom": "4.96",
+            "XisInterval": true,
+            "Xto": "5.05",
+            "YstructureCount": "1369"
+        },
+        {
+            "Xfrom": "5.06",
+            "XisInterval": true,
+            "Xto": "5.22",
+            "YstructureCount": "2423"
+        },
+        {
+            "Xfrom": "5.23",
+            "XisInterval": true,
+            "Xto": "5.41",
+            "YstructureCount": "2532"
+        },
+        {
+            "Xfrom": "5.42",
+            "XisInterval": true,
+            "Xto": "5.58",
+            "YstructureCount": "2197"
+        },
+        {
+            "Xfrom": "5.59",
+            "XisInterval": true,
+            "Xto": "5.69",
+            "YstructureCount": "1376"
+        },
+        {
+            "Xfrom": "5.70",
+            "XisInterval": true,
+            "Xto": "5.85",
+            "YstructureCount": "1912"
+        },
+        {
+            "Xfrom": "5.86",
+            "XisInterval": true,
+            "Xto": "6.02",
+            "YstructureCount": "2100"
+        },
+        {
+            "Xfrom": "6.03",
+            "XisInterval": true,
+            "Xto": "6.13",
+            "YstructureCount": "1307"
+        },
+        {
+            "Xfrom": "6.14",
+            "XisInterval": true,
+            "Xto": "6.31",
+            "YstructureCount": "2077"
+        },
+        {
+            "Xfrom": "6.32",
+            "XisInterval": true,
+            "Xto": "6.44",
+            "YstructureCount": "1468"
+        },
+        {
+            "Xfrom": "6.45",
+            "XisInterval": true,
+            "Xto": "6.53",
+            "YstructureCount": "1014"
+        },
+        {
+            "Xfrom": "6.54",
+            "XisInterval": true,
+            "Xto": "6.66",
+            "YstructureCount": "1372"
+        },
+        {
+            "Xfrom": "6.67",
+            "XisInterval": true,
+            "Xto": "6.77",
+            "YstructureCount": "1145"
+        },
+        {
+            "Xfrom": "6.78",
+            "XisInterval": true,
+            "Xto": "6.91",
+            "YstructureCount": "1509"
+        },
+        {
+            "Xfrom": "6.92",
+            "XisInterval": true,
+            "Xto": "7.05",
+            "YstructureCount": "1384"
+        },
+        {
+            "Xfrom": "7.06",
+            "XisInterval": true,
+            "Xto": "7.26",
+            "YstructureCount": "1997"
+        },
+        {
+            "Xfrom": "7.27",
+            "XisInterval": true,
+            "Xto": "7.48",
+            "YstructureCount": "2016"
+        },
+        {
+            "Xfrom": "7.49",
+            "XisInterval": true,
+            "Xto": "7.59",
+            "YstructureCount": "987"
+        },
+        {
+            "Xfrom": "7.60",
+            "XisInterval": true,
+            "Xto": "7.80",
+            "YstructureCount": "1794"
+        },
+        {
+            "Xfrom": "7.81",
+            "XisInterval": true,
+            "Xto": "7.95",
+            "YstructureCount": "1238"
+        },
+        {
+            "Xfrom": "7.96",
+            "XisInterval": true,
+            "Xto": "8.17",
+            "YstructureCount": "1721"
+        },
+        {
+            "Xfrom": "8.18",
+            "XisInterval": true,
+            "Xto": "8.31",
+            "YstructureCount": "1086"
+        },
+        {
+            "Xfrom": "8.32",
+            "XisInterval": true,
+            "Xto": "8.51",
+            "YstructureCount": "1484"
+        },
+        {
+            "Xfrom": "8.52",
+            "XisInterval": true,
+            "Xto": "8.66",
+            "YstructureCount": "1143"
+        },
+        {
+            "Xfrom": "8.67",
+            "XisInterval": true,
+            "Xto": "8.84",
+            "YstructureCount": "1279"
+        },
+        {
+            "Xfrom": "8.85",
+            "XisInterval": true,
+            "Xto": "9.04",
+            "YstructureCount": "1362"
+        },
+        {
+            "Xfrom": "9.05",
+            "XisInterval": true,
+            "Xto": "9.16",
+            "YstructureCount": "815"
+        },
+        {
+            "Xfrom": "9.17",
+            "XisInterval": true,
+            "Xto": "9.33",
+            "YstructureCount": "1160"
+        },
+        {
+            "Xfrom": "9.34",
+            "XisInterval": true,
+            "Xto": "9.56",
+            "YstructureCount": "1394"
+        },
+        {
+            "Xfrom": "9.57",
+            "XisInterval": true,
+            "Xto": "9.80",
+            "YstructureCount": "1425"
+        },
+        {
+            "Xfrom": "9.81",
+            "XisInterval": true,
+            "Xto": "9.95",
+            "YstructureCount": "937"
+        },
+        {
+            "Xfrom": "9.96",
+            "XisInterval": true,
+            "Xto": "10.16",
+            "YstructureCount": "1173"
+        },
+        {
+            "Xfrom": "10.17",
+            "XisInterval": true,
+            "Xto": "10.39",
+            "YstructureCount": "1245"
+        },
+        {
+            "Xfrom": "10.40",
+            "XisInterval": true,
+            "Xto": "10.55",
+            "YstructureCount": "889"
+        },
+        {
+            "Xfrom": "10.56",
+            "XisInterval": true,
+            "Xto": "10.77",
+            "YstructureCount": "1175"
+        },
+        {
+            "Xfrom": "10.78",
+            "XisInterval": true,
+            "Xto": "10.92",
+            "YstructureCount": "805"
+        },
+        {
+            "Xfrom": "10.93",
+            "XisInterval": true,
+            "Xto": "11.17",
+            "YstructureCount": "1251"
+        },
+        {
+            "Xfrom": "11.18",
+            "XisInterval": true,
+            "Xto": "11.40",
+            "YstructureCount": "1061"
+        },
+        {
+            "Xfrom": "11.41",
+            "XisInterval": true,
+            "Xto": "11.59",
+            "YstructureCount": "856"
+        },
+        {
+            "Xfrom": "11.60",
+            "XisInterval": true,
+            "Xto": "11.83",
+            "YstructureCount": "1045"
+        },
+        {
+            "Xfrom": "11.84",
+            "XisInterval": true,
+            "Xto": "12.12",
+            "YstructureCount": "1234"
+        },
+        {
+            "Xfrom": "12.13",
+            "XisInterval": true,
+            "Xto": "12.41",
+            "YstructureCount": "1168"
+        },
+        {
+            "Xfrom": "12.42",
+            "XisInterval": true,
+            "Xto": "12.57",
+            "YstructureCount": "621"
+        },
+        {
+            "Xfrom": "12.58",
+            "XisInterval": true,
+            "Xto": "12.77",
+            "YstructureCount": "770"
+        },
+        {
+            "Xfrom": "12.78",
+            "XisInterval": true,
+            "Xto": "12.95",
+            "YstructureCount": "688"
+        },
+        {
+            "Xfrom": "12.96",
+            "XisInterval": true,
+            "Xto": "13.22",
+            "YstructureCount": "981"
+        },
+        {
+            "Xfrom": "13.23",
+            "XisInterval": true,
+            "Xto": "13.37",
+            "YstructureCount": "520"
+        },
+        {
+            "Xfrom": "13.38",
+            "XisInterval": true,
+            "Xto": "13.67",
+            "YstructureCount": "961"
+        },
+        {
+            "Xfrom": "13.68",
+            "XisInterval": true,
+            "Xto": "13.84",
+            "YstructureCount": "582"
+        },
+        {
+            "Xfrom": "13.85",
+            "XisInterval": true,
+            "Xto": "14.13",
+            "YstructureCount": "904"
+        },
+        {
+            "Xfrom": "14.14",
+            "XisInterval": true,
+            "Xto": "14.52",
+            "YstructureCount": "1185"
+        },
+        {
+            "Xfrom": "14.53",
+            "XisInterval": true,
+            "Xto": "14.79",
+            "YstructureCount": "796"
+        },
+        {
+            "Xfrom": "14.80",
+            "XisInterval": true,
+            "Xto": "15.02",
+            "YstructureCount": "676"
+        },
+        {
+            "Xfrom": "15.03",
+            "XisInterval": true,
+            "Xto": "15.30",
+            "YstructureCount": "772"
+        },
+        {
+            "Xfrom": "15.31",
+            "XisInterval": true,
+            "Xto": "15.58",
+            "YstructureCount": "773"
+        },
+        {
+            "Xfrom": "15.59",
+            "XisInterval": true,
+            "Xto": "15.93",
+            "YstructureCount": "880"
+        },
+        {
+            "Xfrom": "15.94",
+            "XisInterval": true,
+            "Xto": "16.15",
+            "YstructureCount": "499"
+        },
+        {
+            "Xfrom": "16.16",
+            "XisInterval": true,
+            "Xto": "16.41",
+            "YstructureCount": "593"
+        },
+        {
+            "Xfrom": "16.42",
+            "XisInterval": true,
+            "Xto": "16.64",
+            "YstructureCount": "509"
+        },
+        {
+            "Xfrom": "16.65",
+            "XisInterval": true,
+            "Xto": "17.04",
+            "YstructureCount": "871"
+        },
+        {
+            "Xfrom": "17.05",
+            "XisInterval": true,
+            "Xto": "17.24",
+            "YstructureCount": "411"
+        },
+        {
+            "Xfrom": "17.25",
+            "XisInterval": true,
+            "Xto": "17.56",
+            "YstructureCount": "640"
+        },
+        {
+            "Xfrom": "17.57",
+            "XisInterval": true,
+            "Xto": "17.93",
+            "YstructureCount": "686"
+        },
+        {
+            "Xfrom": "17.94",
+            "XisInterval": true,
+            "Xto": "18.18",
+            "YstructureCount": "457"
+        },
+        {
+            "Xfrom": "18.19",
+            "XisInterval": true,
+            "Xto": "18.55",
+            "YstructureCount": "678"
+        },
+        {
+            "Xfrom": "18.56",
+            "XisInterval": true,
+            "Xto": "18.83",
+            "YstructureCount": "501"
+        },
+        {
+            "Xfrom": "18.84",
+            "XisInterval": true,
+            "Xto": "19.14",
+            "YstructureCount": "539"
+        },
+        {
+            "Xfrom": "19.15",
+            "XisInterval": true,
+            "Xto": "19.67",
+            "YstructureCount": "788"
+        },
+        {
+            "Xfrom": "19.68",
+            "XisInterval": true,
+            "Xto": "20.12",
+            "YstructureCount": "658"
+        },
+        {
+            "Xfrom": "20.13",
+            "XisInterval": true,
+            "Xto": "20.45",
+            "YstructureCount": "461"
+        },
+        {
+            "Xfrom": "20.46",
+            "XisInterval": true,
+            "Xto": "20.79",
+            "YstructureCount": "499"
+        },
+        {
+            "Xfrom": "20.80",
+            "XisInterval": true,
+            "Xto": "21.12",
+            "YstructureCount": "440"
+        },
+        {
+            "Xfrom": "21.13",
+            "XisInterval": true,
+            "Xto": "21.61",
+            "YstructureCount": "625"
+        },
+        {
+            "Xfrom": "21.62",
+            "XisInterval": true,
+            "Xto": "22.10",
+            "YstructureCount": "581"
+        },
+        {
+            "Xfrom": "22.11",
+            "XisInterval": true,
+            "Xto": "22.44",
+            "YstructureCount": "380"
+        },
+        {
+            "Xfrom": "22.45",
+            "XisInterval": true,
+            "Xto": "22.88",
+            "YstructureCount": "482"
+        },
+        {
+            "Xfrom": "22.89",
+            "XisInterval": true,
+            "Xto": "23.37",
+            "YstructureCount": "505"
+        },
+        {
+            "Xfrom": "23.38",
+            "XisInterval": true,
+            "Xto": "23.75",
+            "YstructureCount": "338"
+        },
+        {
+            "Xfrom": "23.76",
+            "XisInterval": true,
+            "Xto": "24.24",
+            "YstructureCount": "427"
+        },
+        {
+            "Xfrom": "24.25",
+            "XisInterval": true,
+            "Xto": "24.62",
+            "YstructureCount": "351"
+        },
+        {
+            "Xfrom": "24.63",
+            "XisInterval": true,
+            "Xto": "25.17",
+            "YstructureCount": "452"
+        },
+        {
+            "Xfrom": "25.18",
+            "XisInterval": true,
+            "Xto": "25.94",
+            "YstructureCount": "618"
+        },
+        {
+            "Xfrom": "25.95",
+            "XisInterval": true,
+            "Xto": "26.66",
+            "YstructureCount": "529"
+        },
+        {
+            "Xfrom": "26.67",
+            "XisInterval": true,
+            "Xto": "27.48",
+            "YstructureCount": "564"
+        },
+        {
+            "Xfrom": "27.49",
+            "XisInterval": true,
+            "Xto": "28.16",
+            "YstructureCount": "462"
+        },
+        {
+            "Xfrom": "28.17",
+            "XisInterval": true,
+            "Xto": "28.60",
+            "YstructureCount": "306"
+        },
+        {
+            "Xfrom": "28.61",
+            "XisInterval": true,
+            "Xto": "29.18",
+            "YstructureCount": "337"
+        },
+        {
+            "Xfrom": "29.19",
+            "XisInterval": true,
+            "Xto": "29.75",
+            "YstructureCount": "312"
+        },
+        {
+            "Xfrom": "29.76",
+            "XisInterval": true,
+            "Xto": "30.25",
+            "YstructureCount": "260"
+        },
+        {
+            "Xfrom": "30.26",
+            "XisInterval": true,
+            "Xto": "30.83",
+            "YstructureCount": "304"
+        },
+        {
+            "Xfrom": "30.84",
+            "XisInterval": true,
+            "Xto": "31.81",
+            "YstructureCount": "481"
+        },
+        {
+            "Xfrom": "31.82",
+            "XisInterval": true,
+            "Xto": "32.26",
+            "YstructureCount": "224"
+        },
+        {
+            "Xfrom": "32.27",
+            "XisInterval": true,
+            "Xto": "32.96",
+            "YstructureCount": "312"
+        },
+        {
+            "Xfrom": "32.97",
+            "XisInterval": true,
+            "Xto": "33.51",
+            "YstructureCount": "231"
+        },
+        {
+            "Xfrom": "33.52",
+            "XisInterval": true,
+            "Xto": "34.44",
+            "YstructureCount": "356"
+        },
+        {
+            "Xfrom": "34.45",
+            "XisInterval": true,
+            "Xto": "35.51",
+            "YstructureCount": "405"
+        },
+        {
+            "Xfrom": "35.52",
+            "XisInterval": true,
+            "Xto": "36.20",
+            "YstructureCount": "224"
+        },
+        {
+            "Xfrom": "36.21",
+            "XisInterval": true,
+            "Xto": "36.76",
+            "YstructureCount": "198"
+        },
+        {
+            "Xfrom": "36.77",
+            "XisInterval": true,
+            "Xto": "37.53",
+            "YstructureCount": "238"
+        },
+        {
+            "Xfrom": "37.54",
+            "XisInterval": true,
+            "Xto": "38.43",
+            "YstructureCount": "255"
+        },
+        {
+            "Xfrom": "38.44",
+            "XisInterval": true,
+            "Xto": "39.52",
+            "YstructureCount": "307"
+        },
+        {
+            "Xfrom": "39.53",
+            "XisInterval": true,
+            "Xto": "40.27",
+            "YstructureCount": "183"
+        },
+        {
+            "Xfrom": "40.28",
+            "XisInterval": true,
+            "Xto": "41.37",
+            "YstructureCount": "270"
+        },
+        {
+            "Xfrom": "41.39",
+            "XisInterval": true,
+            "Xto": "42.05",
+            "YstructureCount": "144"
+        },
+        {
+            "Xfrom": "42.06",
+            "XisInterval": true,
+            "Xto": "43",
+            "YstructureCount": "170"
+        },
+        {
+            "Xfrom": "43.02",
+            "XisInterval": true,
+            "Xto": "43.73",
+            "YstructureCount": "128"
+        },
+        {
+            "Xfrom": "43.75",
+            "XisInterval": true,
+            "Xto": "44.72",
+            "YstructureCount": "206"
+        },
+        {
+            "Xfrom": "44.73",
+            "XisInterval": true,
+            "Xto": "46.11",
+            "YstructureCount": "261"
+        },
+        {
+            "Xfrom": "46.13",
+            "XisInterval": true,
+            "Xto": "47.37",
+            "YstructureCount": "213"
+        },
+        {
+            "Xfrom": "47.38",
+            "XisInterval": true,
+            "Xto": "48.20",
+            "YstructureCount": "132"
+        },
+        {
+            "Xfrom": "48.22",
+            "XisInterval": true,
+            "Xto": "49.50",
+            "YstructureCount": "184"
+        },
+        {
+            "Xfrom": "49.51",
+            "XisInterval": true,
+            "Xto": "50.54",
+            "YstructureCount": "147"
+        },
+        {
+            "Xfrom": "50.57",
+            "XisInterval": true,
+            "Xto": "51.79",
+            "YstructureCount": "164"
+        },
+        {
+            "Xfrom": "51.82",
+            "XisInterval": true,
+            "Xto": "53.48",
+            "YstructureCount": "193"
+        },
+        {
+            "Xfrom": "53.50",
+            "XisInterval": true,
+            "Xto": "55.49",
+            "YstructureCount": "218"
+        },
+        {
+            "Xfrom": "55.56",
+            "XisInterval": true,
+            "Xto": "57.42",
+            "YstructureCount": "192"
+        },
+        {
+            "Xfrom": "57.44",
+            "XisInterval": true,
+            "Xto": "58.73",
+            "YstructureCount": "123"
+        },
+        {
+            "Xfrom": "58.77",
+            "XisInterval": true,
+            "Xto": "60.01",
+            "YstructureCount": "115"
+        },
+        {
+            "Xfrom": "60.03",
+            "XisInterval": true,
+            "Xto": "61.90",
+            "YstructureCount": "157"
+        },
+        {
+            "Xfrom": "61.94",
+            "XisInterval": true,
+            "Xto": "63.78",
+            "YstructureCount": "138"
+        },
+        {
+            "Xfrom": "63.81",
+            "XisInterval": true,
+            "Xto": "65.51",
+            "YstructureCount": "132"
+        },
+        {
+            "Xfrom": "65.56",
+            "XisInterval": true,
+            "Xto": "66.72",
+            "YstructureCount": "78"
+        },
+        {
+            "Xfrom": "66.84",
+            "XisInterval": true,
+            "Xto": "68.65",
+            "YstructureCount": "105"
+        },
+        {
+            "Xfrom": "68.68",
+            "XisInterval": true,
+            "Xto": "70.09",
+            "YstructureCount": "79"
+        },
+        {
+            "Xfrom": "70.18",
+            "XisInterval": true,
+            "Xto": "71.84",
+            "YstructureCount": "84"
+        },
+        {
+            "Xfrom": "71.90",
+            "XisInterval": true,
+            "Xto": "74.53",
+            "YstructureCount": "137"
+        },
+        {
+            "Xfrom": "74.58",
+            "XisInterval": true,
+            "Xto": "77.13",
+            "YstructureCount": "111"
+        },
+        {
+            "Xfrom": "77.18",
+            "XisInterval": true,
+            "Xto": "79.48",
+            "YstructureCount": "102"
+        },
+        {
+            "Xfrom": "79.56",
+            "XisInterval": true,
+            "Xto": "82.72",
+            "YstructureCount": "98"
+        },
+        {
+            "Xfrom": "82.78",
+            "XisInterval": true,
+            "Xto": "85.79",
+            "YstructureCount": "105"
+        },
+        {
+            "Xfrom": "86.04",
+            "XisInterval": true,
+            "Xto": "88.52",
+            "YstructureCount": "59"
+        },
+        {
+            "Xfrom": "88.69",
+            "XisInterval": true,
+            "Xto": "91.74",
+            "YstructureCount": "92"
+        },
+        {
+            "Xfrom": "91.81",
+            "XisInterval": true,
+            "Xto": "94.46",
+            "YstructureCount": "70"
+        },
+        {
+            "Xfrom": "94.53",
+            "XisInterval": true,
+            "Xto": "97.48",
+            "YstructureCount": "79"
+        },
+        {
+            "Xfrom": "97.78",
+            "XisInterval": true,
+            "Xto": "100.29",
+            "YstructureCount": "47"
+        },
+        {
+            "Xfrom": "100.45",
+            "XisInterval": true,
+            "Xto": "105.03",
+            "YstructureCount": "82"
+        },
+        {
+            "Xfrom": "105.29",
+            "XisInterval": true,
+            "Xto": "108.56",
+            "YstructureCount": "41"
+        },
+        {
+            "Xfrom": "108.77",
+            "XisInterval": true,
+            "Xto": "112.78",
+            "YstructureCount": "53"
+        },
+        {
+            "Xfrom": "113",
+            "XisInterval": true,
+            "Xto": "116.35",
+            "YstructureCount": "43"
+        },
+        {
+            "Xfrom": "116.60",
+            "XisInterval": true,
+            "Xto": "121.92",
+            "YstructureCount": "68"
+        },
+        {
+            "Xfrom": "122.21",
+            "XisInterval": true,
+            "Xto": "129.03",
+            "YstructureCount": "60"
+        },
+        {
+            "Xfrom": "129.70",
+            "XisInterval": true,
+            "Xto": "134.11",
+            "YstructureCount": "40"
+        },
+        {
+            "Xfrom": "134.77",
+            "XisInterval": true,
+            "Xto": "143.03",
+            "YstructureCount": "52"
+        },
+        {
+            "Xfrom": "143.38",
+            "XisInterval": true,
+            "Xto": "149.26",
+            "YstructureCount": "27"
+        },
+        {
+            "Xfrom": "150.28",
+            "XisInterval": true,
+            "Xto": "154.35",
+            "YstructureCount": "19"
+        },
+        {
+            "Xfrom": "154.77",
+            "XisInterval": true,
+            "Xto": "163.12",
+            "YstructureCount": "39"
+        },
+        {
+            "Xfrom": "163.81",
+            "XisInterval": true,
+            "Xto": "175.19",
+            "YstructureCount": "37"
+        },
+        {
+            "Xfrom": "176.10",
+            "XisInterval": true,
+            "Xto": "182.84",
+            "YstructureCount": "20"
+        },
+        {
+            "Xfrom": "183.52",
+            "XisInterval": true,
+            "Xto": "195.30",
+            "YstructureCount": "31"
+        },
+        {
+            "Xfrom": "197.61",
+            "XisInterval": true,
+            "Xto": "206.44",
+            "YstructureCount": "18"
+        },
+        {
+            "Xfrom": "208.27",
+            "XisInterval": true,
+            "Xto": "213.74",
+            "YstructureCount": "15"
+        },
+        {
+            "Xfrom": "215.50",
+            "XisInterval": true,
+            "Xto": "227.05",
+            "YstructureCount": "14"
+        },
+        {
+            "Xfrom": "230.10",
+            "XisInterval": true,
+            "Xto": "253.91",
+            "YstructureCount": "16"
+        },
+        {
+            "Xfrom": "255.10",
+            "XisInterval": true,
+            "Xto": "270.41",
+            "YstructureCount": "11"
+        },
+        {
+            "Xfrom": "278.60",
+            "XisInterval": true,
+            "Xto": "317.75",
+            "YstructureCount": "9"
+        },
+        {
+            "Xfrom": "326.15",
+            "XisInterval": true,
+            "Xto": "343.59",
+            "YstructureCount": "9"
+        },
+        {
+            "Xfrom": "358.01",
+            "XisInterval": true,
+            "Xto": "378.68",
+            "YstructureCount": "6"
+        },
+        {
+            "Xfrom": "396.74",
+            "XisInterval": true,
+            "Xto": "434.85",
+            "YstructureCount": "6"
+        },
+        {
+            "Xfrom": "486.04",
+            "XisInterval": true,
+            "Xto": "583.89",
+            "YstructureCount": "3"
+        },
+        {
+            "Xfrom": "1044.30",
+            "XisInterval": false,
+            "Xto": "1044.30",
+            "YstructureCount": "1"
+        }
+    ],
+    "Factor": "clashscore structure quality factor"
+}

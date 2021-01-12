@@ -1,0 +1,551 @@
+{
+    "GraphBuckets": [
+        {
+            "BucketOrdinalNumber": "1",
+            "StructureCountInBucket": "1579",
+            "XfactorFrom": {
+                "XfactorFromIsInfinity": false,
+                "XfactorFromOpenInterval": false,
+                "XfactorFromValue": "1976"
+            },
+            "XfactorTo": {
+                "XfactorToIsInfinity": false,
+                "XfactorToOpenInterval": true,
+                "XfactorToValue": "1994"
+            },
+            "YfactorAverage": "21.8",
+            "YfactorHighQuartile": "22.4",
+            "YfactorLowQuartile": "5.58",
+            "YfactorMaximum": "416",
+            "YfactorMedian": "10.8",
+            "YfactorMinimum": "0"
+        },
+        {
+            "BucketOrdinalNumber": "2",
+            "StructureCountInBucket": "1289",
+            "XfactorFrom": {
+                "XfactorFromIsInfinity": false,
+                "XfactorFromOpenInterval": false,
+                "XfactorFromValue": "1994"
+            },
+            "XfactorTo": {
+                "XfactorToIsInfinity": false,
+                "XfactorToOpenInterval": true,
+                "XfactorToValue": "1995"
+            },
+            "YfactorAverage": "19.1",
+            "YfactorHighQuartile": "20.6",
+            "YfactorLowQuartile": "5.33",
+            "YfactorMaximum": "1044",
+            "YfactorMedian": "10.6",
+            "YfactorMinimum": "0"
+        },
+        {
+            "BucketOrdinalNumber": "3",
+            "StructureCountInBucket": "940",
+            "XfactorFrom": {
+                "XfactorFromIsInfinity": false,
+                "XfactorFromOpenInterval": false,
+                "XfactorFromValue": "1995"
+            },
+            "XfactorTo": {
+                "XfactorToIsInfinity": false,
+                "XfactorToOpenInterval": true,
+                "XfactorToValue": "1996"
+            },
+            "YfactorAverage": "17.8",
+            "YfactorHighQuartile": "20.8",
+            "YfactorLowQuartile": "5.40",
+            "YfactorMaximum": "338",
+            "YfactorMedian": "9.80",
+            "YfactorMinimum": "0"
+        },
+        {
+            "BucketOrdinalNumber": "4",
+            "StructureCountInBucket": "1170",
+            "XfactorFrom": {
+                "XfactorFromIsInfinity": false,
+                "XfactorFromOpenInterval": false,
+                "XfactorFromValue": "1996"
+            },
+            "XfactorTo": {
+                "XfactorToIsInfinity": false,
+                "XfactorToOpenInterval": true,
+                "XfactorToValue": "1997"
+            },
+            "YfactorAverage": "21.2",
+            "YfactorHighQuartile": "23.6",
+            "YfactorLowQuartile": "5.48",
+            "YfactorMaximum": "332",
+            "YfactorMedian": "11.0",
+            "YfactorMinimum": "0"
+        },
+        {
+            "BucketOrdinalNumber": "5",
+            "StructureCountInBucket": "1563",
+            "XfactorFrom": {
+                "XfactorFromIsInfinity": false,
+                "XfactorFromOpenInterval": false,
+                "XfactorFromValue": "1997"
+            },
+            "XfactorTo": {
+                "XfactorToIsInfinity": false,
+                "XfactorToOpenInterval": true,
+                "XfactorToValue": "1998"
+            },
+            "YfactorAverage": "18.5",
+            "YfactorHighQuartile": "20.4",
+            "YfactorLowQuartile": "5.02",
+            "YfactorMaximum": "223",
+            "YfactorMedian": "10.2",
+            "YfactorMinimum": "0"
+        },
+        {
+            "BucketOrdinalNumber": "6",
+            "StructureCountInBucket": "2056",
+            "XfactorFrom": {
+                "XfactorFromIsInfinity": false,
+                "XfactorFromOpenInterval": false,
+                "XfactorFromValue": "1998"
+            },
+            "XfactorTo": {
+                "XfactorToIsInfinity": false,
+                "XfactorToOpenInterval": true,
+                "XfactorToValue": "1999"
+            },
+            "YfactorAverage": "16.0",
+            "YfactorHighQuartile": "17.2",
+            "YfactorLowQuartile": "5.41",
+            "YfactorMaximum": "260",
+            "YfactorMedian": "9.34",
+            "YfactorMinimum": "0"
+        },
+        {
+            "BucketOrdinalNumber": "7",
+            "StructureCountInBucket": "2355",
+            "XfactorFrom": {
+                "XfactorFromIsInfinity": false,
+                "XfactorFromOpenInterval": false,
+                "XfactorFromValue": "1999"
+            },
+            "XfactorTo": {
+                "XfactorToIsInfinity": false,
+                "XfactorToOpenInterval": true,
+                "XfactorToValue": "2000"
+            },
+            "YfactorAverage": "17.6",
+            "YfactorHighQuartile": "20.6",
+            "YfactorLowQuartile": "5.45",
+            "YfactorMaximum": "214",
+            "YfactorMedian": "10.6",
+            "YfactorMinimum": "0"
+        },
+        {
+            "BucketOrdinalNumber": "8",
+            "StructureCountInBucket": "2626",
+            "XfactorFrom": {
+                "XfactorFromIsInfinity": false,
+                "XfactorFromOpenInterval": false,
+                "XfactorFromValue": "2000"
+            },
+            "XfactorTo": {
+                "XfactorToIsInfinity": false,
+                "XfactorToOpenInterval": true,
+                "XfactorToValue": "2001"
+            },
+            "YfactorAverage": "17.1",
+            "YfactorHighQuartile": "18.7",
+            "YfactorLowQuartile": "5.69",
+            "YfactorMaximum": "360",
+            "YfactorMedian": "10.5",
+            "YfactorMinimum": "0"
+        },
+        {
+            "BucketOrdinalNumber": "9",
+            "StructureCountInBucket": "2813",
+            "XfactorFrom": {
+                "XfactorFromIsInfinity": false,
+                "XfactorFromOpenInterval": false,
+                "XfactorFromValue": "2001"
+            },
+            "XfactorTo": {
+                "XfactorToIsInfinity": false,
+                "XfactorToOpenInterval": true,
+                "XfactorToValue": "2002"
+            },
+            "YfactorAverage": "18.2",
+            "YfactorHighQuartile": "19.9",
+            "YfactorLowQuartile": "6.58",
+            "YfactorMaximum": "435",
+            "YfactorMedian": "11.4",
+            "YfactorMinimum": "0"
+        },
+        {
+            "BucketOrdinalNumber": "10",
+            "StructureCountInBucket": "2993",
+            "XfactorFrom": {
+                "XfactorFromIsInfinity": false,
+                "XfactorFromOpenInterval": false,
+                "XfactorFromValue": "2002"
+            },
+            "XfactorTo": {
+                "XfactorToIsInfinity": false,
+                "XfactorToOpenInterval": true,
+                "XfactorToValue": "2003"
+            },
+            "YfactorAverage": "18.5",
+            "YfactorHighQuartile": "20.9",
+            "YfactorLowQuartile": "6.63",
+            "YfactorMaximum": "403",
+            "YfactorMedian": "11.3",
+            "YfactorMinimum": "0"
+        },
+        {
+            "BucketOrdinalNumber": "11",
+            "StructureCountInBucket": "4145",
+            "XfactorFrom": {
+                "XfactorFromIsInfinity": false,
+                "XfactorFromOpenInterval": false,
+                "XfactorFromValue": "2003"
+            },
+            "XfactorTo": {
+                "XfactorToIsInfinity": false,
+                "XfactorToOpenInterval": true,
+                "XfactorToValue": "2004"
+            },
+            "YfactorAverage": "16.2",
+            "YfactorHighQuartile": "18.7",
+            "YfactorLowQuartile": "5.86",
+            "YfactorMaximum": "584",
+            "YfactorMedian": "10.5",
+            "YfactorMinimum": "0"
+        },
+        {
+            "BucketOrdinalNumber": "12",
+            "StructureCountInBucket": "5149",
+            "XfactorFrom": {
+                "XfactorFromIsInfinity": false,
+                "XfactorFromOpenInterval": false,
+                "XfactorFromValue": "2004"
+            },
+            "XfactorTo": {
+                "XfactorToIsInfinity": false,
+                "XfactorToOpenInterval": true,
+                "XfactorToValue": "2005"
+            },
+            "YfactorAverage": "15.2",
+            "YfactorHighQuartile": "18.6",
+            "YfactorLowQuartile": "5.63",
+            "YfactorMaximum": "329",
+            "YfactorMedian": "10.3",
+            "YfactorMinimum": "0"
+        },
+        {
+            "BucketOrdinalNumber": "13",
+            "StructureCountInBucket": "5326",
+            "XfactorFrom": {
+                "XfactorFromIsInfinity": false,
+                "XfactorFromOpenInterval": false,
+                "XfactorFromValue": "2005"
+            },
+            "XfactorTo": {
+                "XfactorToIsInfinity": false,
+                "XfactorToOpenInterval": true,
+                "XfactorToValue": "2006"
+            },
+            "YfactorAverage": "14.6",
+            "YfactorHighQuartile": "17.7",
+            "YfactorLowQuartile": "5.10",
+            "YfactorMaximum": "510",
+            "YfactorMedian": "9.86",
+            "YfactorMinimum": "0"
+        },
+        {
+            "BucketOrdinalNumber": "14",
+            "StructureCountInBucket": "6406",
+            "XfactorFrom": {
+                "XfactorFromIsInfinity": false,
+                "XfactorFromOpenInterval": false,
+                "XfactorFromValue": "2006"
+            },
+            "XfactorTo": {
+                "XfactorToIsInfinity": false,
+                "XfactorToOpenInterval": true,
+                "XfactorToValue": "2007"
+            },
+            "YfactorAverage": "13.2",
+            "YfactorHighQuartile": "15.9",
+            "YfactorLowQuartile": "5.02",
+            "YfactorMaximum": "379",
+            "YfactorMedian": "8.85",
+            "YfactorMinimum": "0"
+        },
+        {
+            "BucketOrdinalNumber": "15",
+            "StructureCountInBucket": "7107",
+            "XfactorFrom": {
+                "XfactorFromIsInfinity": false,
+                "XfactorFromOpenInterval": false,
+                "XfactorFromValue": "2007"
+            },
+            "XfactorTo": {
+                "XfactorToIsInfinity": false,
+                "XfactorToOpenInterval": true,
+                "XfactorToValue": "2008"
+            },
+            "YfactorAverage": "12.2",
+            "YfactorHighQuartile": "14.7",
+            "YfactorLowQuartile": "4.71",
+            "YfactorMaximum": "291",
+            "YfactorMedian": "8.30",
+            "YfactorMinimum": "0"
+        },
+        {
+            "BucketOrdinalNumber": "16",
+            "StructureCountInBucket": "6899",
+            "XfactorFrom": {
+                "XfactorFromIsInfinity": false,
+                "XfactorFromOpenInterval": false,
+                "XfactorFromValue": "2008"
+            },
+            "XfactorTo": {
+                "XfactorToIsInfinity": false,
+                "XfactorToOpenInterval": true,
+                "XfactorToValue": "2009"
+            },
+            "YfactorAverage": "12.1",
+            "YfactorHighQuartile": "14.6",
+            "YfactorLowQuartile": "4.53",
+            "YfactorMaximum": "283",
+            "YfactorMedian": "7.90",
+            "YfactorMinimum": "0"
+        },
+        {
+            "BucketOrdinalNumber": "17",
+            "StructureCountInBucket": "7289",
+            "XfactorFrom": {
+                "XfactorFromIsInfinity": false,
+                "XfactorFromOpenInterval": false,
+                "XfactorFromValue": "2009"
+            },
+            "XfactorTo": {
+                "XfactorToIsInfinity": false,
+                "XfactorToOpenInterval": true,
+                "XfactorToValue": "2010"
+            },
+            "YfactorAverage": "11.8",
+            "YfactorHighQuartile": "14.2",
+            "YfactorLowQuartile": "4.33",
+            "YfactorMaximum": "212",
+            "YfactorMedian": "7.71",
+            "YfactorMinimum": "0"
+        },
+        {
+            "BucketOrdinalNumber": "18",
+            "StructureCountInBucket": "7742",
+            "XfactorFrom": {
+                "XfactorFromIsInfinity": false,
+                "XfactorFromOpenInterval": false,
+                "XfactorFromValue": "2010"
+            },
+            "XfactorTo": {
+                "XfactorToIsInfinity": false,
+                "XfactorToOpenInterval": true,
+                "XfactorToValue": "2011"
+            },
+            "YfactorAverage": "10.7",
+            "YfactorHighQuartile": "12.5",
+            "YfactorLowQuartile": "4.12",
+            "YfactorMaximum": "313",
+            "YfactorMedian": "7.24",
+            "YfactorMinimum": "0"
+        },
+        {
+            "BucketOrdinalNumber": "19",
+            "StructureCountInBucket": "7909",
+            "XfactorFrom": {
+                "XfactorFromIsInfinity": false,
+                "XfactorFromOpenInterval": false,
+                "XfactorFromValue": "2011"
+            },
+            "XfactorTo": {
+                "XfactorToIsInfinity": false,
+                "XfactorToOpenInterval": true,
+                "XfactorToValue": "2012"
+            },
+            "YfactorAverage": "9.70",
+            "YfactorHighQuartile": "11.3",
+            "YfactorLowQuartile": "3.72",
+            "YfactorMaximum": "270",
+            "YfactorMedian": "6.44",
+            "YfactorMinimum": "0"
+        },
+        {
+            "BucketOrdinalNumber": "20",
+            "StructureCountInBucket": "8747",
+            "XfactorFrom": {
+                "XfactorFromIsInfinity": false,
+                "XfactorFromOpenInterval": false,
+                "XfactorFromValue": "2012"
+            },
+            "XfactorTo": {
+                "XfactorToIsInfinity": false,
+                "XfactorToOpenInterval": true,
+                "XfactorToValue": "2013"
+            },
+            "YfactorAverage": "9.31",
+            "YfactorHighQuartile": "10.9",
+            "YfactorLowQuartile": "3.35",
+            "YfactorMaximum": "358",
+            "YfactorMedian": "6.00",
+            "YfactorMinimum": "0"
+        },
+        {
+            "BucketOrdinalNumber": "21",
+            "StructureCountInBucket": "9313",
+            "XfactorFrom": {
+                "XfactorFromIsInfinity": false,
+                "XfactorFromOpenInterval": false,
+                "XfactorFromValue": "2013"
+            },
+            "XfactorTo": {
+                "XfactorToIsInfinity": false,
+                "XfactorToOpenInterval": true,
+                "XfactorToValue": "2014"
+            },
+            "YfactorAverage": "8.24",
+            "YfactorHighQuartile": "9.19",
+            "YfactorLowQuartile": "3.05",
+            "YfactorMaximum": "486",
+            "YfactorMedian": "5.19",
+            "YfactorMinimum": "0"
+        },
+        {
+            "BucketOrdinalNumber": "22",
+            "StructureCountInBucket": "9465",
+            "XfactorFrom": {
+                "XfactorFromIsInfinity": false,
+                "XfactorFromOpenInterval": false,
+                "XfactorFromValue": "2014"
+            },
+            "XfactorTo": {
+                "XfactorToIsInfinity": false,
+                "XfactorToOpenInterval": true,
+                "XfactorToValue": "2015"
+            },
+            "YfactorAverage": "7.35",
+            "YfactorHighQuartile": "7.90",
+            "YfactorLowQuartile": "2.53",
+            "YfactorMaximum": "211",
+            "YfactorMedian": "4.49",
+            "YfactorMinimum": "0"
+        },
+        {
+            "BucketOrdinalNumber": "23",
+            "StructureCountInBucket": "9204",
+            "XfactorFrom": {
+                "XfactorFromIsInfinity": false,
+                "XfactorFromOpenInterval": false,
+                "XfactorFromValue": "2015"
+            },
+            "XfactorTo": {
+                "XfactorToIsInfinity": false,
+                "XfactorToOpenInterval": true,
+                "XfactorToValue": "2016"
+            },
+            "YfactorAverage": "6.14",
+            "YfactorHighQuartile": "6.96",
+            "YfactorLowQuartile": "2.18",
+            "YfactorMaximum": "218",
+            "YfactorMedian": "3.91",
+            "YfactorMinimum": "0"
+        },
+        {
+            "BucketOrdinalNumber": "24",
+            "StructureCountInBucket": "10694",
+            "XfactorFrom": {
+                "XfactorFromIsInfinity": false,
+                "XfactorFromOpenInterval": false,
+                "XfactorFromValue": "2016"
+            },
+            "XfactorTo": {
+                "XfactorToIsInfinity": false,
+                "XfactorToOpenInterval": true,
+                "XfactorToValue": "2017"
+            },
+            "YfactorAverage": "5.68",
+            "YfactorHighQuartile": "6.32",
+            "YfactorLowQuartile": "1.85",
+            "YfactorMaximum": "171",
+            "YfactorMedian": "3.55",
+            "YfactorMinimum": "0"
+        },
+        {
+            "BucketOrdinalNumber": "25",
+            "StructureCountInBucket": "10951",
+            "XfactorFrom": {
+                "XfactorFromIsInfinity": false,
+                "XfactorFromOpenInterval": false,
+                "XfactorFromValue": "2017"
+            },
+            "XfactorTo": {
+                "XfactorToIsInfinity": false,
+                "XfactorToOpenInterval": true,
+                "XfactorToValue": "2018"
+            },
+            "YfactorAverage": "5.48",
+            "YfactorHighQuartile": "6.20",
+            "YfactorLowQuartile": "1.93",
+            "YfactorMaximum": "225",
+            "YfactorMedian": "3.52",
+            "YfactorMinimum": "0"
+        },
+        {
+            "BucketOrdinalNumber": "26",
+            "StructureCountInBucket": "11013",
+            "XfactorFrom": {
+                "XfactorFromIsInfinity": false,
+                "XfactorFromOpenInterval": false,
+                "XfactorFromValue": "2018"
+            },
+            "XfactorTo": {
+                "XfactorToIsInfinity": false,
+                "XfactorToOpenInterval": true,
+                "XfactorToValue": "2019"
+            },
+            "YfactorAverage": "5.34",
+            "YfactorHighQuartile": "6.29",
+            "YfactorLowQuartile": "1.95",
+            "YfactorMaximum": "336",
+            "YfactorMedian": "3.51",
+            "YfactorMinimum": "0"
+        },
+        {
+            "BucketOrdinalNumber": "27",
+            "StructureCountInBucket": "24528",
+            "XfactorFrom": {
+                "XfactorFromIsInfinity": false,
+                "XfactorFromOpenInterval": false,
+                "XfactorFromValue": "2019"
+            },
+            "XfactorTo": {
+                "XfactorToIsInfinity": false,
+                "XfactorToOpenInterval": false,
+                "XfactorToValue": "2020"
+            },
+            "YfactorAverage": "5.72",
+            "YfactorHighQuartile": "6.77",
+            "YfactorLowQuartile": "2.32",
+            "YfactorMaximum": "209",
+            "YfactorMedian": "4.00",
+            "YfactorMinimum": "0"
+        }
+    ],
+    "StructureCount": "171271",
+    "XfactorGlobalMaximum": "2020",
+    "XfactorGlobalMinimum": "1976",
+    "XfactorName": "year of release",
+    "YfactorGlobalMaximum": "21.8",
+    "YfactorGlobalMinimum": "5.34",
+    "YfactorName": "clashscore structure quality factor"
+}

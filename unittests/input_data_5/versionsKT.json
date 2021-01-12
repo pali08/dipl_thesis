@@ -1,0 +1,22 @@
+[
+	{
+		"id": "20201217",
+		"default": true,
+		"userFriendlyName": "current 2020-12-17"
+	},
+	{
+		"id": "20180101",
+		"default": false,
+		"userFriendlyName": "yearly 2018"
+	},
+	{
+		"id": "20170101",
+		"default": false,
+		"userFriendlyName": "yearly 2017"
+	},
+	{
+		"id": "20160101",
+		"default": false,
+		"userFriendlyName": "yearly 2016"
+	}
+]
