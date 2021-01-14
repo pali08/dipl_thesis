@@ -37,7 +37,7 @@ class GetJsonPrecomputedChartsTest(unittest.TestCase):
         self.assertEqual(combined_pairs_of_factors['releaseDate+clashscore'], release_date_plus_clashscore)
 
     def test_split_into_intervals_1(self):
-        print(split_into_intervals('test+split', test_split_into_intervals_input))
+        print(split_into_intervals(test_split_into_intervals_input))
 
     def test_split_into_intervals_2(self):
         pass
