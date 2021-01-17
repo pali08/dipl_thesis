@@ -188,3 +188,23 @@ def remove_custom(path):
         shutil.rmtree(path)  # remove dir and all contains
     else:
         raise DirOrFileNotFoundError("file {} is not a file or dir.".format(path))
+
+
+def str_to_float_or_int(float_or_int):
+    """
+    :param float_or_int: string, that we want to convert to float or integer
+    :return: float if string contains decimal dot, integer otherwise
+    if string we want to convert is in exponent mode (e.g. 5e-1 which equals 0.5),
+    we convert it to float and check if it ends with .0 - it is integer in that case
+    """
+    if is_float(float_or_int):
+        if '.' in str(float_or_int):
+            return float(float_or_int)
+        elif 'e' in str(float_or_int):
+            number_in_e_format = str(float(float_or_int))
+            if number_in_e_format.endswith('.0'):
+                return int(float_or_int)
+            else:
+                return float(float_or_int)
+        else:
+            return int(float_or_int)

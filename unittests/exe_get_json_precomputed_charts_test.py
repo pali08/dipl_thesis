@@ -3,13 +3,15 @@ import sys
 import unittest
 
 sys.path.append('..')
-from src.exe_get_json_precomputed_charts import get_pairs_of_factors_from_autoplot_csv, get_data_from_boundaries_csv, \
-    combine_pairs_of_factors, split_into_intervals
+from src.exe_get_json_precomputed_charts import get_pairs_of_factors_from_autoplot_csv, get_data_from_csv, \
+    combine_pairs_of_factors, split_into_intervals, get_intervals_from_boundaries
 from unittests.exe_get_json_precomputed_charts_test_verification_data import pairs_test, boundaries_test, \
-    release_date_plus_clashscore
+    resolution_plus_release_date, buckets_year, test_split_into_intervals_result
 
 AUTOPLOT_FILEPATH = os.path.join('.', 'input_data_5', 'autoplot.csv')
 BOUNDARIES_FILEPATH = os.path.join('.', 'input_data_5', 'boundaries.csv')
+DATA_CSV_FILEPATH = os.path.join('.', 'input_data_5', 'data.csv')
+DATA_CSV_FILEPATH_2 = os.path.join('.', 'input_data_5', 'data_2.csv')
 test_split_into_intervals_input = [(4.9184867074137975, 9.71912788178685),
                                    (0.3362218404068318, 0.303256099437611),
                                    (9.613, 1.3372324955180115),
@@ -28,19 +30,22 @@ class GetJsonPrecomputedChartsTest(unittest.TestCase):
         pairs = get_pairs_of_factors_from_autoplot_csv(AUTOPLOT_FILEPATH)
         self.assertEqual(pairs, pairs_test)
 
-    def test_get_data_from_boundaries_csv(self):
-        self.assertEqual(get_data_from_boundaries_csv(BOUNDARIES_FILEPATH), boundaries_test)
-
     def test_combine_pairs_of_factors(self):
         combined_pairs_of_factors = combine_pairs_of_factors(get_pairs_of_factors_from_autoplot_csv(AUTOPLOT_FILEPATH),
-                                                             get_data_from_boundaries_csv(BOUNDARIES_FILEPATH))
-        self.assertEqual(combined_pairs_of_factors['releaseDate+clashscore'], release_date_plus_clashscore)
+                                                             get_data_from_csv(DATA_CSV_FILEPATH_2))
+        # print(combined_pairs_of_factors)
+        self.assertEqual(combined_pairs_of_factors['resolution+releaseDate'], resolution_plus_release_date)
 
-    def test_split_into_intervals_1(self):
-        print(split_into_intervals(test_split_into_intervals_input))
+    def test_get_intervals_from_boundaries(self):
+        self.assertEqual(get_intervals_from_boundaries(get_data_from_csv(BOUNDARIES_FILEPATH), 'releaseDate'),
+                         buckets_year)
+        # print(split_into_intervals(test_split_into_intervals_input))
 
-    def test_split_into_intervals_2(self):
-        pass
+    def test_split_into_intervals(self):
+        combined_pair_of_factors = combine_pairs_of_factors(get_pairs_of_factors_from_autoplot_csv(AUTOPLOT_FILEPATH),
+                                                            get_data_from_csv(DATA_CSV_FILEPATH_2))
+        intervals = get_intervals_from_boundaries(get_data_from_csv(BOUNDARIES_FILEPATH), 'releaseDate')
+        self.assertAlmostEqual(split_into_intervals(combined_pair_of_factors, intervals, 'releaseDate+clashscore'), test_split_into_intervals_result)
 
 
 if __name__ == '__main__':
