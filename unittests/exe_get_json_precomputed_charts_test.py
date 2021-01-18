@@ -4,7 +4,7 @@ import unittest
 
 sys.path.append('..')
 from src.exe_get_json_precomputed_charts import get_pairs_of_factors_from_autoplot_csv, get_data_from_csv, \
-    combine_pairs_of_factors, split_into_intervals, get_intervals_from_boundaries
+    combine_pairs_of_factors, split_into_intervals, get_intervals_from_boundaries, compute_data_for_interval
 from unittests.exe_get_json_precomputed_charts_test_verification_data import pairs_test, boundaries_test, \
     resolution_plus_release_date, buckets_year, test_split_into_intervals_result
 
@@ -41,11 +41,103 @@ class GetJsonPrecomputedChartsTest(unittest.TestCase):
                          buckets_year)
         # print(split_into_intervals(test_split_into_intervals_input))
 
-    def test_split_into_intervals(self):
-        combined_pair_of_factors = combine_pairs_of_factors(get_pairs_of_factors_from_autoplot_csv(AUTOPLOT_FILEPATH),
-                                                            get_data_from_csv(DATA_CSV_FILEPATH_2))
-        intervals = get_intervals_from_boundaries(get_data_from_csv(BOUNDARIES_FILEPATH), 'releaseDate')
-        self.assertAlmostEqual(split_into_intervals(combined_pair_of_factors, intervals, 'releaseDate+clashscore'), test_split_into_intervals_result)
+    # def test_split_into_intervals(self):
+    #     combined_pair_of_factors = combine_pairs_of_factors(get_pairs_of_factors_from_autoplot_csv(AUTOPLOT_FILEPATH),
+    #                                                         get_data_from_csv(DATA_CSV_FILEPATH_2))
+    #     intervals = get_intervals_from_boundaries(get_data_from_csv(BOUNDARIES_FILEPATH), 'releaseDate')
+    #     self.assertAlmostEqual(split_into_intervals(combined_pair_of_factors, intervals, 'releaseDate+clashscore'),
+    #                            test_split_into_intervals_result)
+
+    def test_result_for_interval(self):
+        pairs_of_factors = get_pairs_of_factors_from_autoplot_csv(AUTOPLOT_FILEPATH)
+        data_from_boundaries = get_data_from_csv(BOUNDARIES_FILEPATH)
+        data_from_data_csv = get_data_from_csv(DATA_CSV_FILEPATH)
+        combined_pairs_of_factors = combine_pairs_of_factors(pairs_of_factors, data_from_data_csv)
+        key = 'resolution+clashscore'
+        value = combined_pairs_of_factors[key]
+
+        intervals = get_intervals_from_boundaries(data_from_boundaries, key.split('+')[0])
+        # print(intervals)
+        factors_splitted_into_bins, bucket_numbers, borders, min_x, max_x, min_y, max_y, length = split_into_intervals(
+            value, intervals, key)
+        # print(factors_splitted_into_bins)
+
+        print(len(borders))
+        print(len(bucket_numbers))
+        print(len(factors_splitted_into_bins))
+        result_dict = {'GraphBuckets': [],
+                       'StructureCount': length,
+                       'XfactorGlobalMaximum': max_x,
+                       'XfactorGlobalMinimum': min_x,
+                       'XfactorName': key.split('+')[0],
+                       'YfactorGlobalMaximum': max_y,
+                       'YfactorGlobalMinimum': min_y,
+                       'YfactorName': key.split('+')[1]
+                       }
+        j = 1
+        last_bucket = False
+        k = 0
+        first_bucket = True
+        for pair, number in zip(factors_splitted_into_bins, bucket_numbers):
+            if j == len(factors_splitted_into_bins):
+                last_bucket = True
+            if k > 0:
+                first_bucket = False
+            border_low = borders[k]
+            try:
+                border_high = borders[k + 1]
+            except IndexError:
+                border_high = 0  # does not matter
+            result_dict['GraphBuckets'].append(
+                compute_data_for_interval(pair, number, border_low, border_high, last_bucket, first_bucket))
+            j += 1
+            k += 1
+        print(result_dict)
+
+    def test_result_for_interval_2(self):
+        pairs_of_factors = get_pairs_of_factors_from_autoplot_csv(AUTOPLOT_FILEPATH)
+        data_from_boundaries = get_data_from_csv(BOUNDARIES_FILEPATH)
+        data_from_data_csv = get_data_from_csv(DATA_CSV_FILEPATH)
+        combined_pairs_of_factors = combine_pairs_of_factors(pairs_of_factors, data_from_data_csv)
+        key = 'releaseDate+clashscore'
+        value = combined_pairs_of_factors[key]
+
+        intervals = get_intervals_from_boundaries(data_from_boundaries, key.split('+')[0])
+        # print(intervals)
+        factors_splitted_into_bins, bucket_numbers, borders, min_x, max_x, min_y, max_y, length = split_into_intervals(
+            value, intervals, key)
+        print(len(borders))
+        print(len(bucket_numbers))
+        print(len(factors_splitted_into_bins))
+
+        result_dict = {'GraphBuckets': [],
+                       'StructureCount': length,
+                       'XfactorGlobalMaximum': max_x,
+                       'XfactorGlobalMinimum': min_x,
+                       'XfactorName': key.split('+')[0],
+                       'YfactorGlobalMaximum': max_y,
+                       'YfactorGlobalMinimum': min_y,
+                       'YfactorName': key.split('+')[1]
+                       }
+        j = 1
+        last_bucket = False
+        k = 0
+        first_bucket = True
+        for pair, number in zip(factors_splitted_into_bins, bucket_numbers):
+            if j == len(factors_splitted_into_bins):
+                last_bucket = True
+            if k > 0:
+                first_bucket = False
+            border_low = borders[k]
+            try:
+                border_high = borders[k + 1]
+            except IndexError:
+                border_high = 0  # does not matter
+            result_dict['GraphBuckets'].append(
+                compute_data_for_interval(pair, number, border_low, border_high, last_bucket, first_bucket))
+            j += 1
+            k += 1
+        print(result_dict)
 
 
 if __name__ == '__main__':

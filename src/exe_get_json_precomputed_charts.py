@@ -57,8 +57,17 @@ def get_intervals_from_boundaries(data_from_boundaries_csv, wanted_factor_on_x_a
 def split_into_intervals(combined_pair_of_factors, intervals, wanted_factor_pair):
     # print(combined_pair_of_factors[wanted_factor_pair])
     # print(intervals)
-    x_vals = [i[0] for i in combined_pair_of_factors[wanted_factor_pair]]
-    y_vals = [i[1] for i in combined_pair_of_factors[wanted_factor_pair]]
+    # print(combined_pair_of_factors)
+    # x_vals = [i[0] for i in combined_pair_of_factors[wanted_factor_pair]]
+    # print('combined pairs are:')
+    # print(wanted_factor_pair)
+    # print(combined_pair_of_factors)
+    # print(combined_pair_of_factors[wanted_factor_pair])
+    # y_vals = [i[1] for i in combined_pair_of_factors[wanted_factor_pair]]
+    x_vals = [i[0] for i in combined_pair_of_factors]
+    y_vals = [i[1] for i in combined_pair_of_factors]
+    # print(x_vals)
+    # print(y_vals)
     max_x = max(x_vals)
     min_x = min(x_vals)
 
@@ -70,6 +79,8 @@ def split_into_intervals(combined_pair_of_factors, intervals, wanted_factor_pair
     x_vals_np_array = np.array(x_vals)
     # print(x_vals_np_array)
     indices = np.digitize([i for i in x_vals_np_array], borders_for_digitizing, right=False)
+    # print(indices)
+    # print(x_vals)
     # print(combined_pair_of_factors)
     # print(x_vals_np_array)
     # print(borders)
@@ -79,56 +90,66 @@ def split_into_intervals(combined_pair_of_factors, intervals, wanted_factor_pair
     len(factors_splitted_into_bins)
     # sys.exit()
     for i in range(0, len(indices)):
-        factors_splitted_into_bins[indices[i] - 1].append(y_vals[i])
+        factors_splitted_into_bins[indices[i] - 1].append([x_vals[i], y_vals[i]])
+    # print(factors_splitted_into_bins)
+    # print(bucket_numbers)
+    # print(borders)
     return list(factors_splitted_into_bins), bucket_numbers, list(borders), min_x, max_x, min(y_vals), max(y_vals), len(
         x_vals)
 
 
-def compute_data_for_interval(pairs_of_values_in_interval, bucket_number, is_highest_bucket=False):
+def compute_data_for_interval(pairs_of_values_in_interval, bucket_number, border_low, border_high,
+                              is_highest_bucket=False, is_lowest_bucket=True):
+    # if bucket is empty
+    # print(pairs_of_values_in_interval)
+
+    # basic bucket - returned if bucket is empty
+    bucket = {
+        "BucketOrdinalNumber": bucket_number,
+        "StructureCountInBucket": len(pairs_of_values_in_interval),
+        "XfactorFrom": {
+            "XfactorFromIsInfinity": False,
+            "XfactorFromOpenInterval": False,
+            "XfactorFromValue": None
+        },
+        "XfactorTo": {
+            "XfactorToIsInfinity": False,
+            "XfactorToOpenInterval": not is_highest_bucket,
+            "XfactorToValue": None
+        },
+        "YfactorAverage": None,
+        "YfactorHighQuartile": None,
+        "YfactorLowQuartile": None,
+        "YfactorMaximum": None,
+        "YfactorMedian": None,
+        "YfactorMinimum": None
+    }
+
     if pairs_of_values_in_interval:
         x_factor = [i[0] for i in pairs_of_values_in_interval]
         y_factor = [i[1] for i in pairs_of_values_in_interval]
-        bucket = {
-            "BucketOrdinalNumber": bucket_number,
-            "StructureCountInBucket": len(pairs_of_values_in_interval),
-            "XfactorFrom": {
-                "XfactorFromIsInfinity": False,
-                "XfactorFromOpenInterval": False,
-                "XfactorFromValue": min(x_factor)
-            },
-            "XfactorTo": {
-                "XfactorToIsInfinity": False,
-                "XfactorToOpenInterval": is_highest_bucket,
-                "XfactorToValue": max(x_factor)
-            },
-            "YfactorAverage": np.average(y_factor),
-            "YfactorHighQuartile": np.quantile(y_factor, 0.75),
-            "YfactorLowQuartile": np.quantile(y_factor, 0.25),
-            "YfactorMaximum": max(y_factor),
-            "YfactorMedian": np.median(y_factor),
-            "YfactorMinimum": min(y_factor)
-        }
-    else:
-        bucket = {
-            "BucketOrdinalNumber": bucket_number,
-            "StructureCountInBucket": len(pairs_of_values_in_interval),
-            "XfactorFrom": {
-                "XfactorFromIsInfinity": False,
-                "XfactorFromOpenInterval": False,
-                "XfactorFromValue": None
-            },
-            "XfactorTo": {
-                "XfactorToIsInfinity": False,
-                "XfactorToOpenInterval": is_highest_bucket,
-                "XfactorToValue": None
-            },
-            "YfactorAverage": None,
-            "YfactorHighQuartile": None,
-            "YfactorLowQuartile": None,
-            "YfactorMaximum": None,
-            "YfactorMedian": None,
-            "YfactorMinimum": None
-        }
+        if is_lowest_bucket:
+            if min(x_factor) <= border_low:
+                bucket["XfactorFrom"]["XfactorFromValue"] = min(x_factor)
+            bucket["XfactorTo"]["XfactorToValue"] = border_high
+        elif is_highest_bucket:
+            bucket["XfactorFrom"]["XfactorFromValue"] = border_low
+            if max(x_factor) >= border_high:
+                bucket["XfactorTo"]["XfactorToValue"] = max(x_factor)
+        else:
+            bucket["XfactorFrom"]["XfactorFromValue"] = border_low
+            bucket["XfactorTo"]["XfactorToValue"] = border_high
+        bucket["YfactorAverage"] = np.average(y_factor)
+        bucket["YfactorHighQuartile"] = np.quantile(y_factor, 0.75)
+        bucket["YfactorLowQuartile"] = np.quantile(y_factor, 0.25)
+        bucket["YfactorMaximum"] = max(y_factor)
+        bucket["YfactorMedian"] = np.median(y_factor)
+        bucket["YfactorMinimum"] = min(y_factor)
+
+        if is_lowest_bucket:
+            bucket["XfactorFrom"]["XfactorFromValue"] = min(x_factor)
+        if is_highest_bucket:
+            bucket["XfactorTo"]["XfactorToValue"] = max(x_factor)
 
     return bucket
 
@@ -161,11 +182,22 @@ def get_results(filename_autoplots, filename_boundaries, filename_data_csv, resu
                        }
         j = 1
         last_bucket = False
+        k = 0
+        first_bucket = True
         for pair, number in zip(factors_splitted_into_bins, bucket_numbers):
             if j == len(factors_splitted_into_bins):
                 last_bucket = True
-            result_dict['GraphBuckets'].append(compute_data_for_interval(pair, number, last_bucket))
+            if k > 0:
+                first_bucket = False
+            border_low = borders[k]
+            try:
+                border_high = borders[k + 1]
+            except IndexError:
+                border_high = 0  # does not matter
+            result_dict['GraphBuckets'].append(
+                compute_data_for_interval(pair, number, border_low, border_high, last_bucket, first_bucket))
             j += 1
+            k += 1
         create_json(key + '.json', result_folder, result_dict)
 
 
