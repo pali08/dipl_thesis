@@ -180,10 +180,12 @@ def update():
     update_input_files(added_molecules, modified_molecules, added_files, modified_files, obsolete_files)
     print('Update input files finished')
     print('Computing data for data.csv...')
+    start = time.time()
     list_of_rec_lists = get_dicts(args.cpu_count, added_molecules + modified_molecules, args.ligand_stats_csv,
                                   args.mmcif_files, args.vdb_files,
                                   args.xml_files, args.rest_files)
-    print('Computing data for data.csv finished')
+    end = time.time()
+    print('Computing data for data.csv lasted {:.3f} seconds'.format(end - start))
     print('Updating data.csv file...')
     update_csv(args.data_csv, list_of_rec_lists, added_molecules, modified_molecules, obsolete_molecules)
     print('Updating data.csv finished. \n Program finished')

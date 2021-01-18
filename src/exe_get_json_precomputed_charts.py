@@ -3,6 +3,8 @@ import csv
 import json
 import os
 import sys
+import time
+from multiprocessing import Pool
 
 import numpy as np
 
@@ -159,13 +161,8 @@ def create_json(filename, folder, dictionary_to_output):
         json.dump(dictionary_to_output, json_file, indent=4)
 
 
-def get_results(filename_autoplots, filename_boundaries, filename_data_csv, result_folder):
-    pairs_of_factors = get_pairs_of_factors_from_autoplot_csv(filename_autoplots)
-    data_from_boundaries = get_data_from_csv(filename_boundaries)
-    data_from_data_csv = get_data_from_csv(filename_data_csv)
-    # intervals = data_from_boundaries
-    combined_pairs_of_factors_with_key = combine_pairs_of_factors(pairs_of_factors, data_from_data_csv)
-    for key, value in combined_pairs_of_factors_with_key.items():
+def create_json_for_pair(key, value, data_from_boundaries, result_folder):
+    try:
         # print(key.split('+')[0])
         # print(data_from_boundaries)
         intervals = get_intervals_from_boundaries(data_from_boundaries, key.split('+')[0])
@@ -199,6 +196,26 @@ def get_results(filename_autoplots, filename_boundaries, filename_data_csv, resu
             j += 1
             k += 1
         create_json(key + '.json', result_folder, result_dict)
+    except Exception as e:
+        print('Unable to create json for pair {}'.format(str(key)))
+        print(str(e))
+
+
+def get_results(filename_autoplots, filename_boundaries, filename_data_csv, result_folder, cpu_cores_count=1):
+    pairs_of_factors = get_pairs_of_factors_from_autoplot_csv(filename_autoplots)
+    data_from_boundaries = get_data_from_csv(filename_boundaries)
+    data_from_data_csv = get_data_from_csv(filename_data_csv)
+    # intervals = data_from_boundaries
+    combined_pairs_of_factors_with_key = combine_pairs_of_factors(pairs_of_factors, data_from_data_csv)
+    # for key, value in combined_pairs_of_factors_with_key.items():
+    #     create_json_for_pair(key, value, data_from_boundaries, result_folder)
+    # parallel:
+    pool = Pool(cpu_cores_count)
+    arguments_for_create_json = [list(i) + [data_from_boundaries] + [result_folder] for i in
+                                 list(combined_pairs_of_factors_with_key.items())]
+    pool.starmap_async(create_json_for_pair, arguments_for_create_json).get()
+    pool.close()
+    pool.join()
 
 
 if __name__ == '__main__':
@@ -208,5 +225,11 @@ if __name__ == '__main__':
     parser.add_argument('filename_data_csv', help='usually data.csv file', type=str)
     parser.add_argument('result_folder',
                         help='Folder for result. Keep in mind, that existing files will be overwritten', type=str)
+    parser.add_argument('--cpu_count', '-c', nargs='?', const=1, default=1, help='Cpu count',
+                        type=int)
     args = parser.parse_args()
-    get_results(args.filename_autoplots, args.filename_boundaries, args.filename_data_csv, args.result_folder)
+    start = time.time()
+    get_results(args.filename_autoplots, args.filename_boundaries, args.filename_data_csv, args.result_folder,
+                args.cpu_count)
+    end = time.time()
+    print("Computing data and creating json files lasted {:.3f} seconds".format(end - start))

@@ -145,7 +145,7 @@ def create_csv(filename, ligand_stats_list):
 
 
 if __name__ == '__main__':
-    parser = argparse.ArgumentParser(description='Intro task - parse different types of the data.')
+    parser = argparse.ArgumentParser(description='Script for computing ligand flexibility and heavy atoms count')
     parser.add_argument('mmcif_file', help='mmcif file to compute ligand_stats file from', type=str)
     parser.add_argument('ligand_stats_csv',
                         help='Output CSV file with ligand statistics (heavy atoms size and flexibility)',

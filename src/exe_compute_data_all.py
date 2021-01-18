@@ -93,7 +93,7 @@ def main():
     parser.add_argument('rest_files', help='Folder with results of validation.'
                                            'Files can be stored in subfolder', type=str)
     parser.add_argument('ligand_stats_csv', help='CSV file with ligand statistics (heavy atoms size and flexibility)')
-    parser.add_argument('--cpu_count', '-c', nargs='?', const=1, default=1, help='Folder with original json files',
+    parser.add_argument('--cpu_count', '-c', nargs='?', const=1, default=1, help='Cpu count',
                         type=int)
     args = parser.parse_args()
     csvname = csv_name()
@@ -102,7 +102,7 @@ def main():
     list_of_rec_lists = get_dicts(args.cpu_count, molecules, args.ligand_stats_csv, args.mmcif_files, args.vdb_files,
                                   args.xml_files, args.rest_files)
     end = time.time()
-    print("Loading files lasted {:.3f} seconds".format(end - start))
+    print("Loading files and getting data lasted {:.3f} seconds".format(end - start))
     write_csv_file(csvname, list_of_rec_lists)
     print(os.linesep + "Data were successfully written to " + csvname + ".")
 
