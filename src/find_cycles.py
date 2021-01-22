@@ -1,3 +1,5 @@
+import sys
+sys.path.append('..')
 def find_all_cycles(graph_as_list_of_lists):
     cycles = []
     for edge in graph_as_list_of_lists:

@@ -8,9 +8,8 @@ from datetime import datetime
 from itertools import repeat
 from multiprocessing import Pool
 
-from src.global_constants_and_functions import VDB_JSON_UNIVERSAL_NAME
-
 sys.path.append('..')
+from src.global_constants_and_functions import VDB_JSON_UNIVERSAL_NAME
 from src.parser_all_files import AllFilesParser
 
 

@@ -1,7 +1,9 @@
 import json
 import os
+import sys
 
 from src.global_constants_and_functions import WATER_MOL_WEIGHT
+sys.path.append('..')
 from src.parser import Parser
 
 

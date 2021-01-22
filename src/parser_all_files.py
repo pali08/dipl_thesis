@@ -1,6 +1,7 @@
 import os
 import sys
 
+sys.path.append('..')
 from src import global_constants_and_functions
 from src.generate_filepaths import FilepathGenerator
 from src.global_constants_and_functions import is_float, NAN_VALUE, MMCIF_UPDATED_SUFFIX, XML_VALIDATION_SUFFIX, \

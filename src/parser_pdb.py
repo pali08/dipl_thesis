@@ -1,6 +1,9 @@
+import sys
+
 import numpy as np
 from Bio.File import as_handle
 from Bio.PDB.MMCIF2Dict import MMCIF2Dict
+sys.path.append('..')
 from src.global_constants_and_functions import METALS, WATER_MOLECULE, division_zero_div_handling, to_float, to_int, \
     NAN_VALUE, addition_nan_handling, subtraction_nan_handling, is_float, multiplying_question_mark_handling
 from src.parser import Parser

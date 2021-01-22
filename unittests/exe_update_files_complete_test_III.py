@@ -6,9 +6,9 @@ import unittest
 import sys
 from shutil import copy2
 
+sys.path.append('..')
 from src.generate_filepaths import FilepathGenerator
 
-sys.path.append('..')
 from src.global_constants_and_functions import ADDED, LATEST_SUFFIX, METADATA_FILES_PATH, MODIFIED, OBSOLETE, \
     remove_custom, DirOrFileNotFoundError, A_M_O_FILENAME
 from src.exe_update_files import get_lists_of_changed_molecules, get_filepaths_from_list, remove_files, \

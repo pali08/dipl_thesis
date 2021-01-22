@@ -1,3 +1,6 @@
+import sys
+
+sys.path.append('..')
 from src.global_constants_and_functions import METALS, division_zero_div_handling, NAN_VALUE, is_float
 from src.parser_json import JsonParser
 

@@ -1,6 +1,7 @@
 import os
 import sys
 
+sys.path.append('..')
 from src.global_constants_and_functions import MMCIF_UPDATED_SUFFIX, VDB_JSON_UNIVERSAL_NAME, XML_VALIDATION_SUFFIX, \
     ASSEMBLY_FOLDER, MOLECULES_FOLDER, SUMMARY_FOLDER, JSON_SUFFIX
 

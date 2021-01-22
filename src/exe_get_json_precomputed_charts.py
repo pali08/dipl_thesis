@@ -8,6 +8,7 @@ from multiprocessing import Pool
 
 import numpy as np
 
+sys.path.append('..')
 from src.global_constants_and_functions import is_float, str_to_float_or_int
 
 

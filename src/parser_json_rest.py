@@ -1,5 +1,8 @@
 import os
 import csv
+import sys
+
+sys.path.append('..')
 from src.global_constants_and_functions import NAN_VALUE, value_for_result_dictionary, BIOPOLYMERS, ASSEMBLY_FOLDER, \
     MOLECULES_FOLDER, SUMMARY_FOLDER
 from src.parser_json import JsonParser

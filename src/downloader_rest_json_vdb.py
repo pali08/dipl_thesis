@@ -4,9 +4,8 @@ import sys
 
 import requests
 
-from src.global_constants_and_functions import VDB_JSON_UNIVERSAL_NAME
-
 sys.path.append('..')
+from src.global_constants_and_functions import VDB_JSON_UNIVERSAL_NAME
 from src.downloader import FileDownloader
 from src.downloader_rest_json import RestJsonDownloader
 

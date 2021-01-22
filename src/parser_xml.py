@@ -1,9 +1,11 @@
 import math
 import os
+import sys
 import xml.etree.ElementTree as eTree
 
 import numpy as np
 
+sys.path.append('..')
 from src.global_constants_and_functions import NAN_VALUE, division_zero_div_handling, nan_if_list_empty, is_float, \
     CORRELATION_COEF_THRESHOLD_RSCC, addition_nan_handling
 from src.parser import Parser
