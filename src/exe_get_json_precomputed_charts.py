@@ -162,7 +162,21 @@ def create_json(filename, folder, dictionary_to_output):
         json.dump(dictionary_to_output, json_file, indent=4)
 
 
-def create_json_for_pair(key, value, data_from_boundaries, result_folder):
+def get_name_translations(filename):
+    with open(filename, encoding='utf-8') as f:
+        nametranslation_list_of_dicts = json.load(f)
+    return nametranslation_list_of_dicts
+
+
+def get_familiar_name(nametranslation_list_of_dicts, factor_id):
+    for i in nametranslation_list_of_dicts:
+        if i['ID'].lower() == factor_id.lower():
+            return i['FamiliarName']
+    return factor_id
+
+
+def create_json_for_pair(key, value, data_from_boundaries, result_folder, nametranslations_json):
+    nametranslations_list_of_dicts = get_name_translations(nametranslations_json)
     try:
         # print(key.split('+')[0])
         # print(data_from_boundaries)
@@ -173,10 +187,10 @@ def create_json_for_pair(key, value, data_from_boundaries, result_folder):
                        'StructureCount': length,
                        'XfactorGlobalMaximum': max_x,
                        'XfactorGlobalMinimum': min_x,
-                       'XfactorName': key.split('+')[0],
+                       'XfactorName': get_familiar_name(nametranslations_list_of_dicts, key.split('+')[0]),
                        'YfactorGlobalMaximum': max_y,
                        'YfactorGlobalMinimum': min_y,
-                       'YfactorName': key.split('+')[1]
+                       'YfactorName': get_familiar_name(nametranslations_list_of_dicts, key.split('+')[1])
                        }
         j = 1
         last_bucket = False
@@ -202,7 +216,8 @@ def create_json_for_pair(key, value, data_from_boundaries, result_folder):
         print(str(e))
 
 
-def get_results(filename_autoplots, filename_boundaries, filename_data_csv, result_folder, cpu_cores_count=1):
+def get_results(filename_autoplots, filename_boundaries, filename_data_csv, result_folder, nametranslations_json,
+                cpu_cores_count=1):
     pairs_of_factors = get_pairs_of_factors_from_autoplot_csv(filename_autoplots)
     data_from_boundaries = get_data_from_csv(filename_boundaries)
     data_from_data_csv = get_data_from_csv(filename_data_csv)
@@ -212,7 +227,7 @@ def get_results(filename_autoplots, filename_boundaries, filename_data_csv, resu
     #     create_json_for_pair(key, value, data_from_boundaries, result_folder)
     # parallel:
     pool = Pool(cpu_cores_count)
-    arguments_for_create_json = [list(i) + [data_from_boundaries] + [result_folder] for i in
+    arguments_for_create_json = [list(i) + [data_from_boundaries] + [result_folder] + [nametranslations_json] for i in
                                  list(combined_pairs_of_factors_with_key.items())]
     pool.starmap_async(create_json_for_pair, arguments_for_create_json).get()
     pool.close()
@@ -226,11 +241,16 @@ if __name__ == '__main__':
     parser.add_argument('filename_data_csv', help='usually data.csv file', type=str)
     parser.add_argument('result_folder',
                         help='Folder for result. Keep in mind, that existing files will be overwritten', type=str)
+    parser.add_argument('nametranslations_json',
+                        help='Json file (e.g. available on ValTrends db download page), '
+                             'that translates factor ID to human readable factor description',
+                        type=str)
     parser.add_argument('--cpu_count', '-c', nargs='?', const=1, default=1, help='Cpu count',
                         type=int)
     args = parser.parse_args()
     start = time.time()
     get_results(args.filename_autoplots, args.filename_boundaries, args.filename_data_csv, args.result_folder,
+                args.nametranslations_json,
                 args.cpu_count)
     end = time.time()
     print("Computing data and creating json files lasted {:.3f} seconds".format(end - start))

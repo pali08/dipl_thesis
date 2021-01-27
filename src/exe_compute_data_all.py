@@ -58,7 +58,8 @@ def get_dicts(cpu_cores_count, molecules, ligand_stats_csv, *filepaths):
     pool.close()
     pool.join()
     result_tuple_list = [AllFilesParser.order_list]
-    result_tuple_list.extend([result_tuple[i].get_data_ordered() for i in range(0, len(result_tuple))])
+    result_tuple_list.extend(
+        sorted([result_tuple[i].get_data_ordered() for i in range(0, len(result_tuple))], key=lambda x: x[0]))
     return result_tuple_list
 
 
