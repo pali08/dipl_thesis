@@ -86,7 +86,7 @@ def main():
     main - argparsing and executing read_and_write
     4 folders are compulsory as user argument, output csv filename is generated automatically
     """
-    parser = argparse.ArgumentParser(description='Intro task - parse different types of the data.')
+    parser = argparse.ArgumentParser(description='Script for computing data.csv file from dataset given on the input.')
     parser.add_argument('mmcif_files', help='Folder with mmcif files files', type=str)
     parser.add_argument('vdb_files', help='Folder with original json files', type=str)
     parser.add_argument('xml_files', help='Folder with xml files', type=str)

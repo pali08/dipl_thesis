@@ -155,7 +155,7 @@ def update_csv(path_to_csv, molecule_records_update, molecules_added, molecules_
 
 
 def update():
-    parser = argparse.ArgumentParser(description='Intro task - parse different types of the data.')
+    parser = argparse.ArgumentParser(description='Script for weekly updates of dataset and data.csv.')
     parser.add_argument('mmcif_files', help='Folder with mmcif files files', type=str)
     parser.add_argument('vdb_files', help='Folder with original json files', type=str)
     parser.add_argument('xml_files', help='Folder with xml files', type=str)
