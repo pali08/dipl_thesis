@@ -74,7 +74,7 @@ class FtpFileDownloader(FileDownloader):
             return True
         except Exception as e:
             print(str(self.save_filepath) +
-                  'Program encountered exception when testing connection:\n' + str(
+                  'Program encountered exception when testing connection:\n' + ' ' + str(type(e)) + ' ' + str(
                 e) + '. This exception was not encountered during testing and program do not know how to handle it.\n' +
                   '\nPlease contact author (p.mikulaj@mail.muni.cz). Program will be exited. '
                   'Try execute it again in few minutes')

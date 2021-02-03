@@ -96,11 +96,13 @@ def create_data_for_testing():
             Path(os.path.dirname(i)).mkdir(parents=True, exist_ok=True)
             with open(i, mode='w+', encoding='utf-8') as almost_empty_file:
                 almost_empty_file.write('foobar')
-    except Exception:
+    except Exception as e:
         delete_metadata()
         if os.path.exists(os.path.join(METADATA_FILES_PATH, A_M_O_FILENAME)):
             os.remove(os.path.join(METADATA_FILES_PATH, A_M_O_FILENAME))
         restore()
+        print(str(type(e)))
+        print(str(e))
         sys.exit('Unable to download metadata (added.latest, modified.latest, obsolete.latest). Please try again later')
 
 

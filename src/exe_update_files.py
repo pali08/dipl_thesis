@@ -24,13 +24,17 @@ def download_metadata():
         for i in [ADDED, MODIFIED, OBSOLETE]:
             DifferenceFilesDownloader(i).get_file()
         print('Metadata downloaded.')
-    except Exception:
+    except Exception as e:
         for i in [ADDED, MODIFIED, OBSOLETE]:
             if os.path.exists(os.path.join(METADATA_FILES_PATH, i + LATEST_SUFFIX)):
                 os.remove(os.path.join(METADATA_FILES_PATH, i + LATEST_SUFFIX))
         if os.path.exists(os.path.join(METADATA_FILES_PATH, A_M_O_FILENAME)):
             os.remove(os.path.join(METADATA_FILES_PATH, A_M_O_FILENAME))
-        sys.exit('Unable to download metadata (added.latest, modified.latest, obsolete.latest). Please try again later')
+        print(str(type(e)))
+        print(str(e))
+        sys.exit(
+            'download_metadata: Unable to download metadata '
+            '(added.latest, modified.latest, obsolete.latest). Please try again later')
 
 
 def get_lists_of_changed_molecules():
